@@ -1,0 +1,17 @@
+type: object
+properties:
+  projectKey:
+    type: string
+  sprintName:
+    type: string
+  startOfSprint:
+    type: string
+    format: date
+  endOfSprint:
+    type: string
+    format: date
+required:
+  - projectKey
+  - sprintName
+  - startOfSprint
+  - endOfSprint

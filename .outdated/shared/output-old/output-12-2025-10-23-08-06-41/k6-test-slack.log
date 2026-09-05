@@ -1,0 +1,505 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+time="2025-10-23T08:06:41+02:00" level=info msg="Loaded 50 users for tenant slack" source=console
+     execution: local
+        script: /Users/urosceh/Code/zilla-minikube/shared/k6-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 20 max VUs, 3m30s max duration (incl. graceful stop):
+              * default: 20 iterations shared among 20 VUs (maxDuration: 3m0s, gracefulStop: 30s)
+
+time="2025-10-23T08:06:41+02:00" level=info msg="Starting test for tenant: slack" source=console
+time="2025-10-23T08:06:41+02:00" level=warning msg="Error from API server" error="listen tcp 127.0.0.1:6565: bind: address already in use"
+time="2025-10-23T08:06:42+02:00" level=info msg="Admin logged in successfully" source=console
+time="2025-10-23T08:06:42+02:00" level=info msg="Found 50 users from CSV" source=console
+time="2025-10-23T08:06:42+02:00" level=info msg="Creating project 1 of 20" source=console
+time="2025-10-23T08:06:42+02:00" level=info msg="Creating project 2 of 20" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-23T08:06:42+02:00" level=info msg="Creating project 3 of 20" source=console
+time="2025-10-23T08:06:42+02:00" level=info msg="Creating project 4 of 20" source=console
+time="2025-10-23T08:06:42+02:00" level=info msg="Creating project 5 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 6 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 7 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 8 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 9 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 10 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 11 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 12 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 13 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 14 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 15 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 16 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 17 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 18 of 20" source=console
+time="2025-10-23T08:06:43+02:00" level=info msg="Creating project 19 of 20" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-23T08:06:44+02:00" level=info msg="Creating project 20 of 20" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-23T08:06:46+02:00" level=info msg="Created 20 projects" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-23T08:07:20+02:00" level=info msg="Logged in 50 users" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 2 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 16 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 3 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 20 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 11 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 17 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 8 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 10 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 15 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 7 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 6 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 5 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 13 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 1 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 9 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 19 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 4 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 14 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 18 processing project" source=console
+time="2025-10-23T08:07:20+02:00" level=info msg="VU 12 processing project" source=console
+
+running (0m39.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m00.1s/3m0s  00/20 shared iters
+
+running (0m40.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m01.1s/3m0s  00/20 shared iters
+
+running (0m41.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m02.1s/3m0s  00/20 shared iters
+
+running (0m42.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m03.1s/3m0s  00/20 shared iters
+
+running (0m43.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m04.1s/3m0s  00/20 shared iters
+
+running (0m44.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m05.1s/3m0s  00/20 shared iters
+
+running (0m45.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m06.1s/3m0s  00/20 shared iters
+
+running (0m46.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m07.1s/3m0s  00/20 shared iters
+
+running (0m47.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m08.1s/3m0s  00/20 shared iters
+
+running (0m48.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m09.1s/3m0s  00/20 shared iters
+
+running (0m49.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m10.1s/3m0s  00/20 shared iters
+
+running (0m50.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m11.1s/3m0s  00/20 shared iters
+
+running (0m51.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m12.1s/3m0s  00/20 shared iters
+
+running (0m52.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m13.1s/3m0s  00/20 shared iters
+
+running (0m53.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m14.1s/3m0s  00/20 shared iters
+
+running (0m54.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m15.1s/3m0s  00/20 shared iters
+
+running (0m55.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m16.1s/3m0s  00/20 shared iters
+
+running (0m56.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m17.1s/3m0s  00/20 shared iters
+
+running (0m57.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m18.1s/3m0s  00/20 shared iters
+
+running (0m58.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m19.1s/3m0s  00/20 shared iters
+
+running (0m59.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m20.1s/3m0s  00/20 shared iters
+
+running (1m00.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m21.1s/3m0s  00/20 shared iters
+
+running (1m01.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m22.1s/3m0s  00/20 shared iters
+
+running (1m02.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m23.1s/3m0s  00/20 shared iters
+
+running (1m03.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m24.1s/3m0s  00/20 shared iters
+
+running (1m04.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m25.1s/3m0s  00/20 shared iters
+
+running (1m05.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m26.1s/3m0s  00/20 shared iters
+
+running (1m06.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m27.1s/3m0s  00/20 shared iters
+
+running (1m07.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m28.1s/3m0s  00/20 shared iters
+
+running (1m08.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m29.1s/3m0s  00/20 shared iters
+
+running (1m09.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m30.1s/3m0s  00/20 shared iters
+
+running (1m10.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m31.1s/3m0s  00/20 shared iters
+
+running (1m11.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m32.1s/3m0s  00/20 shared iters
+
+running (1m12.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m33.1s/3m0s  00/20 shared iters
+
+running (1m13.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m34.1s/3m0s  00/20 shared iters
+
+running (1m14.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m35.1s/3m0s  00/20 shared iters
+
+running (1m15.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m36.1s/3m0s  00/20 shared iters
+
+running (1m16.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m37.1s/3m0s  00/20 shared iters
+
+running (1m17.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m38.1s/3m0s  00/20 shared iters
+
+running (1m18.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m39.1s/3m0s  00/20 shared iters
+
+running (1m19.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m40.1s/3m0s  00/20 shared iters
+
+running (1m20.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m41.1s/3m0s  00/20 shared iters
+
+running (1m21.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m42.1s/3m0s  00/20 shared iters
+
+running (1m22.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m43.1s/3m0s  00/20 shared iters
+
+running (1m23.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m44.1s/3m0s  00/20 shared iters
+
+running (1m24.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m45.1s/3m0s  00/20 shared iters
+
+running (1m25.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m46.1s/3m0s  00/20 shared iters
+
+running (1m26.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m47.1s/3m0s  00/20 shared iters
+
+running (1m27.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m48.1s/3m0s  00/20 shared iters
+
+running (1m28.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m49.1s/3m0s  00/20 shared iters
+
+running (1m29.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m50.1s/3m0s  00/20 shared iters
+
+running (1m30.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m51.1s/3m0s  00/20 shared iters
+
+running (1m31.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m52.1s/3m0s  00/20 shared iters
+
+running (1m32.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m53.1s/3m0s  00/20 shared iters
+
+running (1m33.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m54.1s/3m0s  00/20 shared iters
+
+running (1m34.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m55.1s/3m0s  00/20 shared iters
+
+running (1m35.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m56.1s/3m0s  00/20 shared iters
+
+running (1m36.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m57.1s/3m0s  00/20 shared iters
+
+running (1m37.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m58.1s/3m0s  00/20 shared iters
+
+running (1m38.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m59.1s/3m0s  00/20 shared iters
+
+running (1m39.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m00.1s/3m0s  00/20 shared iters
+
+running (1m40.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m01.1s/3m0s  00/20 shared iters
+
+running (1m41.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m02.1s/3m0s  00/20 shared iters
+
+running (1m42.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m03.1s/3m0s  00/20 shared iters
+
+running (1m43.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m04.1s/3m0s  00/20 shared iters
+
+running (1m44.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m05.1s/3m0s  00/20 shared iters
+
+running (1m45.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m06.1s/3m0s  00/20 shared iters
+
+running (1m46.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m07.1s/3m0s  00/20 shared iters
+
+running (1m47.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m08.1s/3m0s  00/20 shared iters
+
+running (1m48.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m09.1s/3m0s  00/20 shared iters
+
+running (1m49.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m10.1s/3m0s  00/20 shared iters
+
+running (1m50.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m11.1s/3m0s  00/20 shared iters
+
+running (1m51.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m12.1s/3m0s  00/20 shared iters
+
+running (1m52.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m13.1s/3m0s  00/20 shared iters
+
+running (1m53.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m14.1s/3m0s  00/20 shared iters
+
+running (1m54.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m15.1s/3m0s  00/20 shared iters
+
+running (1m55.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m16.1s/3m0s  00/20 shared iters
+
+running (1m56.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m17.1s/3m0s  00/20 shared iters
+
+running (1m57.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m18.1s/3m0s  00/20 shared iters
+
+running (1m58.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m19.1s/3m0s  00/20 shared iters
+
+running (1m59.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m20.1s/3m0s  00/20 shared iters
+
+running (2m00.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m21.1s/3m0s  00/20 shared iters
+
+running (2m01.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m22.1s/3m0s  00/20 shared iters
+
+running (2m02.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m23.1s/3m0s  00/20 shared iters
+
+running (2m03.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m24.1s/3m0s  00/20 shared iters
+
+running (2m04.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m25.1s/3m0s  00/20 shared iters
+
+running (2m05.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m26.1s/3m0s  00/20 shared iters
+
+running (2m06.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m27.1s/3m0s  00/20 shared iters
+
+running (2m07.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m28.1s/3m0s  00/20 shared iters
+
+running (2m08.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m29.1s/3m0s  00/20 shared iters
+
+running (2m09.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m30.1s/3m0s  00/20 shared iters
+
+running (2m10.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m31.1s/3m0s  00/20 shared iters
+
+running (2m11.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m32.1s/3m0s  00/20 shared iters
+
+running (2m12.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m33.1s/3m0s  00/20 shared iters
+
+running (2m13.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  1m34.1s/3m0s  00/20 shared iters
+time="2025-10-23T08:08:55+02:00" level=info msg="Test completed" source=console
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✗ 'p(95)<500' p(95)=739.08ms
+    ✗ 'p(99)<1000' p(99)=1.05s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    24.12739/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=586.32ms min=28.74ms med=561.79ms max=3.34s p(90)=660.72ms p(95)=739.08ms
+      { expected_response:true }...: avg=586.32ms min=28.74ms med=561.79ms max=3.34s p(90)=660.72ms p(95)=739.08ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   24.659391/s
+
+    EXECUTION
+    iteration_duration.............: avg=1m34s    min=1m34s   med=1m34s    max=1m34s p(90)=1m34s    p(95)=1m34s   
+    iterations.....................: 20     0.14986/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 14 kB/s
+    data_sent......................: 1.8 MB 14 kB/s
+
+
+
+
+running (2m13.5s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  1m34.6s/3m0s  20/20 shared iters
+time="2025-10-23T08:08:55+02:00" level=error msg="thresholds on metrics 'http_req_duration' have been crossed"

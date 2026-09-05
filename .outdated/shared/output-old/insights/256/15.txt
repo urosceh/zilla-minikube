@@ -1,0 +1,658 @@
+reddit
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.35s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.940662/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=767.99ms min=34.61ms med=751.81ms max=2.95s p(90)=860.31ms p(95)=911.91ms
+      { expected_response:true }...: avg=767.99ms min=34.61ms med=751.81ms max=2.95s p(90)=860.31ms p(95)=911.91ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.358297/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m3s    med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.117644/s
+    vus............................: 1      min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.9 MB 11 kB/s
+
+
+
+
+running (2m50.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.3s/3m0s  20/20 shared iters
+
+---
+meta
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.35s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.817805/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=768.97ms min=34.84ms med=752.75ms max=2.77s p(90)=857.95ms p(95)=907.66ms
+      { expected_response:true }...: avg=768.97ms min=34.84ms med=752.75ms max=2.77s p(90)=857.95ms p(95)=907.66ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.232732/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m3s    med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.116881/s
+    vus............................: 11     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.8 MB 11 kB/s
+
+
+
+
+running (2m51.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.8s/3m0s  20/20 shared iters
+
+---
+google
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.23s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    19.059664/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=764.08ms min=33.93ms med=751.22ms max=3.06s p(90)=856.46ms p(95)=906.98ms
+      { expected_response:true }...: avg=764.08ms min=33.93ms med=751.22ms max=3.06s p(90)=856.46ms p(95)=906.98ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.479923/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m3s     min=2m3s    med=2m3s     max=2m3s  p(90)=2m3s     p(95)=2m3s    
+    iterations.....................: 20     0.118383/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.9 MB 11 kB/s
+
+
+
+
+running (2m48.9s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m03.7s/3m0s  20/20 shared iters
+
+---
+netflix
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.38s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.894159/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=767.77ms min=34.22ms med=752.33ms max=2.94s p(90)=855.28ms p(95)=908.98ms
+      { expected_response:true }...: avg=767.77ms min=34.22ms med=752.33ms max=2.94s p(90)=855.28ms p(95)=908.98ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.310769/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m3s    med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.117355/s
+    vus............................: 17     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.9 MB 11 kB/s
+
+
+
+
+running (2m49.6s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.7s/3m0s  20/20 shared iters
+
+---
+paypal
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.36s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.885993/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=767.88ms min=36.66ms med=752.68ms max=3.01s p(90)=855.74ms p(95)=907.86ms
+      { expected_response:true }...: avg=767.88ms min=36.66ms med=752.68ms max=3.01s p(90)=855.74ms p(95)=907.86ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.302423/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m3s    med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.117304/s
+    vus............................: 15     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.9 MB 11 kB/s
+
+
+
+
+running (2m49.4s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.3s/3m0s  20/20 shared iters
+
+---
+nvidia
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.36s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.668367/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=771.69ms min=32.88ms med=752.5ms max=4.33s p(90)=860.69ms p(95)=915.99ms
+      { expected_response:true }...: avg=771.69ms min=32.88ms med=752.5ms max=4.33s p(90)=860.69ms p(95)=915.99ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.079999/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m4s    med=2m4s    max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.115953/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.9 MB 11 kB/s
+
+
+
+
+running (2m52.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m05.2s/3m0s  20/20 shared iters
+
+---
+amazon
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.42s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.979605/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=766.68ms min=33.2ms med=752.87ms max=2.95s p(90)=856.97ms p(95)=909.3ms
+      { expected_response:true }...: avg=766.68ms min=33.2ms med=752.87ms max=2.95s p(90)=856.97ms p(95)=909.3ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.398099/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m3s     min=2m3s   med=2m3s     max=2m4s  p(90)=2m4s     p(95)=2m4s   
+    iterations.....................: 20     0.117886/s
+    vus............................: 19     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.9 MB 11 kB/s
+
+
+
+
+running (2m50.1s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.1s/3m0s  20/20 shared iters
+
+---
+azure
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.36s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.677689/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=773.33ms min=29.22ms med=753.03ms max=4.21s p(90)=863.21ms p(95)=916.51ms
+      { expected_response:true }...: avg=773.33ms min=29.22ms med=753.03ms max=4.21s p(90)=863.21ms p(95)=916.51ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.089526/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m4s    med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.11601/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.8 MB 11 kB/s
+
+
+
+
+running (2m52.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.8s/3m0s  20/20 shared iters
+
+---
+apple
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.34s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.725225/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=770.87ms min=35.1ms med=752.35ms max=3.52s p(90)=860.83ms p(95)=911.57ms
+      { expected_response:true }...: avg=770.87ms min=35.1ms med=752.35ms max=3.52s p(90)=860.83ms p(95)=911.57ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.138111/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m4s   med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.116306/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.8 MB 11 kB/s
+
+
+
+
+running (2m51.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.3s/3m0s  20/20 shared iters
+
+---
+slack
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.34s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.751349/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=771.83ms min=34.71ms med=752.47ms max=3.12s p(90)=857.98ms p(95)=911.05ms
+      { expected_response:true }...: avg=771.83ms min=34.71ms med=752.47ms max=3.12s p(90)=857.98ms p(95)=911.05ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.16481/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m4s    med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.116468/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.8 MB 11 kB/s
+
+
+
+
+running (2m51.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.3s/3m0s  20/20 shared iters
+
+---
+amd
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.32s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.689512/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=773.03ms min=36.44ms med=752.95ms max=3.83s p(90)=862.23ms p(95)=908.06ms
+      { expected_response:true }...: avg=773.03ms min=36.44ms med=752.95ms max=3.83s p(90)=862.23ms p(95)=908.06ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.10161/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m4s    med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.116084/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.8 MB 11 kB/s
+
+
+
+
+running (2m51.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.3s/3m0s  20/20 shared iters
+
+---
+spotify
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.36s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.779237/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=770.97ms min=31.01ms med=752.64ms max=2.95s p(90)=862.18ms p(95)=916.97ms
+      { expected_response:true }...: avg=770.97ms min=31.01ms med=752.64ms max=2.95s p(90)=862.18ms p(95)=916.97ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.193313/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m4s    med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.116641/s
+    vus............................: 19     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.9 MB 11 kB/s
+
+
+
+
+running (2m51.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.3s/3m0s  20/20 shared iters
+
+---
+tesla
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.44s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.724396/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=770.96ms min=31.81ms med=752.75ms max=3.5s p(90)=858.65ms p(95)=914.14ms
+      { expected_response:true }...: avg=770.96ms min=31.81ms med=752.75ms max=3.5s p(90)=858.65ms p(95)=914.14ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.137263/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m4s    med=2m4s     max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.116301/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.8 MB 11 kB/s
+
+
+
+
+running (2m51.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.3s/3m0s  20/20 shared iters
+
+---
+uber
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.33s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.660242/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=770.5ms min=34.41ms med=752.8ms max=4.48s p(90)=863.17ms p(95)=910.66ms
+      { expected_response:true }...: avg=770.5ms min=34.41ms med=752.8ms max=4.48s p(90)=863.17ms p(95)=910.66ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.071695/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s    min=2m4s    med=2m4s    max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.115902/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.8 MB 11 kB/s
+
+
+
+
+running (2m52.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m05.5s/3m0s  20/20 shared iters
+
+---
+zoom
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=1.36s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    18.65802/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=769.33ms min=31.06ms med=753.5ms max=4.73s p(90)=857.82ms p(95)=912.94ms
+      { expected_response:true }...: avg=769.33ms min=31.06ms med=753.5ms max=4.73s p(90)=857.82ms p(95)=912.94ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   19.069423/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m4s     min=2m4s    med=2m4s    max=2m4s  p(90)=2m4s     p(95)=2m4s    
+    iterations.....................: 20     0.115888/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 11 kB/s
+    data_sent......................: 1.8 MB 11 kB/s
+
+
+
+
+running (2m52.0s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  2m04.5s/3m0s  20/20 shared iters

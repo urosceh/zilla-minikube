@@ -1,0 +1,1414 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+time="2025-10-26T20:08:57+01:00" level=info msg="CSV LOCATION:  /Users/urosceh/Code/zilla-minikube/shared/passwords/uber/uber.csv" source=console
+time="2025-10-26T20:08:57+01:00" level=info msg="[uber] Loaded 200 users from CSV" source=console
+     execution: local
+        script: /Users/urosceh/Code/zilla-minikube/shared/k6/k6-load-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 30 max VUs, 10m30s max duration (incl. graceful stop):
+              * default: Up to 30 looping VUs for 10m0s over 3 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+time="2025-10-26T20:08:57+01:00" level=warning msg="Error from API server" error="listen tcp 127.0.0.1:6565: bind: address already in use"
+time="2025-10-26T20:08:57+01:00" level=info msg="[uber] LOAD TEST SETUP" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:08:58+01:00" level=info msg="[uber] Admin token obtained" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:00+01:00" level=info msg="[uber] Created 20 projects" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:01+01:00" level=info msg="Created 5 sprints for project LDT0" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:03+01:00" level=info msg="Created 50 issues for project LDT0" source=console
+time="2025-10-26T20:09:03+01:00" level=info msg="Granting access for project LDT0 0. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:03+01:00" level=info msg="Granted access for project LDT0 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:04+01:00" level=info msg="Created 5 sprints for project LDT1" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:06+01:00" level=info msg="Created 50 issues for project LDT1" source=console
+time="2025-10-26T20:09:06+01:00" level=info msg="Granting access for project LDT1 1. 10 users" source=console
+time="2025-10-26T20:09:07+01:00" level=info msg="Granted access for project LDT1 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:08+01:00" level=info msg="Created 5 sprints for project LDT2" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:09+01:00" level=info msg="Created 50 issues for project LDT2" source=console
+time="2025-10-26T20:09:09+01:00" level=info msg="Granting access for project LDT2 2. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:10+01:00" level=info msg="Granted access for project LDT2 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:11+01:00" level=info msg="Created 5 sprints for project LDT3" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:12+01:00" level=info msg="Created 50 issues for project LDT3" source=console
+time="2025-10-26T20:09:12+01:00" level=info msg="Granting access for project LDT3 3. 10 users" source=console
+time="2025-10-26T20:09:13+01:00" level=info msg="Granted access for project LDT3 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:14+01:00" level=info msg="Created 5 sprints for project LDT4" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:15+01:00" level=info msg="Created 50 issues for project LDT4" source=console
+time="2025-10-26T20:09:15+01:00" level=info msg="Granting access for project LDT4 4. 10 users" source=console
+time="2025-10-26T20:09:16+01:00" level=info msg="Granted access for project LDT4 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:17+01:00" level=info msg="Created 5 sprints for project LDT5" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:18+01:00" level=info msg="Created 50 issues for project LDT5" source=console
+time="2025-10-26T20:09:18+01:00" level=info msg="Granting access for project LDT5 5. 10 users" source=console
+time="2025-10-26T20:09:18+01:00" level=info msg="Granted access for project LDT5 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:19+01:00" level=info msg="Created 5 sprints for project LDT6" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:21+01:00" level=info msg="Created 50 issues for project LDT6" source=console
+time="2025-10-26T20:09:21+01:00" level=info msg="Granting access for project LDT6 6. 10 users" source=console
+time="2025-10-26T20:09:21+01:00" level=info msg="Granted access for project LDT6 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:22+01:00" level=info msg="Created 5 sprints for project LDT7" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:24+01:00" level=info msg="Created 50 issues for project LDT7" source=console
+time="2025-10-26T20:09:24+01:00" level=info msg="Granting access for project LDT7 7. 10 users" source=console
+time="2025-10-26T20:09:24+01:00" level=info msg="Granted access for project LDT7 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:25+01:00" level=info msg="Created 5 sprints for project LDT8" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:27+01:00" level=info msg="Created 50 issues for project LDT8" source=console
+time="2025-10-26T20:09:27+01:00" level=info msg="Granting access for project LDT8 8. 10 users" source=console
+time="2025-10-26T20:09:27+01:00" level=info msg="Granted access for project LDT8 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:28+01:00" level=info msg="Created 5 sprints for project LDT9" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:30+01:00" level=info msg="Created 50 issues for project LDT9" source=console
+time="2025-10-26T20:09:30+01:00" level=info msg="Granting access for project LDT9 9. 10 users" source=console
+time="2025-10-26T20:09:30+01:00" level=info msg="Granted access for project LDT9 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:31+01:00" level=info msg="Created 5 sprints for project LDT10" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:33+01:00" level=info msg="Created 50 issues for project LDT10" source=console
+time="2025-10-26T20:09:33+01:00" level=info msg="Granting access for project LDT10 10. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:33+01:00" level=info msg="Granted access for project LDT10 to 10 users" source=console
+time="2025-10-26T20:09:34+01:00" level=info msg="Created 5 sprints for project LDT11" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:35+01:00" level=info msg="Created 50 issues for project LDT11" source=console
+time="2025-10-26T20:09:35+01:00" level=info msg="Granting access for project LDT11 11. 10 users" source=console
+time="2025-10-26T20:09:36+01:00" level=info msg="Granted access for project LDT11 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:36+01:00" level=info msg="Created 5 sprints for project LDT12" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:38+01:00" level=info msg="Created 50 issues for project LDT12" source=console
+time="2025-10-26T20:09:38+01:00" level=info msg="Granting access for project LDT12 12. 10 users" source=console
+time="2025-10-26T20:09:38+01:00" level=info msg="Granted access for project LDT12 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:39+01:00" level=info msg="Created 5 sprints for project LDT13" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:41+01:00" level=info msg="Created 50 issues for project LDT13" source=console
+time="2025-10-26T20:09:41+01:00" level=info msg="Granting access for project LDT13 13. 10 users" source=console
+time="2025-10-26T20:09:41+01:00" level=info msg="Granted access for project LDT13 to 10 users" source=console
+time="2025-10-26T20:09:42+01:00" level=info msg="Created 5 sprints for project LDT14" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:44+01:00" level=info msg="Created 50 issues for project LDT14" source=console
+time="2025-10-26T20:09:44+01:00" level=info msg="Granting access for project LDT14 14. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:44+01:00" level=info msg="Granted access for project LDT14 to 10 users" source=console
+time="2025-10-26T20:09:45+01:00" level=info msg="Created 5 sprints for project LDT15" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:47+01:00" level=info msg="Created 50 issues for project LDT15" source=console
+time="2025-10-26T20:09:47+01:00" level=info msg="Granting access for project LDT15 15. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:47+01:00" level=info msg="Granted access for project LDT15 to 10 users" source=console
+time="2025-10-26T20:09:47+01:00" level=info msg="Created 5 sprints for project LDT16" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:49+01:00" level=info msg="Created 50 issues for project LDT16" source=console
+time="2025-10-26T20:09:49+01:00" level=info msg="Granting access for project LDT16 16. 10 users" source=console
+time="2025-10-26T20:09:50+01:00" level=info msg="Granted access for project LDT16 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:50+01:00" level=info msg="Created 5 sprints for project LDT17" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:52+01:00" level=info msg="Created 50 issues for project LDT17" source=console
+time="2025-10-26T20:09:52+01:00" level=info msg="Granting access for project LDT17 17. 10 users" source=console
+time="2025-10-26T20:09:52+01:00" level=info msg="Granted access for project LDT17 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:53+01:00" level=info msg="Created 5 sprints for project LDT18" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:55+01:00" level=info msg="Created 50 issues for project LDT18" source=console
+time="2025-10-26T20:09:55+01:00" level=info msg="Granting access for project LDT18 18. 10 users" source=console
+time="2025-10-26T20:09:55+01:00" level=info msg="Granted access for project LDT18 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:56+01:00" level=info msg="Created 5 sprints for project LDT19" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:58+01:00" level=info msg="Created 50 issues for project LDT19" source=console
+time="2025-10-26T20:09:58+01:00" level=info msg="Granting access for project LDT19 19. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T20:09:58+01:00" level=info msg="Granted access for project LDT19 to 10 users" source=console
+time="2025-10-26T20:09:58+01:00" level=info msg="[uber] Setup complete" source=console
+
+running (01m02.0s), 01/30 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 01/30 VUs  00m00.7s/10m00.0s
+
+running (01m03.0s), 01/30 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 01/30 VUs  00m01.7s/10m00.0s
+
+running (01m04.0s), 01/30 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 01/30 VUs  00m02.7s/10m00.0s
+
+running (01m05.0s), 01/30 VUs, 0 complete and 0 interrupted iterations
+default   [   1% ] 01/30 VUs  00m03.7s/10m00.0s
+
+running (01m06.0s), 02/30 VUs, 0 complete and 0 interrupted iterations
+default   [   1% ] 02/30 VUs  00m04.7s/10m00.0s
+
+running (01m07.0s), 02/30 VUs, 0 complete and 0 interrupted iterations
+default   [   1% ] 02/30 VUs  00m05.7s/10m00.0s
+
+running (01m08.0s), 02/30 VUs, 0 complete and 0 interrupted iterations
+default   [   1% ] 02/30 VUs  00m06.7s/10m00.0s
+
+running (01m09.0s), 02/30 VUs, 0 complete and 0 interrupted iterations
+default   [   1% ] 02/30 VUs  00m07.7s/10m00.0s
+
+running (01m10.0s), 03/30 VUs, 0 complete and 0 interrupted iterations
+default   [   1% ] 03/30 VUs  00m08.7s/10m00.0s
+
+running (01m11.0s), 03/30 VUs, 0 complete and 0 interrupted iterations
+default   [   2% ] 03/30 VUs  00m09.7s/10m00.0s
+
+running (01m12.0s), 03/30 VUs, 0 complete and 0 interrupted iterations
+default   [   2% ] 03/30 VUs  00m10.7s/10m00.0s
+
+running (01m13.0s), 03/30 VUs, 0 complete and 0 interrupted iterations
+default   [   2% ] 03/30 VUs  00m11.7s/10m00.0s
+
+running (01m14.0s), 04/30 VUs, 0 complete and 0 interrupted iterations
+default   [   2% ] 04/30 VUs  00m12.7s/10m00.0s
+
+running (01m15.0s), 04/30 VUs, 0 complete and 0 interrupted iterations
+default   [   2% ] 04/30 VUs  00m13.7s/10m00.0s
+
+running (01m16.0s), 04/30 VUs, 0 complete and 0 interrupted iterations
+default   [   2% ] 04/30 VUs  00m14.7s/10m00.0s
+
+running (01m17.0s), 04/30 VUs, 0 complete and 0 interrupted iterations
+default   [   3% ] 04/30 VUs  00m15.7s/10m00.0s
+
+running (01m18.0s), 05/30 VUs, 0 complete and 0 interrupted iterations
+default   [   3% ] 05/30 VUs  00m16.7s/10m00.0s
+
+running (01m19.0s), 05/30 VUs, 0 complete and 0 interrupted iterations
+default   [   3% ] 05/30 VUs  00m17.7s/10m00.0s
+
+running (01m20.0s), 05/30 VUs, 0 complete and 0 interrupted iterations
+default   [   3% ] 05/30 VUs  00m18.7s/10m00.0s
+
+running (01m21.0s), 05/30 VUs, 0 complete and 0 interrupted iterations
+default   [   3% ] 05/30 VUs  00m19.7s/10m00.0s
+
+running (01m22.0s), 06/30 VUs, 0 complete and 0 interrupted iterations
+default   [   3% ] 06/30 VUs  00m20.7s/10m00.0s
+
+running (01m23.0s), 06/30 VUs, 0 complete and 0 interrupted iterations
+default   [   4% ] 06/30 VUs  00m21.7s/10m00.0s
+
+running (01m24.0s), 06/30 VUs, 0 complete and 0 interrupted iterations
+default   [   4% ] 06/30 VUs  00m22.7s/10m00.0s
+
+running (01m25.0s), 06/30 VUs, 0 complete and 0 interrupted iterations
+default   [   4% ] 06/30 VUs  00m23.7s/10m00.0s
+
+running (01m26.0s), 06/30 VUs, 0 complete and 0 interrupted iterations
+default   [   4% ] 06/30 VUs  00m24.7s/10m00.0s
+
+running (01m27.0s), 07/30 VUs, 0 complete and 0 interrupted iterations
+default   [   4% ] 07/30 VUs  00m25.7s/10m00.0s
+
+running (01m28.0s), 07/30 VUs, 0 complete and 0 interrupted iterations
+default   [   4% ] 07/30 VUs  00m26.7s/10m00.0s
+
+running (01m29.0s), 07/30 VUs, 0 complete and 0 interrupted iterations
+default   [   5% ] 07/30 VUs  00m27.7s/10m00.0s
+
+running (01m30.0s), 07/30 VUs, 0 complete and 0 interrupted iterations
+default   [   5% ] 07/30 VUs  00m28.7s/10m00.0s
+
+running (01m31.0s), 08/30 VUs, 0 complete and 0 interrupted iterations
+default   [   5% ] 08/30 VUs  00m29.7s/10m00.0s
+
+running (01m32.0s), 08/30 VUs, 0 complete and 0 interrupted iterations
+default   [   5% ] 08/30 VUs  00m30.7s/10m00.0s
+
+running (01m33.0s), 08/30 VUs, 0 complete and 0 interrupted iterations
+default   [   5% ] 08/30 VUs  00m31.8s/10m00.0s
+
+running (01m34.0s), 08/30 VUs, 0 complete and 0 interrupted iterations
+default   [   5% ] 08/30 VUs  00m32.7s/10m00.0s
+
+running (01m35.0s), 09/30 VUs, 0 complete and 0 interrupted iterations
+default   [   6% ] 09/30 VUs  00m33.7s/10m00.0s
+
+running (01m36.0s), 09/30 VUs, 0 complete and 0 interrupted iterations
+default   [   6% ] 09/30 VUs  00m34.7s/10m00.0s
+
+running (01m37.0s), 09/30 VUs, 0 complete and 0 interrupted iterations
+default   [   6% ] 09/30 VUs  00m35.7s/10m00.0s
+
+running (01m38.0s), 09/30 VUs, 1 complete and 0 interrupted iterations
+default   [   6% ] 09/30 VUs  00m36.7s/10m00.0s
+
+running (01m39.0s), 10/30 VUs, 1 complete and 0 interrupted iterations
+default   [   6% ] 10/30 VUs  00m37.7s/10m00.0s
+
+running (01m40.0s), 10/30 VUs, 1 complete and 0 interrupted iterations
+default   [   6% ] 10/30 VUs  00m38.7s/10m00.0s
+
+running (01m41.0s), 10/30 VUs, 1 complete and 0 interrupted iterations
+default   [   7% ] 10/30 VUs  00m39.7s/10m00.0s
+
+running (01m42.0s), 10/30 VUs, 1 complete and 0 interrupted iterations
+default   [   7% ] 10/30 VUs  00m40.7s/10m00.0s
+
+running (01m43.0s), 11/30 VUs, 1 complete and 0 interrupted iterations
+default   [   7% ] 11/30 VUs  00m41.8s/10m00.0s
+
+running (01m44.0s), 11/30 VUs, 1 complete and 0 interrupted iterations
+default   [   7% ] 11/30 VUs  00m42.7s/10m00.0s
+
+running (01m45.0s), 11/30 VUs, 1 complete and 0 interrupted iterations
+default   [   7% ] 11/30 VUs  00m43.8s/10m00.0s
+
+running (01m46.0s), 11/30 VUs, 2 complete and 0 interrupted iterations
+default   [   7% ] 11/30 VUs  00m44.8s/10m00.0s
+
+running (01m47.0s), 12/30 VUs, 2 complete and 0 interrupted iterations
+default   [   8% ] 12/30 VUs  00m45.8s/10m00.0s
+
+running (01m48.0s), 12/30 VUs, 2 complete and 0 interrupted iterations
+default   [   8% ] 12/30 VUs  00m46.7s/10m00.0s
+
+running (01m49.0s), 12/30 VUs, 2 complete and 0 interrupted iterations
+default   [   8% ] 12/30 VUs  00m47.7s/10m00.0s
+
+running (01m50.0s), 12/30 VUs, 2 complete and 0 interrupted iterations
+default   [   8% ] 12/30 VUs  00m48.7s/10m00.0s
+
+running (01m51.0s), 13/30 VUs, 2 complete and 0 interrupted iterations
+default   [   8% ] 13/30 VUs  00m49.7s/10m00.0s
+
+running (01m52.0s), 13/30 VUs, 2 complete and 0 interrupted iterations
+default   [   8% ] 13/30 VUs  00m50.7s/10m00.0s
+
+running (01m53.0s), 13/30 VUs, 2 complete and 0 interrupted iterations
+default   [   9% ] 13/30 VUs  00m51.7s/10m00.0s
+
+running (01m54.0s), 13/30 VUs, 2 complete and 0 interrupted iterations
+default   [   9% ] 13/30 VUs  00m52.7s/10m00.0s
+
+running (01m55.0s), 13/30 VUs, 2 complete and 0 interrupted iterations
+default   [   9% ] 13/30 VUs  00m53.7s/10m00.0s
+
+running (01m56.0s), 14/30 VUs, 3 complete and 0 interrupted iterations
+default   [   9% ] 14/30 VUs  00m54.8s/10m00.0s
+
+running (01m57.0s), 14/30 VUs, 3 complete and 0 interrupted iterations
+default   [   9% ] 14/30 VUs  00m55.7s/10m00.0s
+
+running (01m58.0s), 14/30 VUs, 3 complete and 0 interrupted iterations
+default   [   9% ] 14/30 VUs  00m56.7s/10m00.0s
+
+running (01m59.0s), 14/30 VUs, 5 complete and 0 interrupted iterations
+default   [  10% ] 14/30 VUs  00m57.7s/10m00.0s
+
+running (02m00.0s), 15/30 VUs, 6 complete and 0 interrupted iterations
+default   [  10% ] 15/30 VUs  00m58.7s/10m00.0s
+
+running (02m01.0s), 15/30 VUs, 6 complete and 0 interrupted iterations
+default   [  10% ] 15/30 VUs  00m59.7s/10m00.0s
+
+running (02m02.0s), 15/30 VUs, 6 complete and 0 interrupted iterations
+default   [  10% ] 15/30 VUs  01m00.7s/10m00.0s
+
+running (02m03.0s), 15/30 VUs, 6 complete and 0 interrupted iterations
+default   [  10% ] 15/30 VUs  01m01.7s/10m00.0s
+
+running (02m04.0s), 16/30 VUs, 6 complete and 0 interrupted iterations
+default   [  10% ] 16/30 VUs  01m02.7s/10m00.0s
+
+running (02m05.0s), 16/30 VUs, 6 complete and 0 interrupted iterations
+default   [  11% ] 16/30 VUs  01m03.7s/10m00.0s
+
+running (02m06.0s), 16/30 VUs, 6 complete and 0 interrupted iterations
+default   [  11% ] 16/30 VUs  01m04.7s/10m00.0s
+
+running (02m07.0s), 16/30 VUs, 6 complete and 0 interrupted iterations
+default   [  11% ] 16/30 VUs  01m05.8s/10m00.0s
+
+running (02m08.0s), 17/30 VUs, 6 complete and 0 interrupted iterations
+default   [  11% ] 17/30 VUs  01m06.7s/10m00.0s
+
+running (02m09.0s), 17/30 VUs, 6 complete and 0 interrupted iterations
+default   [  11% ] 17/30 VUs  01m07.7s/10m00.0s
+
+running (02m10.0s), 17/30 VUs, 6 complete and 0 interrupted iterations
+default   [  11% ] 17/30 VUs  01m08.7s/10m00.0s
+
+running (02m11.0s), 17/30 VUs, 6 complete and 0 interrupted iterations
+default   [  12% ] 17/30 VUs  01m09.7s/10m00.0s
+
+running (02m12.0s), 18/30 VUs, 7 complete and 0 interrupted iterations
+default   [  12% ] 18/30 VUs  01m10.7s/10m00.0s
+
+running (02m13.0s), 18/30 VUs, 8 complete and 0 interrupted iterations
+default   [  12% ] 18/30 VUs  01m11.7s/10m00.0s
+
+running (02m14.0s), 18/30 VUs, 9 complete and 0 interrupted iterations
+default   [  12% ] 18/30 VUs  01m12.7s/10m00.0s
+
+running (02m15.0s), 18/30 VUs, 9 complete and 0 interrupted iterations
+default   [  12% ] 18/30 VUs  01m13.7s/10m00.0s
+
+running (02m16.0s), 19/30 VUs, 9 complete and 0 interrupted iterations
+default   [  12% ] 19/30 VUs  01m14.7s/10m00.0s
+
+running (02m17.0s), 19/30 VUs, 9 complete and 0 interrupted iterations
+default   [  13% ] 19/30 VUs  01m15.7s/10m00.0s
+
+running (02m18.0s), 19/30 VUs, 10 complete and 0 interrupted iterations
+default   [  13% ] 19/30 VUs  01m16.7s/10m00.0s
+
+running (02m19.0s), 19/30 VUs, 10 complete and 0 interrupted iterations
+default   [  13% ] 19/30 VUs  01m17.7s/10m00.0s
+
+running (02m20.0s), 20/30 VUs, 10 complete and 0 interrupted iterations
+default   [  13% ] 20/30 VUs  01m18.7s/10m00.0s
+
+running (02m21.0s), 20/30 VUs, 10 complete and 0 interrupted iterations
+default   [  13% ] 20/30 VUs  01m19.7s/10m00.0s
+
+running (02m22.0s), 20/30 VUs, 12 complete and 0 interrupted iterations
+default   [  13% ] 20/30 VUs  01m20.7s/10m00.0s
+
+running (02m23.0s), 20/30 VUs, 12 complete and 0 interrupted iterations
+default   [  14% ] 20/30 VUs  01m21.7s/10m00.0s
+
+running (02m24.0s), 20/30 VUs, 14 complete and 0 interrupted iterations
+default   [  14% ] 20/30 VUs  01m22.7s/10m00.0s
+
+running (02m25.0s), 21/30 VUs, 15 complete and 0 interrupted iterations
+default   [  14% ] 21/30 VUs  01m23.7s/10m00.0s
+
+running (02m26.0s), 21/30 VUs, 15 complete and 0 interrupted iterations
+default   [  14% ] 21/30 VUs  01m24.7s/10m00.0s
+
+running (02m27.0s), 21/30 VUs, 15 complete and 0 interrupted iterations
+default   [  14% ] 21/30 VUs  01m25.7s/10m00.0s
+
+running (02m28.0s), 21/30 VUs, 16 complete and 0 interrupted iterations
+default   [  14% ] 21/30 VUs  01m26.7s/10m00.0s
+
+running (02m29.0s), 22/30 VUs, 16 complete and 0 interrupted iterations
+default   [  15% ] 22/30 VUs  01m27.7s/10m00.0s
+
+running (02m30.0s), 22/30 VUs, 17 complete and 0 interrupted iterations
+default   [  15% ] 22/30 VUs  01m28.7s/10m00.0s
+
+running (02m31.0s), 22/30 VUs, 17 complete and 0 interrupted iterations
+default   [  15% ] 22/30 VUs  01m29.7s/10m00.0s
+
+running (02m32.0s), 22/30 VUs, 17 complete and 0 interrupted iterations
+default   [  15% ] 22/30 VUs  01m30.7s/10m00.0s
+
+running (02m33.0s), 23/30 VUs, 17 complete and 0 interrupted iterations
+default   [  15% ] 23/30 VUs  01m31.7s/10m00.0s
+
+running (02m34.0s), 23/30 VUs, 17 complete and 0 interrupted iterations
+default   [  15% ] 23/30 VUs  01m32.7s/10m00.0s
+
+running (02m35.0s), 23/30 VUs, 17 complete and 0 interrupted iterations
+default   [  16% ] 23/30 VUs  01m33.7s/10m00.0s
+
+running (02m36.0s), 23/30 VUs, 17 complete and 0 interrupted iterations
+default   [  16% ] 23/30 VUs  01m34.7s/10m00.0s
+
+running (02m37.0s), 24/30 VUs, 18 complete and 0 interrupted iterations
+default   [  16% ] 24/30 VUs  01m35.7s/10m00.0s
+
+running (02m38.0s), 24/30 VUs, 18 complete and 0 interrupted iterations
+default   [  16% ] 24/30 VUs  01m36.7s/10m00.0s
+
+running (02m39.0s), 24/30 VUs, 19 complete and 0 interrupted iterations
+default   [  16% ] 24/30 VUs  01m37.7s/10m00.0s
+
+running (02m40.0s), 24/30 VUs, 20 complete and 0 interrupted iterations
+default   [  16% ] 24/30 VUs  01m38.7s/10m00.0s
+
+running (02m41.0s), 25/30 VUs, 20 complete and 0 interrupted iterations
+default   [  17% ] 25/30 VUs  01m39.7s/10m00.0s
+
+running (02m42.0s), 25/30 VUs, 23 complete and 0 interrupted iterations
+default   [  17% ] 25/30 VUs  01m40.7s/10m00.0s
+
+running (02m43.0s), 25/30 VUs, 23 complete and 0 interrupted iterations
+default   [  17% ] 25/30 VUs  01m41.7s/10m00.0s
+
+running (02m44.0s), 25/30 VUs, 23 complete and 0 interrupted iterations
+default   [  17% ] 25/30 VUs  01m42.7s/10m00.0s
+
+running (02m45.0s), 26/30 VUs, 24 complete and 0 interrupted iterations
+default   [  17% ] 26/30 VUs  01m43.7s/10m00.0s
+
+running (02m46.0s), 26/30 VUs, 25 complete and 0 interrupted iterations
+default   [  17% ] 26/30 VUs  01m44.7s/10m00.0s
+
+running (02m47.0s), 26/30 VUs, 25 complete and 0 interrupted iterations
+default   [  18% ] 26/30 VUs  01m45.7s/10m00.0s
+
+running (02m48.0s), 26/30 VUs, 26 complete and 0 interrupted iterations
+default   [  18% ] 26/30 VUs  01m46.7s/10m00.0s
+
+running (02m49.0s), 27/30 VUs, 26 complete and 0 interrupted iterations
+default   [  18% ] 27/30 VUs  01m47.7s/10m00.0s
+
+running (02m50.0s), 27/30 VUs, 26 complete and 0 interrupted iterations
+default   [  18% ] 27/30 VUs  01m48.7s/10m00.0s
+
+running (02m51.0s), 27/30 VUs, 26 complete and 0 interrupted iterations
+default   [  18% ] 27/30 VUs  01m49.7s/10m00.0s
+
+running (02m52.0s), 27/30 VUs, 26 complete and 0 interrupted iterations
+default   [  18% ] 27/30 VUs  01m50.7s/10m00.0s
+
+running (02m53.0s), 28/30 VUs, 26 complete and 0 interrupted iterations
+default   [  19% ] 28/30 VUs  01m51.7s/10m00.0s
+
+running (02m54.0s), 28/30 VUs, 26 complete and 0 interrupted iterations
+default   [  19% ] 28/30 VUs  01m52.7s/10m00.0s
+
+running (02m55.0s), 28/30 VUs, 27 complete and 0 interrupted iterations
+default   [  19% ] 28/30 VUs  01m53.7s/10m00.0s
+
+running (02m56.0s), 28/30 VUs, 27 complete and 0 interrupted iterations
+default   [  19% ] 28/30 VUs  01m54.7s/10m00.0s
+
+running (02m57.0s), 28/30 VUs, 27 complete and 0 interrupted iterations
+default   [  19% ] 28/30 VUs  01m55.7s/10m00.0s
+
+running (02m58.0s), 29/30 VUs, 27 complete and 0 interrupted iterations
+default   [  19% ] 29/30 VUs  01m56.7s/10m00.0s
+
+running (02m59.0s), 29/30 VUs, 27 complete and 0 interrupted iterations
+default   [  20% ] 29/30 VUs  01m57.7s/10m00.0s
+
+running (03m00.0s), 29/30 VUs, 27 complete and 0 interrupted iterations
+default   [  20% ] 29/30 VUs  01m58.7s/10m00.0s
+
+running (03m01.0s), 29/30 VUs, 27 complete and 0 interrupted iterations
+default   [  20% ] 29/30 VUs  01m59.7s/10m00.0s
+
+running (03m02.0s), 30/30 VUs, 27 complete and 0 interrupted iterations
+default   [  20% ] 30/30 VUs  02m00.7s/10m00.0s
+
+running (03m03.0s), 30/30 VUs, 27 complete and 0 interrupted iterations
+default   [  20% ] 30/30 VUs  02m01.7s/10m00.0s
+
+running (03m04.0s), 30/30 VUs, 28 complete and 0 interrupted iterations
+default   [  20% ] 30/30 VUs  02m02.7s/10m00.0s
+
+running (03m05.0s), 30/30 VUs, 29 complete and 0 interrupted iterations
+default   [  21% ] 30/30 VUs  02m03.7s/10m00.0s
+
+running (03m06.0s), 30/30 VUs, 31 complete and 0 interrupted iterations
+default   [  21% ] 30/30 VUs  02m04.7s/10m00.0s
+
+running (03m07.0s), 30/30 VUs, 31 complete and 0 interrupted iterations
+default   [  21% ] 30/30 VUs  02m05.7s/10m00.0s
+
+running (03m08.0s), 30/30 VUs, 32 complete and 0 interrupted iterations
+default   [  21% ] 30/30 VUs  02m06.7s/10m00.0s
+
+running (03m09.0s), 30/30 VUs, 33 complete and 0 interrupted iterations
+default   [  21% ] 30/30 VUs  02m07.7s/10m00.0s
+
+running (03m10.0s), 30/30 VUs, 34 complete and 0 interrupted iterations
+default   [  21% ] 30/30 VUs  02m08.7s/10m00.0s
+
+running (03m11.0s), 30/30 VUs, 34 complete and 0 interrupted iterations
+default   [  22% ] 30/30 VUs  02m09.7s/10m00.0s
+
+running (03m12.0s), 30/30 VUs, 34 complete and 0 interrupted iterations
+default   [  22% ] 30/30 VUs  02m10.7s/10m00.0s
+
+running (03m13.0s), 30/30 VUs, 36 complete and 0 interrupted iterations
+default   [  22% ] 30/30 VUs  02m11.7s/10m00.0s
+
+running (03m14.0s), 30/30 VUs, 36 complete and 0 interrupted iterations
+default   [  22% ] 30/30 VUs  02m12.7s/10m00.0s
+
+running (03m15.0s), 30/30 VUs, 37 complete and 0 interrupted iterations
+default   [  22% ] 30/30 VUs  02m13.7s/10m00.0s
+
+running (03m16.0s), 30/30 VUs, 37 complete and 0 interrupted iterations
+default   [  22% ] 30/30 VUs  02m14.7s/10m00.0s
+
+running (03m17.0s), 30/30 VUs, 37 complete and 0 interrupted iterations
+default   [  23% ] 30/30 VUs  02m15.7s/10m00.0s
+
+running (03m18.0s), 30/30 VUs, 38 complete and 0 interrupted iterations
+default   [  23% ] 30/30 VUs  02m16.7s/10m00.0s
+
+running (03m19.0s), 30/30 VUs, 39 complete and 0 interrupted iterations
+default   [  23% ] 30/30 VUs  02m17.7s/10m00.0s
+
+running (03m20.0s), 30/30 VUs, 40 complete and 0 interrupted iterations
+default   [  23% ] 30/30 VUs  02m18.7s/10m00.0s
+
+running (03m21.0s), 30/30 VUs, 41 complete and 0 interrupted iterations
+default   [  23% ] 30/30 VUs  02m19.7s/10m00.0s
+
+running (03m22.0s), 30/30 VUs, 41 complete and 0 interrupted iterations
+default   [  23% ] 30/30 VUs  02m20.7s/10m00.0s
+
+running (03m23.0s), 30/30 VUs, 42 complete and 0 interrupted iterations
+default   [  24% ] 30/30 VUs  02m21.7s/10m00.0s
+
+running (03m24.0s), 30/30 VUs, 43 complete and 0 interrupted iterations
+default   [  24% ] 30/30 VUs  02m22.7s/10m00.0s
+
+running (03m25.0s), 30/30 VUs, 43 complete and 0 interrupted iterations
+default   [  24% ] 30/30 VUs  02m23.8s/10m00.0s
+
+running (03m26.0s), 30/30 VUs, 44 complete and 0 interrupted iterations
+default   [  24% ] 30/30 VUs  02m24.7s/10m00.0s
+
+running (03m27.0s), 30/30 VUs, 45 complete and 0 interrupted iterations
+default   [  24% ] 30/30 VUs  02m25.8s/10m00.0s
+
+running (03m28.0s), 30/30 VUs, 46 complete and 0 interrupted iterations
+default   [  24% ] 30/30 VUs  02m26.8s/10m00.0s
+
+running (03m29.0s), 30/30 VUs, 46 complete and 0 interrupted iterations
+default   [  25% ] 30/30 VUs  02m27.7s/10m00.0s
+
+running (03m30.0s), 30/30 VUs, 48 complete and 0 interrupted iterations
+default   [  25% ] 30/30 VUs  02m28.7s/10m00.0s
+
+running (03m31.0s), 30/30 VUs, 49 complete and 0 interrupted iterations
+default   [  25% ] 30/30 VUs  02m29.7s/10m00.0s
+
+running (03m32.0s), 30/30 VUs, 50 complete and 0 interrupted iterations
+default   [  25% ] 30/30 VUs  02m30.8s/10m00.0s
+
+running (03m33.0s), 30/30 VUs, 50 complete and 0 interrupted iterations
+default   [  25% ] 30/30 VUs  02m31.7s/10m00.0s
+
+running (03m34.0s), 30/30 VUs, 50 complete and 0 interrupted iterations
+default   [  25% ] 30/30 VUs  02m32.7s/10m00.0s
+
+running (03m35.0s), 30/30 VUs, 51 complete and 0 interrupted iterations
+default   [  26% ] 30/30 VUs  02m33.7s/10m00.0s
+
+running (03m36.0s), 30/30 VUs, 52 complete and 0 interrupted iterations
+default   [  26% ] 30/30 VUs  02m34.7s/10m00.0s
+
+running (03m37.0s), 30/30 VUs, 52 complete and 0 interrupted iterations
+default   [  26% ] 30/30 VUs  02m35.7s/10m00.0s
+
+running (03m38.0s), 30/30 VUs, 53 complete and 0 interrupted iterations
+default   [  26% ] 30/30 VUs  02m36.7s/10m00.0s
+
+running (03m39.0s), 30/30 VUs, 53 complete and 0 interrupted iterations
+default   [  26% ] 30/30 VUs  02m37.7s/10m00.0s
+
+running (03m40.0s), 30/30 VUs, 53 complete and 0 interrupted iterations
+default   [  26% ] 30/30 VUs  02m38.7s/10m00.0s
+
+running (03m41.0s), 30/30 VUs, 53 complete and 0 interrupted iterations
+default   [  27% ] 30/30 VUs  02m39.7s/10m00.0s
+
+running (03m42.0s), 30/30 VUs, 54 complete and 0 interrupted iterations
+default   [  27% ] 30/30 VUs  02m40.7s/10m00.0s
+
+running (03m43.0s), 30/30 VUs, 55 complete and 0 interrupted iterations
+default   [  27% ] 30/30 VUs  02m41.7s/10m00.0s
+
+running (03m44.0s), 30/30 VUs, 55 complete and 0 interrupted iterations
+default   [  27% ] 30/30 VUs  02m42.7s/10m00.0s
+
+running (03m45.0s), 30/30 VUs, 57 complete and 0 interrupted iterations
+default   [  27% ] 30/30 VUs  02m43.7s/10m00.0s
+
+running (03m46.0s), 30/30 VUs, 58 complete and 0 interrupted iterations
+default   [  27% ] 30/30 VUs  02m44.7s/10m00.0s
+
+running (03m47.0s), 30/30 VUs, 58 complete and 0 interrupted iterations
+default   [  28% ] 30/30 VUs  02m45.7s/10m00.0s
+
+running (03m48.0s), 30/30 VUs, 59 complete and 0 interrupted iterations
+default   [  28% ] 30/30 VUs  02m46.7s/10m00.0s
+
+running (03m49.0s), 30/30 VUs, 59 complete and 0 interrupted iterations
+default   [  28% ] 30/30 VUs  02m47.7s/10m00.0s
+
+running (03m50.0s), 30/30 VUs, 59 complete and 0 interrupted iterations
+default   [  28% ] 30/30 VUs  02m48.7s/10m00.0s
+
+running (03m51.0s), 30/30 VUs, 59 complete and 0 interrupted iterations
+default   [  28% ] 30/30 VUs  02m49.7s/10m00.0s
+
+running (03m52.0s), 30/30 VUs, 60 complete and 0 interrupted iterations
+default   [  28% ] 30/30 VUs  02m50.7s/10m00.0s
+
+running (03m53.0s), 30/30 VUs, 60 complete and 0 interrupted iterations
+default   [  29% ] 30/30 VUs  02m51.7s/10m00.0s
+
+running (03m54.0s), 30/30 VUs, 60 complete and 0 interrupted iterations
+default   [  29% ] 30/30 VUs  02m52.7s/10m00.0s
+
+running (03m55.0s), 30/30 VUs, 61 complete and 0 interrupted iterations
+default   [  29% ] 30/30 VUs  02m53.7s/10m00.0s
+
+running (03m56.0s), 30/30 VUs, 62 complete and 0 interrupted iterations
+default   [  29% ] 30/30 VUs  02m54.7s/10m00.0s
+
+running (03m57.0s), 30/30 VUs, 63 complete and 0 interrupted iterations
+default   [  29% ] 30/30 VUs  02m55.7s/10m00.0s
+
+running (03m58.0s), 30/30 VUs, 65 complete and 0 interrupted iterations
+default   [  29% ] 30/30 VUs  02m56.7s/10m00.0s
+
+running (03m59.0s), 30/30 VUs, 65 complete and 0 interrupted iterations
+default   [  30% ] 30/30 VUs  02m57.7s/10m00.0s
+
+running (04m00.0s), 30/30 VUs, 65 complete and 0 interrupted iterations
+default   [  30% ] 30/30 VUs  02m58.7s/10m00.0s
+
+running (04m01.0s), 30/30 VUs, 65 complete and 0 interrupted iterations
+default   [  30% ] 30/30 VUs  02m59.7s/10m00.0s
+
+running (04m02.0s), 30/30 VUs, 65 complete and 0 interrupted iterations
+default   [  30% ] 30/30 VUs  03m00.7s/10m00.0s
+
+running (04m03.0s), 30/30 VUs, 66 complete and 0 interrupted iterations
+default   [  30% ] 30/30 VUs  03m01.7s/10m00.0s
+
+running (04m04.0s), 30/30 VUs, 68 complete and 0 interrupted iterations
+default   [  30% ] 30/30 VUs  03m02.7s/10m00.0s
+
+running (04m05.0s), 30/30 VUs, 69 complete and 0 interrupted iterations
+default   [  31% ] 30/30 VUs  03m03.7s/10m00.0s
+
+running (04m06.0s), 30/30 VUs, 71 complete and 0 interrupted iterations
+default   [  31% ] 30/30 VUs  03m04.7s/10m00.0s
+
+running (04m07.0s), 30/30 VUs, 72 complete and 0 interrupted iterations
+default   [  31% ] 30/30 VUs  03m05.7s/10m00.0s
+
+running (04m08.0s), 30/30 VUs, 72 complete and 0 interrupted iterations
+default   [  31% ] 30/30 VUs  03m06.7s/10m00.0s
+
+running (04m09.0s), 30/30 VUs, 73 complete and 0 interrupted iterations
+default   [  31% ] 30/30 VUs  03m07.7s/10m00.0s
+
+running (04m10.0s), 30/30 VUs, 73 complete and 0 interrupted iterations
+default   [  31% ] 30/30 VUs  03m08.7s/10m00.0s
+
+running (04m11.0s), 30/30 VUs, 73 complete and 0 interrupted iterations
+default   [  32% ] 30/30 VUs  03m09.7s/10m00.0s
+
+running (04m12.0s), 30/30 VUs, 74 complete and 0 interrupted iterations
+default   [  32% ] 30/30 VUs  03m10.7s/10m00.0s
+
+running (04m13.0s), 30/30 VUs, 74 complete and 0 interrupted iterations
+default   [  32% ] 30/30 VUs  03m11.7s/10m00.0s
+
+running (04m14.0s), 30/30 VUs, 74 complete and 0 interrupted iterations
+default   [  32% ] 30/30 VUs  03m12.7s/10m00.0s
+
+running (04m15.0s), 30/30 VUs, 76 complete and 0 interrupted iterations
+default   [  32% ] 30/30 VUs  03m13.7s/10m00.0s
+
+running (04m16.0s), 30/30 VUs, 78 complete and 0 interrupted iterations
+default   [  32% ] 30/30 VUs  03m14.7s/10m00.0s
+
+running (04m17.0s), 30/30 VUs, 79 complete and 0 interrupted iterations
+default   [  33% ] 30/30 VUs  03m15.7s/10m00.0s
+
+running (04m18.0s), 30/30 VUs, 79 complete and 0 interrupted iterations
+default   [  33% ] 30/30 VUs  03m16.7s/10m00.0s
+
+running (04m19.0s), 30/30 VUs, 80 complete and 0 interrupted iterations
+default   [  33% ] 30/30 VUs  03m17.7s/10m00.0s
+
+running (04m20.0s), 30/30 VUs, 81 complete and 0 interrupted iterations
+default   [  33% ] 30/30 VUs  03m18.7s/10m00.0s
+
+running (04m21.0s), 30/30 VUs, 81 complete and 0 interrupted iterations
+default   [  33% ] 30/30 VUs  03m19.7s/10m00.0s
+
+running (04m22.0s), 30/30 VUs, 82 complete and 0 interrupted iterations
+default   [  33% ] 30/30 VUs  03m20.7s/10m00.0s
+
+running (04m23.0s), 30/30 VUs, 83 complete and 0 interrupted iterations
+default   [  34% ] 30/30 VUs  03m21.7s/10m00.0s
+
+running (04m24.0s), 30/30 VUs, 83 complete and 0 interrupted iterations
+default   [  34% ] 30/30 VUs  03m22.7s/10m00.0s
+
+running (04m25.0s), 30/30 VUs, 84 complete and 0 interrupted iterations
+default   [  34% ] 30/30 VUs  03m23.7s/10m00.0s
+
+running (04m26.0s), 30/30 VUs, 85 complete and 0 interrupted iterations
+default   [  34% ] 30/30 VUs  03m24.7s/10m00.0s
+
+running (04m27.0s), 30/30 VUs, 85 complete and 0 interrupted iterations
+default   [  34% ] 30/30 VUs  03m25.7s/10m00.0s
+
+running (04m28.0s), 30/30 VUs, 86 complete and 0 interrupted iterations
+default   [  34% ] 30/30 VUs  03m26.7s/10m00.0s
+
+running (04m29.0s), 30/30 VUs, 87 complete and 0 interrupted iterations
+default   [  35% ] 30/30 VUs  03m27.7s/10m00.0s
+
+running (04m30.0s), 30/30 VUs, 87 complete and 0 interrupted iterations
+default   [  35% ] 30/30 VUs  03m28.7s/10m00.0s
+
+running (04m31.0s), 30/30 VUs, 87 complete and 0 interrupted iterations
+default   [  35% ] 30/30 VUs  03m29.7s/10m00.0s
+
+running (04m32.0s), 30/30 VUs, 89 complete and 0 interrupted iterations
+default   [  35% ] 30/30 VUs  03m30.7s/10m00.0s
+
+running (04m33.0s), 30/30 VUs, 92 complete and 0 interrupted iterations
+default   [  35% ] 30/30 VUs  03m31.7s/10m00.0s
+
+running (04m34.0s), 30/30 VUs, 92 complete and 0 interrupted iterations
+default   [  35% ] 30/30 VUs  03m32.7s/10m00.0s
+
+running (04m35.0s), 30/30 VUs, 92 complete and 0 interrupted iterations
+default   [  36% ] 30/30 VUs  03m33.7s/10m00.0s
+
+running (04m36.0s), 30/30 VUs, 92 complete and 0 interrupted iterations
+default   [  36% ] 30/30 VUs  03m34.7s/10m00.0s
+
+running (04m37.0s), 30/30 VUs, 93 complete and 0 interrupted iterations
+default   [  36% ] 30/30 VUs  03m35.7s/10m00.0s
+
+running (04m38.0s), 30/30 VUs, 93 complete and 0 interrupted iterations
+default   [  36% ] 30/30 VUs  03m36.7s/10m00.0s
+
+running (04m39.0s), 30/30 VUs, 93 complete and 0 interrupted iterations
+default   [  36% ] 30/30 VUs  03m37.7s/10m00.0s
+
+running (04m40.0s), 30/30 VUs, 93 complete and 0 interrupted iterations
+default   [  36% ] 30/30 VUs  03m38.7s/10m00.0s
+
+running (04m41.0s), 30/30 VUs, 93 complete and 0 interrupted iterations
+default   [  37% ] 30/30 VUs  03m39.7s/10m00.0s
+
+running (04m42.0s), 30/30 VUs, 93 complete and 0 interrupted iterations
+default   [  37% ] 30/30 VUs  03m40.7s/10m00.0s
+
+running (04m43.0s), 30/30 VUs, 93 complete and 0 interrupted iterations
+default   [  37% ] 30/30 VUs  03m41.7s/10m00.0s
+
+running (04m44.0s), 30/30 VUs, 94 complete and 0 interrupted iterations
+default   [  37% ] 30/30 VUs  03m42.7s/10m00.0s
+
+running (04m45.0s), 30/30 VUs, 97 complete and 0 interrupted iterations
+default   [  37% ] 30/30 VUs  03m43.7s/10m00.0s
+
+running (04m46.0s), 30/30 VUs, 98 complete and 0 interrupted iterations
+default   [  37% ] 30/30 VUs  03m44.7s/10m00.0s
+
+running (04m47.0s), 30/30 VUs, 99 complete and 0 interrupted iterations
+default   [  38% ] 30/30 VUs  03m45.7s/10m00.0s
+
+running (04m48.0s), 30/30 VUs, 99 complete and 0 interrupted iterations
+default   [  38% ] 30/30 VUs  03m46.7s/10m00.0s
+
+running (04m49.0s), 30/30 VUs, 99 complete and 0 interrupted iterations
+default   [  38% ] 30/30 VUs  03m47.7s/10m00.0s
+
+running (04m50.0s), 30/30 VUs, 99 complete and 0 interrupted iterations
+default   [  38% ] 30/30 VUs  03m48.7s/10m00.0s
+
+running (04m51.0s), 30/30 VUs, 101 complete and 0 interrupted iterations
+default   [  38% ] 30/30 VUs  03m49.7s/10m00.0s
+
+running (04m52.0s), 30/30 VUs, 101 complete and 0 interrupted iterations
+default   [  38% ] 30/30 VUs  03m50.7s/10m00.0s
+
+running (04m53.0s), 30/30 VUs, 103 complete and 0 interrupted iterations
+default   [  39% ] 30/30 VUs  03m51.7s/10m00.0s
+
+running (04m54.0s), 30/30 VUs, 103 complete and 0 interrupted iterations
+default   [  39% ] 30/30 VUs  03m52.7s/10m00.0s
+
+running (04m55.0s), 30/30 VUs, 104 complete and 0 interrupted iterations
+default   [  39% ] 30/30 VUs  03m53.7s/10m00.0s
+
+running (04m56.0s), 30/30 VUs, 105 complete and 0 interrupted iterations
+default   [  39% ] 30/30 VUs  03m54.7s/10m00.0s
+
+running (04m57.0s), 30/30 VUs, 106 complete and 0 interrupted iterations
+default   [  39% ] 30/30 VUs  03m55.7s/10m00.0s
+
+running (04m58.0s), 30/30 VUs, 106 complete and 0 interrupted iterations
+default   [  39% ] 30/30 VUs  03m56.7s/10m00.0s
+
+running (04m59.0s), 30/30 VUs, 106 complete and 0 interrupted iterations
+default   [  40% ] 30/30 VUs  03m57.7s/10m00.0s
+
+running (05m00.0s), 30/30 VUs, 106 complete and 0 interrupted iterations
+default   [  40% ] 30/30 VUs  03m58.7s/10m00.0s
+
+running (05m01.0s), 30/30 VUs, 107 complete and 0 interrupted iterations
+default   [  40% ] 30/30 VUs  03m59.7s/10m00.0s
+
+running (05m02.0s), 30/30 VUs, 109 complete and 0 interrupted iterations
+default   [  40% ] 30/30 VUs  04m00.7s/10m00.0s
+
+running (05m03.0s), 30/30 VUs, 110 complete and 0 interrupted iterations
+default   [  40% ] 30/30 VUs  04m01.7s/10m00.0s
+
+running (05m04.0s), 30/30 VUs, 111 complete and 0 interrupted iterations
+default   [  40% ] 30/30 VUs  04m02.7s/10m00.0s
+
+running (05m05.0s), 30/30 VUs, 112 complete and 0 interrupted iterations
+default   [  41% ] 30/30 VUs  04m03.7s/10m00.0s
+
+running (05m06.0s), 30/30 VUs, 112 complete and 0 interrupted iterations
+default   [  41% ] 30/30 VUs  04m04.8s/10m00.0s
+
+running (05m07.0s), 30/30 VUs, 113 complete and 0 interrupted iterations
+default   [  41% ] 30/30 VUs  04m05.7s/10m00.0s
+
+running (05m08.0s), 30/30 VUs, 113 complete and 0 interrupted iterations
+default   [  41% ] 30/30 VUs  04m06.7s/10m00.0s
+
+running (05m09.0s), 30/30 VUs, 114 complete and 0 interrupted iterations
+default   [  41% ] 30/30 VUs  04m07.7s/10m00.0s
+
+running (05m10.0s), 30/30 VUs, 114 complete and 0 interrupted iterations
+default   [  41% ] 30/30 VUs  04m08.7s/10m00.0s
+
+running (05m11.0s), 30/30 VUs, 115 complete and 0 interrupted iterations
+default   [  42% ] 30/30 VUs  04m09.7s/10m00.0s
+
+running (05m12.0s), 30/30 VUs, 115 complete and 0 interrupted iterations
+default   [  42% ] 30/30 VUs  04m10.7s/10m00.0s
+
+running (05m13.0s), 30/30 VUs, 115 complete and 0 interrupted iterations
+default   [  42% ] 30/30 VUs  04m11.7s/10m00.0s
+
+running (05m14.0s), 30/30 VUs, 115 complete and 0 interrupted iterations
+default   [  42% ] 30/30 VUs  04m12.7s/10m00.0s
+
+running (05m15.0s), 30/30 VUs, 115 complete and 0 interrupted iterations
+default   [  42% ] 30/30 VUs  04m13.7s/10m00.0s
+
+running (05m16.0s), 30/30 VUs, 116 complete and 0 interrupted iterations
+default   [  42% ] 30/30 VUs  04m14.7s/10m00.0s
+
+running (05m17.0s), 30/30 VUs, 116 complete and 0 interrupted iterations
+default   [  43% ] 30/30 VUs  04m15.7s/10m00.0s
+
+running (05m18.0s), 30/30 VUs, 116 complete and 0 interrupted iterations
+default   [  43% ] 30/30 VUs  04m16.7s/10m00.0s
+
+running (05m19.0s), 30/30 VUs, 116 complete and 0 interrupted iterations
+default   [  43% ] 30/30 VUs  04m17.7s/10m00.0s
+
+running (05m20.0s), 30/30 VUs, 118 complete and 0 interrupted iterations
+default   [  43% ] 30/30 VUs  04m18.7s/10m00.0s
+
+running (05m21.0s), 30/30 VUs, 119 complete and 0 interrupted iterations
+default   [  43% ] 30/30 VUs  04m19.7s/10m00.0s
+
+running (05m22.0s), 30/30 VUs, 121 complete and 0 interrupted iterations
+default   [  43% ] 30/30 VUs  04m20.7s/10m00.0s
+
+running (05m23.0s), 30/30 VUs, 123 complete and 0 interrupted iterations
+default   [  44% ] 30/30 VUs  04m21.7s/10m00.0s
+
+running (05m24.0s), 30/30 VUs, 123 complete and 0 interrupted iterations
+default   [  44% ] 30/30 VUs  04m22.7s/10m00.0s
+
+running (05m25.0s), 30/30 VUs, 124 complete and 0 interrupted iterations
+default   [  44% ] 30/30 VUs  04m23.7s/10m00.0s
+
+running (05m26.0s), 30/30 VUs, 125 complete and 0 interrupted iterations
+default   [  44% ] 30/30 VUs  04m24.7s/10m00.0s
+
+running (05m27.0s), 30/30 VUs, 127 complete and 0 interrupted iterations
+default   [  44% ] 30/30 VUs  04m25.7s/10m00.0s
+
+running (05m28.0s), 30/30 VUs, 127 complete and 0 interrupted iterations
+default   [  44% ] 30/30 VUs  04m26.7s/10m00.0s
+
+running (05m29.0s), 30/30 VUs, 127 complete and 0 interrupted iterations
+default   [  45% ] 30/30 VUs  04m27.7s/10m00.0s
+
+running (05m30.0s), 30/30 VUs, 127 complete and 0 interrupted iterations
+default   [  45% ] 30/30 VUs  04m28.7s/10m00.0s
+
+running (05m31.0s), 30/30 VUs, 129 complete and 0 interrupted iterations
+default   [  45% ] 30/30 VUs  04m29.7s/10m00.0s
+
+running (05m32.0s), 30/30 VUs, 130 complete and 0 interrupted iterations
+default   [  45% ] 30/30 VUs  04m30.7s/10m00.0s
+
+running (05m33.0s), 30/30 VUs, 131 complete and 0 interrupted iterations
+default   [  45% ] 30/30 VUs  04m31.7s/10m00.0s
+
+running (05m34.0s), 30/30 VUs, 132 complete and 0 interrupted iterations
+default   [  45% ] 30/30 VUs  04m32.8s/10m00.0s
+
+running (05m35.0s), 30/30 VUs, 134 complete and 0 interrupted iterations
+default   [  46% ] 30/30 VUs  04m33.7s/10m00.0s
+
+running (05m36.0s), 30/30 VUs, 135 complete and 0 interrupted iterations
+default   [  46% ] 30/30 VUs  04m34.7s/10m00.0s
+
+running (05m37.0s), 30/30 VUs, 136 complete and 0 interrupted iterations
+default   [  46% ] 30/30 VUs  04m35.7s/10m00.0s
+
+running (05m38.0s), 30/30 VUs, 138 complete and 0 interrupted iterations
+default   [  46% ] 30/30 VUs  04m36.8s/10m00.0s
+
+running (05m39.0s), 30/30 VUs, 138 complete and 0 interrupted iterations
+default   [  46% ] 30/30 VUs  04m37.7s/10m00.0s
+
+running (05m40.0s), 30/30 VUs, 140 complete and 0 interrupted iterations
+default   [  46% ] 30/30 VUs  04m38.7s/10m00.0s
+
+running (05m41.0s), 30/30 VUs, 140 complete and 0 interrupted iterations
+default   [  47% ] 30/30 VUs  04m39.7s/10m00.0s
+
+running (05m42.0s), 30/30 VUs, 140 complete and 0 interrupted iterations
+default   [  47% ] 30/30 VUs  04m40.7s/10m00.0s
+
+running (05m43.0s), 30/30 VUs, 140 complete and 0 interrupted iterations
+default   [  47% ] 30/30 VUs  04m41.7s/10m00.0s
+
+running (05m44.0s), 30/30 VUs, 140 complete and 0 interrupted iterations
+default   [  47% ] 30/30 VUs  04m42.7s/10m00.0s
+
+running (05m45.0s), 30/30 VUs, 140 complete and 0 interrupted iterations
+default   [  47% ] 30/30 VUs  04m43.7s/10m00.0s
+
+running (05m46.0s), 30/30 VUs, 141 complete and 0 interrupted iterations
+default   [  47% ] 30/30 VUs  04m44.7s/10m00.0s
+
+running (05m47.0s), 30/30 VUs, 141 complete and 0 interrupted iterations
+default   [  48% ] 30/30 VUs  04m45.8s/10m00.0s
+
+running (05m48.0s), 30/30 VUs, 141 complete and 0 interrupted iterations
+default   [  48% ] 30/30 VUs  04m46.7s/10m00.0s
+
+running (05m49.0s), 30/30 VUs, 142 complete and 0 interrupted iterations
+default   [  48% ] 30/30 VUs  04m47.7s/10m00.0s
+
+running (05m50.0s), 30/30 VUs, 143 complete and 0 interrupted iterations
+default   [  48% ] 30/30 VUs  04m48.7s/10m00.0s
+
+running (05m51.0s), 30/30 VUs, 143 complete and 0 interrupted iterations
+default   [  48% ] 30/30 VUs  04m49.7s/10m00.0s
+
+running (05m52.0s), 30/30 VUs, 144 complete and 0 interrupted iterations
+default   [  48% ] 30/30 VUs  04m50.7s/10m00.0s
+
+running (05m53.0s), 30/30 VUs, 144 complete and 0 interrupted iterations
+default   [  49% ] 30/30 VUs  04m51.7s/10m00.0s
+
+running (05m54.0s), 30/30 VUs, 144 complete and 0 interrupted iterations
+default   [  49% ] 30/30 VUs  04m52.7s/10m00.0s
+
+running (05m55.0s), 30/30 VUs, 144 complete and 0 interrupted iterations
+default   [  49% ] 30/30 VUs  04m53.7s/10m00.0s
+
+running (05m56.0s), 30/30 VUs, 144 complete and 0 interrupted iterations
+default   [  49% ] 30/30 VUs  04m54.8s/10m00.0s
+
+running (05m57.0s), 30/30 VUs, 145 complete and 0 interrupted iterations
+default   [  49% ] 30/30 VUs  04m55.8s/10m00.0s
+
+running (05m58.0s), 30/30 VUs, 145 complete and 0 interrupted iterations
+default   [  49% ] 30/30 VUs  04m56.7s/10m00.0s
+
+running (05m59.0s), 30/30 VUs, 147 complete and 0 interrupted iterations
+default   [  50% ] 30/30 VUs  04m57.7s/10m00.0s
+
+running (06m00.0s), 30/30 VUs, 147 complete and 0 interrupted iterations
+default   [  50% ] 30/30 VUs  04m58.7s/10m00.0s
+
+running (06m01.0s), 30/30 VUs, 147 complete and 0 interrupted iterations
+default   [  50% ] 30/30 VUs  04m59.7s/10m00.0s
+
+running (06m02.0s), 30/30 VUs, 148 complete and 0 interrupted iterations
+default   [  50% ] 30/30 VUs  05m00.7s/10m00.0s
+
+running (06m03.0s), 30/30 VUs, 148 complete and 0 interrupted iterations
+default   [  50% ] 30/30 VUs  05m01.7s/10m00.0s
+
+running (06m04.0s), 30/30 VUs, 150 complete and 0 interrupted iterations
+default   [  50% ] 30/30 VUs  05m02.7s/10m00.0s
+
+running (06m05.0s), 30/30 VUs, 151 complete and 0 interrupted iterations
+default   [  51% ] 30/30 VUs  05m03.7s/10m00.0s
+
+running (06m06.0s), 30/30 VUs, 152 complete and 0 interrupted iterations
+default   [  51% ] 30/30 VUs  05m04.7s/10m00.0s
+
+running (06m07.0s), 30/30 VUs, 152 complete and 0 interrupted iterations
+default   [  51% ] 30/30 VUs  05m05.7s/10m00.0s
+
+running (06m08.0s), 30/30 VUs, 152 complete and 0 interrupted iterations
+default   [  51% ] 30/30 VUs  05m06.7s/10m00.0s
+
+running (06m09.0s), 30/30 VUs, 152 complete and 0 interrupted iterations
+default   [  51% ] 30/30 VUs  05m07.7s/10m00.0s
+
+running (06m10.0s), 30/30 VUs, 153 complete and 0 interrupted iterations
+default   [  51% ] 30/30 VUs  05m08.7s/10m00.0s
+
+running (06m11.0s), 30/30 VUs, 153 complete and 0 interrupted iterations
+default   [  52% ] 30/30 VUs  05m09.7s/10m00.0s
+
+running (06m12.0s), 30/30 VUs, 153 complete and 0 interrupted iterations
+default   [  52% ] 30/30 VUs  05m10.7s/10m00.0s
+
+running (06m13.0s), 30/30 VUs, 154 complete and 0 interrupted iterations
+default   [  52% ] 30/30 VUs  05m11.7s/10m00.0s
+
+running (06m14.0s), 30/30 VUs, 155 complete and 0 interrupted iterations
+default   [  52% ] 30/30 VUs  05m12.7s/10m00.0s
+
+running (06m15.0s), 30/30 VUs, 155 complete and 0 interrupted iterations
+default   [  52% ] 30/30 VUs  05m13.7s/10m00.0s
+
+running (06m16.0s), 30/30 VUs, 156 complete and 0 interrupted iterations
+default   [  52% ] 30/30 VUs  05m14.7s/10m00.0s
+
+running (06m17.0s), 30/30 VUs, 159 complete and 0 interrupted iterations
+default   [  53% ] 30/30 VUs  05m15.7s/10m00.0s
+
+running (06m18.0s), 30/30 VUs, 160 complete and 0 interrupted iterations
+default   [  53% ] 30/30 VUs  05m16.7s/10m00.0s
+
+running (06m19.0s), 30/30 VUs, 161 complete and 0 interrupted iterations
+default   [  53% ] 30/30 VUs  05m17.7s/10m00.0s
+
+running (06m20.0s), 30/30 VUs, 161 complete and 0 interrupted iterations
+default   [  53% ] 30/30 VUs  05m18.7s/10m00.0s
+
+running (06m21.0s), 30/30 VUs, 161 complete and 0 interrupted iterations
+default   [  53% ] 30/30 VUs  05m19.7s/10m00.0s
+
+running (06m22.0s), 30/30 VUs, 162 complete and 0 interrupted iterations
+default   [  53% ] 30/30 VUs  05m20.7s/10m00.0s
+
+running (06m23.0s), 30/30 VUs, 163 complete and 0 interrupted iterations
+default   [  54% ] 30/30 VUs  05m21.7s/10m00.0s
+
+running (06m24.0s), 30/30 VUs, 164 complete and 0 interrupted iterations
+default   [  54% ] 30/30 VUs  05m22.7s/10m00.0s
+
+running (06m25.0s), 30/30 VUs, 165 complete and 0 interrupted iterations
+default   [  54% ] 30/30 VUs  05m23.7s/10m00.0s
+
+running (06m26.0s), 30/30 VUs, 165 complete and 0 interrupted iterations
+default   [  54% ] 30/30 VUs  05m24.7s/10m00.0s
+
+running (06m27.0s), 30/30 VUs, 165 complete and 0 interrupted iterations
+default   [  54% ] 30/30 VUs  05m25.7s/10m00.0s
+
+running (06m28.0s), 30/30 VUs, 165 complete and 0 interrupted iterations
+default   [  54% ] 30/30 VUs  05m26.7s/10m00.0s
+
+running (06m29.0s), 30/30 VUs, 166 complete and 0 interrupted iterations
+default   [  55% ] 30/30 VUs  05m27.7s/10m00.0s
+
+running (06m29.9s), 30/30 VUs, 167 complete and 0 interrupted iterations
+default   [  55% ] 30/30 VUs  05m28.7s/10m00.0s
+
+running (06m30.9s), 30/30 VUs, 168 complete and 0 interrupted iterations
+default   [  55% ] 30/30 VUs  05m29.7s/10m00.0s
+
+running (06m31.9s), 30/30 VUs, 169 complete and 0 interrupted iterations
+default   [  55% ] 30/30 VUs  05m30.7s/10m00.0s
+
+running (06m32.9s), 30/30 VUs, 169 complete and 0 interrupted iterations
+default   [  55% ] 30/30 VUs  05m31.7s/10m00.0s
+
+running (06m33.9s), 30/30 VUs, 170 complete and 0 interrupted iterations
+default   [  55% ] 30/30 VUs  05m32.7s/10m00.0s
+
+running (06m34.9s), 30/30 VUs, 170 complete and 0 interrupted iterations
+default   [  56% ] 30/30 VUs  05m33.7s/10m00.0s
+
+running (06m35.9s), 30/30 VUs, 170 complete and 0 interrupted iterations
+default   [  56% ] 30/30 VUs  05m34.7s/10m00.0s
+
+running (06m36.9s), 30/30 VUs, 170 complete and 0 interrupted iterations
+default   [  56% ] 30/30 VUs  05m35.7s/10m00.0s
+
+running (06m37.9s), 30/30 VUs, 171 complete and 0 interrupted iterations
+default   [  56% ] 30/30 VUs  05m36.7s/10m00.0s
+
+running (06m38.9s), 30/30 VUs, 172 complete and 0 interrupted iterations
+default   [  56% ] 30/30 VUs  05m37.7s/10m00.0s
+
+running (06m39.9s), 30/30 VUs, 172 complete and 0 interrupted iterations
+default   [  56% ] 30/30 VUs  05m38.7s/10m00.0s
+
+running (06m40.9s), 30/30 VUs, 172 complete and 0 interrupted iterations
+default   [  57% ] 30/30 VUs  05m39.7s/10m00.0s
+
+running (06m41.9s), 30/30 VUs, 173 complete and 0 interrupted iterations
+default   [  57% ] 30/30 VUs  05m40.7s/10m00.0s
+
+running (06m42.9s), 30/30 VUs, 175 complete and 0 interrupted iterations
+default   [  57% ] 30/30 VUs  05m41.7s/10m00.0s
+
+running (06m43.9s), 30/30 VUs, 175 complete and 0 interrupted iterations
+default   [  57% ] 30/30 VUs  05m42.7s/10m00.0s
+
+running (06m44.9s), 30/30 VUs, 175 complete and 0 interrupted iterations
+default   [  57% ] 30/30 VUs  05m43.7s/10m00.0s
+
+running (06m45.9s), 30/30 VUs, 175 complete and 0 interrupted iterations
+default   [  57% ] 30/30 VUs  05m44.7s/10m00.0s
+
+running (06m46.9s), 30/30 VUs, 177 complete and 0 interrupted iterations
+default   [  58% ] 30/30 VUs  05m45.7s/10m00.0s
+
+running (06m47.9s), 30/30 VUs, 179 complete and 0 interrupted iterations
+default   [  58% ] 30/30 VUs  05m46.7s/10m00.0s
+
+running (06m48.9s), 30/30 VUs, 180 complete and 0 interrupted iterations
+default   [  58% ] 30/30 VUs  05m47.7s/10m00.0s
+
+running (06m49.9s), 30/30 VUs, 182 complete and 0 interrupted iterations
+default   [  58% ] 30/30 VUs  05m48.7s/10m00.0s
+
+running (06m50.9s), 30/30 VUs, 182 complete and 0 interrupted iterations
+default   [  58% ] 30/30 VUs  05m49.7s/10m00.0s
+
+running (06m51.9s), 30/30 VUs, 183 complete and 0 interrupted iterations
+default   [  58% ] 30/30 VUs  05m50.7s/10m00.0s
+
+running (06m52.9s), 30/30 VUs, 184 complete and 0 interrupted iterations
+default   [  59% ] 30/30 VUs  05m51.7s/10m00.0s
+
+running (06m53.9s), 30/30 VUs, 184 complete and 0 interrupted iterations
+default   [  59% ] 30/30 VUs  05m52.7s/10m00.0s
+
+running (06m54.9s), 30/30 VUs, 185 complete and 0 interrupted iterations
+default   [  59% ] 30/30 VUs  05m53.7s/10m00.0s
+
+running (06m55.9s), 30/30 VUs, 186 complete and 0 interrupted iterations
+default   [  59% ] 30/30 VUs  05m54.7s/10m00.0s
+
+running (06m56.9s), 30/30 VUs, 186 complete and 0 interrupted iterations
+default   [  59% ] 30/30 VUs  05m55.8s/10m00.0s
+
+running (06m57.9s), 30/30 VUs, 186 complete and 0 interrupted iterations
+default   [  59% ] 30/30 VUs  05m56.7s/10m00.0s
+time="2025-10-26T20:15:55+01:00" level=info msg="[uber] Load test completed" source=console
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{phase:test}
+    ✗ 'p(95)<300' p(95)=332.31ms
+    ✗ 'p(99)<500' p(99)=681.77ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.74%
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration..............: avg=52.64ms min=3.26ms med=15.02ms max=1.45s p(90)=128.09ms p(95)=285.29ms
+      { expected_response:true }...: avg=50.11ms min=3.26ms med=14.64ms max=1.45s p(90)=105.3ms  p(95)=269.09ms
+      { phase:test }...............: avg=55.07ms min=3.26ms med=9.97ms  max=1.45s p(90)=163.74ms p(95)=332.31ms
+    http_req_failed................: 0.74%  39 out of 5253
+    http_reqs......................: 5253   12.555535/s
+
+    EXECUTION
+    iteration_duration.............: avg=44.29s  min=25.3s  med=42.5s   max=1m11s p(90)=59.21s   p(95)=1m1s    
+    iterations.....................: 186    0.444571/s
+    vus............................: 30     min=0          max=30
+    vus_max........................: 30     min=30         max=30
+
+    NETWORK
+    data_received..................: 9.5 MB 23 kB/s
+    data_sent......................: 2.4 MB 5.7 kB/s
+
+
+
+
+running (06m58.4s), 00/30 VUs, 186 complete and 30 interrupted iterations
+default ✗ [  60% ] 22/30 VUs  05m57.2s/10m00.0s
+time="2025-10-26T20:15:55+01:00" level=error msg="test run was aborted because k6 received a 'interrupt' signal"

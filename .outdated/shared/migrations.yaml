@@ -1,0 +1,47 @@
+# =====================
+# Shared Liquibase Migrations (Job)
+# =====================
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations
+spec:
+  template:
+    spec:
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations:latest
+          imagePullPolicy: Always
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: "dbchangelog.xml"
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              # the postgres service in the 'default' namespace and this is not
+              value: "jdbc:postgresql://postgres.default.svc.cluster.local:5450/zilla"
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_USER
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASS
+            - name: DEFAULT_SCHEMA
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_SCHEMA
+            - name: LIQUIBASE_LOG_LEVEL
+              value: "info"
+          workingDir: /liquibase/changelog
+          command: ["sh", "-c"]
+          args:
+            - |
+                liquibase \
+                  --defaultSchemaName=$DEFAULT_SCHEMA \
+                update
+          # command: ["liquibase"]
+          # args: ["update", "--defaultSchemaName=meta"]
+      restartPolicy: Never

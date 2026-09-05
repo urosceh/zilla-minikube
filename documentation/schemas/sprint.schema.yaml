@@ -1,0 +1,12 @@
+type: object
+properties:
+  sprintId:
+    type: integer
+  sprintName:
+    type: string
+  projectId:
+    type: string
+  startDate:
+    type: string
+  endDate:
+    type: string

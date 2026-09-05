@@ -1,0 +1,481 @@
+# GROUPED-HYBRID manifest (namespace: hybrid-grouped)
+# Tenants: datadog, ibm, intel
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hybrid-grouped
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: hybrid-grouped
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5450
+      targetPort: 5450
+  selector:
+    app: postgres
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: hybrid-grouped
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: hybrid-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:14-alpine
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-datadog
+                  key: DB_USERNAME
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-datadog
+                  key: DB_PASSWORD
+            - name: POSTGRES_DB
+              value: "zilla"
+            - name: PGPORT
+              value: "5450"
+          ports:
+            - containerPort: 5450
+          resources:
+            requests:
+              cpu: "0.5"
+              memory: "1Gi"
+            limits:
+              cpu: "0.5"
+              memory: "1Gi"
+          volumeMounts:
+            - name: postgres-volume
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-volume
+          persistentVolumeClaim:
+            claimName: postgres-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  namespace: hybrid-grouped
+spec:
+  ports:
+    - port: 6379
+      targetPort: 6379
+  selector:
+    app: redis
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: hybrid-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:6.2-alpine
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret-datadog
+                  key: REDIS_PASSWORD
+          command: ["sh","-c","redis-server --requirepass $REDIS_PASSWORD"]
+          ports:
+            - containerPort: 6379
+          resources:
+            requests:
+              cpu: "0.1"
+              memory: "64Mi"
+            limits:
+              cpu: "0.1"
+              memory: "64Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zilla-backend-datadog
+  namespace: hybrid-grouped
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: zilla-backend-datadog
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zilla-backend-datadog
+  namespace: hybrid-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zilla-backend-datadog
+  template:
+    metadata:
+      labels:
+        app: zilla-backend-datadog
+    spec:
+      containers:
+        - name: zilla-backend
+          image: hatch33/zilla-backend:v1.0.0-hybrid
+          imagePullPolicy: Always
+          command: ["npm","run","start:prod-local"]
+          env:
+            - name: TENANT_ID
+              value: "datadog"
+            - name: DB_HOST
+              value: "postgres"
+            - name: DB_PORT
+              value: "5450"
+            - name: DB_NAME
+              value: "zilla"
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-datadog
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-datadog
+                  key: DB_PASSWORD
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret-datadog
+                  key: REDIS_PASSWORD
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "0.25"
+              memory: "128Mi"
+            limits:
+              cpu: "0.25"
+              memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zilla-backend-ibm
+  namespace: hybrid-grouped
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: zilla-backend-ibm
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zilla-backend-ibm
+  namespace: hybrid-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zilla-backend-ibm
+  template:
+    metadata:
+      labels:
+        app: zilla-backend-ibm
+    spec:
+      containers:
+        - name: zilla-backend
+          image: hatch33/zilla-backend:v1.0.0-hybrid
+          imagePullPolicy: Always
+          command: ["npm","run","start:prod-local"]
+          env:
+            - name: TENANT_ID
+              value: "ibm"
+            - name: DB_HOST
+              value: "postgres"
+            - name: DB_PORT
+              value: "5450"
+            - name: DB_NAME
+              value: "zilla"
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-ibm
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-ibm
+                  key: DB_PASSWORD
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret-ibm
+                  key: REDIS_PASSWORD
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "0.25"
+              memory: "128Mi"
+            limits:
+              cpu: "0.25"
+              memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zilla-backend-intel
+  namespace: hybrid-grouped
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: zilla-backend-intel
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zilla-backend-intel
+  namespace: hybrid-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zilla-backend-intel
+  template:
+    metadata:
+      labels:
+        app: zilla-backend-intel
+    spec:
+      containers:
+        - name: zilla-backend
+          image: hatch33/zilla-backend:v1.0.0-hybrid
+          imagePullPolicy: Always
+          command: ["npm","run","start:prod-local"]
+          env:
+            - name: TENANT_ID
+              value: "intel"
+            - name: DB_HOST
+              value: "postgres"
+            - name: DB_PORT
+              value: "5450"
+            - name: DB_NAME
+              value: "zilla"
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-intel
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-intel
+                  key: DB_PASSWORD
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret-intel
+                  key: REDIS_PASSWORD
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "0.25"
+              memory: "128Mi"
+            limits:
+              cpu: "0.25"
+              memory: "128Mi"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: hybrid-grouped
+data:
+  default.conf: |
+    server {
+      listen 80;
+      location /api/datadog/ {
+        proxy_pass http://zilla-backend-datadog:3000/api/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+      }
+      location /api/ibm/ {
+        proxy_pass http://zilla-backend-ibm:3000/api/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+      }
+      location /api/intel/ {
+        proxy_pass http://zilla-backend-intel:3000/api/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+      }
+      location / {
+        proxy_pass http://zilla-frontend:8080/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+      }
+    }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-bff
+  namespace: hybrid-grouped
+spec:
+  selector:
+    app: nginx-bff
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-bff
+  namespace: hybrid-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-bff
+  template:
+    metadata:
+      labels:
+        app: nginx-bff
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /etc/nginx/conf.d/default.conf
+          subPath: default.conf
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "0.1"
+            memory: "64Mi"
+          limits:
+            cpu: "0.1"
+            memory: "64Mi"
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zilla-frontend
+  namespace: hybrid-grouped
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: zilla-frontend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zilla-frontend
+  namespace: hybrid-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zilla-frontend
+  template:
+    metadata:
+      labels:
+        app: zilla-frontend
+    spec:
+      containers:
+        - name: zilla-frontend
+          image: hatch33/zilla-frontend:v1.0.0-hybrid
+          imagePullPolicy: Always
+          command: ["npm","run","start"]
+          env:
+            - name: PORT
+              value: "8080"
+            - name: NGINX_URL
+              value: "/api"
+            - name: REACT_APP_NGINX_URL
+              value: "/api"
+            - name: API_HOST
+              value: "nginx-bff"
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "0.25"
+              memory: "128Mi"
+            limits:
+              cpu: "0.25"
+              memory: "128Mi"

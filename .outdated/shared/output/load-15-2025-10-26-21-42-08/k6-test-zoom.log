@@ -1,0 +1,331 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+time="2025-10-26T21:42:08+01:00" level=info msg="CSV LOCATION:  /Users/urosceh/Code/zilla-minikube/shared/passwords/zoom/zoom.csv" source=console
+time="2025-10-26T21:42:08+01:00" level=info msg="[zoom] Loaded 200 users from CSV" source=console
+time="2025-10-26T21:42:08+01:00" level=warning msg="There were unknown fields in the options exported in the script" error="json: unknown field \"gracefulStop\""
+     execution: local
+        script: /Users/urosceh/Code/zilla-minikube/shared/k6/k6-load-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 30 max VUs, 3m30s max duration (incl. graceful stop):
+              * default: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+time="2025-10-26T21:42:08+01:00" level=info msg="[zoom] LOAD TEST SETUP" source=console
+time="2025-10-26T21:42:08+01:00" level=info msg="[zoom] Admin token obtained" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:10+01:00" level=info msg="[zoom] Created 20 projects" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:11+01:00" level=info msg="Created 5 sprints for project LDT0" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:13+01:00" level=info msg="Created 50 issues for project LDT0" source=console
+time="2025-10-26T21:42:13+01:00" level=info msg="Granting access for project LDT0 0. 10 users" source=console
+time="2025-10-26T21:42:13+01:00" level=info msg="Granted access for project LDT0 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:14+01:00" level=info msg="Created 5 sprints for project LDT1" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:16+01:00" level=info msg="Created 50 issues for project LDT1" source=console
+time="2025-10-26T21:42:16+01:00" level=info msg="Granting access for project LDT1 1. 10 users" source=console
+time="2025-10-26T21:42:16+01:00" level=info msg="Granted access for project LDT1 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:17+01:00" level=info msg="Created 5 sprints for project LDT2" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:18+01:00" level=info msg="Created 50 issues for project LDT2" source=console
+time="2025-10-26T21:42:18+01:00" level=info msg="Granting access for project LDT2 2. 10 users" source=console
+time="2025-10-26T21:42:19+01:00" level=info msg="Granted access for project LDT2 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:19+01:00" level=info msg="Created 5 sprints for project LDT3" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:21+01:00" level=info msg="Created 50 issues for project LDT3" source=console
+time="2025-10-26T21:42:21+01:00" level=info msg="Granting access for project LDT3 3. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:21+01:00" level=info msg="Granted access for project LDT3 to 10 users" source=console
+time="2025-10-26T21:42:22+01:00" level=info msg="Created 5 sprints for project LDT4" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:23+01:00" level=info msg="Created 50 issues for project LDT4" source=console
+time="2025-10-26T21:42:23+01:00" level=info msg="Granting access for project LDT4 4. 10 users" source=console
+time="2025-10-26T21:42:24+01:00" level=info msg="Granted access for project LDT4 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:25+01:00" level=info msg="Created 5 sprints for project LDT5" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:26+01:00" level=info msg="Created 50 issues for project LDT5" source=console
+time="2025-10-26T21:42:26+01:00" level=info msg="Granting access for project LDT5 5. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:26+01:00" level=info msg="Granted access for project LDT5 to 10 users" source=console
+time="2025-10-26T21:42:27+01:00" level=info msg="Created 5 sprints for project LDT6" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:29+01:00" level=info msg="Created 50 issues for project LDT6" source=console
+time="2025-10-26T21:42:29+01:00" level=info msg="Granting access for project LDT6 6. 10 users" source=console
+time="2025-10-26T21:42:29+01:00" level=info msg="Granted access for project LDT6 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:29+01:00" level=info msg="Created 5 sprints for project LDT7" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:31+01:00" level=info msg="Created 50 issues for project LDT7" source=console
+time="2025-10-26T21:42:31+01:00" level=info msg="Granting access for project LDT7 7. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:32+01:00" level=info msg="Granted access for project LDT7 to 10 users" source=console
+time="2025-10-26T21:42:32+01:00" level=info msg="Created 5 sprints for project LDT8" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:34+01:00" level=info msg="Created 50 issues for project LDT8" source=console
+time="2025-10-26T21:42:34+01:00" level=info msg="Granting access for project LDT8 8. 10 users" source=console
+time="2025-10-26T21:42:34+01:00" level=info msg="Granted access for project LDT8 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:34+01:00" level=info msg="Created 5 sprints for project LDT9" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:36+01:00" level=info msg="Created 50 issues for project LDT9" source=console
+time="2025-10-26T21:42:36+01:00" level=info msg="Granting access for project LDT9 9. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:36+01:00" level=info msg="Granted access for project LDT9 to 10 users" source=console
+time="2025-10-26T21:42:37+01:00" level=info msg="Created 5 sprints for project LDT10" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:39+01:00" level=info msg="Created 50 issues for project LDT10" source=console
+time="2025-10-26T21:42:39+01:00" level=info msg="Granting access for project LDT10 10. 10 users" source=console
+time="2025-10-26T21:42:39+01:00" level=info msg="Granted access for project LDT10 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:39+01:00" level=info msg="Created 5 sprints for project LDT11" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:41+01:00" level=info msg="Created 50 issues for project LDT11" source=console
+time="2025-10-26T21:42:41+01:00" level=info msg="Granting access for project LDT11 11. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:41+01:00" level=info msg="Granted access for project LDT11 to 10 users" source=console
+time="2025-10-26T21:42:42+01:00" level=info msg="Created 5 sprints for project LDT12" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:43+01:00" level=info msg="Created 50 issues for project LDT12" source=console
+time="2025-10-26T21:42:43+01:00" level=info msg="Granting access for project LDT12 12. 10 users" source=console
+time="2025-10-26T21:42:44+01:00" level=info msg="Granted access for project LDT12 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:44+01:00" level=info msg="Created 5 sprints for project LDT13" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:46+01:00" level=info msg="Created 50 issues for project LDT13" source=console
+time="2025-10-26T21:42:46+01:00" level=info msg="Granting access for project LDT13 13. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:46+01:00" level=info msg="Granted access for project LDT13 to 10 users" source=console
+time="2025-10-26T21:42:47+01:00" level=info msg="Created 5 sprints for project LDT14" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:49+01:00" level=info msg="Created 50 issues for project LDT14" source=console
+time="2025-10-26T21:42:49+01:00" level=info msg="Granting access for project LDT14 14. 10 users" source=console
+time="2025-10-26T21:42:49+01:00" level=info msg="Granted access for project LDT14 to 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:49+01:00" level=info msg="Created 5 sprints for project LDT15" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:51+01:00" level=info msg="Created 50 issues for project LDT15" source=console
+time="2025-10-26T21:42:51+01:00" level=info msg="Granting access for project LDT15 15. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:52+01:00" level=info msg="Granted access for project LDT15 to 10 users" source=console
+time="2025-10-26T21:42:52+01:00" level=info msg="Created 5 sprints for project LDT16" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:54+01:00" level=info msg="Created 50 issues for project LDT16" source=console
+time="2025-10-26T21:42:54+01:00" level=info msg="Granting access for project LDT16 16. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:54+01:00" level=info msg="Granted access for project LDT16 to 10 users" source=console
+time="2025-10-26T21:42:55+01:00" level=info msg="Created 5 sprints for project LDT17" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:57+01:00" level=info msg="Created 50 issues for project LDT17" source=console
+time="2025-10-26T21:42:57+01:00" level=info msg="Granting access for project LDT17 17. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:42:58+01:00" level=info msg="Granted access for project LDT17 to 10 users" source=console
+time="2025-10-26T21:42:58+01:00" level=info msg="Created 5 sprints for project LDT18" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:43:00+01:00" level=info msg="Created 50 issues for project LDT18" source=console
+time="2025-10-26T21:43:00+01:00" level=info msg="Granting access for project LDT18 18. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:43:00+01:00" level=info msg="Granted access for project LDT18 to 10 users" source=console
+time="2025-10-26T21:43:01+01:00" level=info msg="Created 5 sprints for project LDT19" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:43:03+01:00" level=info msg="Created 50 issues for project LDT19" source=console
+time="2025-10-26T21:43:03+01:00" level=info msg="Granting access for project LDT19 19. 10 users" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T21:43:03+01:00" level=info msg="Granted access for project LDT19 to 10 users" source=console
+time="2025-10-26T21:43:03+01:00" level=info msg="[zoom] Setup complete" source=console
+
+running (0m56.0s), 01/30 VUs, 2 complete and 0 interrupted iterations
+default   [   1% ] 01/30 VUs  0m00.9s/3m00.0s
+
+running (0m57.0s), 02/30 VUs, 3 complete and 0 interrupted iterations
+default   [   1% ] 02/30 VUs  0m01.9s/3m00.0s
+
+running (0m58.0s), 03/30 VUs, 6 complete and 0 interrupted iterations
+default   [   2% ] 03/30 VUs  0m02.9s/3m00.0s
+
+running (0m59.0s), 04/30 VUs, 9 complete and 0 interrupted iterations
+default   [   2% ] 04/30 VUs  0m03.9s/3m00.0s
+
+running (1m00.0s), 05/30 VUs, 10 complete and 0 interrupted iterations
+default   [   3% ] 05/30 VUs  0m04.9s/3m00.0s
+
+running (1m01.0s), 06/30 VUs, 13 complete and 0 interrupted iterations
+default   [   3% ] 06/30 VUs  0m05.9s/3m00.0s
+
+running (1m02.0s), 07/30 VUs, 15 complete and 0 interrupted iterations
+default   [   4% ] 07/30 VUs  0m06.9s/3m00.0s
+
+running (1m03.0s), 08/30 VUs, 19 complete and 0 interrupted iterations
+default   [   4% ] 08/30 VUs  0m07.9s/3m00.0s
+
+running (1m04.0s), 09/30 VUs, 20 complete and 0 interrupted iterations
+default   [   5% ] 09/30 VUs  0m08.9s/3m00.0s
+time="2025-10-26T21:43:12+01:00" level=info msg="[zoom] Load test completed" source=console
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{phase:test}
+    ✗ 'p(95)<300' p(95)=1s
+    ✗ 'p(99)<500' p(99)=1.45s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration..............: avg=64.23ms  min=16.86ms  med=31.85ms  max=1.49s p(90)=87.12ms  p(95)=182.6ms
+      { expected_response:true }...: avg=64.23ms  min=16.86ms  med=31.85ms  max=1.49s p(90)=87.12ms  p(95)=182.6ms
+      { phase:test }...............: avg=560.66ms min=25.36ms  med=495.17ms max=1.49s p(90)=917.82ms p(95)=1s     
+    http_req_failed................: 0.00%  0 out of 1404
+    http_reqs......................: 1404   21.838519/s
+
+    EXECUTION
+    iteration_duration.............: avg=1.48s    min=409.41ms med=1.2s     max=3.44s p(90)=2.56s    p(95)=3.16s  
+    iterations.....................: 20     0.31109/s
+    vus............................: 9      min=0         max=9 
+    vus_max........................: 30     min=30        max=30
+
+    NETWORK
+    data_received..................: 751 kB 12 kB/s
+    data_sent......................: 726 kB 11 kB/s
+
+
+
+
+running (1m04.3s), 00/30 VUs, 20 complete and 9 interrupted iterations
+default ✗ [   5% ] 09/30 VUs  0m09.2s/3m00.0s
+time="2025-10-26T21:43:13+01:00" level=error msg="test run was aborted because k6 received a 'interrupt' signal"

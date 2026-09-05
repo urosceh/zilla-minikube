@@ -1,0 +1,1132 @@
+openapi: 3.0.3
+info:
+  title: Zilla Backend
+  description: |-
+    Zilla Backend OpenAPI 3.0 specification.
+  # termsOfService: http://swagger.io/terms/
+  contact:
+    email: urosvceh@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: GitHub Page of Zilla Backend
+  url: https://github.com/urosceh/zilla-backend
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
+
+paths:
+  #################### user
+  /api/user/login:
+    post:
+      security: []
+      summary: Login
+      description: Login
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "schemas/login.schema.yaml"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/bearer.token.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Invalid Password
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "404":
+          description: Email Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+
+  /api/user/logout:
+    post:
+      summary: Logout
+      description: Logout
+      operationId: logout
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /api/user/create-batch:
+    post:
+      summary: Create a batch of users
+      description: Create a batch of users
+      operationId: createBatch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                users:
+                  type: array
+                  items:
+                    $ref: "schemas/create.user.schema.yaml"
+                
+              
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "schemas/user.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Not an Admin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /api/user/:
+    patch:
+      summary: Update a user
+      description: Update a user
+      operationId: updateUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "schemas/update.user.schema.yaml"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/user.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "404":
+          description: User Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+
+  /api/user/password:
+    put:
+      summary: Change password
+      description: Change password
+      operationId: changePassword
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "schemas/change.password.schema.yaml"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/bearer.token.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /api/user/forgotten-password:
+    post:
+      summary: Send a forgotten password email
+      description: Send a forgotten password email
+      operationId: forgottenPassword
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+              required:
+                - email
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Not an Admin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "404":
+          description: Email Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "502":
+          description: Email Not Sent
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /api/user/set-forgotten-password:
+    post:
+      security: []
+      summary: Set a new password
+      description: Set a new password
+      operationId: setForgottenPassword
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityCode:
+                  type: string
+                newPassword:
+                  type: string
+              required:
+                - token
+                - newPassword
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/bearer.token.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  #################### admin
+  /api/admin/make-user-admin/{userId}:
+    post:
+      summary: Make a user an admin
+      description: Make a user an admin
+      operationId: makeUserAdmin
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "201":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/user.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Not an Admin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "404":
+          description: User Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  #################### issue
+  /api/issue/project/{projectKey}:
+    get:
+      summary: Get all issues for a project
+      description: Get all issues for a project with optional filtering, sorting, and pagination
+      operationId: getProjectIssues
+      parameters:
+        - name: projectKey
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: "^[A-Z0-9_-]+$"
+          description: The project key
+        - name: assigneeIds
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              format: uuid
+          description: Filter by assignee user IDs
+        - name: reporterIds
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              format: uuid
+          description: Filter by reporter user IDs
+        - name: sprintIds
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+              minimum: 1
+          description: Filter by sprint IDs
+        - name: issueStatuses
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: [Backlog, In Progress, In Review, Deployed, Tested, Done, Rejected]
+          description: Filter by issue statuses
+        - name: search
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Search in issue summary
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 50
+          description: Number of results to return
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+          description: Number of results to skip
+        - name: orderCol
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [createdAt, updatedAt]
+            default: updatedAt
+          description: Column to order by
+        - name: orderDir
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [ASC, DESC]
+            default: ASC
+          description: Order direction
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "schemas/issue.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Forbidden Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /api/issue/{issueId}:
+    get:
+      summary: Get an issue
+      description: Get an issue
+      operationId: getIssue
+      parameters:
+        - name: issueId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/create.issue.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Forbidden Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "404":
+          description: Issue Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    patch:
+      summary: Update an issue
+      description: Update an issue
+      operationId: updateIssue
+      parameters:
+        - name: issueId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: projectKey
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The project key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                summary:
+                  type: string
+                description:
+                  type: string
+                issueStatus:
+                  type: string
+                  enum: [Backlog, In Progress, In Review, Deployed, Tested, Done, Rejected]
+                assigneeId:
+                  type: string
+                  format: uuid
+                sprintId:
+                  type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/issue.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Forbidden Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "404":
+          description: Issue Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /api/issue:
+    post:
+      summary: Create an issue
+      description: Create an issue
+      operationId: createIssue
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "schemas/create.issue.schema.yaml"
+      responses:
+        "201":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/issue.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Forbidden Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  #################### project
+  /api/project:
+    get:
+      summary: Get a project
+      description: Get a project
+      operationId: getProject
+      parameters:
+        - name: projectKey
+          in: query
+          required: true
+          schema:
+            type: string
+            pattern: "^[A-Z0-9_-]+$"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/project.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Forbidden Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "404":
+          description: Project Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    post:
+      summary: Create a project
+      description: Create a project
+      operationId: createProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "schemas/create.project.schema.yaml"
+      responses:
+        "201":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/project.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Forbidden Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /api/project/all:
+    get:
+      summary: Get all users projects
+      description: Get all users projects
+      operationId: getAllUsersProjects
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "schemas/project.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string  
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+
+  #################### sprint
+  /api/sprint:
+    post:
+      summary: Create a sprint
+      description: Create a sprint
+      operationId: createSprint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "schemas/create.sprint.schema.yaml"
+      responses:
+        "201":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "schemas/sprint.schema.yaml"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Not a Manager
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  #################### access
+  /api/access:
+    post:
+      summary: Grant access to a project
+      description: Grant access to a project
+      operationId: grantAccess
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "schemas/manage.access.schema.yaml"
+      responses:
+        "201":
+          description: OK
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Not a Manager
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    delete:
+      summary: Revoke access to a project
+      description: Revoke access to a project
+      operationId: revokeAccess
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "schemas/manage.access.schema.yaml"
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized Access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "403":
+          description: Not a Manager
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "422":
+          description: Token Validation Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string

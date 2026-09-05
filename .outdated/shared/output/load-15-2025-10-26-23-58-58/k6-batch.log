@@ -1,0 +1,70 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: /Users/urosceh/Code/zilla-minikube/shared/k6/k6-batch-test.js
+        output: -
+
+     scenarios: (100.00%) 15 scenarios, 450 max VUs, 3m30s max duration (incl. graceful stop):
+              * tenant_amazon: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_amd: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_apple: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_azure: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_google: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_meta: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_netflix: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_nvidia: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_paypal: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_reddit: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_slack: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_spotify: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_tesla: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_uber: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+              * tenant_zoom: Up to 30 looping VUs for 3m0s over 3 stages (gracefulRampDown: 30s, exec: tenantTest, gracefulStop: 30s)
+
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{phase:test}
+    ✓ 'p(95)<300' p(95)=0s
+    ✓ 'p(99)<500' p(99)=0s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration...: avg=0s min=0s med=0s max=0s p(90)=0s p(95)=0s
+      { phase:test }....: avg=0s min=0s med=0s max=0s p(90)=0s p(95)=0s
+    http_req_failed.....: 0.00% 0 out of 0
+
+    NETWORK
+    data_received.......: 0 B   0 B/s
+    data_sent...........: 0 B   0 B/s
+
+
+
+
+Run              [ 100% ] setup()
+tenant_amazon    [   0% ]
+tenant_amd       [   0% ]
+tenant_apple     [   0% ]
+tenant_azure     [   0% ]
+tenant_google    [   0% ]
+tenant_meta      [   0% ]
+tenant_netflix   [   0% ]
+tenant_nvidia    [   0% ]
+tenant_paypal    [   0% ]
+tenant_reddit    [   0% ]
+tenant_slack     [   0% ]
+tenant_spotify   [   0% ]
+tenant_tesla     [   0% ]
+tenant_uber      [   0% ]
+tenant_zoom      [   0% ]

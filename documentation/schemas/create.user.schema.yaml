@@ -1,0 +1,16 @@
+type: object
+properties:
+  email:
+    type: string
+    format: email
+    allowNull: false
+  firstName:
+    type: string
+    allowNull: false
+  lastName:
+    type: string
+    allowNull: false
+required:
+  - email
+  - firstName
+  - lastName

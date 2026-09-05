@@ -1,0 +1,235 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+time="2025-10-26T11:47:52+01:00" level=info msg="[uber] Loaded 200 users from CSV" source=console
+     execution: local
+        script: /Users/urosceh/Code/zilla-minikube/shared/k6/k6-stress-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 200 max VUs, 3m30s max duration (incl. graceful stop):
+              * default: Up to 200 looping VUs for 3m0s over 41 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+time="2025-10-26T11:47:52+01:00" level=warning msg="Error from API server" error="listen tcp 127.0.0.1:6565: bind: address already in use"
+time="2025-10-26T11:47:52+01:00" level=info msg="[uber] STRESS TEST SETUP" source=console
+time="2025-10-26T11:47:52+01:00" level=info msg="[uber] Initial VUs: 5, Max VUs: 200, Increment: 5" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T11:47:53+01:00" level=info msg="[uber] Admin token obtained" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T11:47:54+01:00" level=info msg="[uber] Created 20 projects" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{phase:test}
+    ✓ 'p(95)<300' p(95)=0s
+    ✓ 'p(99)<500' p(99)=0s
+
+    http_req_failed
+    ✓ 'rate<0.00001' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration..............: avg=46.2ms min=4.98ms med=29.97ms max=911.66ms p(90)=76.15ms p(95)=149.31ms
+      { expected_response:true }...: avg=46.2ms min=4.98ms med=29.97ms max=911.66ms p(90)=76.15ms p(95)=149.31ms
+      { phase:test }...............: avg=0s     min=0s     med=0s      max=0s       p(90)=0s      p(95)=0s      
+    http_req_failed................: 0.00%  0 out of 1295
+    http_reqs......................: 1295   21.582971/s
+
+    EXECUTION
+    vus............................: 0      min=0         max=0  
+    vus_max........................: 200    min=200       max=200
+
+    NETWORK
+    data_received..................: 606 kB 10 kB/s
+    data_sent......................: 678 kB 11 kB/s
+
+
+
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-26T11:48:52+01:00" level=error msg="setup() execution timed out after 60 seconds" hint="You can increase the time limit via the setupTimeout option"

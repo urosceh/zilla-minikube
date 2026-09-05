@@ -1,0 +1,19 @@
+type: object
+properties:
+  userId:
+    type: string
+    format: uuid
+  email:
+    type: string
+    format: email
+  firstName:
+    type: string
+    allowNull: true
+  lastName:
+    type: string
+    allowNull: true
+required:
+  - userId
+  - email
+  - firstName
+  - lastName

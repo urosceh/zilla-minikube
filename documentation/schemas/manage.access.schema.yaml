@@ -1,0 +1,12 @@
+type: object
+properties:
+  userIds:
+    type: array
+    items:
+      type: string
+      format: uuid
+  projectKey:
+    type: string
+required:
+  - userIds
+  - projectKey

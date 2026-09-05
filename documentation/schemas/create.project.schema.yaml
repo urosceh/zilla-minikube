@@ -1,0 +1,12 @@
+type: object
+properties:
+  projectName:
+    type: string
+  projectKey:
+    type: string
+  managerId:
+    type: string
+required:
+  - projectName
+  - projectKey
+  - managerId

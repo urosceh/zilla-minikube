@@ -1,0 +1,196 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+time="2025-10-23T08:01:39+02:00" level=info msg="Loaded 50 users for tenant apple" source=console
+     execution: local
+        script: /Users/urosceh/Code/zilla-minikube/shared/k6-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 20 max VUs, 3m30s max duration (incl. graceful stop):
+              * default: 20 iterations shared among 20 VUs (maxDuration: 3m0s, gracefulStop: 30s)
+
+time="2025-10-23T08:01:39+02:00" level=info msg="Starting test for tenant: apple" source=console
+time="2025-10-23T08:01:39+02:00" level=info msg="Admin logged in successfully" source=console
+time="2025-10-23T08:01:39+02:00" level=info msg="Found 50 users from CSV" source=console
+time="2025-10-23T08:01:39+02:00" level=info msg="Creating project 1 of 20" source=console
+time="2025-10-23T08:01:39+02:00" level=info msg="Creating project 2 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 3 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 4 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 5 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 6 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 7 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 8 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 9 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 10 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 11 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 12 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 13 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 14 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 15 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 16 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 17 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 18 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 19 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Creating project 20 of 20" source=console
+time="2025-10-23T08:01:40+02:00" level=info msg="Created 20 projects" source=console
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2025-10-23T08:01:49+02:00" level=info msg="Logged in 50 users" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 10 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 3 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 8 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 2 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 4 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 13 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 7 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 19 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 9 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 20 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 6 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 14 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 16 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 15 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 17 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 12 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 1 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 5 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 11 processing project" source=console
+time="2025-10-23T08:01:49+02:00" level=info msg="VU 18 processing project" source=console
+
+running (0m10.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m00.5s/3m0s  00/20 shared iters
+
+running (0m11.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m01.5s/3m0s  00/20 shared iters
+
+running (0m12.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m02.5s/3m0s  00/20 shared iters
+
+running (0m13.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m03.5s/3m0s  00/20 shared iters
+
+running (0m14.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m04.5s/3m0s  00/20 shared iters
+
+running (0m15.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m05.5s/3m0s  00/20 shared iters
+
+running (0m16.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m06.5s/3m0s  00/20 shared iters
+
+running (0m17.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m07.5s/3m0s  00/20 shared iters
+
+running (0m18.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m08.5s/3m0s  00/20 shared iters
+
+running (0m19.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m09.5s/3m0s  00/20 shared iters
+
+running (0m20.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m10.5s/3m0s  00/20 shared iters
+
+running (0m21.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m11.5s/3m0s  00/20 shared iters
+
+running (0m22.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m12.5s/3m0s  00/20 shared iters
+
+running (0m23.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m13.5s/3m0s  00/20 shared iters
+
+running (0m24.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m14.5s/3m0s  00/20 shared iters
+
+running (0m25.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m15.5s/3m0s  00/20 shared iters
+
+running (0m26.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m16.5s/3m0s  00/20 shared iters
+
+running (0m27.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m17.5s/3m0s  00/20 shared iters
+
+running (0m28.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m18.5s/3m0s  00/20 shared iters
+
+running (0m29.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m19.5s/3m0s  00/20 shared iters
+
+running (0m30.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m20.5s/3m0s  00/20 shared iters
+
+running (0m31.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 20 VUs  0m21.5s/3m0s  00/20 shared iters
+time="2025-10-23T08:02:11+02:00" level=info msg="Test completed" source=console
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(99)<2000' p(99)=290.62ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3220    102.625335/s
+    checks_succeeded...: 100.00% 3220 out of 3220
+    checks_failed......: 0.00%   0 out of 3220
+
+    ✓ sprint created successfully
+    ✓ access granted successfully
+    ✓ issue created successfully
+
+    HTTP
+    http_req_duration..............: avg=135.17ms min=6.21ms med=127.22ms max=541.33ms p(90)=160.29ms p(95)=185.78ms
+      { expected_response:true }...: avg=135.17ms min=6.21ms med=127.22ms max=541.33ms p(90)=160.29ms p(95)=185.78ms
+    http_req_failed................: 0.00%  0 out of 3291
+    http_reqs......................: 3291   104.888191/s
+
+    EXECUTION
+    iteration_duration.............: avg=21.79s   min=21.71s med=21.8s    max=21.83s   p(90)=21.83s   p(95)=21.83s  
+    iterations.....................: 20     0.637424/s
+    vus............................: 20     min=0         max=20
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 1.8 MB 58 kB/s
+    data_sent......................: 1.8 MB 59 kB/s
+
+
+
+
+running (0m31.4s), 00/20 VUs, 20 complete and 0 interrupted iterations
+default ✓ [ 100% ] 20 VUs  0m21.8s/3m0s  20/20 shared iters

@@ -1,0 +1,20 @@
+type: object
+properties:
+  projectKey:
+    type: string
+    pattern: "^[A-Z0-9_-]+$"
+  issueStatus:
+    type: string
+  summary:
+    type: string
+  details:
+    type: string
+  sprintId:
+    type: integer
+  assigneeId:
+    type: string
+    format: uuid
+required:
+  - projectKey
+  - issueStatus
+  - summary

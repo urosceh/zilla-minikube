@@ -1,0 +1,22 @@
+type: object
+properties:
+  projectId:
+    type: string
+    format: uuid
+  projectName:
+    type: string
+  projectKey:
+    type: string
+  managerId:
+    type: string
+    format: uuid
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time
+  manager:
+    $ref: 'user.schema.yaml'
+  isManager:
+    type: boolean

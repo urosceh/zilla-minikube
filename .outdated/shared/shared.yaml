@@ -1,0 +1,764 @@
+# =====================
+# Shared (Multi-tenant) Kubernetes Manifest
+# =====================
+# This file is derived from separate/k8s.yaml but intentionally omits:
+#  - The global Postgres secret (each tenant has its own secret: postgres-secret-{tenant})
+#  - The Liquibase migrations Job
+#
+# The backend deployment is extended to pull ALL tenant database credentials
+# from the copied tenant secrets in the default namespace:
+#   postgres-secret-amazon, postgres-secret-meta, postgres-secret-tesla
+# Each secret is expected to contain:
+#   DB_USER_<TENANT_UPPER>, DB_PASS_<TENANT_UPPER>
+#
+# NOTE: The Postgres Deployment here uses a simple single superuser (inline env vars)
+# because the consolidated postgres-secret was removed. Adjust as needed if you
+# want Postgres to align with a specific tenant or use an init process to create
+# per-tenant roles.
+
+# =====================
+# Postgres Secret
+# =====================
+apiVersion: v1
+kind: Secret
+metadata:
+  name: postgres-secret
+type: Opaque
+data:
+  DB_USERNAME: dXNlcg==  # base64 encoded "user"
+  DB_PASSWORD: cGFzcw==  # base64 encoded "pass"
+---
+# =====================
+# Redis Secret (retained)
+# =====================
+apiVersion: v1
+kind: Secret
+metadata:
+  name: redis-secret
+type: Opaque
+data:
+  REDIS_PASSWORD: cGFzc3dvcmQ=  # base64("password")
+
+---
+# =====================
+# Postgres Service
+# =====================
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5450
+      targetPort: 5450
+  selector:
+    app: postgres
+
+---
+# =====================
+# Postgres Persistent Volume Claim
+# =====================
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+# =====================
+# Postgres Deployment (no secret reference)
+# =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:14-alpine
+          args:
+            - -c
+            - max_connections=300
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_USERNAME
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+            - name: POSTGRES_DB
+              value: "zilla"
+            - name: PGPORT
+              value: "5450"
+          ports:
+            - containerPort: 5450
+          readinessProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - user
+                - -d
+                - zilla
+                - -p
+                - "5450"
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+          livenessProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - user
+                - -d
+                - zilla
+                - -p
+                - "5450"
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "1"
+              memory: "1024Mi"
+            limits:
+              cpu: "1"
+              memory: "1024Mi"
+          volumeMounts:
+            - name: postgres-volume
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-volume
+          persistentVolumeClaim:
+            claimName: postgres-pvc
+
+---
+# =====================
+# Redis Service
+# =====================
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+spec:
+  ports:
+    - port: 6379
+      targetPort: 6379
+  selector:
+    app: redis
+
+---
+# =====================
+# Redis Deployment
+# =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:6.2-alpine
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: REDIS_PASSWORD
+          command: ["sh", "-c", "redis-server --requirepass $REDIS_PASSWORD"]
+          ports:
+            - containerPort: 6379
+          readinessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - redis-cli -a "$REDIS_PASSWORD" ping
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+          livenessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - redis-cli -a "$REDIS_PASSWORD" ping
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+---
+# =====================
+# Zilla Backend Service
+# =====================
+apiVersion: v1
+kind: Service
+metadata:
+  name: zilla-backend
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: zilla-backend
+
+---
+# =====================
+# Zilla Backend Deployment (multi-tenant secrets injected)
+# =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zilla-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zilla-backend
+  template:
+    metadata:
+      labels:
+        app: zilla-backend
+    spec:
+      initContainers:
+        - name: wait-for-postgres
+          image: postgres:14-alpine
+          env:
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_USERNAME
+          command:
+            - sh
+            - -c
+            - |
+              until pg_isready -h postgres -p 5450; do
+                echo "Waiting for postgres to be ready..."
+                sleep 2
+              done
+              echo "Postgres is ready!"
+        - name: wait-for-redis
+          image: redis:6.2-alpine
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: REDIS_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              until redis-cli -h redis -p 6379 -a "$REDIS_PASSWORD" ping; do
+                echo "Waiting for redis to be ready..."
+                sleep 2
+              done
+              echo "Redis is ready!"
+      containers:
+        - name: zilla-backend
+          image: hatch33/zilla-backend:v1.0.0-shared
+          imagePullPolicy: Always
+          command: ["npm", "run", "start:prod-local"]
+          env:
+            - name: DB_HOST
+              value: "postgres"
+            - name: DB_PORT
+              value: "5450"
+            - name: DB_NAME
+              value: "zilla"
+            # Tenant-specific credentials (expect secrets copied into default namespace)
+            - name: DB_USER_META
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-meta
+                  key: DB_USER
+            - name: DB_PASS_META
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-meta
+                  key: DB_PASS
+            - name: DB_USER_AMAZON
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-amazon
+                  key: DB_USER
+            - name: DB_PASS_AMAZON
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-amazon
+                  key: DB_PASS
+            - name: DB_USER_GOOGLE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-google
+                  key: DB_USER
+            - name: DB_PASS_GOOGLE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-google
+                  key: DB_PASS
+            - name: DB_USER_TESLA
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-tesla
+                  key: DB_USER
+            - name: DB_PASS_TESLA
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-tesla
+                  key: DB_PASS
+            - name: DB_USER_UBER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-uber
+                  key: DB_USER
+            - name: DB_PASS_UBER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-uber
+                  key: DB_PASS
+            - name: DB_USER_SLACK
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-slack
+                  key: DB_USER
+            - name: DB_PASS_SLACK
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-slack
+                  key: DB_PASS
+            - name: DB_USER_APPLE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-apple
+                  key: DB_USER
+            - name: DB_PASS_APPLE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-apple
+                  key: DB_PASS
+            - name: DB_USER_AZURE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-azure
+                  key: DB_USER
+            - name: DB_PASS_AZURE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-azure
+                  key: DB_PASS
+            - name: DB_USER_NETFLIX
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-netflix
+                  key: DB_USER
+            - name: DB_PASS_NETFLIX
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-netflix
+                  key: DB_PASS
+            - name: DB_USER_SPOTIFY
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-spotify
+                  key: DB_USER
+            - name: DB_PASS_SPOTIFY
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-spotify
+                  key: DB_PASS
+            - name: DB_USER_ZOOM
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-zoom
+                  key: DB_USER
+            - name: DB_PASS_ZOOM
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-zoom
+                  key: DB_PASS
+            - name: DB_USER_NVIDIA
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-nvidia
+                  key: DB_USER
+            - name: DB_PASS_NVIDIA
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-nvidia
+                  key: DB_PASS
+            - name: DB_USER_AMD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-amd
+                  key: DB_USER
+            - name: DB_PASS_AMD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-amd
+                  key: DB_PASS
+            - name: DB_USER_PAYPAL
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-paypal
+                  key: DB_USER
+            - name: DB_PASS_PAYPAL
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-paypal
+                  key: DB_PASS
+            - name: DB_USER_REDDIT
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-reddit
+                  key: DB_USER
+            - name: DB_PASS_REDDIT
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-reddit
+                  key: DB_PASS
+            # End of tenant-specific credentials
+            - name: JWT_SECRET
+              value: "secret"
+            - name: JWT_EXPIRES_IN_IN_SECONDS
+              value: "100000"
+            - name: NODE_ENV
+              value: "test"
+            - name: ADMIN_EMAL
+              value: "urosvceh@gmail.com"
+            - name: ADMIN_PASSWORD
+              value: "pass123!"
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: REDIS_PASSWORD
+            - name: TENANT_CONFIG_PATH
+              value: "/etc/tenant-config/tenants.json"
+            - name: DB_POOL_MAX
+              value: "2"
+            - name: DB_POOL_MIN
+              value: "0"
+            - name: DB_POOL_IDLE
+              value: "10000"
+            - name: DB_POOL_EVICT
+              value: "10000"
+            - name: UV_THREADPOOL_SIZE
+              value: "15"
+            - name: NODE_OPTIONS
+              value: "--max-old-space-size=400"
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: tenant-config
+              mountPath: /etc/tenant-config
+              readOnly: true
+          resources:
+            requests:
+              cpu: "2"
+              memory: "512Mi"
+            limits:
+              cpu: "2"
+              memory: "512Mi"
+      volumes:
+        - name: tenant-config
+          configMap:
+            name: tenant-config
+
+---
+# =====================
+# Tenant Config Map
+# =====================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tenant-config
+data:
+  tenants.json: |
+    {
+      "amazon": {
+        "tenantId": "amazon",
+        "schemaName": "amazon",
+        "displayName": "Amazon",
+        "redisDb": 1,
+        "isActive": true
+      },
+      "amd": {
+        "tenantId": "amd",
+        "schemaName": "amd",
+        "displayName": "AMD",
+        "redisDb": 2,
+        "isActive": true
+      },
+      "apple": {
+        "tenantId": "apple",
+        "schemaName": "apple",
+        "displayName": "Apple",
+        "redisDb": 3,
+        "isActive": true
+      },
+      "azure": {
+        "tenantId": "azure",
+        "schemaName": "azure",
+        "displayName": "Azure",
+        "redisDb": 4,
+        "isActive": true
+      },
+      "google": {
+        "tenantId": "google",
+        "schemaName": "google",
+        "displayName": "Google",
+        "redisDb": 5,
+        "isActive": true
+      },
+      "meta": {
+        "tenantId": "meta",
+        "schemaName": "meta",
+        "displayName": "Meta",
+        "redisDb": 6,
+        "isActive": true
+      },
+      "netflix": {
+        "tenantId": "netflix",
+        "schemaName": "netflix",
+        "displayName": "Netflix",
+        "redisDb": 7,
+        "isActive": true
+      },
+      "nvidia": {
+        "tenantId": "nvidia",
+        "schemaName": "nvidia",
+        "displayName": "NVIDIA",
+        "redisDb": 8,
+        "isActive": true
+      },
+      "paypal": {
+        "tenantId": "paypal",
+        "schemaName": "paypal",
+        "displayName": "PayPal",
+        "redisDb": 9,
+        "isActive": true
+      },
+      "reddit": {
+        "tenantId": "reddit",
+        "schemaName": "reddit",
+        "displayName": "Reddit",
+        "redisDb": 10,
+        "isActive": true
+      },
+      "slack": {
+        "tenantId": "slack",
+        "schemaName": "slack",
+        "displayName": "Slack",
+        "redisDb": 11,
+        "isActive": true
+      },
+      "spotify": {
+        "tenantId": "spotify",
+        "schemaName": "spotify",
+        "displayName": "Spotify",
+        "redisDb": 12,
+        "isActive": true
+      },
+      "tesla": {
+        "tenantId": "tesla",
+        "schemaName": "tesla",
+        "displayName": "Tesla",
+        "redisDb": 13,
+        "isActive": true
+      },
+      "uber": {
+        "tenantId": "uber",
+        "schemaName": "uber",
+        "displayName": "Uber",
+        "redisDb": 14,
+        "isActive": true
+      },
+      "zoom": {
+        "tenantId": "zoom",
+        "schemaName": "zoom",
+        "displayName": "Zoom",
+        "redisDb": 15,
+        "isActive": true
+      }
+    }
+
+---
+# =====================
+# Nginx BFF Config
+# =====================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  default.conf: |
+    server {
+        listen 80;
+
+        location /api/ {
+            proxy_pass http://zilla-backend:3000/api/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+        location / {
+            proxy_pass http://zilla-frontend:8080/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+
+---
+# =====================
+# Nginx BFF Service
+# =====================
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-bff
+spec:
+  selector:
+    app: nginx-bff
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
+
+---
+# =====================
+# Nginx BFF Deployment
+# =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-bff
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-bff
+  template:
+    metadata:
+      labels:
+        app: nginx-bff
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /etc/nginx/conf.d/default.conf
+          subPath: default.conf
+        ports:
+        - containerPort: 80
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+
+---
+# =====================
+# Zilla Frontend Service
+# =====================
+apiVersion: v1
+kind: Service
+metadata:
+  name: zilla-frontend
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: zilla-frontend
+
+---
+# =====================
+# Zilla Frontend Deployment
+# =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zilla-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zilla-frontend
+  template:
+    metadata:
+      labels:
+        app: zilla-frontend
+    spec:
+      initContainers:
+        - name: wait-for-backend
+          image: curlimages/curl:latest
+          command:
+            - sh
+            - -c
+            - |
+              until curl -s -f -o /dev/null http://zilla-backend:3000/ || curl -s http://zilla-backend:3000/ | grep -q "Cannot GET"; do
+                echo "Waiting for zilla-backend to be ready..."
+                sleep 2
+              done
+              echo "zilla-backend is ready!"
+      containers:
+        - name: zilla-frontend
+          image: hatch33/zilla-frontend:v1.0.0-shared
+          imagePullPolicy: Always
+          command: ["npm", "run", "start"]
+          env:
+            - name: PORT
+              value: "8080"
+            - name: NGINX_URL
+              value: "/api"
+            - name: REACT_APP_NGINX_URL
+              value: "/api"
+            - name: API_HOST
+              value: "zilla-backend"
+          ports:
+            - containerPort: 8080

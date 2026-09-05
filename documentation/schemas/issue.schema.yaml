@@ -1,0 +1,37 @@
+type: object
+properties:
+  issueId:
+    type: string
+    format: uuid
+  projectId:
+    type: string
+    format: uuid
+  reporter:
+    $ref: "user.schema.yaml"
+  assignee:
+    $ref: "user.schema.yaml"
+  sprint:
+    $ref: "sprint.schema.yaml"
+  issueStatus:
+    type: string
+    enum:
+      - Backlog
+      - In Progress
+      - In Review
+      - Deployed
+      - Tested
+      - Done
+      - Rejected
+  summary:
+    type: string
+  details:
+    type: string
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time
+  deletedAt:
+    type: string
+    format: date-time
