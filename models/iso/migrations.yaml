@@ -1,0 +1,49 @@
+# ISO Liquibase — apply per tenant namespace after data layer is ready
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    app.kubernetes.io/component: migrations
+    zilla.io/model: iso
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: zilla-migrations
+        app.kubernetes.io/component: migrations
+        zilla.io/model: iso
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+            - name: LIQUIBASE_LOG_LEVEL
+              value: info
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

@@ -1,20 +1,33 @@
+# Per-tenant Liquibase jobs (shared PostgreSQL, per-schema)
+---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: zilla-migrations
+  name: zilla-migrations-atlassian
   namespace: hybrid
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    app.kubernetes.io/component: migrations
+    zilla.io/model: hybrid
+    zilla.io/tenant: atlassian
 spec:
   template:
     spec:
+      restartPolicy: Never
       containers:
         - name: migrations
-          image: hatch33/zilla-migrations:latest
-          imagePullPolicy: Always
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
           env:
             - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
-              value: "dbchangelog.xml"
+              value: dbchangelog.xml
             - name: LIQUIBASE_COMMAND_UPDATE_URL
-              value: "jdbc:postgresql://postgres:5450/zilla"
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Datlassian%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: atlassian
             - name: LIQUIBASE_COMMAND_USERNAME
               valueFrom:
                 secretKeyRef:
@@ -25,9 +38,100 @@ spec:
                 secretKeyRef:
                   name: postgres-secret-atlassian
                   key: DB_PASSWORD
-            - name: LIQUIBASE_LOG_LEVEL
-              value: "info"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-baidu
+  namespace: hybrid
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: hybrid
+    zilla.io/tenant: baidu
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
           workingDir: /liquibase/changelog
           command: ["liquibase"]
           args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dbaidu%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: baidu
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-baidu
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-baidu
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-blackrock
+  namespace: hybrid
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: hybrid
+    zilla.io/tenant: blackrock
+spec:
+  template:
+    spec:
       restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dblackrock%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: blackrock
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-blackrock
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-blackrock
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

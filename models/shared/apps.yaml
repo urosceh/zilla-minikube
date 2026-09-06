@@ -1,153 +1,14 @@
-# SHARED manifest (shared FE/BE 256Mi 0.5 CPU, shared PG/Redis)
-# Tenants (15): amazon, amd, apple, azure, google, meta, netflix, nvidia, paypal, reddit, slack, spotify, tesla, uber, zoom
-
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: shared
----
-# Platform secrets (Postgres superuser and Redis) should be applied separately (see platform-secrets.yaml)
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: postgres
-  namespace: shared
-spec:
-  type: ClusterIP
-  ports:
-    - port: 5450
-      targetPort: 5450
-  selector:
-    app: postgres
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: postgres-pvc
-  namespace: shared
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 3Gi
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: postgres
-  namespace: shared
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: postgres
-  template:
-    metadata:
-      labels:
-        app: postgres
-    spec:
-      containers:
-        - name: postgres
-          image: postgres:14-alpine
-          args:
-            - -c
-            - max_connections=300
-          env:
-            - name: POSTGRES_USER
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: DB_USERNAME
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: DB_PASSWORD
-            - name: POSTGRES_DB
-              value: "zilla"
-            - name: PGPORT
-              value: "5450"
-          ports:
-            - containerPort: 5450
-          readinessProbe:
-            exec:
-              command: ["pg_isready","-U","user","-d","zilla","-p","5450"]
-            initialDelaySeconds: 10
-            periodSeconds: 5
-          livenessProbe:
-            exec:
-              command: ["pg_isready","-U","user","-d","zilla","-p","5450"]
-            initialDelaySeconds: 30
-            periodSeconds: 30
-          resources:
-            requests:
-              cpu: "0.5"
-              memory: "1Gi"
-            limits:
-              cpu: "0.5"
-              memory: "1Gi"
-          volumeMounts:
-            - name: postgres-volume
-              mountPath: /var/lib/postgresql/data
-      volumes:
-        - name: postgres-volume
-          persistentVolumeClaim:
-            claimName: postgres-pvc
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: redis
-  namespace: shared
-spec:
-  ports:
-    - port: 6379
-      targetPort: 6379
-  selector:
-    app: redis
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: redis
-  namespace: shared
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: redis
-  template:
-    metadata:
-      labels:
-        app: redis
-    spec:
-      containers:
-        - name: redis
-          image: redis:6.2-alpine
-          env:
-            - name: REDIS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: redis-secret
-                  key: REDIS_PASSWORD
-          command: ["sh","-c","redis-server --requirepass $REDIS_PASSWORD"]
-          ports:
-            - containerPort: 6379
-          resources:
-            requests:
-              cpu: "0.1"
-              memory: "64Mi"
-            limits:
-              cpu: "0.1"
-              memory: "64Mi"
+# Shared application tier
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: zilla-backend
   namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-backend
+    app.kubernetes.io/component: backend
+    zilla.io/model: shared
 spec:
   ports:
     - port: 3000
@@ -160,6 +21,10 @@ kind: Deployment
 metadata:
   name: zilla-backend
   namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-backend
+    app.kubernetes.io/component: backend
+    zilla.io/model: shared
 spec:
   replicas: 1
   selector:
@@ -169,33 +34,37 @@ spec:
     metadata:
       labels:
         app: zilla-backend
+        app.kubernetes.io/name: zilla-backend
+        app.kubernetes.io/component: backend
+        zilla.io/model: shared
     spec:
       initContainers:
         - name: wait-for-postgres
           image: postgres:14-alpine
-          command: ["sh","-c","until pg_isready -h postgres -p 5450; do echo waiting for postgres; sleep 2; done"]
+          imagePullPolicy: IfNotPresent
+          command: ["sh","-c","until pg_isready -h postgres -p 5450; do sleep 2; done"]
         - name: wait-for-redis
           image: redis:6.2-alpine
-          command: ["sh","-c","until redis-cli -h redis -p 6379 -a \"$REDIS_PASSWORD\" ping; do echo waiting for redis; sleep 2; done"]
+          imagePullPolicy: IfNotPresent
           env:
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: redis-secret
                   key: REDIS_PASSWORD
+          command: ["sh","-c","until redis-cli -h redis -p 6379 -a \"$REDIS_PASSWORD\" ping | grep -q PONG; do sleep 2; done"]
       containers:
         - name: zilla-backend
-          image: hatch33/zilla-backend:v1.0.0-shared
-          imagePullPolicy: Always
-          command: ["npm","run","start:prod-local"]
+          image: zilla-backend:local-master-shared-c50a156
+          imagePullPolicy: IfNotPresent
+          command: ["node","build/index.js"]
           env:
             - name: DB_HOST
-              value: "postgres"
+              value: postgres
             - name: DB_PORT
               value: "5450"
             - name: DB_NAME
-              value: "zilla"
-            # Per-tenant credentials (secrets under tenants/<tenant>/secrets.yaml)
+              value: zilla
             - name: DB_USER_AMAZON
               valueFrom:
                 secretKeyRef:
@@ -347,17 +216,13 @@ spec:
                   name: postgres-secret-zoom
                   key: DB_PASSWORD
             - name: JWT_SECRET
-              value: "secret"
+              value: secret
             - name: JWT_EXPIRES_IN_IN_SECONDS
               value: "100000"
             - name: NODE_ENV
-              value: "test"
-            - name: ADMIN_EMAL
-              value: "admin@example.com"
-            - name: ADMIN_PASSWORD
-              value: "pass123!"
+              value: test
             - name: REDIS_HOST
-              value: "redis"
+              value: redis
             - name: REDIS_PORT
               value: "6379"
             - name: REDIS_PASSWORD
@@ -366,32 +231,36 @@ spec:
                   name: redis-secret
                   key: REDIS_PASSWORD
             - name: TENANT_CONFIG_PATH
-              value: "/etc/tenant-config/tenants.json"
+              value: /etc/tenant-config/tenants.json
             - name: DB_POOL_MAX
               value: "2"
-            - name: DB_POOL_MIN
-              value: "0"
-            - name: DB_POOL_IDLE
-              value: "10000"
-            - name: DB_POOL_EVICT
-              value: "10000"
-            - name: UV_THREADPOOL_SIZE
-              value: "15"
             - name: NODE_OPTIONS
-              value: "--max-old-space-size=400"
+              value: --max-old-space-size=384
           ports:
             - containerPort: 3000
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 5
           volumeMounts:
             - name: tenant-config
               mountPath: /etc/tenant-config
               readOnly: true
           resources:
             requests:
-              cpu: "0.5"
-              memory: "256Mi"
+              cpu: 250m
+              memory: 256Mi
             limits:
-              cpu: "0.5"
-              memory: "256Mi"
+              cpu: 500m
+              memory: 512Mi
       volumes:
         - name: tenant-config
           configMap:
@@ -402,18 +271,21 @@ kind: ConfigMap
 metadata:
   name: tenant-config
   namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-config
+    zilla.io/model: shared
 data:
   tenants.json: |
     {
       "amazon": { "tenantId": "amazon", "schemaName": "amazon", "displayName": "Amazon", "redisDb": 1, "isActive": true },
-      "amd": { "tenantId": "amd", "schemaName": "amd", "displayName": "AMD", "redisDb": 2, "isActive": true },
+      "amd": { "tenantId": "amd", "schemaName": "amd", "displayName": "Amd", "redisDb": 2, "isActive": true },
       "apple": { "tenantId": "apple", "schemaName": "apple", "displayName": "Apple", "redisDb": 3, "isActive": true },
       "azure": { "tenantId": "azure", "schemaName": "azure", "displayName": "Azure", "redisDb": 4, "isActive": true },
       "google": { "tenantId": "google", "schemaName": "google", "displayName": "Google", "redisDb": 5, "isActive": true },
       "meta": { "tenantId": "meta", "schemaName": "meta", "displayName": "Meta", "redisDb": 6, "isActive": true },
       "netflix": { "tenantId": "netflix", "schemaName": "netflix", "displayName": "Netflix", "redisDb": 7, "isActive": true },
-      "nvidia": { "tenantId": "nvidia", "schemaName": "nvidia", "displayName": "NVIDIA", "redisDb": 8, "isActive": true },
-      "paypal": { "tenantId": "paypal", "schemaName": "paypal", "displayName": "PayPal", "redisDb": 9, "isActive": true },
+      "nvidia": { "tenantId": "nvidia", "schemaName": "nvidia", "displayName": "Nvidia", "redisDb": 8, "isActive": true },
+      "paypal": { "tenantId": "paypal", "schemaName": "paypal", "displayName": "Paypal", "redisDb": 9, "isActive": true },
       "reddit": { "tenantId": "reddit", "schemaName": "reddit", "displayName": "Reddit", "redisDb": 10, "isActive": true },
       "slack": { "tenantId": "slack", "schemaName": "slack", "displayName": "Slack", "redisDb": 11, "isActive": true },
       "spotify": { "tenantId": "spotify", "schemaName": "spotify", "displayName": "Spotify", "redisDb": 12, "isActive": true },
@@ -427,11 +299,13 @@ kind: ConfigMap
 metadata:
   name: nginx-config
   namespace: shared
+  labels:
+    app.kubernetes.io/name: nginx-bff
+    zilla.io/model: shared
 data:
   default.conf: |
     server {
       listen 80;
-
       location /api/ {
         proxy_pass http://zilla-backend:3000/api/;
         proxy_set_header Host $host;
@@ -439,7 +313,6 @@ data:
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
       }
-
       location / {
         proxy_pass http://zilla-frontend:8080/;
         proxy_set_header Host $host;
@@ -454,14 +327,16 @@ kind: Service
 metadata:
   name: nginx-bff
   namespace: shared
+  labels:
+    app.kubernetes.io/name: nginx-bff
+    zilla.io/model: shared
 spec:
+  type: LoadBalancer
   selector:
     app: nginx-bff
   ports:
-    - protocol: TCP
-      port: 80
+    - port: 80
       targetPort: 80
-  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -477,27 +352,30 @@ spec:
     metadata:
       labels:
         app: nginx-bff
+        app.kubernetes.io/name: nginx-bff
+        zilla.io/model: shared
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        volumeMounts:
-        - name: nginx-config
-          mountPath: /etc/nginx/conf.d/default.conf
-          subPath: default.conf
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            cpu: "0.1"
-            memory: "64Mi"
-          limits:
-            cpu: "0.1"
-            memory: "64Mi"
+        - name: nginx
+          image: nginx:1.27-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
       volumes:
-      - name: nginx-config
-        configMap:
-          name: nginx-config
+        - name: nginx-config
+          configMap:
+            name: nginx-config
 ---
 apiVersion: v1
 kind: Service
@@ -505,10 +383,8 @@ metadata:
   name: zilla-frontend
   namespace: shared
 spec:
-  type: LoadBalancer
   ports:
-    - protocol: TCP
-      port: 8080
+    - port: 8080
       targetPort: 8080
   selector:
     app: zilla-frontend
@@ -527,27 +403,25 @@ spec:
     metadata:
       labels:
         app: zilla-frontend
+        app.kubernetes.io/name: zilla-frontend
+        zilla.io/model: shared
     spec:
       containers:
         - name: zilla-frontend
-          image: hatch33/zilla-frontend:v1.0.0-shared
-          imagePullPolicy: Always
+          image: zilla-frontend:local-master-shared-3107d77
+          imagePullPolicy: IfNotPresent
           command: ["npm","run","start"]
           env:
             - name: PORT
               value: "8080"
-            - name: NGINX_URL
-              value: "/api"
             - name: REACT_APP_NGINX_URL
-              value: "/api"
-            - name: API_HOST
-              value: "zilla-backend"
+              value: /api
           ports:
             - containerPort: 8080
           resources:
             requests:
-              cpu: "0.5"
-              memory: "256Mi"
+              cpu: 100m
+              memory: 128Mi
             limits:
-              cpu: "0.5"
-              memory: "256Mi"
+              cpu: 250m
+              memory: 256Mi
