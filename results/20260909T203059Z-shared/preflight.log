@@ -1,0 +1,32 @@
+Profile: shared
+Chart:   kube-prometheus-stack 88.6.2
+NAME                                                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/kube-prometheus-stack-grafana              1/1     1            1           13h
+deployment.apps/kube-prometheus-stack-kube-state-metrics   1/1     1            1           13h
+deployment.apps/kube-prometheus-stack-operator             1/1     1            1           13h
+
+NAME                                                           READY   AGE
+statefulset.apps/prometheus-kube-prometheus-stack-prometheus   1/1     13h
+
+NAME                                                            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+daemonset.apps/kube-prometheus-stack-prometheus-node-exporter   1         1         1       1            1           kubernetes.io/os=linux   13h
+
+NAME                                                            READY   STATUS    RESTARTS      AGE
+pod/kube-prometheus-stack-grafana-6f676dd88f-6845s              3/3     Running   3 (17m ago)   13h
+pod/kube-prometheus-stack-kube-state-metrics-699c6d6699-cj4gl   1/1     Running   1 (17m ago)   13h
+pod/kube-prometheus-stack-operator-76b9767869-rc7vt             1/1     Running   2 (17m ago)   13h
+pod/kube-prometheus-stack-prometheus-node-exporter-qf2zb        1/1     Running   1 (17m ago)   13h
+pod/prometheus-kube-prometheus-stack-prometheus-0               2/2     Running   2 (17m ago)   13h
+
+NAME                                                                                                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0   Bound    pvc-bbd5443a-ad24-4d10-97a3-f337adc11aa3   4Gi        RWO            standard       <unset>                 13h
+[OK] Grafana Prometheus datasource is provisioned
+[OK] Grafana dashboards are provisioned (3 ConfigMaps)
+[OK] All monitoring workloads are Ready
+backend: 1/1 UP (1 discovered)
+postgres: 1/1 UP (1 discovered)
+redis: 1/1 UP (1 discovered)
+[OK] zilla_http_requests_total returns data for model shared
+[OK] pg_up returns data for model shared
+[OK] redis_up returns data for model shared
+[OK] All expected shared targets and metric families are available

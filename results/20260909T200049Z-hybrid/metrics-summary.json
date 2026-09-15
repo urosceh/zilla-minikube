@@ -1,0 +1,150 @@
+{
+  "cpu_cores": 0.9300848155446223,
+  "cpu_cores_by_namespace": [
+    {
+      "labels": {
+        "namespace": "hybrid"
+      },
+      "value": 0.9300848155446223
+    }
+  ],
+  "cpu_cores_by_tenant": [
+    {
+      "labels": {
+        "tenant": "atlassian"
+      },
+      "value": 0.30633849565598303
+    },
+    {
+      "labels": {
+        "tenant": "blackrock"
+      },
+      "value": 0.30748728397383646
+    },
+    {
+      "labels": {
+        "tenant": "baidu"
+      },
+      "value": 0.27593706306708315
+    }
+  ],
+  "cpu_cores_per_rps": 0.01803631801006031,
+  "cpu_throttle_ratio": 0.09817627222363476,
+  "error_rate": 0.0,
+  "error_rate_by_tenant": [
+    {
+      "labels": {
+        "tenant": "blackrock"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "baidu"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "atlassian"
+      },
+      "value": 0.0
+    }
+  ],
+  "latency_p50_seconds": 0.0041189541060384525,
+  "latency_p95_seconds": 0.08500380142898137,
+  "latency_p99_seconds": 0.18411562283057828,
+  "memory_bytes_by_namespace": [
+    {
+      "labels": {
+        "namespace": "hybrid"
+      },
+      "value": 887972937.1428572
+    }
+  ],
+  "memory_bytes_by_tenant": [
+    {
+      "labels": {
+        "tenant": "atlassian"
+      },
+      "value": 60867072.0
+    },
+    {
+      "labels": {
+        "tenant": "blackrock"
+      },
+      "value": 48869961.14285714
+    },
+    {
+      "labels": {
+        "tenant": "baidu"
+      },
+      "value": 55490048.0
+    }
+  ],
+  "memory_bytes_per_rps": 17219679.335650314,
+  "memory_working_set_bytes": 887972937.1428572,
+  "postgres_cache_hit_ratio": 0.9998391107210765,
+  "postgres_connections": 6.0,
+  "postgres_locks": 2.0,
+  "redis_hit_ratio": 0.0,
+  "redis_memory_bytes": 971560.0,
+  "redis_ops_per_second": 36.0663231778745,
+  "resource_limits": [
+    {
+      "labels": {
+        "resource": "cpu",
+        "unit": "core"
+      },
+      "value": 3.05
+    },
+    {
+      "labels": {
+        "resource": "memory",
+        "unit": "byte"
+      },
+      "value": 4831838208.0
+    }
+  ],
+  "resource_requests": [
+    {
+      "labels": {
+        "resource": "cpu",
+        "unit": "core"
+      },
+      "value": 1.4
+    },
+    {
+      "labels": {
+        "resource": "memory",
+        "unit": "byte"
+      },
+      "value": 2147483648.0
+    }
+  ],
+  "restarts": 0.0,
+  "rps": 51.567332923817325,
+  "rps_by_tenant": [
+    {
+      "labels": {
+        "tenant": "blackrock"
+      },
+      "value": 18.399649530485135
+    },
+    {
+      "labels": {
+        "tenant": "baidu"
+      },
+      "value": 15.790175425229997
+    },
+    {
+      "labels": {
+        "tenant": "atlassian"
+      },
+      "value": 17.377507968102194
+    }
+  ],
+  "rps_per_tenant": 17.189110974605775,
+  "running_pods": 9.0,
+  "tenant_count": 3
+}

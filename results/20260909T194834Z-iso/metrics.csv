@@ -1,0 +1,27 @@
+metric,timestamp,value,labels
+rps,1788983470,15.533037465953031,{}
+error_rate,1788983470,0,{}
+latency_p50_seconds,1788983470,0.003954898157129001,{}
+latency_p95_seconds,1788983470,0.15705769230769223,{}
+latency_p99_seconds,1788983470,0.23233461538461542,{}
+cpu_cores,1788983470,0.28832742945125156,{}
+memory_working_set_bytes,1788983470,746321838.7301587,{}
+running_pods,1788983470,7,{}
+restarts,1788983470,0,{}
+cpu_throttle_ratio,1788983470,0.11275542875416927,{}
+postgres_connections,1788983470,4,{}
+postgres_cache_hit_ratio,1788983470,0.9999296972764724,{}
+postgres_locks,1788983470,1,{}
+redis_memory_bytes,1788983470,929640,{}
+redis_ops_per_second,1788983470,12.504642812925592,{}
+redis_hit_ratio,1788983470,0,{}
+rps_by_tenant,1788983470,15.533037465953031,"{""tenant"": ""arm""}"
+error_rate_by_tenant,1788983470,0,"{""tenant"": ""arm""}"
+cpu_cores_by_namespace,1788983470,0.28832742945125156,"{""namespace"": ""arm""}"
+memory_bytes_by_namespace,1788983470,746321838.7301587,"{""namespace"": ""arm""}"
+cpu_cores_by_tenant,1788983470,0.28832742945125156,"{""tenant"": ""arm""}"
+memory_bytes_by_tenant,1788983470,746321838.7301587,"{""tenant"": ""arm""}"
+resource_requests,1788983470,0.9,"{""resource"": ""cpu"", ""unit"": ""core""}"
+resource_requests,1788983470,1610612736,"{""resource"": ""memory"", ""unit"": ""byte""}"
+resource_limits,1788983470,2.05,"{""resource"": ""cpu"", ""unit"": ""core""}"
+resource_limits,1788983470,3758096384,"{""resource"": ""memory"", ""unit"": ""byte""}"

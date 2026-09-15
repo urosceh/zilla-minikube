@@ -1,0 +1,210 @@
+{
+  "cpu_cores": {
+    "query": "sum(rate(container_cpu_usage_seconds_total{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[1m]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "values": [
+              [
+                1789487488,
+                "0.20326870550535356"
+              ],
+              [
+                1789487503,
+                "0.7326593029897511"
+              ],
+              [
+                1789487518,
+                "1.246801967183274"
+              ],
+              [
+                1789487533,
+                "1.6710202724021752"
+              ],
+              [
+                1789487548,
+                "1.8165592807609279"
+              ],
+              [
+                1789487563,
+                "1.6269061958146187"
+              ],
+              [
+                1789487578,
+                "1.7600543242907192"
+              ],
+              [
+                1789487593,
+                "1.7443387005931281"
+              ],
+              [
+                1789487608,
+                "1.6048380122091719"
+              ]
+            ]
+          }
+        ],
+        "resultType": "matrix"
+      },
+      "status": "success"
+    }
+  },
+  "error_rate": {
+    "query": "(sum(rate(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\",status_code=~\"5..\"}[1m])) or vector(0)) / clamp_min(sum(rate(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[1m])), 1e-9)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "values": [
+              [
+                1789487488,
+                "0"
+              ],
+              [
+                1789487503,
+                "0"
+              ],
+              [
+                1789487518,
+                "0"
+              ],
+              [
+                1789487533,
+                "0"
+              ],
+              [
+                1789487548,
+                "0"
+              ],
+              [
+                1789487563,
+                "0"
+              ],
+              [
+                1789487578,
+                "0"
+              ],
+              [
+                1789487593,
+                "0"
+              ],
+              [
+                1789487608,
+                "0"
+              ]
+            ]
+          }
+        ],
+        "resultType": "matrix"
+      },
+      "status": "success"
+    }
+  },
+  "memory_working_set_bytes": {
+    "query": "sum(container_memory_working_set_bytes{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "values": [
+              [
+                1789487488,
+                "2175582208"
+              ],
+              [
+                1789487503,
+                "2269122560"
+              ],
+              [
+                1789487518,
+                "2289381376"
+              ],
+              [
+                1789487533,
+                "2272747520"
+              ],
+              [
+                1789487548,
+                "2281226240"
+              ],
+              [
+                1789487563,
+                "2267742208"
+              ],
+              [
+                1789487578,
+                "2275323904"
+              ],
+              [
+                1789487593,
+                "2275573760"
+              ],
+              [
+                1789487608,
+                "2278797312"
+              ]
+            ]
+          }
+        ],
+        "resultType": "matrix"
+      },
+      "status": "success"
+    }
+  },
+  "rps": {
+    "query": "sum(rate(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[1m]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "values": [
+              [
+                1789487488,
+                "5.234368518518519"
+              ],
+              [
+                1789487503,
+                "36.48915592592593"
+              ],
+              [
+                1789487518,
+                "62.55807777777778"
+              ],
+              [
+                1789487533,
+                "88.79868888888889"
+              ],
+              [
+                1789487548,
+                "99.6927185185185"
+              ],
+              [
+                1789487563,
+                "98.97777777777776"
+              ],
+              [
+                1789487578,
+                "95.6"
+              ],
+              [
+                1789487593,
+                "94.22222222222221"
+              ],
+              [
+                1789487608,
+                "93.44444444444443"
+              ]
+            ]
+          }
+        ],
+        "resultType": "matrix"
+      },
+      "status": "success"
+    }
+  }
+}

@@ -1,0 +1,726 @@
+{
+  "cpu_cores": {
+    "query": "sum(rate(container_cpu_usage_seconds_total{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "0.4817790333961397"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "cpu_cores_by_namespace": {
+    "query": "sum by (namespace) (rate(container_cpu_usage_seconds_total{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "namespace": "shared"
+            },
+            "value": [
+              1788985486,
+              "0.4817790333961397"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "cpu_cores_by_tenant": {
+    "query": "sum by (tenant) (label_replace(rate(container_cpu_usage_seconds_total{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]) * on(namespace,pod) group_left(label_zilla_io_tenant) max by (namespace,pod,label_zilla_io_tenant) (kube_pod_labels{namespace=~\"shared\",label_zilla_io_tenant!=\"\"}), \"tenant\", \"$1\", \"label_zilla_io_tenant\", \"(.*)\"))",
+    "response": {
+      "data": {
+        "result": [],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "cpu_throttle_ratio": {
+    "query": "sum(increase(container_cpu_cfs_throttled_periods_total{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s])) / clamp_min(sum(increase(container_cpu_cfs_periods_total{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "0.37861711548875965"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "error_rate": {
+    "query": "(sum(increase(zilla_http_requests_total{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\",status_code=~\"5..\"}[120s])) or vector(0)) / clamp_min(sum(increase(zilla_http_requests_total{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "error_rate_by_tenant": {
+    "query": "(sum by (tenant) (increase(zilla_http_requests_total{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\",status_code=~\"5..\"}[120s])) or (sum by (tenant) (increase(zilla_http_requests_total{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])) * 0)) / clamp_min(sum by (tenant) (increase(zilla_http_requests_total{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "unknown"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "amazon"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "amd"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "apple"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "azure"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "google"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "meta"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "netflix"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "nvidia"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "paypal"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "reddit"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "slack"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "spotify"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "tesla"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "uber"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "zoom"
+            },
+            "value": [
+              1788985486,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "latency_p50_seconds": {
+    "query": "histogram_quantile(0.50, sum by (le) (increase(zilla_http_request_duration_seconds_bucket{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "0.07512810563274215"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "latency_p95_seconds": {
+    "query": "histogram_quantile(0.95, sum by (le) (increase(zilla_http_request_duration_seconds_bucket{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "0.45626627604166653"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "latency_p99_seconds": {
+    "query": "histogram_quantile(0.99, sum by (le) (increase(zilla_http_request_duration_seconds_bucket{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "0.526805555555551"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "memory_bytes_by_namespace": {
+    "query": "sum by (namespace) (avg_over_time(container_memory_working_set_bytes{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "namespace": "shared"
+            },
+            "value": [
+              1788985486,
+              "945293214.4761904"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "memory_bytes_by_tenant": {
+    "query": "sum by (tenant) (label_replace(avg_over_time(container_memory_working_set_bytes{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]) * on(namespace,pod) group_left(label_zilla_io_tenant) max by (namespace,pod,label_zilla_io_tenant) (kube_pod_labels{namespace=~\"shared\",label_zilla_io_tenant!=\"\"}), \"tenant\", \"$1\", \"label_zilla_io_tenant\", \"(.*)\"))",
+    "response": {
+      "data": {
+        "result": [],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "memory_working_set_bytes": {
+    "query": "sum(avg_over_time(container_memory_working_set_bytes{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "945293214.4761904"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "postgres_cache_hit_ratio": {
+    "query": "sum(increase(pg_stat_database_blks_hit{model=\"shared\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"}[120s])) / clamp_min(sum(increase(pg_stat_database_blks_hit{model=\"shared\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"}[120s])) + sum(increase(pg_stat_database_blks_read{model=\"shared\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "0.9999865607654989"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "infos": [
+        "PromQL info: metric might not be a counter, name does not end in _total/_sum/_count/_bucket: \"pg_stat_database_blks_read\" (1:260)",
+        "PromQL info: metric might not be a counter, name does not end in _total/_sum/_count/_bucket: \"pg_stat_database_blks_hit\" (1:142)"
+      ],
+      "status": "success"
+    }
+  },
+  "postgres_connections": {
+    "query": "sum(pg_stat_database_numbackends{model=\"shared\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "32"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "postgres_locks": {
+    "query": "sum(pg_locks_count{model=\"shared\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "8"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "redis_hit_ratio": {
+    "query": "sum(increase(redis_keyspace_hits_total{model=\"shared\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[120s])) / clamp_min(sum(increase(redis_keyspace_hits_total{model=\"shared\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[120s])) + sum(increase(redis_keyspace_misses_total{model=\"shared\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "redis_memory_bytes": {
+    "query": "sum(redis_memory_used_bytes{model=\"shared\",zilla_target_type=\"redis\",namespace!=\"monitoring\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "1285032"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "redis_ops_per_second": {
+    "query": "sum(increase(redis_commands_processed_total{model=\"shared\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[120s])) / 120",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "24.16167465071761"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "resource_limits": {
+    "query": "sum by (resource,unit) (kube_pod_container_resource_limits{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\"} * on(namespace,pod) group_left max by (namespace,pod) (kube_pod_status_phase{namespace=~\"shared\",namespace!=\"monitoring\",phase=\"Running\"} == 1))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "resource": "cpu",
+              "unit": "core"
+            },
+            "value": [
+              1788985486,
+              "2.05"
+            ]
+          },
+          {
+            "metric": {
+              "resource": "memory",
+              "unit": "byte"
+            },
+            "value": [
+              1788985486,
+              "3758096384"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "resource_requests": {
+    "query": "sum by (resource,unit) (kube_pod_container_resource_requests{namespace=~\"shared\",namespace!=\"monitoring\",container!=\"\"} * on(namespace,pod) group_left max by (namespace,pod) (kube_pod_status_phase{namespace=~\"shared\",namespace!=\"monitoring\",phase=\"Running\"} == 1))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "resource": "cpu",
+              "unit": "core"
+            },
+            "value": [
+              1788985486,
+              "0.9"
+            ]
+          },
+          {
+            "metric": {
+              "resource": "memory",
+              "unit": "byte"
+            },
+            "value": [
+              1788985486,
+              "1610612736"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "restarts": {
+    "query": "sum(increase(kube_pod_container_status_restarts_total{namespace=~\"shared\",namespace!=\"monitoring\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "rps": {
+    "query": "sum(increase(zilla_http_requests_total{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])) / 120",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "32.447310025618805"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "rps_by_tenant": {
+    "query": "sum by (tenant) (increase(zilla_http_requests_total{model=\"shared\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])) / 120",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "unknown"
+            },
+            "value": [
+              1788985486,
+              "0.36190131522556934"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "amazon"
+            },
+            "value": [
+              1788985486,
+              "2.1047418596013374"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "amd"
+            },
+            "value": [
+              1788985486,
+              "2.1428367348882396"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "apple"
+            },
+            "value": [
+              1788985486,
+              "2.171407891353416"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "azure"
+            },
+            "value": [
+              1788985486,
+              "2.1047418596013374"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "google"
+            },
+            "value": [
+              1788985486,
+              "2.114265578423063"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "meta"
+            },
+            "value": [
+              1788985486,
+              "2.152360453709965"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "netflix"
+            },
+            "value": [
+              1788985486,
+              "2.1047418596013374"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "nvidia"
+            },
+            "value": [
+              1788985486,
+              "2.114265578423063"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "paypal"
+            },
+            "value": [
+              1788985486,
+              "2.152360453709965"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "reddit"
+            },
+            "value": [
+              1788985486,
+              "2.095218140779612"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "slack"
+            },
+            "value": [
+              1788985486,
+              "2.171407891353416"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "spotify"
+            },
+            "value": [
+              1788985486,
+              "2.1333130160665137"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "tesla"
+            },
+            "value": [
+              1788985486,
+              "2.2380739231054942"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "uber"
+            },
+            "value": [
+              1788985486,
+              "2.1428367348882396"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "zoom"
+            },
+            "value": [
+              1788985486,
+              "2.1428367348882396"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "running_pods": {
+    "query": "sum(kube_pod_status_phase{namespace=~\"shared\",namespace!=\"monitoring\",phase=\"Running\"} == 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788985486,
+              "7"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  }
+}
