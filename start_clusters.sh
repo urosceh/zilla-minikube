@@ -30,22 +30,26 @@ esac
 
 ensure_profile() {
   local profile="$1"
+  local cpus memory disk
+  cpus="$(profile_cpus "$profile")"
+  memory="$(profile_memory "$profile")"
+  disk="$(profile_disk "$profile")"
   sleep 1
   if minikube status -p "$profile" >/dev/null 2>&1; then
     log "Profile '${profile}' exists. Starting/validating..."
     minikube start -p "$profile" \
       --driver="$MINIKUBE_DRIVER" \
-      --cpus="$PROFILE_CPUS" \
-      --memory="$PROFILE_MEMORY" \
-      --disk-size="$PROFILE_DISK" \
+      --cpus="$cpus" \
+      --memory="$memory" \
+      --disk-size="$disk" \
       --kubernetes-version=stable >/dev/null
   else
-    log "Creating profile '${profile}' (cpus=${PROFILE_CPUS} mem=${PROFILE_MEMORY}Mi disk=${PROFILE_DISK} driver=${MINIKUBE_DRIVER})"
+    log "Creating profile '${profile}' (cpus=${cpus} mem=${memory}Mi disk=${disk} driver=${MINIKUBE_DRIVER})"
     minikube start -p "$profile" \
       --driver="$MINIKUBE_DRIVER" \
-      --cpus="$PROFILE_CPUS" \
-      --memory="$PROFILE_MEMORY" \
-      --disk-size="$PROFILE_DISK" \
+      --cpus="$cpus" \
+      --memory="$memory" \
+      --disk-size="$disk" \
       --kubernetes-version=stable
   fi
 }

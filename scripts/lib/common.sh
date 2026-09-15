@@ -21,8 +21,10 @@ usage_start_clusters() {
   cat <<'EOF'
 Usage: start_clusters.sh <iso|hybrid|shared|grouped|all>
 
-Starts one or all Minikube profiles with uniform capacity:
-  3 CPU, 4096 MiB RAM, 20 GiB disk, docker driver.
+Starts one or all Minikube profiles with controlled capacity:
+  iso/hybrid/shared: 3 CPU, 4096 MiB RAM, 20 GiB disk
+  grouped:           4 CPU, 6144 MiB RAM, 20 GiB disk
+  driver: docker
 
 Examples:
   ./start_clusters.sh iso
@@ -52,6 +54,31 @@ usage_smoke() {
 Usage: scripts/smoke-test.sh <iso|hybrid|shared|grouped> [--all-tenants]
 
 Runs readiness, health, infrastructure, and API smoke checks.
+EOF
+}
+
+usage_seed() {
+  cat <<'EOF'
+Usage: scripts/seed-model.sh <iso|hybrid|shared|grouped>
+
+Seeds all tenants for the selected model profile using the full seed script.
+Exports local user credentials for every tenant to:
+  credentials/<profile>-<tenant>-users.csv
+
+Requires the Minikube profile to be running and the model deployed.
+Does not accept "all" — run once per profile.
+
+If seed data already exists, purge first:
+  scripts/purge-model.sh <profile>
+EOF
+}
+
+usage_purge() {
+  cat <<'EOF'
+Usage: scripts/purge-model.sh <iso|hybrid|shared|grouped>
+
+Purges seed data for all tenants in the selected model profile.
+Keeps the admin user. Does not accept "all".
 EOF
 }
 

@@ -1,0 +1,34 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: monitoring
+configMapGenerator:
+  - name: zilla-grafana-model-overview
+    files:
+      - zilla-model-overview.json=dashboards/zilla-model-overview.json
+    options:
+      disableNameSuffixHash: true
+      labels:
+        grafana_dashboard: "1"
+        app.kubernetes.io/part-of: zilla-observability
+      annotations:
+        grafana_folder: Zilla
+  - name: zilla-grafana-backend-tenants
+    files:
+      - zilla-backend-tenants.json=dashboards/zilla-backend-tenants.json
+    options:
+      disableNameSuffixHash: true
+      labels:
+        grafana_dashboard: "1"
+        app.kubernetes.io/part-of: zilla-observability
+      annotations:
+        grafana_folder: Zilla
+  - name: zilla-grafana-postgres-redis
+    files:
+      - zilla-postgres-redis.json=dashboards/zilla-postgres-redis.json
+    options:
+      disableNameSuffixHash: true
+      labels:
+        grafana_dashboard: "1"
+        app.kubernetes.io/part-of: zilla-observability
+      annotations:
+        grafana_folder: Zilla

@@ -1,0 +1,210 @@
+# Shared by the iso, hybrid, shared, and grouped Minikube profiles.
+# The release is installed into the monitoring namespace by install.sh.
+
+crds:
+  enabled: true
+
+# Local comparison runs do not need production alerting or the large default
+# ruleset. Metrics collection and dashboard provisioning remain enabled.
+defaultRules:
+  create: false
+
+alertmanager:
+  enabled: false
+
+grafana:
+  enabled: true
+  defaultDashboardsEnabled: false
+  admin:
+    existingSecret: zilla-grafana-admin
+    userKey: admin-user
+    passwordKey: admin-password
+  startupProbe:
+    httpGet:
+      path: /api/health
+      port: grafana
+    initialDelaySeconds: 5
+    periodSeconds: 10
+    timeoutSeconds: 10
+    failureThreshold: 30
+  readinessProbe:
+    httpGet:
+      path: /api/health
+      port: grafana
+    periodSeconds: 10
+    timeoutSeconds: 10
+    failureThreshold: 6
+  resources:
+    requests:
+      cpu: 200m
+      memory: 256Mi
+    limits:
+      cpu: 750m
+      memory: 512Mi
+  sidecar:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+      limits:
+        cpu: 100m
+        memory: 96Mi
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+      labelValue: "1"
+      searchNamespace: ALL
+      folderAnnotation: grafana_folder
+      provider:
+        folder: Zilla
+        allowUiUpdates: false
+        foldersFromFilesStructure: true
+    datasources:
+      enabled: true
+      defaultDatasourceEnabled: true
+      isDefaultDatasource: true
+      name: Prometheus
+      uid: prometheus
+
+kubeApiServer:
+  enabled: true
+
+kubelet:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+    https: true
+    insecureSkipVerify: true
+    cAdvisor: true
+    cAdvisorInterval: 15s
+    probes: true
+
+coreDns:
+  enabled: true
+
+kubeDns:
+  enabled: false
+
+# These control-plane endpoints are commonly not exposed by Minikube. Disabling
+# their monitors avoids permanently DOWN targets without losing pod/container,
+# API server, DNS, kube-state-metrics, or kubelet/cAdvisor metrics.
+kubeControllerManager:
+  enabled: false
+
+kubeEtcd:
+  enabled: false
+
+kubeScheduler:
+  enabled: false
+
+kubeProxy:
+  enabled: false
+
+kubeStateMetrics:
+  enabled: true
+
+kube-state-metrics:
+  metricLabelsAllowlist:
+    - pods=[zilla.io/model,zilla.io/tenant,zilla.io/group]
+  # Grouped runs put sustained pressure on the single Minikube node. Give
+  # health checks enough time to respond instead of restarting a healthy
+  # collector while the API server is briefly saturated.
+  livenessProbe:
+    failureThreshold: 12
+    timeoutSeconds: 10
+  readinessProbe:
+    failureThreshold: 12
+    timeoutSeconds: 10
+  resources:
+    requests:
+      cpu: 25m
+      memory: 64Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+
+nodeExporter:
+  enabled: true
+
+prometheus-node-exporter:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 32Mi
+    limits:
+      cpu: 100m
+      memory: 64Mi
+
+prometheusOperator:
+  enabled: true
+  livenessProbe:
+    enabled: true
+    failureThreshold: 12
+    timeoutSeconds: 10
+  readinessProbe:
+    enabled: true
+    failureThreshold: 12
+    timeoutSeconds: 10
+  resources:
+    requests:
+      cpu: 50m
+      memory: 96Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+  prometheusConfigReloader:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+      limits:
+        cpu: 100m
+        memory: 64Mi
+
+prometheus:
+  enabled: true
+  prometheusSpec:
+    replicas: 1
+    retention: 3d
+    retentionSize: 3GB
+    scrapeInterval: 15s
+    evaluationInterval: 30s
+    enableAdminAPI: false
+
+    # Empty selectors plus the NilUsesHelmValues overrides let Task 3
+    # ServiceMonitor/PodMonitor resources be discovered in every model/tenant
+    # namespace, without requiring a Helm release label.
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelector: {}
+    serviceMonitorNamespaceSelector: {}
+    podMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelector: {}
+    podMonitorNamespaceSelector: {}
+
+    # Strategic-merge overrides for operator-managed probes. The default
+    # three-second timeout is too aggressive for the resource-dense grouped
+    # profile and can interrupt Prometheus HTTP API exports mid-response.
+    containers:
+      - name: prometheus
+        livenessProbe:
+          failureThreshold: 12
+          timeoutSeconds: 10
+        readinessProbe:
+          failureThreshold: 12
+          timeoutSeconds: 10
+
+    resources:
+      requests:
+        cpu: 150m
+        memory: 384Mi
+      limits:
+        cpu: 750m
+        memory: 768Mi
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 4Gi

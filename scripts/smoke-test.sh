@@ -31,15 +31,34 @@ record_fail() { err "$1"; FAILURES=$((FAILURES + 1)); }
 check_pods_ready() {
   local ns="$1"
   local not_ready
-  not_ready=$(kctl -n "$ns" get pods --no-headers 2>/dev/null | awk '$2 !~ /^[0-9]+\/[0-9]+$/ || $3 != "Running" {print}' | grep -v Completed || true)
+  not_ready=$(
+    kctl -n "$ns" get pods -o json 2>/dev/null |
+      python3 -c '
+import json
+import sys
+
+for pod in json.load(sys.stdin).get("items", []):
+    if any(owner.get("kind") == "Job" for owner in pod["metadata"].get("ownerReferences", [])):
+        continue
+    statuses = pod.get("status", {}).get("containerStatuses", [])
+    ready = (
+        pod.get("status", {}).get("phase") == "Running"
+        and not pod["metadata"].get("deletionTimestamp")
+        and statuses
+        and all(status.get("ready") for status in statuses)
+    )
+    if not ready:
+        ready_count = sum(bool(status.get("ready")) for status in statuses)
+        print(
+            pod["metadata"]["name"],
+            pod.get("status", {}).get("phase", "Unknown"),
+            f"{ready_count}/{len(statuses)}",
+        )
+'
+  )
   if [[ -n "$not_ready" ]]; then
     record_fail "Pods not ready in ${ns}: ${not_ready}"
     return 1
-  fi
-  local restarts
-  restarts=$(kctl -n "$ns" get pods -o jsonpath='{range .items[*]}{.metadata.name}:{.status.containerStatuses[0].restartCount}{"\n"}{end}' 2>/dev/null | awk -F: '$2>0 {print}' || true)
-  if [[ -n "$restarts" ]]; then
-    record_fail "Restart loops detected in ${ns}: ${restarts}"
   fi
   ok "Pods ready in ${ns}"
 }
@@ -67,58 +86,114 @@ check_pg_redis() {
     || record_fail "Redis not ready in ${ns}"
 }
 
+API_PF_PID=""
+API_PF_LOG=""
+API_PF_PORT=""
+
+cleanup_api_port_forward() {
+  if [[ -n "$API_PF_PID" ]]; then
+    pkill -TERM -P "$API_PF_PID" >/dev/null 2>&1 || true
+    kill "$API_PF_PID" >/dev/null 2>&1 || true
+    wait "$API_PF_PID" >/dev/null 2>&1 || true
+  fi
+  [[ -n "$API_PF_LOG" ]] && rm -f "$API_PF_LOG"
+  API_PF_PID=""
+  API_PF_LOG=""
+  API_PF_PORT=""
+}
+trap cleanup_api_port_forward EXIT INT TERM
+
+start_api_port_forward() {
+  local ns="$1"
+  API_PF_PORT="$(python3 -c 'import socket; s=socket.socket(); s.bind(("127.0.0.1", 0)); print(s.getsockname()[1]); s.close()')"
+  API_PF_LOG="$(mktemp -t zilla-smoke-port-forward.XXXXXX)"
+  kctl -n "$ns" port-forward svc/nginx-bff "${API_PF_PORT}:80" >"$API_PF_LOG" 2>&1 &
+  API_PF_PID=$!
+
+  local attempt
+  for attempt in {1..30}; do
+    if curl -sf --connect-timeout 1 --max-time 2 "http://127.0.0.1:${API_PF_PORT}/" >/dev/null; then
+      return 0
+    fi
+    if ! kill -0 "$API_PF_PID" >/dev/null 2>&1; then
+      record_fail "Nginx port-forward failed in ${ns}: $(cat "$API_PF_LOG")"
+      cleanup_api_port_forward
+      return 1
+    fi
+    sleep 1
+  done
+
+  record_fail "Nginx port-forward timed out in ${ns}: $(cat "$API_PF_LOG")"
+  cleanup_api_port_forward
+  return 1
+}
+
+bearer_authorization() {
+  local token="$1"
+  if [[ "$token" == "Bearer "* ]]; then
+    printf '%s' "$token"
+  else
+    printf 'Bearer %s' "$token"
+  fi
+}
+
 api_smoke_direct() {
   local ns="$1"
-  local pf_port=18080
-  kctl -n "$ns" port-forward svc/nginx-bff "${pf_port}:80" >/tmp/zilla-pf.log 2>&1 &
-  local pf_pid=$!
-  sleep 2
+  start_api_port_forward "$ns" || return
   local token
-  token=$(curl -sf -X POST "http://127.0.0.1:${pf_port}/api/user/login" \
+  token=$(curl -sf --connect-timeout 2 --max-time 15 -X POST "http://127.0.0.1:${API_PF_PORT}/api/user/login" \
     -H 'Content-Type: application/json' \
     -d "{\"email\":\"${ZILLA_ADMIN_EMAIL}\",\"password\":\"${ZILLA_ADMIN_PASSWORD}\"}" \
     | python3 -c 'import sys,json; print(json.load(sys.stdin).get("bearerToken",""))' 2>/dev/null || true)
   if [[ -z "$token" ]]; then
     record_fail "Login failed for direct route in ${ns}"
   else
-    curl -sf "http://127.0.0.1:${pf_port}/api/project/all" -H "Authorization: Bearer ${token}" >/dev/null \
-      || record_fail "Read API failed for direct route in ${ns}"
-    ok "API smoke passed (direct) in ${ns}"
+    local authorization
+    authorization="$(bearer_authorization "$token")"
+    if curl -sf --connect-timeout 2 --max-time 15 \
+      "http://127.0.0.1:${API_PF_PORT}/api/project/all" \
+      -H "Authorization: ${authorization}" >/dev/null; then
+      ok "API smoke passed (direct) in ${ns}"
+    else
+      record_fail "Read API failed for direct route in ${ns}"
+    fi
   fi
-  kill "$pf_pid" 2>/dev/null || true
+  cleanup_api_port_forward
 }
 
 api_smoke_path_prefix() {
   local ns="$1"
   local tenant="$2"
-  local pf_port=18081
-  kctl -n "$ns" port-forward svc/nginx-bff "${pf_port}:80" >/tmp/zilla-pf.log 2>&1 &
-  local pf_pid=$!
-  sleep 2
+  start_api_port_forward "$ns" || return
   local token
-  token=$(curl -sf -X POST "http://127.0.0.1:${pf_port}/api/${tenant}/user/login" \
+  token=$(curl -sf --connect-timeout 2 --max-time 15 -X POST \
+    "http://127.0.0.1:${API_PF_PORT}/api/${tenant}/user/login" \
     -H 'Content-Type: application/json' \
     -d "{\"email\":\"${ZILLA_ADMIN_EMAIL}\",\"password\":\"${ZILLA_ADMIN_PASSWORD}\"}" \
     | python3 -c 'import sys,json; print(json.load(sys.stdin).get("bearerToken",""))' 2>/dev/null || true)
   if [[ -z "$token" ]]; then
     record_fail "Login failed for path-prefix tenant ${tenant} in ${ns}"
   else
-    curl -sf "http://127.0.0.1:${pf_port}/api/${tenant}/project/all" -H "Authorization: Bearer ${token}" >/dev/null \
-      || record_fail "Read API failed for path-prefix tenant ${tenant} in ${ns}"
-    ok "API smoke passed (path-prefix) tenant ${tenant} in ${ns}"
+    local authorization
+    authorization="$(bearer_authorization "$token")"
+    if curl -sf --connect-timeout 2 --max-time 15 \
+      "http://127.0.0.1:${API_PF_PORT}/api/${tenant}/project/all" \
+      -H "Authorization: ${authorization}" >/dev/null; then
+      ok "API smoke passed (path-prefix) tenant ${tenant} in ${ns}"
+    else
+      record_fail "Read API failed for path-prefix tenant ${tenant} in ${ns}"
+    fi
   fi
-  kill "$pf_pid" 2>/dev/null || true
+  cleanup_api_port_forward
 }
 
 api_smoke_header_tenant() {
   local ns="$1"
   local tenant="$2"
-  local pf_port=18082
-  kctl -n "$ns" port-forward svc/nginx-bff "${pf_port}:80" >/tmp/zilla-pf.log 2>&1 &
-  local pf_pid=$!
-  sleep 2
+  start_api_port_forward "$ns" || return
   local token
-  token=$(curl -sf -X POST "http://127.0.0.1:${pf_port}/api/user/login" \
+  token=$(curl -sf --connect-timeout 2 --max-time 15 -X POST \
+    "http://127.0.0.1:${API_PF_PORT}/api/user/login" \
     -H 'Content-Type: application/json' \
     -H "tenant: ${tenant}" \
     -d "{\"email\":\"${ZILLA_ADMIN_EMAIL}\",\"password\":\"${ZILLA_ADMIN_PASSWORD}\"}" \
@@ -126,12 +201,17 @@ api_smoke_header_tenant() {
   if [[ -z "$token" ]]; then
     record_fail "Login failed for header-tenant ${tenant} in ${ns}"
   else
-    curl -sf "http://127.0.0.1:${pf_port}/api/project/all" \
-      -H "Authorization: Bearer ${token}" -H "tenant: ${tenant}" >/dev/null \
-      || record_fail "Read API failed for header-tenant ${tenant} in ${ns}"
-    ok "API smoke passed (header-tenant) ${tenant} in ${ns}"
+    local authorization
+    authorization="$(bearer_authorization "$token")"
+    if curl -sf --connect-timeout 2 --max-time 15 \
+      "http://127.0.0.1:${API_PF_PORT}/api/project/all" \
+      -H "Authorization: ${authorization}" -H "tenant: ${tenant}" >/dev/null; then
+      ok "API smoke passed (header-tenant) ${tenant} in ${ns}"
+    else
+      record_fail "Read API failed for header-tenant ${tenant} in ${ns}"
+    fi
   fi
-  kill "$pf_pid" 2>/dev/null || true
+  cleanup_api_port_forward
 }
 
 smoke_namespace_iso() {

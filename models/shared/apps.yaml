@@ -9,9 +9,11 @@ metadata:
     app.kubernetes.io/name: zilla-backend
     app.kubernetes.io/component: backend
     zilla.io/model: shared
+    monitoring.zilla.io/scrape: backend
 spec:
   ports:
-    - port: 3000
+    - name: metrics
+      port: 3000
       targetPort: 3000
   selector:
     app: zilla-backend
@@ -59,6 +61,8 @@ spec:
           imagePullPolicy: IfNotPresent
           command: ["node","build/index.js"]
           env:
+            - name: ZILLA_MODEL
+              value: shared
             - name: DB_HOST
               value: postgres
             - name: DB_PORT
@@ -238,18 +242,29 @@ spec:
               value: --max-old-space-size=384
           ports:
             - containerPort: 3000
+          startupProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 24
           livenessProbe:
             httpGet:
               path: /api/health
               port: 3000
             initialDelaySeconds: 30
             periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 6
           readinessProbe:
             httpGet:
               path: /api/health
               port: 3000
             initialDelaySeconds: 15
             periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 6
           volumeMounts:
             - name: tenant-config
               mountPath: /etc/tenant-config
@@ -420,8 +435,8 @@ spec:
             - containerPort: 8080
           resources:
             requests:
-              cpu: 100m
-              memory: 128Mi
+              cpu: 200m
+              memory: 512Mi
             limits:
-              cpu: 250m
-              memory: 256Mi
+              cpu: 500m
+              memory: 1536Mi

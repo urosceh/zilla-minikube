@@ -11,6 +11,8 @@ source "${ZILLA_MINIKUBE_ROOT}/scripts/lib/images.sh"
 readonly PROFILE_CPUS=3
 readonly PROFILE_MEMORY=4096
 readonly PROFILE_DISK=20g
+readonly GROUPED_PROFILE_CPUS=4
+readonly GROUPED_PROFILE_MEMORY=6144
 readonly MINIKUBE_DRIVER="${MINIKUBE_DRIVER:-docker}"
 
 readonly VALID_MODELS="iso hybrid shared grouped"
@@ -56,6 +58,29 @@ readonly NGINX_PORT=80
 model_profile() {
   case "$1" in
     iso|hybrid|shared|grouped) echo "$1" ;;
+    *) return 1 ;;
+  esac
+}
+
+profile_cpus() {
+  case "$1" in
+    grouped) echo "$GROUPED_PROFILE_CPUS" ;;
+    iso|hybrid|shared) echo "$PROFILE_CPUS" ;;
+    *) return 1 ;;
+  esac
+}
+
+profile_memory() {
+  case "$1" in
+    grouped) echo "$GROUPED_PROFILE_MEMORY" ;;
+    iso|hybrid|shared) echo "$PROFILE_MEMORY" ;;
+    *) return 1 ;;
+  esac
+}
+
+profile_disk() {
+  case "$1" in
+    iso|hybrid|shared|grouped) echo "$PROFILE_DISK" ;;
     *) return 1 ;;
   esac
 }
@@ -147,15 +172,42 @@ expected_deployment_count() {
     iso)
       local n
       n=$(discover_iso_tenants | wc -l | tr -d ' ')
-      echo $((5 * n))
+      echo $((7 * n))
       ;;
-    hybrid) echo 7 ;;
-    shared) echo 5 ;;
+    hybrid) echo 9 ;;
+    shared) echo 7 ;;
     grouped)
       local iso_n hybrid_n
       iso_n=$(discover_grouped_iso_tenants | wc -l | tr -d ' ')
       hybrid_n=$(discover_grouped_hybrid_tenants | wc -l | tr -d ' ')
-      echo $((5 * iso_n + 4 + hybrid_n + 5))
+      echo $((7 * iso_n + hybrid_n + 13))
+      ;;
+  esac
+}
+
+# Expected Prometheus application target counts per model.
+expected_backend_target_count() {
+  case "$1" in
+    iso) discover_iso_tenants | wc -l | tr -d ' ' ;;
+    hybrid) discover_hybrid_tenants | wc -l | tr -d ' ' ;;
+    shared) echo 1 ;;
+    grouped)
+      local iso_n hybrid_n
+      iso_n=$(discover_grouped_iso_tenants | wc -l | tr -d ' ')
+      hybrid_n=$(discover_grouped_hybrid_tenants | wc -l | tr -d ' ')
+      echo $((iso_n + hybrid_n + 1))
+      ;;
+  esac
+}
+
+expected_exporter_target_count() {
+  case "$1" in
+    iso) discover_iso_tenants | wc -l | tr -d ' ' ;;
+    hybrid|shared) echo 1 ;;
+    grouped)
+      local iso_n
+      iso_n=$(discover_grouped_iso_tenants | wc -l | tr -d ' ')
+      echo $((iso_n + 2))
       ;;
   esac
 }
@@ -199,5 +251,30 @@ smoke_tenant_for() {
     grouped-iso) discover_grouped_iso_tenants | head -n1 ;;
     grouped-hybrid) discover_grouped_hybrid_tenants | head -n1 ;;
     grouped-shared) discover_grouped_shared_tenants | head -n1 ;;
+  esac
+}
+
+# All tenants for a model profile (sorted, unique)
+discover_all_tenants_for_model() {
+  case "$1" in
+    iso)
+      discover_iso_tenants
+      ;;
+    hybrid)
+      discover_hybrid_tenants
+      ;;
+    shared)
+      discover_shared_tenants
+      ;;
+    grouped)
+      {
+        discover_grouped_iso_tenants
+        discover_grouped_hybrid_tenants
+        discover_grouped_shared_tenants
+      } | awk 'NF' | sort -u
+      ;;
+    *)
+      return 1
+      ;;
   esac
 }

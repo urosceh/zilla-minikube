@@ -8,9 +8,11 @@ metadata:
     app.kubernetes.io/name: zilla-backend
     app.kubernetes.io/component: backend
     zilla.io/model: iso
+    monitoring.zilla.io/scrape: backend
 spec:
   ports:
-    - port: 3000
+    - name: metrics
+      port: 3000
       targetPort: 3000
   selector:
     app: zilla-backend
@@ -60,6 +62,10 @@ spec:
           imagePullPolicy: IfNotPresent
           command: ["node", "build/index.js"]
           env:
+            - name: ZILLA_MODEL
+              value: iso
+            - name: ZILLA_TENANT
+              value: arm
             - name: DB_HOST
               value: postgres
             - name: DB_PORT

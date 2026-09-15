@@ -1,0 +1,18 @@
+{
+  "cpu_cores": 0.42,
+  "cpu_throttle_ratio": 0.01,
+  "error_rate": 0.0,
+  "latency_p50_seconds": 0.018,
+  "latency_p95_seconds": 0.061,
+  "latency_p99_seconds": 0.094,
+  "memory_working_set_bytes": 734003200.0,
+  "postgres_cache_hit_ratio": 0.99,
+  "postgres_connections": 8.0,
+  "postgres_locks": 3.0,
+  "redis_hit_ratio": 0.92,
+  "redis_memory_bytes": 4194304.0,
+  "redis_ops_per_second": 14.2,
+  "restarts": 0.0,
+  "rps": 7.5,
+  "running_pods": 7.0
+}

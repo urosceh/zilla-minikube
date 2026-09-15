@@ -17,21 +17,33 @@ BACKEND_REPO="${REPO_ROOT}/zilla-backend"
 FRONTEND_REPO="${REPO_ROOT}/zilla-frontend"
 WORKTREE_ROOT="${ROOT_DIR}/.build/worktrees"
 
+current_backend_branch() {
+  local head_file="${BACKEND_REPO}/.git/HEAD"
+  [[ -f "$head_file" ]] || return 1
+  sed -n 's#^ref: refs/heads/##p' "$head_file"
+}
+
 build_backend() {
   local branch="$1"
   local sha="$2"
   local tag="$3"
   local wt="${WORKTREE_ROOT}/zilla-backend-${branch}"
+  local build_path=""
+  local active_branch
+  active_branch="$(current_backend_branch || true)"
 
   log "Building backend ${tag} from ${branch}@${sha}"
-  mkdir -p "$WORKTREE_ROOT"
-  if [[ ! -d "${wt}" ]]; then
-    git -C "$BACKEND_REPO" worktree add -f "$wt" "$sha"
+
+  if [[ "$active_branch" == "$branch" ]]; then
+    build_path="$BACKEND_REPO"
+  elif [[ -d "$wt" ]]; then
+    build_path="$wt"
   else
-    git -C "$wt" checkout -f "$sha"
+    err "No checkout found for backend branch '${branch}'. Expected ${BACKEND_REPO} on that branch or ${wt}."
+    exit 1
   fi
 
-  docker build --network=host -t "$tag" "$wt"
+  docker build --network=host -t "$tag" "$build_path"
 }
 
 build_frontend() {

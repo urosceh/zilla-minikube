@@ -1,12 +1,13 @@
 # Zilla Minikube — local infrastructure models
 
-Reproducible local Kubernetes environments for comparing Zilla deployment topologies (ISO, hybrid, shared, grouped). This repo prepares manifests and lifecycle scripts only — no Prometheus/Grafana.
+Reproducible local Kubernetes environments for comparing Zilla deployment topologies (ISO, hybrid, shared, grouped), with an identical local Prometheus and Grafana stack for every profile. ISO, hybrid, and shared use the same 3 CPU / 4 GiB profile; the standalone grouped stress profile uses 4 CPU / 6 GiB.
 
 ## macOS prerequisites
 
 - Docker Desktop (or compatible Docker engine)
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 - `kubectl` (via Minikube)
+- [Helm](https://helm.sh/docs/intro/install/) 3 or newer
 - `bash`, `curl`, `python3`
 - Git clones of this repo plus sibling repos:
   - `../zilla-backend`
@@ -15,7 +16,7 @@ Reproducible local Kubernetes environments for comparing Zilla deployment topolo
 ## Quick start (one model)
 
 ```bash
-# 1. Start Minikube profile (uniform: 3 CPU, 4 GiB RAM, 20 GiB disk)
+# 1. Start Minikube profile (ISO/hybrid/shared: 3 CPU, 4 GiB RAM, 20 GiB disk)
 ./start_clusters.sh iso
 
 # 2. Build and load local images (see config/IMAGES.md for branch/SHA mapping)
@@ -27,7 +28,13 @@ Reproducible local Kubernetes environments for comparing Zilla deployment topolo
 # 4. Smoke test
 ./scripts/smoke-test.sh iso
 
-# 5. Tear down (add --purge-data to remove namespaces/PVCs)
+# 5. Install the local monitoring stack
+./scripts/observability/install.sh iso
+./scripts/observability/status.sh iso
+
+# 6. Tear down
+./scripts/observability/delete.sh iso
+# Add --purge-data to remove application namespaces/PVCs.
 ./scripts/delete-model.sh iso --purge-data
 ```
 
@@ -47,6 +54,45 @@ Start all profiles:
 ```bash
 ./start_clusters.sh all
 ```
+
+## Prometheus and Grafana
+
+The pinned `prometheus-community/kube-prometheus-stack` chart is configured by
+one shared `observability/values.yaml`, so monitoring resources are identical
+in `iso`, `hybrid`, `shared`, and `grouped`.
+
+```bash
+./scripts/observability/install.sh <profile>
+./scripts/observability/status.sh <profile>
+./scripts/observability/port-forward.sh <profile> grafana
+./scripts/observability/port-forward.sh <profile> prometheus
+./scripts/observability/delete.sh <profile>
+```
+
+Grafana is available at <http://localhost:3000> after port-forwarding. Its
+local-only login is `admin` / `zilla-local-only`. Three Zilla dashboards appear
+in the **Zilla** folder after install; see
+[`observability/grafana/README.md`](observability/grafana/README.md).
+Prometheus is available at <http://localhost:9090>.
+
+Monitoring runs only in the `monitoring` namespace. Always exclude
+`namespace="monitoring"` from aggregate application CPU and memory results so
+the observability stack is not counted as Zilla workload consumption. See
+[`observability/README.md`](observability/README.md) for verification details.
+
+## Reproducible experiments
+
+Run the same authentication/read/write k6 scenario and export its matching
+Prometheus measurement window with:
+
+```bash
+./scripts/run-experiment.sh <iso|hybrid|shared|grouped>
+```
+
+Results are written to a unique `results/<UTC timestamp>-<model>/` directory.
+Durations, VUs, tenant selection, clean resets, three-run comparison, result
+schemas, and Grafana screenshot steps are documented in
+[`experiments/README.md`](experiments/README.md).
 
 ## Expected components (steady-state Deployments)
 
@@ -85,7 +131,7 @@ See [`config/IMAGES.md`](config/IMAGES.md) and [`config/images.lock.env`](config
 ## Validation
 
 ```bash
-chmod +x start_clusters.sh scripts/*.sh
+chmod +x start_clusters.sh scripts/*.sh scripts/observability/*.sh
 ./scripts/validate-manifests.sh
 ```
 

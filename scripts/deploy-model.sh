@@ -37,6 +37,25 @@ wait_jobs_matching() {
   done < <(kctl -n "$ns" get jobs -o jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep "^${prefix}" || true)
 }
 
+apply_observability_monitors_if_available() {
+  if kctl get crd servicemonitors.monitoring.coreos.com >/dev/null 2>&1 &&
+    kctl get namespace monitoring >/dev/null 2>&1; then
+    apply_file "" "${ZILLA_MINIKUBE_ROOT}/observability/service-monitors.yaml"
+  else
+    warn "Prometheus Operator is not installed; ServiceMonitors will be applied by observability/install.sh"
+  fi
+}
+
+deploy_exporters() {
+  local ns="$1"
+  local overlay="$2"
+  log "Deploying PostgreSQL and Redis exporters in ${ns}"
+  kctl -n "$ns" apply -k \
+    "${ZILLA_MINIKUBE_ROOT}/observability/exporters/overlays/${overlay}"
+  wait_deploy "$ns" postgres-exporter
+  wait_deploy "$ns" redis-exporter
+}
+
 seed_admin_master() {
   local ns="$1"
   local deploy="${2:-zilla-backend}"
@@ -62,6 +81,7 @@ deploy_iso_tenant() {
   [[ -f "${dir}/tenants/${tenant}/nginx-configmap.yaml" ]] && apply_file "$tenant" "${dir}/tenants/${tenant}/nginx-configmap.yaml"
   apply_file "$tenant" "${dir}/data.yaml"
   wait_data_layer "$tenant"
+  deploy_exporters "$tenant" iso
   delete_jobs "$tenant"
   apply_file "$tenant" "${dir}/migrations.yaml"
   wait_job "$tenant" zilla-migrations
@@ -82,17 +102,30 @@ deploy_iso() {
 deploy_hybrid_like() {
   local base_dir="$1"
   local ns="$2"
+  local exporter_overlay="$3"
   log "Deploying hybrid-like stack in namespace ${ns}"
   apply_file "" "${base_dir}/platform-secrets.yaml"
   apply_tenant_secrets_dir "$ns" "${base_dir}/tenants"
   apply_file "$ns" "${base_dir}/data.yaml"
   wait_data_layer "$ns"
+  deploy_exporters "$ns" "$exporter_overlay"
   delete_jobs "$ns"
   apply_file "$ns" "${base_dir}/tenant-init.yaml"
   wait_jobs_matching "$ns" "tenant-init-"
   apply_file "$ns" "${base_dir}/migrations.yaml"
   wait_jobs_matching "$ns" "zilla-migrations-"
   apply_file "$ns" "${base_dir}/apps.yaml"
+  # A stopped profile resumes existing application pods before Redis is ready.
+  # Restart hybrid backends after the data layer to restore their Redis clients.
+  local backend_deploy
+  while IFS= read -r backend_deploy; do
+    [[ -n "$backend_deploy" ]] &&
+      kctl -n "$ns" rollout restart "deployment/${backend_deploy}"
+  done < <(
+    kctl -n "$ns" get deployment \
+      -l app.kubernetes.io/component=backend \
+      -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
+  )
   local deploy
   while IFS= read -r deploy; do
     [[ -n "$deploy" ]] && wait_deploy "$ns" "$deploy"
@@ -106,6 +139,7 @@ deploy_hybrid_like() {
 deploy_shared_like() {
   local base_dir="$1"
   local ns="$2"
+  local exporter_overlay="$3"
   log "Deploying shared-like stack in namespace ${ns}"
   if [[ -f "${base_dir}/platform-secrets.yaml" ]]; then
     apply_file "" "${base_dir}/platform-secrets.yaml"
@@ -113,6 +147,7 @@ deploy_shared_like() {
   apply_tenant_secrets_dir "$ns" "${base_dir}/tenants"
   apply_file "$ns" "${base_dir}/data.yaml"
   wait_data_layer "$ns"
+  deploy_exporters "$ns" "$exporter_overlay"
   delete_jobs "$ns"
   apply_file "$ns" "${base_dir}/tenant-init.yaml"
   wait_jobs_matching "$ns" "tenant-init-"
@@ -129,12 +164,12 @@ deploy_shared_like() {
 }
 
 deploy_hybrid() {
-  deploy_hybrid_like "${ZILLA_MINIKUBE_ROOT}/models/hybrid" hybrid
+  deploy_hybrid_like "${ZILLA_MINIKUBE_ROOT}/models/hybrid" hybrid hybrid
 }
 
 deploy_shared() {
   apply_file "" "${ZILLA_MINIKUBE_ROOT}/models/shared/platform-secrets.yaml"
-  deploy_shared_like "${ZILLA_MINIKUBE_ROOT}/models/shared" shared
+  deploy_shared_like "${ZILLA_MINIKUBE_ROOT}/models/shared" shared shared
 }
 
 deploy_grouped() {
@@ -142,8 +177,8 @@ deploy_grouped() {
   while IFS= read -r tenant; do
     [[ -n "$tenant" ]] && deploy_iso_tenant_grouped "$tenant"
   done < <(discover_grouped_iso_tenants)
-  deploy_hybrid_like "${ZILLA_MINIKUBE_ROOT}/models/grouped/hybrid.grouped" hybrid-grouped
-  deploy_shared_like "${ZILLA_MINIKUBE_ROOT}/models/grouped/shared.grouped" shared-grouped
+  deploy_hybrid_like "${ZILLA_MINIKUBE_ROOT}/models/grouped/hybrid.grouped" hybrid-grouped grouped-hybrid
+  deploy_shared_like "${ZILLA_MINIKUBE_ROOT}/models/grouped/shared.grouped" shared-grouped grouped-shared
 }
 
 deploy_iso_tenant_grouped() {
@@ -155,6 +190,7 @@ deploy_iso_tenant_grouped() {
   [[ -f "${dir}/tenants/${tenant}/nginx-configmap.yaml" ]] && apply_file "$tenant" "${dir}/tenants/${tenant}/nginx-configmap.yaml"
   apply_file "$tenant" "${dir}/data.yaml"
   wait_data_layer "$tenant"
+  deploy_exporters "$tenant" grouped-iso
   delete_jobs "$tenant"
   apply_file "$tenant" "${dir}/migrations.yaml"
   wait_job "$tenant" zilla-migrations
@@ -166,6 +202,7 @@ deploy_iso_tenant_grouped() {
 }
 
 main() {
+  apply_observability_monitors_if_available
   case "$MODEL" in
     iso) deploy_iso ;;
     hybrid) deploy_hybrid ;;

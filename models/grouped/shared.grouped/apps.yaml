@@ -9,9 +9,12 @@ metadata:
     app.kubernetes.io/name: zilla-backend
     app.kubernetes.io/component: backend
     zilla.io/model: grouped
+    zilla.io/group: shared
+    monitoring.zilla.io/scrape: backend
 spec:
   ports:
-    - port: 3000
+    - name: metrics
+      port: 3000
       targetPort: 3000
   selector:
     app: zilla-backend
@@ -59,6 +62,8 @@ spec:
           imagePullPolicy: IfNotPresent
           command: ["node","build/index.js"]
           env:
+            - name: ZILLA_MODEL
+              value: grouped
             - name: DB_HOST
               value: postgres
             - name: DB_PORT
@@ -339,12 +344,14 @@ spec:
               value: "8080"
             - name: REACT_APP_NGINX_URL
               value: /api
+            - name: NODE_OPTIONS
+              value: --max-old-space-size=256
           ports:
             - containerPort: 8080
           resources:
             requests:
-              cpu: 100m
-              memory: 128Mi
+              cpu: 200m
+              memory: 512Mi
             limits:
-              cpu: 250m
-              memory: 256Mi
+              cpu: 500m
+              memory: 1536Mi
