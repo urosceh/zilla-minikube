@@ -1,0 +1,27 @@
+{
+  "configured_tenant_count": 3,
+  "cooldown_seconds": 30,
+  "experiment_batch_id": "20260909T200021Z",
+  "experiment_protocol": "fixed-cost-v1",
+  "experiment_repetition": 3,
+  "images_lock_sha256": "9dd99f5736134bb5c2b64068fa769c794a8469160827a328be1b9333b36c1314",
+  "k6_mode": "docker",
+  "k6_version": "grafana/k6:1.8.1@sha256:23f2279054c3e01535455c4d92914a625df12aeb631ea0e3ea7a43f96bcbc843",
+  "model": "hybrid",
+  "profile_cpus": 3,
+  "profile_disk": "20g",
+  "profile_memory_mib": 4096,
+  "steady_end_epoch": 1788984643,
+  "steady_seconds": 120,
+  "steady_start_epoch": 1788984523,
+  "tenant_selection": "full",
+  "tenants": [
+    "atlassian",
+    "baidu",
+    "blackrock"
+  ],
+  "test_start_epoch": 1788984493,
+  "think_time_seconds": 0.25,
+  "vus_per_tenant": 2,
+  "warmup_seconds": 30
+}

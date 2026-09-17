@@ -1,0 +1,231 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-mongo
+  namespace: shared-grouped
+  labels:
+    zilla.io/model: grouped
+    zilla.io/tenant: mongo
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS mongo AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-oracle
+  namespace: shared-grouped
+  labels:
+    zilla.io/model: grouped
+    zilla.io/tenant: oracle
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS oracle AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-qualcomm
+  namespace: shared-grouped
+  labels:
+    zilla.io/model: grouped
+    zilla.io/tenant: qualcomm
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS qualcomm AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-salesforce
+  namespace: shared-grouped
+  labels:
+    zilla.io/model: grouped
+    zilla.io/tenant: salesforce
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS salesforce AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-sap
+  namespace: shared-grouped
+  labels:
+    zilla.io/model: grouped
+    zilla.io/tenant: sap
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS sap AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-shopify
+  namespace: shared-grouped
+  labels:
+    zilla.io/model: grouped
+    zilla.io/tenant: shopify
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS shopify AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-stripe
+  namespace: shared-grouped
+  labels:
+    zilla.io/model: grouped
+    zilla.io/tenant: stripe
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS stripe AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-twilio
+  namespace: shared-grouped
+  labels:
+    zilla.io/model: grouped
+    zilla.io/tenant: twilio
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS twilio AUTHORIZATION \"user\";"

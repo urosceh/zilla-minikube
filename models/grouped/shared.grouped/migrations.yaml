@@ -1,33 +1,271 @@
+---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: zilla-migrations
+  name: zilla-migrations-mongo
   namespace: shared-grouped
 spec:
   template:
     spec:
+      restartPolicy: Never
       containers:
         - name: migrations
-          image: hatch33/zilla-migrations:latest
-          imagePullPolicy: Always
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
           env:
             - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
-              value: "dbchangelog.xml"
+              value: dbchangelog.xml
             - name: LIQUIBASE_COMMAND_UPDATE_URL
-              value: "jdbc:postgresql://postgres:5450/zilla"
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dmongo%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: mongo
             - name: LIQUIBASE_COMMAND_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
+                  name: postgres-secret-mongo
                   key: DB_USERNAME
             - name: LIQUIBASE_COMMAND_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
+                  name: postgres-secret-mongo
                   key: DB_PASSWORD
-            - name: LIQUIBASE_LOG_LEVEL
-              value: "info"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-oracle
+  namespace: shared-grouped
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
           workingDir: /liquibase/changelog
           command: ["liquibase"]
           args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Doracle%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: oracle
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-oracle
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-oracle
+                  key: DB_PASSWORD
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-qualcomm
+  namespace: shared-grouped
+spec:
+  template:
+    spec:
       restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dqualcomm%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: qualcomm
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-qualcomm
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-qualcomm
+                  key: DB_PASSWORD
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-salesforce
+  namespace: shared-grouped
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dsalesforce%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: salesforce
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-salesforce
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-salesforce
+                  key: DB_PASSWORD
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-sap
+  namespace: shared-grouped
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dsap%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: sap
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-sap
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-sap
+                  key: DB_PASSWORD
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-shopify
+  namespace: shared-grouped
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dshopify%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: shopify
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-shopify
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-shopify
+                  key: DB_PASSWORD
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-stripe
+  namespace: shared-grouped
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dstripe%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: stripe
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-stripe
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-stripe
+                  key: DB_PASSWORD
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-twilio
+  namespace: shared-grouped
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dtwilio%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: twilio
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-twilio
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-twilio
+                  key: DB_PASSWORD

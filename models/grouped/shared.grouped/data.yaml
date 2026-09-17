@@ -1,0 +1,152 @@
+# Shared data layer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: shared-grouped
+  labels:
+    app.kubernetes.io/name: postgres
+    zilla.io/model: grouped
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5450
+      targetPort: 5450
+  selector:
+    app: postgres
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: shared-grouped
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 3Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: shared-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+        app.kubernetes.io/name: postgres
+        zilla.io/model: grouped
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          args: ["-c","max_connections=300"]
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_USERNAME
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+            - name: POSTGRES_DB
+              value: zilla
+            - name: PGPORT
+              value: "5450"
+          ports:
+            - containerPort: 5450
+          readinessProbe:
+            exec:
+              command: ["pg_isready","-U","user","-d","zilla","-p","5450"]
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            exec:
+              command: ["pg_isready","-U","user","-d","zilla","-p","5450"]
+            initialDelaySeconds: 30
+            periodSeconds: 30
+          resources:
+            requests:
+              cpu: "250m"
+              memory: 512Mi
+            limits:
+              cpu: "500m"
+              memory: 1Gi
+          volumeMounts:
+            - name: postgres-volume
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-volume
+          persistentVolumeClaim:
+            claimName: postgres-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  namespace: shared-grouped
+spec:
+  ports:
+    - port: 6379
+      targetPort: 6379
+  selector:
+    app: redis
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: shared-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+        app.kubernetes.io/name: redis
+        zilla.io/model: grouped
+    spec:
+      containers:
+        - name: redis
+          image: redis:6.2-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: REDIS_PASSWORD
+          command: ["sh","-c","redis-server --requirepass $REDIS_PASSWORD"]
+          ports:
+            - containerPort: 6379
+          readinessProbe:
+            exec:
+              command: ["sh","-c","redis-cli -a \"$REDIS_PASSWORD\" ping | grep -q PONG"]
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            exec:
+              command: ["sh","-c","redis-cli -a \"$REDIS_PASSWORD\" ping | grep -q PONG"]
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi

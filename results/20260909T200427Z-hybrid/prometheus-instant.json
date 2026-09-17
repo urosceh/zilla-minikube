@@ -1,0 +1,548 @@
+{
+  "cpu_cores": {
+    "query": "sum(rate(container_cpu_usage_seconds_total{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "0.866576659887963"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "cpu_cores_by_namespace": {
+    "query": "sum by (namespace) (rate(container_cpu_usage_seconds_total{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "namespace": "hybrid"
+            },
+            "value": [
+              1788984426,
+              "0.866576659887963"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "cpu_cores_by_tenant": {
+    "query": "sum by (tenant) (label_replace(rate(container_cpu_usage_seconds_total{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]) * on(namespace,pod) group_left(label_zilla_io_tenant) max by (namespace,pod,label_zilla_io_tenant) (kube_pod_labels{namespace=~\"hybrid\",label_zilla_io_tenant!=\"\"}), \"tenant\", \"$1\", \"label_zilla_io_tenant\", \"(.*)\"))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "atlassian"
+            },
+            "value": [
+              1788984426,
+              "0.2750769882939385"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "blackrock"
+            },
+            "value": [
+              1788984426,
+              "0.2866735421034324"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "baidu"
+            },
+            "value": [
+              1788984426,
+              "0.26856544347184613"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "cpu_throttle_ratio": {
+    "query": "sum(increase(container_cpu_cfs_throttled_periods_total{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s])) / clamp_min(sum(increase(container_cpu_cfs_periods_total{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "0.12104601449579667"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "error_rate": {
+    "query": "(sum(increase(zilla_http_requests_total{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\",status_code=~\"5..\"}[120s])) or vector(0)) / clamp_min(sum(increase(zilla_http_requests_total{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "error_rate_by_tenant": {
+    "query": "(sum by (tenant) (increase(zilla_http_requests_total{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\",status_code=~\"5..\"}[120s])) or (sum by (tenant) (increase(zilla_http_requests_total{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])) * 0)) / clamp_min(sum by (tenant) (increase(zilla_http_requests_total{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "blackrock"
+            },
+            "value": [
+              1788984426,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "baidu"
+            },
+            "value": [
+              1788984426,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "atlassian"
+            },
+            "value": [
+              1788984426,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "latency_p50_seconds": {
+    "query": "histogram_quantile(0.50, sum by (le) (increase(zilla_http_request_duration_seconds_bucket{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "0.0040339366181094665"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "latency_p95_seconds": {
+    "query": "histogram_quantile(0.95, sum by (le) (increase(zilla_http_request_duration_seconds_bucket{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "0.09031199318268637"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "latency_p99_seconds": {
+    "query": "histogram_quantile(0.99, sum by (le) (increase(zilla_http_request_duration_seconds_bucket{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "0.19751005062710264"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "memory_bytes_by_namespace": {
+    "query": "sum by (namespace) (avg_over_time(container_memory_working_set_bytes{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "namespace": "hybrid"
+            },
+            "value": [
+              1788984426,
+              "894345703.6190475"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "memory_bytes_by_tenant": {
+    "query": "sum by (tenant) (label_replace(avg_over_time(container_memory_working_set_bytes{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]) * on(namespace,pod) group_left(label_zilla_io_tenant) max by (namespace,pod,label_zilla_io_tenant) (kube_pod_labels{namespace=~\"hybrid\",label_zilla_io_tenant!=\"\"}), \"tenant\", \"$1\", \"label_zilla_io_tenant\", \"(.*)\"))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "atlassian"
+            },
+            "value": [
+              1788984426,
+              "63130965.333333336"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "blackrock"
+            },
+            "value": [
+              1788984426,
+              "51202925.71428572"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "baidu"
+            },
+            "value": [
+              1788984426,
+              "56683008"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "memory_working_set_bytes": {
+    "query": "sum(avg_over_time(container_memory_working_set_bytes{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "894345703.6190475"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "postgres_cache_hit_ratio": {
+    "query": "sum(increase(pg_stat_database_blks_hit{model=\"hybrid\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"}[120s])) / clamp_min(sum(increase(pg_stat_database_blks_hit{model=\"hybrid\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"}[120s])) + sum(increase(pg_stat_database_blks_read{model=\"hybrid\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "0.9999123761400229"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "infos": [
+        "PromQL info: metric might not be a counter, name does not end in _total/_sum/_count/_bucket: \"pg_stat_database_blks_hit\" (1:142)",
+        "PromQL info: metric might not be a counter, name does not end in _total/_sum/_count/_bucket: \"pg_stat_database_blks_read\" (1:260)"
+      ],
+      "status": "success"
+    }
+  },
+  "postgres_connections": {
+    "query": "sum(pg_stat_database_numbackends{model=\"hybrid\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "8"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "postgres_locks": {
+    "query": "sum(pg_locks_count{model=\"hybrid\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "1"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "redis_hit_ratio": {
+    "query": "sum(increase(redis_keyspace_hits_total{model=\"hybrid\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[120s])) / clamp_min(sum(increase(redis_keyspace_hits_total{model=\"hybrid\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[120s])) + sum(increase(redis_keyspace_misses_total{model=\"hybrid\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[120s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "redis_memory_bytes": {
+    "query": "sum(redis_memory_used_bytes{model=\"hybrid\",zilla_target_type=\"redis\",namespace!=\"monitoring\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "1012512"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "redis_ops_per_second": {
+    "query": "sum(increase(redis_commands_processed_total{model=\"hybrid\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[120s])) / 120",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "35.799318108226515"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "resource_limits": {
+    "query": "sum by (resource,unit) (kube_pod_container_resource_limits{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\"} * on(namespace,pod) group_left max by (namespace,pod) (kube_pod_status_phase{namespace=~\"hybrid\",namespace!=\"monitoring\",phase=\"Running\"} == 1))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "resource": "cpu",
+              "unit": "core"
+            },
+            "value": [
+              1788984426,
+              "3.05"
+            ]
+          },
+          {
+            "metric": {
+              "resource": "memory",
+              "unit": "byte"
+            },
+            "value": [
+              1788984426,
+              "4831838208"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "resource_requests": {
+    "query": "sum by (resource,unit) (kube_pod_container_resource_requests{namespace=~\"hybrid\",namespace!=\"monitoring\",container!=\"\"} * on(namespace,pod) group_left max by (namespace,pod) (kube_pod_status_phase{namespace=~\"hybrid\",namespace!=\"monitoring\",phase=\"Running\"} == 1))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "resource": "cpu",
+              "unit": "core"
+            },
+            "value": [
+              1788984426,
+              "1.4"
+            ]
+          },
+          {
+            "metric": {
+              "resource": "memory",
+              "unit": "byte"
+            },
+            "value": [
+              1788984426,
+              "2147483648"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "restarts": {
+    "query": "sum(increase(kube_pod_container_status_restarts_total{namespace=~\"hybrid\",namespace!=\"monitoring\"}[120s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "rps": {
+    "query": "sum(increase(zilla_http_requests_total{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])) / 120",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "50.94252961763176"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "rps_by_tenant": {
+    "query": "sum by (tenant) (increase(zilla_http_requests_total{model=\"hybrid\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[120s])) / 120",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "blackrock"
+            },
+            "value": [
+              1788984426,
+              "17.799830477804974"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "baidu"
+            },
+            "value": [
+              1788984426,
+              "16.552380952380954"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "atlassian"
+            },
+            "value": [
+              1788984426,
+              "16.590318187445835"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "running_pods": {
+    "query": "sum(kube_pod_status_phase{namespace=~\"hybrid\",namespace!=\"monitoring\",phase=\"Running\"} == 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1788984426,
+              "9"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  }
+}

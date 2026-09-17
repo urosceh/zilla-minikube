@@ -1,0 +1,338 @@
+[
+  {
+    "namespace": "binance",
+    "pod": "nginx-bff-5f4f8bd9c9-tkg8m",
+    "container": "nginx",
+    "image": "docker.io/library/nginx:1.27-alpine",
+    "image_id": "docker.io/library/nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+  },
+  {
+    "namespace": "binance",
+    "pod": "postgres-9c4f48c67-xzbk6",
+    "container": "postgres",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "binance",
+    "pod": "postgres-exporter-67d7bc7898-nfbwq",
+    "container": "postgres-exporter",
+    "image": "sha256:d991414f980c03f4bdb5b79e6c83b37aea682c5842bd84091ba7cf2e3689b74a",
+    "image_id": "quay.io/prometheuscommunity/postgres-exporter@sha256:ac5ec343104fae0e2d84a27bb8d69b38430a11910c5382cad85d478d2bab713e"
+  },
+  {
+    "namespace": "binance",
+    "pod": "redis-5bf55678f-2xdjs",
+    "container": "redis",
+    "image": "docker.io/library/redis:6.2-alpine",
+    "image_id": "docker.io/library/redis@sha256:d0c875bdacfb5c4d2c2d9124de3f53cee1dc9ceff8936bd459fabc135cb33015"
+  },
+  {
+    "namespace": "binance",
+    "pod": "redis-exporter-f895d4f46-bgtr8",
+    "container": "redis-exporter",
+    "image": "sha256:0892de2d75ea1c5df257f5f63dc2291dd1650dbf250358946bdf336ee00321bb",
+    "image_id": "docker.io/oliver006/redis_exporter@sha256:a129504e65b87c54f79bc92f1afc403475e8ff646a3d7512de469904ceddf986"
+  },
+  {
+    "namespace": "binance",
+    "pod": "zilla-backend-7ccfb8c764-k5hb7",
+    "container": "zilla-backend",
+    "image": "docker.io/library/zilla-backend:local-master-a64b6c44",
+    "image_id": "sha256:a73f0d689bd6b17349c678ddd6ac66d2469cdd4bc7594bac4d834e476b56411c"
+  },
+  {
+    "namespace": "binance",
+    "pod": "zilla-frontend-549b4b4ff-l8v76",
+    "container": "zilla-frontend",
+    "image": "docker.io/library/zilla-frontend:local-master-d481e950",
+    "image_id": "sha256:48abf357c6750698f54b5a30486106bab31a1961c6c58e1950e8afad8b1cfce1"
+  },
+  {
+    "namespace": "binance",
+    "pod": "zilla-migrations-4bd8v",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "nginx-bff-5f4f8bd9c9-dlk8f",
+    "container": "nginx",
+    "image": "docker.io/library/nginx:1.27-alpine",
+    "image_id": "docker.io/library/nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "postgres-9c4f48c67-qmqs9",
+    "container": "postgres",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "postgres-exporter-78f876bd79-kcpx6",
+    "container": "postgres-exporter",
+    "image": "sha256:d991414f980c03f4bdb5b79e6c83b37aea682c5842bd84091ba7cf2e3689b74a",
+    "image_id": "quay.io/prometheuscommunity/postgres-exporter@sha256:ac5ec343104fae0e2d84a27bb8d69b38430a11910c5382cad85d478d2bab713e"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "redis-5bf55678f-qhbcx",
+    "container": "redis",
+    "image": "docker.io/library/redis:6.2-alpine",
+    "image_id": "docker.io/library/redis@sha256:d0c875bdacfb5c4d2c2d9124de3f53cee1dc9ceff8936bd459fabc135cb33015"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "redis-exporter-774cf48dd9-m97sj",
+    "container": "redis-exporter",
+    "image": "sha256:0892de2d75ea1c5df257f5f63dc2291dd1650dbf250358946bdf336ee00321bb",
+    "image_id": "docker.io/oliver006/redis_exporter@sha256:a129504e65b87c54f79bc92f1afc403475e8ff646a3d7512de469904ceddf986"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "tenant-init-datadog-fz6zj",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "tenant-init-datadog-nnhws",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "tenant-init-ibm-889fx",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "tenant-init-ibm-nvwg4",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "tenant-init-intel-957rl",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "zilla-backend-datadog-5cfcf5d5bf-2hvs5",
+    "container": "zilla-backend",
+    "image": "docker.io/library/zilla-backend:local-master-a64b6c44",
+    "image_id": "sha256:a73f0d689bd6b17349c678ddd6ac66d2469cdd4bc7594bac4d834e476b56411c"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "zilla-backend-ibm-5c6cbdc984-cvtjv",
+    "container": "zilla-backend",
+    "image": "docker.io/library/zilla-backend:local-master-a64b6c44",
+    "image_id": "sha256:a73f0d689bd6b17349c678ddd6ac66d2469cdd4bc7594bac4d834e476b56411c"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "zilla-backend-intel-7ddd8fb59-5fz2f",
+    "container": "zilla-backend",
+    "image": "docker.io/library/zilla-backend:local-master-a64b6c44",
+    "image_id": "sha256:a73f0d689bd6b17349c678ddd6ac66d2469cdd4bc7594bac4d834e476b56411c"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "zilla-frontend-6f5b854ffb-rzx79",
+    "container": "zilla-frontend",
+    "image": "docker.io/library/zilla-frontend:local-master-shared-3107d77",
+    "image_id": "sha256:00d365771fa1105fb8df9018922716e7d181f6ed75612a9b8cb7a35cb9338a3e"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "zilla-migrations-datadog-2wlft",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "zilla-migrations-ibm-zcq9c",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "hybrid-grouped",
+    "pod": "zilla-migrations-intel-kdcfp",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "nginx-bff-6987d8bdf8-4g7j4",
+    "container": "nginx",
+    "image": "docker.io/library/nginx:1.27-alpine",
+    "image_id": "docker.io/library/nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "postgres-854f9595f6-l7dbf",
+    "container": "postgres",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "postgres-exporter-77895bd544-jb6pr",
+    "container": "postgres-exporter",
+    "image": "sha256:d991414f980c03f4bdb5b79e6c83b37aea682c5842bd84091ba7cf2e3689b74a",
+    "image_id": "quay.io/prometheuscommunity/postgres-exporter@sha256:ac5ec343104fae0e2d84a27bb8d69b38430a11910c5382cad85d478d2bab713e"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "redis-56d859cbd6-h49db",
+    "container": "redis",
+    "image": "docker.io/library/redis:6.2-alpine",
+    "image_id": "docker.io/library/redis@sha256:d0c875bdacfb5c4d2c2d9124de3f53cee1dc9ceff8936bd459fabc135cb33015"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "redis-exporter-76f7b57bf8-lm2k9",
+    "container": "redis-exporter",
+    "image": "sha256:0892de2d75ea1c5df257f5f63dc2291dd1650dbf250358946bdf336ee00321bb",
+    "image_id": "docker.io/oliver006/redis_exporter@sha256:a129504e65b87c54f79bc92f1afc403475e8ff646a3d7512de469904ceddf986"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "tenant-init-mongo-k7qnw",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "tenant-init-oracle-rpkss",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "tenant-init-qualcomm-r8fmj",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "tenant-init-salesforce-jzjmt",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "tenant-init-sap-tb4tv",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "tenant-init-shopify-8rg5f",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "tenant-init-stripe-hmn4z",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "tenant-init-twilio-hbzts",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "docker.io/library/postgres@sha256:727876d274666da0b92a445390ba093c84b8e9f8343e1c53cd4e9a7ab2d85310"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-backend-544ccd976d-fffn4",
+    "container": "zilla-backend",
+    "image": "docker.io/library/zilla-backend:local-master-shared-c50a156",
+    "image_id": "sha256:26daaadc6f7717c67302e7b42c73fca0a823f249295a01484e1b7ad0d6aa37b6"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-frontend-67d56b5b57-96swn",
+    "container": "zilla-frontend",
+    "image": "docker.io/library/zilla-frontend:local-master-shared-3107d77",
+    "image_id": "sha256:00d365771fa1105fb8df9018922716e7d181f6ed75612a9b8cb7a35cb9338a3e"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-migrations-mongo-fstzh",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-migrations-oracle-pclrv",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-migrations-qualcomm-pf7ls",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-migrations-salesforce-d6b8k",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-migrations-sap-2t66t",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-migrations-shopify-2xtml",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-migrations-stripe-bbnmn",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared-grouped",
+    "pod": "zilla-migrations-twilio-765zm",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  }
+]

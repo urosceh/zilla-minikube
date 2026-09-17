@@ -1,0 +1,261 @@
+[
+  {
+    "namespace": "shared",
+    "pod": "nginx-bff-7c9d648f89-v6vpj",
+    "container": "nginx",
+    "image": "docker.io/library/nginx:1.27-alpine",
+    "image_id": "sha256:96868d9fa38f469a86d2f25787e43ee9ad330339d30be260aa9f5a338bb03751"
+  },
+  {
+    "namespace": "shared",
+    "pod": "postgres-5f774d75cc-crbmq",
+    "container": "postgres",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "postgres-exporter-c6856cfb-wvh7f",
+    "container": "postgres-exporter",
+    "image": "sha256:d991414f980c03f4bdb5b79e6c83b37aea682c5842bd84091ba7cf2e3689b74a",
+    "image_id": "quay.io/prometheuscommunity/postgres-exporter@sha256:ac5ec343104fae0e2d84a27bb8d69b38430a11910c5382cad85d478d2bab713e"
+  },
+  {
+    "namespace": "shared",
+    "pod": "redis-7d8b445547-g5jqv",
+    "container": "redis",
+    "image": "docker.io/library/redis:6.2-alpine",
+    "image_id": "sha256:9d6d416217a50326c190acf2797ee26ca354b6bd055e4399bc97427ff7af369f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "redis-exporter-6d47f596b8-9hzxk",
+    "container": "redis-exporter",
+    "image": "sha256:0892de2d75ea1c5df257f5f63dc2291dd1650dbf250358946bdf336ee00321bb",
+    "image_id": "docker.io/oliver006/redis_exporter@sha256:a129504e65b87c54f79bc92f1afc403475e8ff646a3d7512de469904ceddf986"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-amazon-68562",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-amd-5cqcv",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-apple-spdb4",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-azure-t8s8z",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-google-ttdfs",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-meta-2tqph",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-netflix-r462g",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-nvidia-b9nlr",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-paypal-kwxpv",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-reddit-jzkcm",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-slack-hsg7s",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-spotify-8p2wz",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-tesla-nkp47",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-uber-bfgrl",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "tenant-init-zoom-pp5kk",
+    "container": "init",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-backend-54cf8dff9b-cqd4q",
+    "container": "zilla-backend",
+    "image": "docker.io/library/zilla-backend:local-master-shared-c50a156",
+    "image_id": "sha256:26daaadc6f7717c67302e7b42c73fca0a823f249295a01484e1b7ad0d6aa37b6"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-frontend-69c46b4dfc-wlx7m",
+    "container": "zilla-frontend",
+    "image": "docker.io/library/zilla-frontend:local-master-shared-3107d77",
+    "image_id": "sha256:00d365771fa1105fb8df9018922716e7d181f6ed75612a9b8cb7a35cb9338a3e"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-amazon-nl5mj",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-amd-j8n76",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-apple-s5d6x",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-azure-qggcz",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-google-kgddp",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-meta-thksh",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-netflix-w8h6x",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-nvidia-wm5x9",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-paypal-8r2wd",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-reddit-n2jnt",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-slack-7fkxv",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-spotify-gsvgw",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-tesla-dnrgh",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-uber-cl79r",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  },
+  {
+    "namespace": "shared",
+    "pod": "zilla-migrations-zoom-smmsv",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  }
+]

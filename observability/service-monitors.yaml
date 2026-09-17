@@ -1,0 +1,135 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: zilla-backend
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/part-of: zilla-observability
+spec:
+  namespaceSelector:
+    any: true
+  selector:
+    matchLabels:
+      monitoring.zilla.io/scrape: backend
+  endpoints:
+    - port: metrics
+      path: /api/metrics
+      interval: 15s
+      scrapeTimeout: 10s
+      honorLabels: true
+      relabelings:
+        - sourceLabels: [__meta_kubernetes_service_label_zilla_io_model]
+          targetLabel: model
+        - sourceLabels: [__meta_kubernetes_service_label_zilla_io_tenant]
+          targetLabel: tenant
+        - sourceLabels: [__meta_kubernetes_service_label_zilla_io_group]
+          targetLabel: group
+        - sourceLabels: [model, tenant, __meta_kubernetes_namespace]
+          separator: ;
+          regex: iso;;(.+)
+          replacement: $1
+          targetLabel: tenant
+        - sourceLabels: [model, group, tenant, __meta_kubernetes_namespace]
+          separator: ;
+          regex: grouped;iso;;(.+)
+          replacement: $1
+          targetLabel: tenant
+        - sourceLabels: [__meta_kubernetes_namespace]
+          targetLabel: namespace
+        - sourceLabels: [__meta_kubernetes_service_name]
+          targetLabel: service
+        - sourceLabels: [__meta_kubernetes_pod_name]
+          regex: (.+)
+          targetLabel: pod
+        - replacement: backend
+          targetLabel: zilla_target_type
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: zilla-postgres-exporter
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/part-of: zilla-observability
+spec:
+  namespaceSelector:
+    any: true
+  selector:
+    matchLabels:
+      monitoring.zilla.io/scrape: postgres
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 15s
+      scrapeTimeout: 10s
+      relabelings:
+        - sourceLabels: [__meta_kubernetes_service_label_zilla_io_model]
+          targetLabel: model
+        - sourceLabels: [__meta_kubernetes_service_label_zilla_io_tenant]
+          targetLabel: tenant
+        - sourceLabels: [__meta_kubernetes_service_label_zilla_io_group]
+          targetLabel: group
+        - sourceLabels: [model, tenant, __meta_kubernetes_namespace]
+          separator: ;
+          regex: iso;;(.+)
+          replacement: $1
+          targetLabel: tenant
+        - sourceLabels: [model, group, tenant, __meta_kubernetes_namespace]
+          separator: ;
+          regex: grouped;iso;;(.+)
+          replacement: $1
+          targetLabel: tenant
+        - sourceLabels: [__meta_kubernetes_namespace]
+          targetLabel: namespace
+        - sourceLabels: [__meta_kubernetes_service_name]
+          targetLabel: service
+        - sourceLabels: [__meta_kubernetes_pod_name]
+          regex: (.+)
+          targetLabel: pod
+        - replacement: postgres
+          targetLabel: zilla_target_type
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: zilla-redis-exporter
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/part-of: zilla-observability
+spec:
+  namespaceSelector:
+    any: true
+  selector:
+    matchLabels:
+      monitoring.zilla.io/scrape: redis
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 15s
+      scrapeTimeout: 10s
+      relabelings:
+        - sourceLabels: [__meta_kubernetes_service_label_zilla_io_model]
+          targetLabel: model
+        - sourceLabels: [__meta_kubernetes_service_label_zilla_io_tenant]
+          targetLabel: tenant
+        - sourceLabels: [__meta_kubernetes_service_label_zilla_io_group]
+          targetLabel: group
+        - sourceLabels: [model, tenant, __meta_kubernetes_namespace]
+          separator: ;
+          regex: iso;;(.+)
+          replacement: $1
+          targetLabel: tenant
+        - sourceLabels: [model, group, tenant, __meta_kubernetes_namespace]
+          separator: ;
+          regex: grouped;iso;;(.+)
+          replacement: $1
+          targetLabel: tenant
+        - sourceLabels: [__meta_kubernetes_namespace]
+          targetLabel: namespace
+        - sourceLabels: [__meta_kubernetes_service_name]
+          targetLabel: service
+        - sourceLabels: [__meta_kubernetes_pod_name]
+          regex: (.+)
+          targetLabel: pod
+        - replacement: redis
+          targetLabel: zilla_target_type

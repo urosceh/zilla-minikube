@@ -1,0 +1,61 @@
+metric,timestamp,value,labels
+rps,1789488144,91.94902139432783,{}
+error_rate,1789488144,0,{}
+latency_p50_seconds,1789488144,0.014018576498396123,{}
+latency_p95_seconds,1789488144,0.35429080993897033,{}
+latency_p99_seconds,1789488144,0.49648408281731243,{}
+cpu_cores,1789488144,1.7579614232759413,{}
+memory_working_set_bytes,1789488144,2288929011.809524,{}
+running_pods,1789488144,23,{}
+restarts,1789488144,0,{}
+cpu_throttle_ratio,1789488144,0.187182433532087,{}
+postgres_connections,1789488144,30,{}
+postgres_cache_hit_ratio,1789488144,0.9999520321939718,{}
+postgres_locks,1789488144,16,{}
+redis_memory_bytes,1789488144,3121408,{}
+redis_ops_per_second,1789488144,68.25689651262878,{}
+redis_hit_ratio,1789488144,0,{}
+rps_by_tenant,1789488144,0.3618944220641315,"{""tenant"": ""unknown""}"
+rps_by_tenant,1789488144,16.152380952380952,"{""tenant"": ""ibm""}"
+rps_by_tenant,1789488144,16.40921125311899,"{""tenant"": ""binance""}"
+rps_by_tenant,1789488144,16.00952380952381,"{""tenant"": ""intel""}"
+rps_by_tenant,1789488144,15.816788077893637,"{""tenant"": ""datadog""}"
+rps_by_tenant,1789488144,3.3999028599182877,"{""tenant"": ""mongo""}"
+rps_by_tenant,1789488144,3.3999028599182877,"{""tenant"": ""oracle""}"
+rps_by_tenant,1789488144,3.44752054703199,"{""tenant"": ""qualcomm""}"
+rps_by_tenant,1789488144,3.4094263973410284,"{""tenant"": ""salesforce""}"
+rps_by_tenant,1789488144,3.295143948268145,"{""tenant"": ""sap""}"
+rps_by_tenant,1789488144,3.3999028599182877,"{""tenant"": ""shopify""}"
+rps_by_tenant,1789488144,3.437997009609249,"{""tenant"": ""stripe""}"
+rps_by_tenant,1789488144,3.4094263973410284,"{""tenant"": ""twilio""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""unknown""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""ibm""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""binance""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""intel""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""datadog""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""mongo""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""oracle""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""qualcomm""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""salesforce""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""sap""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""shopify""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""stripe""}"
+error_rate_by_tenant,1789488144,0,"{""tenant"": ""twilio""}"
+cpu_cores_by_namespace,1789488144,0.3257395170991928,"{""namespace"": ""binance""}"
+cpu_cores_by_namespace,1789488144,0.8932771487838758,"{""namespace"": ""hybrid-grouped""}"
+cpu_cores_by_namespace,1789488144,0.5389447573928727,"{""namespace"": ""shared-grouped""}"
+memory_bytes_by_namespace,1789488144,717157221.5873016,"{""namespace"": ""binance""}"
+memory_bytes_by_namespace,1789488144,818553319.6190476,"{""namespace"": ""hybrid-grouped""}"
+memory_bytes_by_namespace,1789488144,753218470.6031747,"{""namespace"": ""shared-grouped""}"
+cpu_cores_by_tenant,1789488144,0.2859643010924966,"{""tenant"": ""ibm""}"
+cpu_cores_by_tenant,1789488144,0.27456259868329935,"{""tenant"": ""intel""}"
+cpu_cores_by_tenant,1789488144,0.2754930633087468,"{""tenant"": ""datadog""}"
+cpu_cores_by_tenant,1789488144,0.3257395170991928,"{""tenant"": ""binance""}"
+memory_bytes_by_tenant,1789488144,50847158.85714286,"{""tenant"": ""ibm""}"
+memory_bytes_by_tenant,1789488144,52956672,"{""tenant"": ""intel""}"
+memory_bytes_by_tenant,1789488144,50735981.71428572,"{""tenant"": ""datadog""}"
+memory_bytes_by_tenant,1789488144,717157221.5873016,"{""tenant"": ""binance""}"
+resource_requests,1789488144,3.2,"{""resource"": ""cpu"", ""unit"": ""core""}"
+resource_requests,1789488144,5368709120,"{""resource"": ""memory"", ""unit"": ""byte""}"
+resource_limits,1789488144,7.15,"{""resource"": ""cpu"", ""unit"": ""core""}"
+resource_limits,1789488144,12348030976,"{""resource"": ""memory"", ""unit"": ""byte""}"

@@ -1,0 +1,16 @@
+{
+  "cooldown_seconds": 30,
+  "k6_mode": "docker",
+  "k6_version": "example",
+  "model": "iso",
+  "steady_end_epoch": 1788800550,
+  "steady_seconds": 120,
+  "steady_start_epoch": 1788800430,
+  "tenants": [
+    "arm"
+  ],
+  "test_start_epoch": 1788800400,
+  "think_time_seconds": 0.25,
+  "vus_per_tenant": 2,
+  "warmup_seconds": 30
+}

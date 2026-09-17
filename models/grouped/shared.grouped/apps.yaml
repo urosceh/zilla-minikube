@@ -1,0 +1,357 @@
+# Grouped-shared application tier
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zilla-backend
+  namespace: shared-grouped
+  labels:
+    app.kubernetes.io/name: zilla-backend
+    app.kubernetes.io/component: backend
+    zilla.io/model: grouped
+    zilla.io/group: shared
+    monitoring.zilla.io/scrape: backend
+spec:
+  ports:
+    - name: metrics
+      port: 3000
+      targetPort: 3000
+  selector:
+    app: zilla-backend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zilla-backend
+  namespace: shared-grouped
+  labels:
+    app.kubernetes.io/name: zilla-backend
+    app.kubernetes.io/component: backend
+    zilla.io/model: grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zilla-backend
+  template:
+    metadata:
+      labels:
+        app: zilla-backend
+        app.kubernetes.io/name: zilla-backend
+        app.kubernetes.io/component: backend
+        zilla.io/model: grouped
+    spec:
+      initContainers:
+        - name: wait-for-postgres
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          command: ["sh","-c","until pg_isready -h postgres -p 5450; do sleep 2; done"]
+        - name: wait-for-redis
+          image: redis:6.2-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: REDIS_PASSWORD
+          command: ["sh","-c","until redis-cli -h redis -p 6379 -a \"$REDIS_PASSWORD\" ping | grep -q PONG; do sleep 2; done"]
+      containers:
+        - name: zilla-backend
+          image: zilla-backend:local-master-shared-c50a156
+          imagePullPolicy: IfNotPresent
+          command: ["node","build/index.js"]
+          env:
+            - name: ZILLA_MODEL
+              value: grouped
+            - name: DB_HOST
+              value: postgres
+            - name: DB_PORT
+              value: "5450"
+            - name: DB_NAME
+              value: zilla
+            - name: DB_USER_MONGO
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-mongo
+                  key: DB_USERNAME
+            - name: DB_PASS_MONGO
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-mongo
+                  key: DB_PASSWORD
+            - name: DB_USER_ORACLE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-oracle
+                  key: DB_USERNAME
+            - name: DB_PASS_ORACLE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-oracle
+                  key: DB_PASSWORD
+            - name: DB_USER_QUALCOMM
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-qualcomm
+                  key: DB_USERNAME
+            - name: DB_PASS_QUALCOMM
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-qualcomm
+                  key: DB_PASSWORD
+            - name: DB_USER_SALESFORCE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-salesforce
+                  key: DB_USERNAME
+            - name: DB_PASS_SALESFORCE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-salesforce
+                  key: DB_PASSWORD
+            - name: DB_USER_SAP
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-sap
+                  key: DB_USERNAME
+            - name: DB_PASS_SAP
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-sap
+                  key: DB_PASSWORD
+            - name: DB_USER_SHOPIFY
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-shopify
+                  key: DB_USERNAME
+            - name: DB_PASS_SHOPIFY
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-shopify
+                  key: DB_PASSWORD
+            - name: DB_USER_STRIPE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-stripe
+                  key: DB_USERNAME
+            - name: DB_PASS_STRIPE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-stripe
+                  key: DB_PASSWORD
+            - name: DB_USER_TWILIO
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-twilio
+                  key: DB_USERNAME
+            - name: DB_PASS_TWILIO
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-twilio
+                  key: DB_PASSWORD
+            - name: JWT_SECRET
+              value: secret
+            - name: JWT_EXPIRES_IN_IN_SECONDS
+              value: "100000"
+            - name: NODE_ENV
+              value: test
+            - name: REDIS_HOST
+              value: redis
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: REDIS_PASSWORD
+            - name: TENANT_CONFIG_PATH
+              value: /etc/tenant-config/tenants.json
+            - name: DB_POOL_MAX
+              value: "2"
+            - name: NODE_OPTIONS
+              value: --max-old-space-size=384
+          ports:
+            - containerPort: 3000
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 5
+          volumeMounts:
+            - name: tenant-config
+              mountPath: /etc/tenant-config
+              readOnly: true
+          resources:
+            requests:
+              cpu: 250m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+      volumes:
+        - name: tenant-config
+          configMap:
+            name: tenant-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tenant-config
+  namespace: shared-grouped
+  labels:
+    app.kubernetes.io/name: tenant-config
+    zilla.io/model: grouped
+data:
+  tenants.json: |
+    {
+      "mongo": { "tenantId": "mongo", "schemaName": "mongo", "displayName": "Mongo", "redisDb": 1, "isActive": true },
+      "oracle": { "tenantId": "oracle", "schemaName": "oracle", "displayName": "Oracle", "redisDb": 2, "isActive": true },
+      "qualcomm": { "tenantId": "qualcomm", "schemaName": "qualcomm", "displayName": "Qualcomm", "redisDb": 3, "isActive": true },
+      "salesforce": { "tenantId": "salesforce", "schemaName": "salesforce", "displayName": "Salesforce", "redisDb": 4, "isActive": true },
+      "sap": { "tenantId": "sap", "schemaName": "sap", "displayName": "Sap", "redisDb": 5, "isActive": true },
+      "shopify": { "tenantId": "shopify", "schemaName": "shopify", "displayName": "Shopify", "redisDb": 6, "isActive": true },
+      "stripe": { "tenantId": "stripe", "schemaName": "stripe", "displayName": "Stripe", "redisDb": 7, "isActive": true },
+      "twilio": { "tenantId": "twilio", "schemaName": "twilio", "displayName": "Twilio", "redisDb": 8, "isActive": true }
+    }
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: shared-grouped
+  labels:
+    app.kubernetes.io/name: nginx-bff
+    zilla.io/model: grouped
+data:
+  default.conf: |
+    server {
+      listen 80;
+      location /api/ {
+        proxy_pass http://zilla-backend:3000/api/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+      }
+      location / {
+        proxy_pass http://zilla-frontend:8080/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+      }
+    }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-bff
+  namespace: shared-grouped
+  labels:
+    app.kubernetes.io/name: nginx-bff
+    zilla.io/model: grouped
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx-bff
+  ports:
+    - port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-bff
+  namespace: shared-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-bff
+  template:
+    metadata:
+      labels:
+        app: nginx-bff
+        app.kubernetes.io/name: nginx-bff
+        zilla.io/model: grouped
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: nginx-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zilla-frontend
+  namespace: shared-grouped
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: zilla-frontend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zilla-frontend
+  namespace: shared-grouped
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zilla-frontend
+  template:
+    metadata:
+      labels:
+        app: zilla-frontend
+        app.kubernetes.io/name: zilla-frontend
+        zilla.io/model: grouped
+    spec:
+      containers:
+        - name: zilla-frontend
+          image: zilla-frontend:local-master-shared-3107d77
+          imagePullPolicy: IfNotPresent
+          command: ["npm","run","start"]
+          env:
+            - name: PORT
+              value: "8080"
+            - name: REACT_APP_NGINX_URL
+              value: /api
+            - name: NODE_OPTIONS
+              value: --max-old-space-size=256
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 200m
+              memory: 512Mi
+            limits:
+              cpu: 500m
+              memory: 1536Mi

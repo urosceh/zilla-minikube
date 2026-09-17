@@ -1,0 +1,464 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-amazon
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: amazon
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS amazon AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-amd
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: amd
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS amd AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-apple
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: apple
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS apple AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-azure
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: azure
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS azure AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-google
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: google
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS google AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-meta
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: meta
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS meta AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-netflix
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: netflix
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS netflix AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-nvidia
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: nvidia
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS nvidia AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-paypal
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: paypal
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS paypal AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-reddit
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: reddit
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS reddit AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-slack
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: slack
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS slack AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-spotify
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: spotify
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS spotify AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-tesla
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: tesla
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS tesla AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-uber
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: uber
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS uber AUTHORIZATION \"user\";"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-zoom
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: shared
+    zilla.io/tenant: zoom
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c "CREATE SCHEMA IF NOT EXISTS zoom AUTHORIZATION \"user\";"

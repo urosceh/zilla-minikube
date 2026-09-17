@@ -1,0 +1,114 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+export ZILLA_MINIKUBE_ROOT="$ROOT_DIR"
+# shellcheck source=scripts/lib/common.sh
+source "${ROOT_DIR}/scripts/lib/common.sh"
+
+PROFILE="${1:-}"
+if [[ -z "$PROFILE" ]]; then
+  err "Usage: $0 <iso|hybrid|shared|grouped|all>"
+  exit 1
+fi
+
+REPO_ROOT="$(cd "${ROOT_DIR}/.." && pwd)"
+BACKEND_REPO="${REPO_ROOT}/zilla-backend"
+FRONTEND_REPO="${REPO_ROOT}/zilla-frontend"
+WORKTREE_ROOT="${ROOT_DIR}/.build/worktrees"
+
+current_backend_branch() {
+  local head_file="${BACKEND_REPO}/.git/HEAD"
+  [[ -f "$head_file" ]] || return 1
+  sed -n 's#^ref: refs/heads/##p' "$head_file"
+}
+
+build_backend() {
+  local branch="$1"
+  local sha="$2"
+  local tag="$3"
+  local wt="${WORKTREE_ROOT}/zilla-backend-${branch}"
+  local build_path=""
+  local active_branch
+  active_branch="$(current_backend_branch || true)"
+
+  log "Building backend ${tag} from ${branch}@${sha}"
+
+  if [[ "$active_branch" == "$branch" ]]; then
+    build_path="$BACKEND_REPO"
+  elif [[ -d "$wt" ]]; then
+    build_path="$wt"
+  else
+    err "No checkout found for backend branch '${branch}'. Expected ${BACKEND_REPO} on that branch or ${wt}."
+    exit 1
+  fi
+
+  docker build --network=host -t "$tag" "$build_path"
+}
+
+build_frontend() {
+  local branch="$1"
+  local sha="$2"
+  local tag="$3"
+  local wt="${WORKTREE_ROOT}/zilla-frontend-${branch}"
+
+  log "Building frontend ${tag} from ${branch}@${sha}"
+  mkdir -p "$WORKTREE_ROOT"
+  if [[ ! -d "${wt}" ]]; then
+    git -C "$FRONTEND_REPO" worktree add -f "$wt" "$sha"
+  else
+    git -C "$wt" checkout -f "$sha"
+  fi
+
+  docker build --network=host -t "$tag" "$wt"
+}
+
+load_images() {
+  local profile="$1"
+  log "Loading images into Minikube profile: ${profile}"
+  minikube -p "$profile" image load \
+    "${ZILLA_BACKEND_MASTER_IMAGE}" \
+    "${ZILLA_BACKEND_MASTER_SHARED_IMAGE}" \
+    "${ZILLA_FRONTEND_MASTER_IMAGE}" \
+    "${ZILLA_FRONTEND_MASTER_SHARED_IMAGE}" \
+    "${POSTGRES_IMAGE}" \
+    "${REDIS_IMAGE}" \
+    "${NGINX_IMAGE}"
+  # Migrations image pulled on first use (digest-pinned in manifests)
+}
+
+build_all_images() {
+  build_backend "$ZILLA_BACKEND_MASTER_BRANCH" "$ZILLA_BACKEND_MASTER_SHA" "$ZILLA_BACKEND_MASTER_IMAGE"
+  build_backend "$ZILLA_BACKEND_MASTER_SHARED_BRANCH" "$ZILLA_BACKEND_MASTER_SHARED_SHA" "$ZILLA_BACKEND_MASTER_SHARED_IMAGE"
+  build_frontend "$ZILLA_FRONTEND_MASTER_BRANCH" "$ZILLA_FRONTEND_MASTER_SHA" "$ZILLA_FRONTEND_MASTER_IMAGE"
+  build_frontend "$ZILLA_FRONTEND_MASTER_SHARED_BRANCH" "$ZILLA_FRONTEND_MASTER_SHARED_SHA" "$ZILLA_FRONTEND_MASTER_SHARED_IMAGE"
+}
+
+profiles_to_load() {
+  case "$PROFILE" in
+    all) echo iso hybrid shared grouped ;;
+    iso|hybrid|shared|grouped) echo "$PROFILE" ;;
+    *)
+      err "Invalid profile: ${PROFILE}"
+      exit 1
+      ;;
+  esac
+}
+
+main() {
+  if [[ ! -d "$BACKEND_REPO/.git" ]] || [[ ! -d "$FRONTEND_REPO/.git" ]]; then
+    err "Expected git repos at ${BACKEND_REPO} and ${FRONTEND_REPO}"
+    exit 1
+  fi
+
+  build_all_images
+
+  local p
+  while IFS= read -r p; do
+    [[ -n "$p" ]] && load_images "$p"
+  done < <(profiles_to_load)
+
+  ok "Images built and loaded. See config/images.lock.env for branch/SHA mapping."
+}
+
+main "$@"

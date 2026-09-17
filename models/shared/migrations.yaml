@@ -1,33 +1,689 @@
+---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: zilla-migrations
+  name: zilla-migrations-amazon
   namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: amazon
 spec:
   template:
     spec:
+      restartPolicy: Never
       containers:
         - name: migrations
-          image: hatch33/zilla-migrations:latest
-          imagePullPolicy: Always
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
           env:
             - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
-              value: "dbchangelog.xml"
+              value: dbchangelog.xml
             - name: LIQUIBASE_COMMAND_UPDATE_URL
-              value: "jdbc:postgresql://postgres:5450/zilla"
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Damazon%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: amazon
             - name: LIQUIBASE_COMMAND_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
+                  name: postgres-secret-amazon
                   key: DB_USERNAME
             - name: LIQUIBASE_COMMAND_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
+                  name: postgres-secret-amazon
                   key: DB_PASSWORD
-            - name: LIQUIBASE_LOG_LEVEL
-              value: "info"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-amd
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: amd
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
           workingDir: /liquibase/changelog
           command: ["liquibase"]
           args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Damd%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: amd
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-amd
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-amd
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-apple
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: apple
+spec:
+  template:
+    spec:
       restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dapple%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: apple
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-apple
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-apple
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-azure
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: azure
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dazure%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: azure
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-azure
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-azure
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-google
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: google
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dgoogle%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: google
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-google
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-google
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-meta
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: meta
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dmeta%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: meta
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-meta
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-meta
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-netflix
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: netflix
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dnetflix%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: netflix
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-netflix
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-netflix
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-nvidia
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: nvidia
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dnvidia%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: nvidia
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-nvidia
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-nvidia
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-paypal
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: paypal
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dpaypal%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: paypal
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-paypal
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-paypal
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-reddit
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: reddit
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dreddit%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: reddit
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-reddit
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-reddit
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-slack
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: slack
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dslack%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: slack
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-slack
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-slack
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-spotify
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: spotify
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dspotify%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: spotify
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-spotify
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-spotify
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-tesla
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: tesla
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dtesla%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: tesla
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-tesla
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-tesla
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-uber
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: uber
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Duber%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: uber
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-uber
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-uber
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zilla-migrations-zoom
+  namespace: shared
+  labels:
+    app.kubernetes.io/name: zilla-migrations
+    zilla.io/model: shared
+    zilla.io/tenant: zoom
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrations
+          image: hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac
+          imagePullPolicy: IfNotPresent
+          workingDir: /liquibase/changelog
+          command: ["liquibase"]
+          args: ["update"]
+          env:
+            - name: LIQUIBASE_COMMAND_CHANGELOG_FILE
+              value: dbchangelog.xml
+            - name: LIQUIBASE_COMMAND_UPDATE_URL
+              value: jdbc:postgresql://postgres:5450/zilla?options=-c%20search_path%3Dzoom%2Cpublic
+            - name: LIQUIBASE_COMMAND_DEFAULT_SCHEMA_NAME
+              value: zoom
+            - name: LIQUIBASE_COMMAND_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-zoom
+                  key: DB_USERNAME
+            - name: LIQUIBASE_COMMAND_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret-zoom
+                  key: DB_PASSWORD
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

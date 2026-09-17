@@ -1,0 +1,101 @@
+# Per-tenant schema initialization for shared PostgreSQL
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-datadog
+  namespace: hybrid-grouped
+  labels:
+    app.kubernetes.io/name: tenant-init
+    app.kubernetes.io/component: database
+    zilla.io/model: grouped
+    zilla.io/tenant: datadog
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: tenant-init
+        zilla.io/model: grouped
+        zilla.io/tenant: datadog
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";' -c "CREATE SCHEMA IF NOT EXISTS datadog AUTHORIZATION \"user\";"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-ibm
+  namespace: hybrid-grouped
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: grouped
+    zilla.io/tenant: ibm
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";' -c "CREATE SCHEMA IF NOT EXISTS ibm AUTHORIZATION \"user\";"
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tenant-init-intel
+  namespace: hybrid-grouped
+  labels:
+    app.kubernetes.io/name: tenant-init
+    zilla.io/model: grouped
+    zilla.io/tenant: intel
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: init
+          image: postgres:14-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              psql -h postgres -p 5450 -U user -d zilla -v ON_ERROR_STOP=1 -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";' -c "CREATE SCHEMA IF NOT EXISTS intel AUTHORIZATION \"user\";"
