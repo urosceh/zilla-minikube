@@ -1,0 +1,590 @@
+{
+  "cpu_cores": {
+    "maximum": 0.2958470982930745,
+    "mean": 0.2758575466435967,
+    "minimum": 0.2589171652001766,
+    "runs": 3,
+    "sample_standard_deviation": 0.01865283004722369,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.2958470982930745
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.272808376437539
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.2589171652001766
+      }
+    ]
+  },
+  "cpu_cores_per_rps": {
+    "maximum": 0.002692112312384131,
+    "mean": 0.0025488195938056383,
+    "minimum": 0.00244002329811468,
+    "runs": 3,
+    "sample_standard_deviation": 0.00012953655921346143,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.002692112312384131
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.0025143231709181036
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.00244002329811468
+      }
+    ]
+  },
+  "cpu_throttle_ratio": {
+    "maximum": 0.019493518992998695,
+    "mean": 0.010363582027033922,
+    "minimum": 0.005430066207182716,
+    "runs": 3,
+    "sample_standard_deviation": 0.00791534199459383,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.019493518992998695
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.005430066207182716
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.006167160880920352
+      }
+    ]
+  },
+  "error_rate": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.0
+      }
+    ]
+  },
+  "k6_steady_checks_rate": {
+    "maximum": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 1.0
+      }
+    ]
+  },
+  "k6_steady_error_rate": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.0
+      }
+    ]
+  },
+  "k6_steady_http_requests": {
+    "maximum": 19757.0,
+    "mean": 19402.333333333332,
+    "minimum": 19005.0,
+    "runs": 3,
+    "sample_standard_deviation": 377.81124034805174,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 19757.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 19445.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 19005.0
+      }
+    ]
+  },
+  "k6_steady_latency_p50_ms": {
+    "maximum": 3.151083,
+    "mean": 3.0930276666666665,
+    "minimum": 2.993416,
+    "runs": 3,
+    "sample_standard_deviation": 0.08665977932312852,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 3.151083
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 3.134584
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 2.993416
+      }
+    ]
+  },
+  "k6_steady_latency_p95_ms": {
+    "maximum": 7.144466799999998,
+    "mean": 5.9991027333333315,
+    "minimum": 5.128708,
+    "runs": 3,
+    "sample_standard_deviation": 1.0356287875728891,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 7.144466799999998
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 5.724133399999998
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 5.128708
+      }
+    ]
+  },
+  "k6_steady_latency_p99_ms": {
+    "maximum": 82.59050199999989,
+    "mean": 39.48872834666661,
+    "minimum": 17.137194999999974,
+    "runs": 3,
+    "sample_standard_deviation": 37.33581663627258,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 82.59050199999989
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 17.137194999999974
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 18.738488039999986
+      }
+    ]
+  },
+  "k6_steady_rps": {
+    "maximum": 109.7611111111111,
+    "mean": 107.79074074074073,
+    "minimum": 105.58333333333333,
+    "runs": 3,
+    "sample_standard_deviation": 2.0989513352669538,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 109.7611111111111
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 108.02777777777777
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 105.58333333333333
+      }
+    ]
+  },
+  "k6_thresholds_passed": {
+    "maximum": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 1.0
+      }
+    ]
+  },
+  "latency_p50_seconds": {
+    "maximum": 0.0025998107038375496,
+    "mean": 0.002561069776257698,
+    "minimum": 0.002541514254194972,
+    "runs": 3,
+    "sample_standard_deviation": 3.355113781788642e-05,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.0025998107038375496
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.0025418843707405727
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.002541514254194972
+      }
+    ]
+  },
+  "latency_p95_seconds": {
+    "maximum": 0.004939640337291344,
+    "mean": 0.004866032574889626,
+    "minimum": 0.004828877082970446,
+    "runs": 3,
+    "sample_standard_deviation": 6.374716185398375e-05,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.004939640337291344
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.004829580304407089
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.004828877082970446
+      }
+    ]
+  },
+  "latency_p99_seconds": {
+    "maximum": 0.028568181818180383,
+    "mean": 0.014958793397551214,
+    "minimum": 0.007635681818181876,
+    "runs": 3,
+    "sample_standard_deviation": 0.011797472036678202,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.028568181818180383
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.007635681818181876
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.008672516556291383
+      }
+    ]
+  },
+  "memory_bytes_per_rps": {
+    "maximum": 8434032.153727558,
+    "mean": 8197141.099544789,
+    "minimum": 7961160.640700738,
+    "runs": 3,
+    "sample_standard_deviation": 236437.0716405775,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 7961160.640700738
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 8196230.504206071
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 8434032.153727558
+      }
+    ]
+  },
+  "memory_working_set_bytes": {
+    "maximum": 894956903.9515152,
+    "mean": 886382025.8693603,
+    "minimum": 874884106.3434343,
+    "runs": 3,
+    "sample_standard_deviation": 10350721.202662477,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 874884106.3434343
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 889305067.3131313
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 894956903.9515152
+      }
+    ]
+  },
+  "postgres_cache_hit_ratio": {
+    "maximum": 0.9999950977268158,
+    "mean": 0.9999583918059273,
+    "minimum": 0.99989347789538,
+    "runs": 3,
+    "sample_standard_deviation": 5.6377438268372846e-05,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.99989347789538
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.999986599795586
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.9999950977268158
+      }
+    ]
+  },
+  "postgres_connections": {
+    "maximum": 23.0,
+    "mean": 11.666666666666666,
+    "minimum": 6.0,
+    "runs": 3,
+    "sample_standard_deviation": 9.814954576223638,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 23.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 6.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 6.0
+      }
+    ]
+  },
+  "postgres_locks": {
+    "maximum": 2.0,
+    "mean": 1.3333333333333333,
+    "minimum": 1.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.5773502691896257,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 2.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 1.0
+      }
+    ]
+  },
+  "redis_hit_ratio": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.0
+      }
+    ]
+  },
+  "redis_memory_bytes": {
+    "maximum": 970592.0,
+    "mean": 956930.6666666666,
+    "minimum": 929640.0,
+    "runs": 3,
+    "sample_standard_deviation": 23634.416035378013,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 970560.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 970592.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 929640.0
+      }
+    ]
+  },
+  "redis_ops_per_second": {
+    "maximum": 111.91397015142515,
+    "mean": 110.20434656313579,
+    "minimum": 108.0640469321956,
+    "runs": 3,
+    "sample_standard_deviation": 1.9607622468763872,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 111.91397015142515
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 110.6350226057866
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 108.0640469321956
+      }
+    ]
+  },
+  "restarts": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 0.0
+      }
+    ]
+  },
+  "rps": {
+    "maximum": 109.89404005625333,
+    "mean": 108.16944475865694,
+    "minimum": 106.1125790889918,
+    "runs": 3,
+    "sample_standard_deviation": 1.9125021468868144,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 109.89404005625333
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 108.5017151307257
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 106.1125790889918
+      }
+    ]
+  },
+  "rps_per_tenant": {
+    "maximum": 109.89404005625333,
+    "mean": 108.16944475865694,
+    "minimum": 106.1125790889918,
+    "runs": 3,
+    "sample_standard_deviation": 1.9125021468868144,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 109.89404005625333
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 108.5017151307257
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 106.1125790889918
+      }
+    ]
+  },
+  "running_pods": {
+    "maximum": 7.0,
+    "mean": 7.0,
+    "minimum": 7.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 7.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 7.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 7.0
+      }
+    ]
+  },
+  "tenant_count": {
+    "maximum": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T101225Z-iso",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T102614Z-iso",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T103426Z-iso",
+        "value": 1.0
+      }
+    ]
+  }
+}

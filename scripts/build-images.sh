@@ -17,10 +17,23 @@ BACKEND_REPO="${REPO_ROOT}/zilla-backend"
 FRONTEND_REPO="${REPO_ROOT}/zilla-frontend"
 WORKTREE_ROOT="${ROOT_DIR}/.build/worktrees"
 
-current_backend_branch() {
-  local head_file="${BACKEND_REPO}/.git/HEAD"
-  [[ -f "$head_file" ]] || return 1
-  sed -n 's#^ref: refs/heads/##p' "$head_file"
+worktree_head_sha() {
+  local wt="$1"
+  local git_file="${wt}/.git"
+  local gitdir_line gitdir head
+
+  [[ -f "$git_file" ]] || return 1
+  IFS= read -r gitdir_line < "$git_file"
+  [[ "$gitdir_line" == "gitdir: "* ]] || return 1
+  gitdir="${gitdir_line#gitdir: }"
+  if [[ "$gitdir" != /* ]]; then
+    gitdir="${wt}/${gitdir}"
+  fi
+
+  [[ -f "${gitdir}/HEAD" ]] || return 1
+  IFS= read -r head < "${gitdir}/HEAD"
+  [[ "$head" =~ ^[0-9a-f]{40}$ ]] || return 1
+  printf '%s\n' "$head"
 }
 
 build_backend() {
@@ -28,22 +41,25 @@ build_backend() {
   local sha="$2"
   local tag="$3"
   local wt="${WORKTREE_ROOT}/zilla-backend-${branch}"
-  local build_path=""
-  local active_branch
-  active_branch="$(current_backend_branch || true)"
+  local actual_sha
 
   log "Building backend ${tag} from ${branch}@${sha}"
 
-  if [[ "$active_branch" == "$branch" ]]; then
-    build_path="$BACKEND_REPO"
-  elif [[ -d "$wt" ]]; then
-    build_path="$wt"
-  else
-    err "No checkout found for backend branch '${branch}'. Expected ${BACKEND_REPO} on that branch or ${wt}."
+  mkdir -p "$WORKTREE_ROOT"
+  if [[ ! -d "$wt" ]]; then
+    git -C "$BACKEND_REPO" worktree add -f "$wt" "$sha"
+  fi
+
+  if ! actual_sha="$(worktree_head_sha "$wt")"; then
+    err "Cannot verify detached HEAD metadata for backend worktree ${wt}."
+    exit 1
+  fi
+  if [[ "$actual_sha" != "$sha" ]]; then
+    err "Backend worktree ${wt} is at ${actual_sha}, expected pinned SHA ${sha}. Refusing to modify it or build the wrong source."
     exit 1
   fi
 
-  docker build --network=host -t "$tag" "$build_path"
+  docker build --network=host -t "$tag" "$wt"
 }
 
 build_frontend() {

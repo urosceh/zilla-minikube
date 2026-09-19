@@ -1,0 +1,58 @@
+[
+  {
+    "namespace": "arm",
+    "pod": "nginx-bff-5c7b84dcb6-ft25m",
+    "container": "nginx",
+    "image": "docker.io/library/nginx:1.27-alpine",
+    "image_id": "sha256:96868d9fa38f469a86d2f25787e43ee9ad330339d30be260aa9f5a338bb03751"
+  },
+  {
+    "namespace": "arm",
+    "pod": "postgres-54cc467dd6-mttvh",
+    "container": "postgres",
+    "image": "docker.io/library/postgres:14-alpine",
+    "image_id": "sha256:7fb5de972ac225764197eebcfa6be41734d0240fcb6892d36f0569349c43c79f"
+  },
+  {
+    "namespace": "arm",
+    "pod": "postgres-exporter-78f6bb6df6-k8x98",
+    "container": "postgres-exporter",
+    "image": "sha256:d991414f980c03f4bdb5b79e6c83b37aea682c5842bd84091ba7cf2e3689b74a",
+    "image_id": "quay.io/prometheuscommunity/postgres-exporter@sha256:ac5ec343104fae0e2d84a27bb8d69b38430a11910c5382cad85d478d2bab713e"
+  },
+  {
+    "namespace": "arm",
+    "pod": "redis-6988c9688b-44p7m",
+    "container": "redis",
+    "image": "docker.io/library/redis:6.2-alpine",
+    "image_id": "sha256:9d6d416217a50326c190acf2797ee26ca354b6bd055e4399bc97427ff7af369f"
+  },
+  {
+    "namespace": "arm",
+    "pod": "redis-exporter-577549cc9d-fcgc7",
+    "container": "redis-exporter",
+    "image": "sha256:0892de2d75ea1c5df257f5f63dc2291dd1650dbf250358946bdf336ee00321bb",
+    "image_id": "docker.io/oliver006/redis_exporter@sha256:a129504e65b87c54f79bc92f1afc403475e8ff646a3d7512de469904ceddf986"
+  },
+  {
+    "namespace": "arm",
+    "pod": "zilla-backend-6947bdb59f-qqhb5",
+    "container": "zilla-backend",
+    "image": "docker.io/library/zilla-backend:local-master-a64b6c44",
+    "image_id": "sha256:10cf900957bf334fb68fa777b1648845fadeaa643f867ea8a08490855717a665"
+  },
+  {
+    "namespace": "arm",
+    "pod": "zilla-frontend-66c4857fd5-p45nm",
+    "container": "zilla-frontend",
+    "image": "docker.io/library/zilla-frontend:local-master-d481e950",
+    "image_id": "sha256:48abf357c6750698f54b5a30486106bab31a1961c6c58e1950e8afad8b1cfce1"
+  },
+  {
+    "namespace": "arm",
+    "pod": "zilla-migrations-gqqvm",
+    "container": "migrations",
+    "image": "sha256:ef72efeb6941b5a98069f2cd112be8f248dac94de97a896396957e787a484ca2",
+    "image_id": "docker.io/hatch33/zilla-migrations@sha256:1cf36e1143114f5ad2b3043ec1d6f2692809ba537c7ac6ed9e946fdd71504bac"
+  }
+]

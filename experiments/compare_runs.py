@@ -19,7 +19,10 @@ COMPARABLE_PARAMETER_KEYS = (
     "steady_seconds",
     "cooldown_seconds",
     "vus_per_tenant",
-    "think_time_seconds",
+    "think_time_min_seconds",
+    "think_time_max_seconds",
+    "think_time_distribution",
+    "authentication",
     "k6_mode",
     "k6_version",
     "experiment_protocol",
@@ -29,6 +32,22 @@ COMPARABLE_PARAMETER_KEYS = (
     "profile_disk",
     "images_lock_sha256",
 )
+
+FIXED_COST_V2_TENANTS = {
+    "iso": ["arm"],
+    "shared": [
+        "amazon",
+        "amd",
+        "apple",
+        "azure",
+        "google",
+        "meta",
+        "netflix",
+        "nvidia",
+        "paypal",
+        "reddit",
+    ],
+}
 
 
 def load_json_value(path: pathlib.Path) -> object:
@@ -180,15 +199,26 @@ def main() -> None:
         elif current_images != expected_images:
             parser.error(f"{run}: container images do not match the first run")
 
-        if (
-            parameters.get("experiment_protocol") == "fixed-cost-v1"
-            and parameters.get("tenant_selection") != "full"
-        ):
+        protocol = parameters.get("experiment_protocol")
+        if protocol == "fixed-cost-v1" and parameters.get("tenant_selection") != "full":
             parser.error(f"{run}: fixed-cost-v1 requires the full tenant set")
+
+        if protocol == "fixed-cost-v2":
+            model = parameters.get("model")
+            expected_tenants = FIXED_COST_V2_TENANTS.get(str(model))
+            if expected_tenants is not None and parameters.get("tenants") != expected_tenants:
+                parser.error(
+                    f"{run}: fixed-cost-v2 {model} tenants must be {expected_tenants}"
+                )
+            if expected_tenants is None and parameters.get("tenant_selection") != "full":
+                parser.error(
+                    f"{run}: fixed-cost-v2 secondary models require the full tenant set"
+                )
+
         repetition = parameters.get("experiment_repetition")
-        if parameters.get("experiment_protocol") == "fixed-cost-v1":
+        if protocol in {"fixed-cost-v1", "fixed-cost-v2"}:
             if not isinstance(repetition, int):
-                parser.error(f"{run}: fixed-cost-v1 requires a repetition number")
+                parser.error(f"{run}: {protocol} requires a repetition number")
             if repetition in seen_repetitions:
                 parser.error(f"{run}: duplicate repetition number {repetition}")
             seen_repetitions.add(repetition)

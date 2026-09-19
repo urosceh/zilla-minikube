@@ -27,7 +27,7 @@ Open Grafana:
 ```
 
 Visit <http://localhost:3000> and sign in with the local-only credentials
-`admin` / `zilla-local-only`. The **Zilla** folder contains Model Overview,
+`admin` / `admin`. The **Zilla** folder contains Model Overview,
 Backend and Tenants, and PostgreSQL and Redis. They are loaded from
 `observability/grafana/dashboards/` and survive Grafana reinstalls because
 `install.sh` reapplies the ConfigMaps. See

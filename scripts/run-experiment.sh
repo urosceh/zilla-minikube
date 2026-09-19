@@ -16,11 +16,12 @@ fi
 init_profile "$MODEL"
 require_profile_running "$CURRENT_PROFILE"
 
-WARMUP_SECONDS="${WARMUP_SECONDS:-30}"
-STEADY_SECONDS="${STEADY_SECONDS:-120}"
+WARMUP_SECONDS="${WARMUP_SECONDS:-60}"
+STEADY_SECONDS="${STEADY_SECONDS:-180}"
 COOLDOWN_SECONDS="${COOLDOWN_SECONDS:-30}"
-VUS_PER_TENANT="${VUS_PER_TENANT:-2}"
-THINK_TIME_SECONDS="${THINK_TIME_SECONDS:-0.25}"
+VUS_PER_TENANT="${VUS_PER_TENANT:-10}"
+THINK_TIME_MIN_SECONDS="${THINK_TIME_MIN_SECONDS:-2}"
+THINK_TIME_MAX_SECONDS="${THINK_TIME_MAX_SECONDS:-4}"
 TENANT_FILTER="${TENANTS:-}"
 EXPERIMENT_PROTOCOL="${EXPERIMENT_PROTOCOL:-ad-hoc}"
 EXPERIMENT_BATCH_ID="${EXPERIMENT_BATCH_ID:-}"
@@ -43,10 +44,13 @@ require_positive_integer VUS_PER_TENANT "$VUS_PER_TENANT"
 if [[ -n "$EXPERIMENT_REPETITION" ]]; then
   require_positive_integer EXPERIMENT_REPETITION "$EXPERIMENT_REPETITION"
 fi
-if [[ ! "$THINK_TIME_SECONDS" =~ ^[0-9]+([.][0-9]+)?$ ]]; then
-  err "THINK_TIME_SECONDS must be a non-negative number, got: ${THINK_TIME_SECONDS}"
-  exit 1
-fi
+for think_time_name in THINK_TIME_MIN_SECONDS THINK_TIME_MAX_SECONDS; do
+  think_time_value="${!think_time_name}"
+  if [[ ! "$think_time_value" =~ ^[0-9]+([.][0-9]+)?$ ]]; then
+    err "${think_time_name} must be a non-negative number, got: ${think_time_value}"
+    exit 1
+  fi
+done
 
 for command_name in minikube curl python3 jq; do
   if ! command -v "$command_name" >/dev/null 2>&1; then
@@ -54,6 +58,16 @@ for command_name in minikube curl python3 jq; do
     exit 1
   fi
 done
+
+if ! python3 - "$THINK_TIME_MIN_SECONDS" "$THINK_TIME_MAX_SECONDS" <<'PY'
+import sys
+
+raise SystemExit(0 if float(sys.argv[1]) <= float(sys.argv[2]) else 1)
+PY
+then
+  err "THINK_TIME_MIN_SECONDS must be less than or equal to THINK_TIME_MAX_SECONDS"
+  exit 1
+fi
 
 K6_MODE="local"
 K6_VERSION=""
@@ -377,7 +391,8 @@ current_profile_memory="$(profile_memory "$MODEL")"
 current_profile_disk="$(profile_disk "$MODEL")"
 
 python3 - "$RESULT_DIR/parameters.json" "$MODEL" "$tenant_csv" "$WARMUP_SECONDS" \
-  "$STEADY_SECONDS" "$COOLDOWN_SECONDS" "$VUS_PER_TENANT" "$THINK_TIME_SECONDS" \
+  "$STEADY_SECONDS" "$COOLDOWN_SECONDS" "$VUS_PER_TENANT" \
+  "$THINK_TIME_MIN_SECONDS" "$THINK_TIME_MAX_SECONDS" \
   "$K6_MODE" "$K6_VERSION" "$TEST_START_EPOCH" "$STEADY_START_EPOCH" "$STEADY_END_EPOCH" \
   "$EXPERIMENT_PROTOCOL" "$EXPERIMENT_BATCH_ID" "$EXPERIMENT_REPETITION" \
   "$configured_tenant_count" "$current_profile_cpus" "$current_profile_memory" "$current_profile_disk" \
@@ -385,8 +400,8 @@ python3 - "$RESULT_DIR/parameters.json" "$MODEL" "$tenant_csv" "$WARMUP_SECONDS"
 import json
 import sys
 
-(path, model, tenants, warmup, steady, cooldown, vus, think_time, k6_mode,
- k6_version, test_start, steady_start, steady_end, protocol, batch_id,
+(path, model, tenants, warmup, steady, cooldown, vus, think_time_min,
+ think_time_max, k6_mode, k6_version, test_start, steady_start, steady_end, protocol, batch_id,
  repetition, configured_tenant_count, profile_cpus, profile_memory,
  profile_disk, image_lock_sha256) = sys.argv[1:]
 selected_tenants = tenants.split(",")
@@ -404,7 +419,10 @@ payload = {
     "steady_seconds": int(steady),
     "cooldown_seconds": int(cooldown),
     "vus_per_tenant": int(vus),
-    "think_time_seconds": float(think_time),
+    "think_time_min_seconds": float(think_time_min),
+    "think_time_max_seconds": float(think_time_max),
+    "think_time_distribution": "uniform",
+    "authentication": "once-per-vu-with-401-refresh",
     "k6_mode": k6_mode,
     "k6_version": k6_version,
     "test_start_epoch": int(test_start),
@@ -447,7 +465,8 @@ if [[ "$K6_MODE" == "local" ]]; then
   STEADY_SECONDS="$STEADY_SECONDS" \
   COOLDOWN_SECONDS="$COOLDOWN_SECONDS" \
   VUS_PER_TENANT="$VUS_PER_TENANT" \
-  THINK_TIME_SECONDS="$THINK_TIME_SECONDS" \
+  THINK_TIME_MIN_SECONDS="$THINK_TIME_MIN_SECONDS" \
+  THINK_TIME_MAX_SECONDS="$THINK_TIME_MAX_SECONDS" \
     k6 run "${ROOT_DIR}/experiments/k6/scenario.js" 2>&1 |
     tee "${RESULT_DIR}/k6.log"
   K6_EXIT_CODE="${PIPESTATUS[0]}"
@@ -464,7 +483,8 @@ else
     -e STEADY_SECONDS="$STEADY_SECONDS" \
     -e COOLDOWN_SECONDS="$COOLDOWN_SECONDS" \
     -e VUS_PER_TENANT="$VUS_PER_TENANT" \
-    -e THINK_TIME_SECONDS="$THINK_TIME_SECONDS" \
+    -e THINK_TIME_MIN_SECONDS="$THINK_TIME_MIN_SECONDS" \
+    -e THINK_TIME_MAX_SECONDS="$THINK_TIME_MAX_SECONDS" \
     "${K6_DOCKER_IMAGE}" run /scripts/scenario.js 2>&1 |
     tee "${RESULT_DIR}/k6.log"
   K6_EXIT_CODE="${PIPESTATUS[0]}"

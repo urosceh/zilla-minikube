@@ -1,0 +1,590 @@
+{
+  "cpu_cores": {
+    "maximum": 0.839485484470239,
+    "mean": 0.7986215116350525,
+    "minimum": 0.7242772660965165,
+    "runs": 3,
+    "sample_standard_deviation": 0.06448976578054702,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.839485484470239
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.832101784338402
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.7242772660965165
+      }
+    ]
+  },
+  "cpu_cores_per_rps": {
+    "maximum": 0.0026370902656291965,
+    "mean": 0.0024986997821429035,
+    "minimum": 0.0022498995800641053,
+    "runs": 3,
+    "sample_standard_deviation": 0.00021592101846936636,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.0026091095007354085
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.0026370902656291965
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.0022498995800641053
+      }
+    ]
+  },
+  "cpu_throttle_ratio": {
+    "maximum": 0.033923266366013824,
+    "mean": 0.026426115386843935,
+    "minimum": 0.0136940944651558,
+    "runs": 3,
+    "sample_standard_deviation": 0.011084121365039574,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.033923266366013824
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.031660985329362186
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.0136940944651558
+      }
+    ]
+  },
+  "error_rate": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.0
+      }
+    ]
+  },
+  "k6_steady_checks_rate": {
+    "maximum": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 1.0
+      }
+    ]
+  },
+  "k6_steady_error_rate": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.0
+      }
+    ]
+  },
+  "k6_steady_http_requests": {
+    "maximum": 57915.0,
+    "mean": 57343.333333333336,
+    "minimum": 56346.0,
+    "runs": 3,
+    "sample_standard_deviation": 866.7954391512068,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 57915.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 56346.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 57769.0
+      }
+    ]
+  },
+  "k6_steady_latency_p50_ms": {
+    "maximum": 3.151834,
+    "mean": 2.999041666666667,
+    "minimum": 2.842208,
+    "runs": 3,
+    "sample_standard_deviation": 0.15485255648626975,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 3.003083
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 3.151834
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 2.842208
+      }
+    ]
+  },
+  "k6_steady_latency_p95_ms": {
+    "maximum": 13.077770999999982,
+    "mean": 9.519012699999978,
+    "minimum": 5.080033199999999,
+    "runs": 3,
+    "sample_standard_deviation": 4.070877608094377,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 10.399233899999956
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 13.077770999999982
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 5.080033199999999
+      }
+    ]
+  },
+  "k6_steady_latency_p99_ms": {
+    "maximum": 223.6115996999997,
+    "mean": 152.0666125866665,
+    "minimum": 33.897665559999865,
+    "runs": 3,
+    "sample_standard_deviation": 103.0931104886216,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 198.69057249999997
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 223.6115996999997
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 33.897665559999865
+      }
+    ]
+  },
+  "k6_steady_rps": {
+    "maximum": 321.75,
+    "mean": 318.5740740740741,
+    "minimum": 313.03333333333336,
+    "runs": 3,
+    "sample_standard_deviation": 4.815530217506684,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 321.75
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 313.03333333333336
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 320.93888888888887
+      }
+    ]
+  },
+  "k6_thresholds_passed": {
+    "maximum": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 1.0
+      }
+    ]
+  },
+  "latency_p50_seconds": {
+    "maximum": 0.0026460095158185835,
+    "mean": 0.002612286409937551,
+    "minimum": 0.002549240765661931,
+    "runs": 3,
+    "sample_standard_deviation": 5.4643446040185945e-05,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.0026416089483321387
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.0026460095158185835
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.002549240765661931
+      }
+    ]
+  },
+  "latency_p95_seconds": {
+    "maximum": 0.006299373705780245,
+    "mean": 0.005780434708915203,
+    "minimum": 0.004843557454757668,
+    "runs": 3,
+    "sample_standard_deviation": 0.0008129295968082791,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.006198372966207694
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.006299373705780245
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.004843557454757668
+      }
+    ]
+  },
+  "latency_p99_seconds": {
+    "maximum": 0.18321826280623385,
+    "mean": 0.11578857914917223,
+    "minimum": 0.009804176897728632,
+    "runs": 3,
+    "sample_standard_deviation": 0.09291372903015784,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.18321826280623385
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.1543432977435542
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.009804176897728632
+      }
+    ]
+  },
+  "memory_bytes_per_rps": {
+    "maximum": 3133349.155166975,
+    "mean": 2999228.2234763787,
+    "minimum": 2870690.39360487,
+    "runs": 3,
+    "sample_standard_deviation": 131418.3568828055,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 2993645.1216572924
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 3133349.155166975
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 2870690.39360487
+      }
+    ]
+  },
+  "memory_working_set_bytes": {
+    "maximum": 988690245.8181818,
+    "mean": 958673367.7666925,
+    "minimum": 924119373.3768454,
+    "runs": 3,
+    "sample_standard_deviation": 32523660.010209188,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 963210484.1050506
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 988690245.8181818
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 924119373.3768454
+      }
+    ]
+  },
+  "postgres_cache_hit_ratio": {
+    "maximum": 0.9999947725811427,
+    "mean": 0.9999349520482864,
+    "minimum": 0.9998639708391663,
+    "runs": 3,
+    "sample_standard_deviation": 6.611122784376338e-05,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.9998639708391663
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.9999461127245503
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.9999947725811427
+      }
+    ]
+  },
+  "postgres_connections": {
+    "maximum": 68.0,
+    "mean": 40.666666666666664,
+    "minimum": 11.0,
+    "runs": 3,
+    "sample_standard_deviation": 28.571547618799602,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 43.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 68.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 11.0
+      }
+    ]
+  },
+  "postgres_locks": {
+    "maximum": 9.0,
+    "mean": 3.6666666666666665,
+    "minimum": 1.0,
+    "runs": 3,
+    "sample_standard_deviation": 4.618802153517006,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 9.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 1.0
+      }
+    ]
+  },
+  "redis_hit_ratio": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.0
+      }
+    ]
+  },
+  "redis_memory_bytes": {
+    "maximum": 1094416.0,
+    "mean": 1067114.6666666667,
+    "minimum": 1053464.0,
+    "runs": 3,
+    "sample_standard_deviation": 23643.648223853554,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 1094416.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 1053464.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 1053464.0
+      }
+    ]
+  },
+  "redis_ops_per_second": {
+    "maximum": 323.422462485758,
+    "mean": 320.3552979475134,
+    "minimum": 314.83894427441595,
+    "runs": 3,
+    "sample_standard_deviation": 4.787284385204294,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 322.80448708236617
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 314.83894427441595
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 323.422462485758
+      }
+    ]
+  },
+  "restarts": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 0.0
+      }
+    ]
+  },
+  "rps": {
+    "maximum": 321.9153745856871,
+    "mean": 319.7349823838409,
+    "minimum": 315.5378468396366,
+    "runs": 3,
+    "sample_standard_deviation": 3.635746872324888,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 321.7517257261989
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 315.5378468396366
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 321.9153745856871
+      }
+    ]
+  },
+  "rps_per_tenant": {
+    "maximum": 107.3051248618957,
+    "mean": 106.5783274612803,
+    "minimum": 105.17928227987886,
+    "runs": 3,
+    "sample_standard_deviation": 1.211915624108296,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 107.2505752420663
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 105.17928227987886
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 107.3051248618957
+      }
+    ]
+  },
+  "running_pods": {
+    "maximum": 9.0,
+    "mean": 9.0,
+    "minimum": 9.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 9.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 9.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 9.0
+      }
+    ]
+  },
+  "tenant_count": {
+    "maximum": 3.0,
+    "mean": 3.0,
+    "minimum": 3.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T105757Z-hybrid",
+        "value": 3.0
+      },
+      {
+        "run": "20260919T110306Z-hybrid",
+        "value": 3.0
+      },
+      {
+        "run": "20260919T110816Z-hybrid",
+        "value": 3.0
+      }
+    ]
+  }
+}

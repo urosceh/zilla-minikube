@@ -1,0 +1,32 @@
+Profile: hybrid
+Chart:   kube-prometheus-stack 88.6.2
+NAME                                                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/kube-prometheus-stack-grafana              1/1     1            1           14m
+deployment.apps/kube-prometheus-stack-kube-state-metrics   1/1     1            1           14m
+deployment.apps/kube-prometheus-stack-operator             1/1     1            1           14m
+
+NAME                                                           READY   AGE
+statefulset.apps/prometheus-kube-prometheus-stack-prometheus   1/1     14m
+
+NAME                                                            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+daemonset.apps/kube-prometheus-stack-prometheus-node-exporter   1         1         1       1            1           kubernetes.io/os=linux   14m
+
+NAME                                                           READY   STATUS    RESTARTS   AGE
+pod/kube-prometheus-stack-grafana-6f676dd88f-z7lkc             3/3     Running   0          14m
+pod/kube-prometheus-stack-kube-state-metrics-8fc6b9b9f-rj65c   1/1     Running   0          14m
+pod/kube-prometheus-stack-operator-589d8c9bc7-pt75g            1/1     Running   0          14m
+pod/kube-prometheus-stack-prometheus-node-exporter-qd6g4       1/1     Running   0          14m
+pod/prometheus-kube-prometheus-stack-prometheus-0              2/2     Running   0          14m
+
+NAME                                                                                                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0   Bound    pvc-b2e0584b-9db6-4af6-8654-82c31a8ef1d1   4Gi        RWO            standard       <unset>                 14m
+[OK] Grafana Prometheus datasource is provisioned
+[OK] Grafana dashboards are provisioned (3 ConfigMaps)
+[OK] All monitoring workloads are Ready
+backend: 3/3 UP (3 discovered)
+postgres: 1/1 UP (1 discovered)
+redis: 1/1 UP (1 discovered)
+[OK] zilla_http_requests_total returns data for model hybrid
+[OK] pg_up returns data for model hybrid
+[OK] redis_up returns data for model hybrid
+[OK] All expected hybrid targets and metric families are available

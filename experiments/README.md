@@ -2,10 +2,13 @@
 
 The active experiment uses one logical workload for every topology:
 
-1. authenticate a seeded user;
+1. assign one seeded user to each VU and authenticate once per VU session;
 2. list that user's projects;
 3. perform a 60% issue-read, 20% issue-create, and 20% issue-update mix;
-4. apply the same virtual-user schedule independently to every selected tenant.
+4. wait a uniformly random 2–4 seconds between iterations;
+5. apply the same virtual-user schedule independently to every selected tenant.
+
+An expired session is authenticated again only after a `401` response.
 
 Only routing changes by topology:
 
@@ -20,8 +23,8 @@ profile-explicit Minikube commands.
 
 For thesis measurements, resource accounting, and the exact three-run
 procedure, follow [`FAIR_COMPARISON.md`](FAIR_COMPARISON.md). The primary
-fixed-cost comparison covers `iso`, `hybrid`, and `shared`; treat `grouped`
-as a separate mixed-topology experiment.
+fixed-cost comparison covers `iso` and `shared`; treat `hybrid` and `grouped`
+as secondary experiments.
 
 ## macOS prerequisites
 
@@ -50,16 +53,18 @@ From the `zilla-minikube` root:
 ./scripts/run-experiment.sh grouped
 ```
 
-The default schedule per tenant is 30 seconds warm-up, 120 seconds steady
-measurement, and 30 seconds cool-down with two VUs. Override it without
-editing the scenario:
+The default schedule per tenant is 60 seconds warm-up, 180 seconds steady
+measurement, and 30 seconds cool-down with 10 VUs. Warm-up ramps for 30
+seconds and then holds all VUs for 30 seconds. Override it without editing
+the scenario:
 
 ```bash
 WARMUP_SECONDS=60 \
-STEADY_SECONDS=300 \
-COOLDOWN_SECONDS=60 \
-VUS_PER_TENANT=5 \
-THINK_TIME_SECONDS=0.5 \
+STEADY_SECONDS=180 \
+COOLDOWN_SECONDS=30 \
+VUS_PER_TENANT=10 \
+THINK_TIME_MIN_SECONDS=2 \
+THINK_TIME_MAX_SECONDS=4 \
 ./scripts/run-experiment.sh iso
 ```
 
@@ -70,8 +75,8 @@ TENANTS=arm ./scripts/run-experiment.sh iso
 TENANTS=amazon,amd ./scripts/run-experiment.sh shared
 ```
 
-Published comparisons should use all tenants so every topology receives the
-same configured load per tenant.
+Published primary comparisons use `arm` for ISO and the 10 shared tenants
+defined in `experiments/fair-comparison.env`.
 
 ## Clean reset and three repetitions
 
@@ -81,16 +86,19 @@ For the final fixed-cost comparison, use the controlled runner:
 ./scripts/run-fair-comparison.sh primary
 ```
 
-It reads `experiments/fair-comparison.env`, runs `iso`, `hybrid`, and `shared`
-three times in rotating order, stops the other profiles before each
+It reads `experiments/fair-comparison.env`, runs `iso` and `shared` three
+times in rotating order, stops the other profiles before each
 measurement, resets and seeds all tenants, and generates one comparison
-JSON/CSV pair per model. Run the mixed topology separately:
+JSON/CSV pair per model. Before changing models, it pauses for a `y/n`
+confirmation so the currently active Grafana can be inspected. Run secondary
+models separately:
 
 ```bash
+./scripts/run-fair-comparison.sh hybrid
 ./scripts/run-fair-comparison.sh grouped
 ```
 
-The grouped output is not part of the primary model ranking.
+Hybrid and grouped outputs are not part of the primary model ranking.
 
 For ad-hoc repetitions, reset application data before every measured run.
 Do not delete the monitoring namespace because its retained Prometheus data
@@ -160,7 +168,7 @@ Start Grafana for the same profile:
 open http://localhost:3000
 ```
 
-Log in with `admin` / `zilla-local-only`, open a provisioned Zilla dashboard,
+Log in with `admin` / `admin`, open a provisioned Zilla dashboard,
 select the model and tenant filters, and set an absolute time range using
 `steady_start_epoch` and `steady_end_epoch` from `parameters.json`. In a panel
 menu choose **Share → Export → Download image** (or take a macOS screenshot

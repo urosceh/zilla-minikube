@@ -1,0 +1,782 @@
+{
+  "cpu_cores": {
+    "query": "sum(rate(container_cpu_usage_seconds_total{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[180s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "2.0159457115875954"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "cpu_cores_by_namespace": {
+    "query": "sum by (namespace) (rate(container_cpu_usage_seconds_total{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[180s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "namespace": "hybrid-grouped"
+            },
+            "value": [
+              1789817454,
+              "0.9791054246459661"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "binance"
+            },
+            "value": [
+              1789817454,
+              "0.3115144122080327"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "shared-grouped"
+            },
+            "value": [
+              1789817454,
+              "0.7253258747335966"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "cpu_cores_by_tenant": {
+    "query": "(sum by (tenant) (label_replace(rate(container_cpu_usage_seconds_total{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[180s]) * on(namespace,pod) group_left(label_zilla_io_tenant) max by (namespace,pod,label_zilla_io_tenant) (kube_pod_labels{namespace=~\"binance|hybrid-grouped|shared-grouped\",label_zilla_io_tenant!=\"\"}), \"tenant\", \"$1\", \"label_zilla_io_tenant\", \"(.*)\"))) or (sum by (tenant) (label_replace(rate(container_cpu_usage_seconds_total{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\",namespace!~\"hybrid-grouped|shared-grouped\"}[180s]), \"tenant\", \"$1\", \"namespace\", \"(.*)\")))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "datadog"
+            },
+            "value": [
+              1789817454,
+              "0.24764743687060375"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "ibm"
+            },
+            "value": [
+              1789817454,
+              "0.24546397470424436"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "intel"
+            },
+            "value": [
+              1789817454,
+              "0.2089471682292394"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "binance"
+            },
+            "value": [
+              1789817454,
+              "0.3115144122080327"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "cpu_throttle_ratio": {
+    "query": "sum(increase(container_cpu_cfs_throttled_periods_total{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[180s])) / clamp_min(sum(increase(container_cpu_cfs_periods_total{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[180s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "0.0939746025346737"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "error_rate": {
+    "query": "(sum(increase(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\",status_code=~\"5..\"}[180s])) or vector(0)) / clamp_min(sum(increase(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[180s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "error_rate_by_tenant": {
+    "query": "(sum by (tenant) (increase(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\",status_code=~\"5..\"}[180s])) or (sum by (tenant) (increase(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[180s])) * 0)) / clamp_min(sum by (tenant) (increase(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[180s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "ibm"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "unknown"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "mongo"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "oracle"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "qualcomm"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "salesforce"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "sap"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "shopify"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "stripe"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "twilio"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "datadog"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "intel"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "binance"
+            },
+            "value": [
+              1789817454,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "latency_p50_seconds": {
+    "query": "histogram_quantile(0.50, sum by (le) (increase(zilla_http_request_duration_seconds_bucket{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[180s])))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "0.0041918997613063815"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "latency_p95_seconds": {
+    "query": "histogram_quantile(0.95, sum by (le) (increase(zilla_http_request_duration_seconds_bucket{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[180s])))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "0.08491295930752388"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "latency_p99_seconds": {
+    "query": "histogram_quantile(0.99, sum by (le) (increase(zilla_http_request_duration_seconds_bucket{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[180s])))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "0.1528860380310311"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "memory_bytes_by_namespace": {
+    "query": "sum by (namespace) (avg_over_time(container_memory_working_set_bytes{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[180s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "namespace": "hybrid-grouped"
+            },
+            "value": [
+              1789817454,
+              "864790732.8"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "binance"
+            },
+            "value": [
+              1789817454,
+              "715003655.7575758"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "shared-grouped"
+            },
+            "value": [
+              1789817454,
+              "765589696.3878788"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "memory_bytes_by_tenant": {
+    "query": "(sum by (tenant) (label_replace(avg_over_time(container_memory_working_set_bytes{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[180s]) * on(namespace,pod) group_left(label_zilla_io_tenant) max by (namespace,pod,label_zilla_io_tenant) (kube_pod_labels{namespace=~\"binance|hybrid-grouped|shared-grouped\",label_zilla_io_tenant!=\"\"}), \"tenant\", \"$1\", \"label_zilla_io_tenant\", \"(.*)\"))) or (sum by (tenant) (label_replace(avg_over_time(container_memory_working_set_bytes{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\",namespace!~\"hybrid-grouped|shared-grouped\"}[180s]), \"tenant\", \"$1\", \"namespace\", \"(.*)\")))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "datadog"
+            },
+            "value": [
+              1789817454,
+              "52892057.6"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "ibm"
+            },
+            "value": [
+              1789817454,
+              "51781632"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "intel"
+            },
+            "value": [
+              1789817454,
+              "53791278.54545455"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "binance"
+            },
+            "value": [
+              1789817454,
+              "715003655.7575758"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "memory_working_set_bytes": {
+    "query": "sum(avg_over_time(container_memory_working_set_bytes{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\",container!=\"POD\"}[180s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "2345384084.9454546"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "postgres_cache_hit_ratio": {
+    "query": "sum(increase(pg_stat_database_blks_hit{model=\"grouped\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"}[180s])) / clamp_min(sum(increase(pg_stat_database_blks_hit{model=\"grouped\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"}[180s])) + sum(increase(pg_stat_database_blks_read{model=\"grouped\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"}[180s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "0.9998376980283964"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "infos": [
+        "PromQL info: metric might not be a counter, name does not end in _total/_sum/_count/_bucket: \"pg_stat_database_blks_hit\" (1:143)",
+        "PromQL info: metric might not be a counter, name does not end in _total/_sum/_count/_bucket: \"pg_stat_database_blks_read\" (1:262)"
+      ],
+      "status": "success"
+    }
+  },
+  "postgres_connections": {
+    "query": "sum(pg_stat_database_numbackends{model=\"grouped\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "56"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "postgres_locks": {
+    "query": "sum(pg_locks_count{model=\"grouped\",zilla_target_type=\"postgres\",namespace!=\"monitoring\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "19"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "redis_hit_ratio": {
+    "query": "sum(increase(redis_keyspace_hits_total{model=\"grouped\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[180s])) / clamp_min(sum(increase(redis_keyspace_hits_total{model=\"grouped\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[180s])) + sum(increase(redis_keyspace_misses_total{model=\"grouped\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[180s])), 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "redis_memory_bytes": {
+    "query": "sum(redis_memory_used_bytes{model=\"grouped\",zilla_target_type=\"redis\",namespace!=\"monitoring\"})",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "3489976"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "redis_ops_per_second": {
+    "query": "sum(increase(redis_commands_processed_total{model=\"grouped\",zilla_target_type=\"redis\",namespace!=\"monitoring\"}[180s])) / 180",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "657.608823508178"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "resource_limits": {
+    "query": "sum by (resource,unit) (kube_pod_container_resource_limits{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\"} * on(namespace,pod) group_left max by (namespace,pod) (kube_pod_status_phase{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",phase=\"Running\"} == 1))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "resource": "cpu",
+              "unit": "core"
+            },
+            "value": [
+              1789817454,
+              "7.15"
+            ]
+          },
+          {
+            "metric": {
+              "resource": "memory",
+              "unit": "byte"
+            },
+            "value": [
+              1789817454,
+              "12348030976"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "resource_requests": {
+    "query": "sum by (resource,unit) (kube_pod_container_resource_requests{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",container!=\"\"} * on(namespace,pod) group_left max by (namespace,pod) (kube_pod_status_phase{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",phase=\"Running\"} == 1))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "resource": "cpu",
+              "unit": "core"
+            },
+            "value": [
+              1789817454,
+              "3.2"
+            ]
+          },
+          {
+            "metric": {
+              "resource": "memory",
+              "unit": "byte"
+            },
+            "value": [
+              1789817454,
+              "5368709120"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "restarts": {
+    "query": "sum(increase(kube_pod_container_status_restarts_total{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\"}[180s]))",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "0"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "rps": {
+    "query": "sum(increase(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[180s])) / 180",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "651.6378801288666"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "rps_by_tenant": {
+    "query": "sum by (tenant) (increase(zilla_http_requests_total{model=\"grouped\",zilla_target_type=\"backend\",namespace!=\"monitoring\"}[180s])) / 180",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "tenant": "ibm"
+            },
+            "value": [
+              1789817454,
+              "111.8403907807737"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "unknown"
+            },
+            "value": [
+              1789817454,
+              "0.36969248857589604"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "mongo"
+            },
+            "value": [
+              1789817454,
+              "28.157234457764147"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "oracle"
+            },
+            "value": [
+              1789817454,
+              "27.957236881977188"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "qualcomm"
+            },
+            "value": [
+              1789817454,
+              "28.520866413740443"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "salesforce"
+            },
+            "value": [
+              1789817454,
+              "28.569350674537276"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "sap"
+            },
+            "value": [
+              1789817454,
+              "28.181476588162568"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "shopify"
+            },
+            "value": [
+              1789817454,
+              "28.54510854413886"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "stripe"
+            },
+            "value": [
+              1789817454,
+              "28.77540878292384"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "twilio"
+            },
+            "value": [
+              1789817454,
+              "28.508745348541233"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "datadog"
+            },
+            "value": [
+              1789817454,
+              "111.55419532741432"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "intel"
+            },
+            "value": [
+              1789817454,
+              "97.0351874522733"
+            ]
+          },
+          {
+            "metric": {
+              "tenant": "binance"
+            },
+            "value": [
+              1789817454,
+              "103.62298638804378"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  },
+  "running_pods": {
+    "query": "sum(kube_pod_status_phase{namespace=~\"binance|hybrid-grouped|shared-grouped\",namespace!=\"monitoring\",phase=\"Running\"} == 1)",
+    "response": {
+      "data": {
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789817454,
+              "23"
+            ]
+          }
+        ],
+        "resultType": "vector"
+      },
+      "status": "success"
+    }
+  }
+}

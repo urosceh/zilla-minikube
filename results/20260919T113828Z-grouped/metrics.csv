@@ -1,0 +1,61 @@
+metric,timestamp,value,labels
+rps,1789818169,613.8931108723663,{}
+error_rate,1789818169,0,{}
+latency_p50_seconds,1789818169,0.004433924724560016,{}
+latency_p95_seconds,1789818169,0.08997162797368266,{}
+latency_p99_seconds,1789818169,0.2144175238101461,{}
+cpu_cores,1789818169,2.1030877573817794,{}
+memory_working_set_bytes,1789818169,2391763239.5039625,{}
+running_pods,1789818169,23,{}
+restarts,1789818169,0,{}
+cpu_throttle_ratio,1789818169,0.1024014523696643,{}
+postgres_connections,1789818169,46,{}
+postgres_cache_hit_ratio,1789818169,0.9999751562472684,{}
+postgres_locks,1789818169,18,{}
+redis_memory_bytes,1789818169,3449376,{}
+redis_ops_per_second,1789818169,619.7682452333911,{}
+redis_hit_ratio,1789818169,0,{}
+rps_by_tenant,1789818169,105.02233292728013,"{""tenant"": ""ibm""}"
+rps_by_tenant,1789818169,0.36362975218632393,"{""tenant"": ""unknown""}"
+rps_by_tenant,1789818169,26.635879347648224,"{""tenant"": ""mongo""}"
+rps_by_tenant,1789818169,26.66012133112731,"{""tenant"": ""oracle""}"
+rps_by_tenant,1789818169,26.326794058289845,"{""tenant"": ""qualcomm""}"
+rps_by_tenant,1789818169,26.387399016987565,"{""tenant"": ""salesforce""}"
+rps_by_tenant,1789818169,25.79347042174991,"{""tenant"": ""sap""}"
+rps_by_tenant,1789818169,25.538929595219482,"{""tenant"": ""shopify""}"
+rps_by_tenant,1789818169,26.114676702847827,"{""tenant"": ""stripe""}"
+rps_by_tenant,1789818169,26.09043471936874,"{""tenant"": ""twilio""}"
+rps_by_tenant,1789818169,99.49576368771288,"{""tenant"": ""datadog""}"
+rps_by_tenant,1789818169,105.47750936352287,"{""tenant"": ""intel""}"
+rps_by_tenant,1789818169,93.98616994842519,"{""tenant"": ""binance""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""ibm""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""unknown""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""mongo""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""oracle""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""qualcomm""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""salesforce""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""sap""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""shopify""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""stripe""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""twilio""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""datadog""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""intel""}"
+error_rate_by_tenant,1789818169,0,"{""tenant"": ""binance""}"
+cpu_cores_by_namespace,1789818169,1.0575918399467261,"{""namespace"": ""hybrid-grouped""}"
+cpu_cores_by_namespace,1789818169,0.3211191708433824,"{""namespace"": ""binance""}"
+cpu_cores_by_namespace,1789818169,0.7243767465916712,"{""namespace"": ""shared-grouped""}"
+memory_bytes_by_namespace,1789818169,909364218.2713287,"{""namespace"": ""hybrid-grouped""}"
+memory_bytes_by_namespace,1789818169,713542324.2144521,"{""namespace"": ""binance""}"
+memory_bytes_by_namespace,1789818169,768856697.0181818,"{""namespace"": ""shared-grouped""}"
+cpu_cores_by_tenant,1789818169,0.2426529805641146,"{""tenant"": ""datadog""}"
+cpu_cores_by_tenant,1789818169,0.2530380067052728,"{""tenant"": ""ibm""}"
+cpu_cores_by_tenant,1789818169,0.25575775302651865,"{""tenant"": ""intel""}"
+cpu_cores_by_tenant,1789818169,0.3211191708433824,"{""tenant"": ""binance""}"
+memory_bytes_by_tenant,1789818169,53146624,"{""tenant"": ""datadog""}"
+memory_bytes_by_tenant,1789818169,52775470.54545455,"{""tenant"": ""ibm""}"
+memory_bytes_by_tenant,1789818169,52612002.90909091,"{""tenant"": ""intel""}"
+memory_bytes_by_tenant,1789818169,713542324.2144521,"{""tenant"": ""binance""}"
+resource_requests,1789818169,3.2,"{""resource"": ""cpu"", ""unit"": ""core""}"
+resource_requests,1789818169,5368709120,"{""resource"": ""memory"", ""unit"": ""byte""}"
+resource_limits,1789818169,7.15,"{""resource"": ""cpu"", ""unit"": ""core""}"
+resource_limits,1789818169,12348030976,"{""resource"": ""memory"", ""unit"": ""byte""}"

@@ -70,7 +70,7 @@ in `iso`, `hybrid`, `shared`, and `grouped`.
 ```
 
 Grafana is available at <http://localhost:3000> after port-forwarding. Its
-local-only login is `admin` / `zilla-local-only`. Three Zilla dashboards appear
+local-only login is `admin` / `admin`. Three Zilla dashboards appear
 in the **Zilla** folder after install; see
 [`observability/grafana/README.md`](observability/grafana/README.md).
 Prometheus is available at <http://localhost:9090>.

@@ -1,0 +1,3287 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: /scripts/scenario.js
+        output: -
+
+     scenarios: (100.00%) 10 scenarios, 200 max VUs, 4m30s max duration (incl. graceful stop):
+              * workload_01_amazon: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+              * workload_02_amd: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+              * workload_03_apple: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+              * workload_04_azure: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+              * workload_05_google: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+              * workload_06_meta: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+              * workload_07_netflix: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+              * workload_08_nvidia: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+              * workload_09_paypal: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+              * workload_10_reddit: Up to 20 looping VUs for 4m30s over 4 stages (gracefulRampDown: 0s, exec: tenantWorkload, gracefulStop: 5s)
+
+
+running (0m00.9s), 000/200 VUs, 0 complete and 0 interrupted iterations
+workload_01_amazon    [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+workload_02_amd       [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+workload_03_apple     [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+workload_04_azure     [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+workload_05_google    [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+workload_06_meta      [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+workload_07_netflix   [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+workload_08_nvidia    [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+workload_09_paypal    [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+workload_10_reddit    [   0% ] 00/20 VUs  0m00.9s/4m30.0s
+
+running (0m01.9s), 010/200 VUs, 0 complete and 0 interrupted iterations
+workload_01_amazon    [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+workload_02_amd       [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+workload_03_apple     [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+workload_04_azure     [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+workload_05_google    [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+workload_06_meta      [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+workload_07_netflix   [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+workload_08_nvidia    [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+workload_09_paypal    [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+workload_10_reddit    [   1% ] 01/20 VUs  0m01.9s/4m30.0s
+
+running (0m02.9s), 010/200 VUs, 0 complete and 0 interrupted iterations
+workload_01_amazon    [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+workload_02_amd       [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+workload_03_apple     [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+workload_04_azure     [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+workload_05_google    [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+workload_06_meta      [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+workload_07_netflix   [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+workload_08_nvidia    [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+workload_09_paypal    [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+workload_10_reddit    [   1% ] 01/20 VUs  0m02.9s/4m30.0s
+
+running (0m03.9s), 020/200 VUs, 10 complete and 0 interrupted iterations
+workload_01_amazon    [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+workload_02_amd       [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+workload_03_apple     [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+workload_04_azure     [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+workload_05_google    [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+workload_06_meta      [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+workload_07_netflix   [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+workload_08_nvidia    [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+workload_09_paypal    [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+workload_10_reddit    [   1% ] 02/20 VUs  0m03.9s/4m30.0s
+
+running (0m04.9s), 030/200 VUs, 35 complete and 0 interrupted iterations
+workload_01_amazon    [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+workload_02_amd       [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+workload_03_apple     [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+workload_04_azure     [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+workload_05_google    [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+workload_06_meta      [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+workload_07_netflix   [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+workload_08_nvidia    [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+workload_09_paypal    [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+workload_10_reddit    [   2% ] 03/20 VUs  0m04.9s/4m30.0s
+
+running (0m05.9s), 030/200 VUs, 42 complete and 0 interrupted iterations
+workload_01_amazon    [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+workload_02_amd       [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+workload_03_apple     [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+workload_04_azure     [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+workload_05_google    [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+workload_06_meta      [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+workload_07_netflix   [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+workload_08_nvidia    [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+workload_09_paypal    [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+workload_10_reddit    [   2% ] 03/20 VUs  0m05.9s/4m30.0s
+
+running (0m06.9s), 040/200 VUs, 79 complete and 0 interrupted iterations
+workload_01_amazon    [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+workload_02_amd       [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+workload_03_apple     [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+workload_04_azure     [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+workload_05_google    [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+workload_06_meta      [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+workload_07_netflix   [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+workload_08_nvidia    [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+workload_09_paypal    [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+workload_10_reddit    [   3% ] 04/20 VUs  0m06.9s/4m30.0s
+
+running (0m07.9s), 050/200 VUs, 131 complete and 0 interrupted iterations
+workload_01_amazon    [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+workload_02_amd       [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+workload_03_apple     [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+workload_04_azure     [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+workload_05_google    [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+workload_06_meta      [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+workload_07_netflix   [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+workload_08_nvidia    [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+workload_09_paypal    [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+workload_10_reddit    [   3% ] 05/20 VUs  0m07.9s/4m30.0s
+
+running (0m08.9s), 050/200 VUs, 136 complete and 0 interrupted iterations
+workload_01_amazon    [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+workload_02_amd       [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+workload_03_apple     [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+workload_04_azure     [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+workload_05_google    [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+workload_06_meta      [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+workload_07_netflix   [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+workload_08_nvidia    [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+workload_09_paypal    [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+workload_10_reddit    [   3% ] 05/20 VUs  0m08.9s/4m30.0s
+
+running (0m09.9s), 060/200 VUs, 190 complete and 0 interrupted iterations
+workload_01_amazon    [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+workload_02_amd       [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+workload_03_apple     [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+workload_04_azure     [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+workload_05_google    [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+workload_06_meta      [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+workload_07_netflix   [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+workload_08_nvidia    [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+workload_09_paypal    [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+workload_10_reddit    [   4% ] 06/20 VUs  0m09.9s/4m30.0s
+
+running (0m10.9s), 070/200 VUs, 225 complete and 0 interrupted iterations
+workload_01_amazon    [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+workload_02_amd       [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+workload_03_apple     [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+workload_04_azure     [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+workload_05_google    [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+workload_06_meta      [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+workload_07_netflix   [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+workload_08_nvidia    [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+workload_09_paypal    [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+workload_10_reddit    [   4% ] 07/20 VUs  0m10.9s/4m30.0s
+
+running (0m11.9s), 070/200 VUs, 255 complete and 0 interrupted iterations
+workload_01_amazon    [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+workload_02_amd       [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+workload_03_apple     [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+workload_04_azure     [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+workload_05_google    [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+workload_06_meta      [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+workload_07_netflix   [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+workload_08_nvidia    [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+workload_09_paypal    [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+workload_10_reddit    [   4% ] 07/20 VUs  0m11.9s/4m30.0s
+
+running (0m12.9s), 080/200 VUs, 313 complete and 0 interrupted iterations
+workload_01_amazon    [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+workload_02_amd       [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+workload_03_apple     [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+workload_04_azure     [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+workload_05_google    [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+workload_06_meta      [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+workload_07_netflix   [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+workload_08_nvidia    [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+workload_09_paypal    [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+workload_10_reddit    [   5% ] 08/20 VUs  0m12.9s/4m30.0s
+
+running (0m13.9s), 090/200 VUs, 339 complete and 0 interrupted iterations
+workload_01_amazon    [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+workload_02_amd       [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+workload_03_apple     [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+workload_04_azure     [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+workload_05_google    [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+workload_06_meta      [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+workload_07_netflix   [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+workload_08_nvidia    [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+workload_09_paypal    [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+workload_10_reddit    [   5% ] 09/20 VUs  0m13.9s/4m30.0s
+
+running (0m14.9s), 090/200 VUs, 389 complete and 0 interrupted iterations
+workload_01_amazon    [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+workload_02_amd       [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+workload_03_apple     [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+workload_04_azure     [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+workload_05_google    [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+workload_06_meta      [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+workload_07_netflix   [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+workload_08_nvidia    [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+workload_09_paypal    [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+workload_10_reddit    [   6% ] 09/20 VUs  0m14.9s/4m30.0s
+
+running (0m15.9s), 100/200 VUs, 462 complete and 0 interrupted iterations
+workload_01_amazon    [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+workload_02_amd       [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+workload_03_apple     [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+workload_04_azure     [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+workload_05_google    [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+workload_06_meta      [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+workload_07_netflix   [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+workload_08_nvidia    [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+workload_09_paypal    [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+workload_10_reddit    [   6% ] 10/20 VUs  0m15.9s/4m30.0s
+
+running (0m16.9s), 110/200 VUs, 488 complete and 0 interrupted iterations
+workload_01_amazon    [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+workload_02_amd       [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+workload_03_apple     [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+workload_04_azure     [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+workload_05_google    [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+workload_06_meta      [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+workload_07_netflix   [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+workload_08_nvidia    [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+workload_09_paypal    [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+workload_10_reddit    [   6% ] 11/20 VUs  0m16.9s/4m30.0s
+
+running (0m17.9s), 110/200 VUs, 544 complete and 0 interrupted iterations
+workload_01_amazon    [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+workload_02_amd       [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+workload_03_apple     [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+workload_04_azure     [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+workload_05_google    [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+workload_06_meta      [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+workload_07_netflix   [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+workload_08_nvidia    [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+workload_09_paypal    [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+workload_10_reddit    [   7% ] 11/20 VUs  0m17.9s/4m30.0s
+
+running (0m18.9s), 120/200 VUs, 579 complete and 0 interrupted iterations
+workload_01_amazon    [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+workload_02_amd       [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+workload_03_apple     [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+workload_04_azure     [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+workload_05_google    [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+workload_06_meta      [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+workload_07_netflix   [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+workload_08_nvidia    [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+workload_09_paypal    [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+workload_10_reddit    [   7% ] 12/20 VUs  0m18.9s/4m30.0s
+
+running (0m19.9s), 130/200 VUs, 603 complete and 0 interrupted iterations
+workload_01_amazon    [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+workload_02_amd       [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+workload_03_apple     [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+workload_04_azure     [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+workload_05_google    [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+workload_06_meta      [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+workload_07_netflix   [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+workload_08_nvidia    [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+workload_09_paypal    [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+workload_10_reddit    [   7% ] 13/20 VUs  0m19.9s/4m30.0s
+
+running (0m20.9s), 130/200 VUs, 654 complete and 0 interrupted iterations
+workload_01_amazon    [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+workload_02_amd       [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+workload_03_apple     [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+workload_04_azure     [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+workload_05_google    [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+workload_06_meta      [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+workload_07_netflix   [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+workload_08_nvidia    [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+workload_09_paypal    [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+workload_10_reddit    [   8% ] 13/20 VUs  0m20.9s/4m30.0s
+
+running (0m21.9s), 140/200 VUs, 720 complete and 0 interrupted iterations
+workload_01_amazon    [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+workload_02_amd       [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+workload_03_apple     [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+workload_04_azure     [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+workload_05_google    [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+workload_06_meta      [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+workload_07_netflix   [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+workload_08_nvidia    [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+workload_09_paypal    [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+workload_10_reddit    [   8% ] 14/20 VUs  0m21.9s/4m30.0s
+
+running (0m22.9s), 150/200 VUs, 736 complete and 0 interrupted iterations
+workload_01_amazon    [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+workload_02_amd       [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+workload_03_apple     [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+workload_04_azure     [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+workload_05_google    [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+workload_06_meta      [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+workload_07_netflix   [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+workload_08_nvidia    [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+workload_09_paypal    [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+workload_10_reddit    [   8% ] 15/20 VUs  0m22.9s/4m30.0s
+
+running (0m23.9s), 150/200 VUs, 795 complete and 0 interrupted iterations
+workload_01_amazon    [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+workload_02_amd       [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+workload_03_apple     [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+workload_04_azure     [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+workload_05_google    [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+workload_06_meta      [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+workload_07_netflix   [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+workload_08_nvidia    [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+workload_09_paypal    [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+workload_10_reddit    [   9% ] 15/20 VUs  0m23.9s/4m30.0s
+
+running (0m24.9s), 160/200 VUs, 831 complete and 0 interrupted iterations
+workload_01_amazon    [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+workload_02_amd       [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+workload_03_apple     [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+workload_04_azure     [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+workload_05_google    [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+workload_06_meta      [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+workload_07_netflix   [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+workload_08_nvidia    [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+workload_09_paypal    [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+workload_10_reddit    [   9% ] 16/20 VUs  0m24.9s/4m30.0s
+
+running (0m25.9s), 170/200 VUs, 868 complete and 0 interrupted iterations
+workload_01_amazon    [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+workload_02_amd       [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+workload_03_apple     [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+workload_04_azure     [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+workload_05_google    [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+workload_06_meta      [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+workload_07_netflix   [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+workload_08_nvidia    [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+workload_09_paypal    [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+workload_10_reddit    [  10% ] 17/20 VUs  0m25.9s/4m30.0s
+
+running (0m26.9s), 170/200 VUs, 934 complete and 0 interrupted iterations
+workload_01_amazon    [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+workload_02_amd       [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+workload_03_apple     [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+workload_04_azure     [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+workload_05_google    [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+workload_06_meta      [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+workload_07_netflix   [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+workload_08_nvidia    [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+workload_09_paypal    [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+workload_10_reddit    [  10% ] 17/20 VUs  0m26.9s/4m30.0s
+
+running (0m27.9s), 180/200 VUs, 950 complete and 0 interrupted iterations
+workload_01_amazon    [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+workload_02_amd       [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+workload_03_apple     [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+workload_04_azure     [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+workload_05_google    [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+workload_06_meta      [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+workload_07_netflix   [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+workload_08_nvidia    [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+workload_09_paypal    [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+workload_10_reddit    [  10% ] 18/20 VUs  0m27.9s/4m30.0s
+
+running (0m28.9s), 190/200 VUs, 1025 complete and 0 interrupted iterations
+workload_01_amazon    [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+workload_02_amd       [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+workload_03_apple     [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+workload_04_azure     [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+workload_05_google    [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+workload_06_meta      [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+workload_07_netflix   [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+workload_08_nvidia    [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+workload_09_paypal    [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+workload_10_reddit    [  11% ] 19/20 VUs  0m28.9s/4m30.0s
+
+running (0m29.9s), 190/200 VUs, 1073 complete and 0 interrupted iterations
+workload_01_amazon    [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+workload_02_amd       [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+workload_03_apple     [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+workload_04_azure     [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+workload_05_google    [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+workload_06_meta      [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+workload_07_netflix   [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+workload_08_nvidia    [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+workload_09_paypal    [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+workload_10_reddit    [  11% ] 19/20 VUs  0m29.9s/4m30.0s
+
+running (0m30.9s), 200/200 VUs, 1109 complete and 0 interrupted iterations
+workload_01_amazon    [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+workload_02_amd       [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+workload_03_apple     [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+workload_04_azure     [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+workload_05_google    [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+workload_06_meta      [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+workload_07_netflix   [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+workload_08_nvidia    [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+workload_09_paypal    [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+workload_10_reddit    [  11% ] 20/20 VUs  0m30.9s/4m30.0s
+
+running (0m31.9s), 200/200 VUs, 1159 complete and 0 interrupted iterations
+workload_01_amazon    [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+workload_02_amd       [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+workload_03_apple     [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+workload_04_azure     [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+workload_05_google    [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+workload_06_meta      [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+workload_07_netflix   [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+workload_08_nvidia    [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+workload_09_paypal    [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+workload_10_reddit    [  12% ] 20/20 VUs  0m31.9s/4m30.0s
+
+running (0m32.9s), 200/200 VUs, 1186 complete and 0 interrupted iterations
+workload_01_amazon    [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+workload_02_amd       [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+workload_03_apple     [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+workload_04_azure     [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+workload_05_google    [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+workload_06_meta      [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+workload_07_netflix   [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+workload_08_nvidia    [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+workload_09_paypal    [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+workload_10_reddit    [  12% ] 20/20 VUs  0m32.9s/4m30.0s
+
+running (0m33.9s), 200/200 VUs, 1259 complete and 0 interrupted iterations
+workload_01_amazon    [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+workload_02_amd       [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+workload_03_apple     [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+workload_04_azure     [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+workload_05_google    [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+workload_06_meta      [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+workload_07_netflix   [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+workload_08_nvidia    [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+workload_09_paypal    [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+workload_10_reddit    [  13% ] 20/20 VUs  0m33.9s/4m30.0s
+
+running (0m34.9s), 200/200 VUs, 1348 complete and 0 interrupted iterations
+workload_01_amazon    [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+workload_02_amd       [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+workload_03_apple     [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+workload_04_azure     [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+workload_05_google    [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+workload_06_meta      [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+workload_07_netflix   [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+workload_08_nvidia    [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+workload_09_paypal    [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+workload_10_reddit    [  13% ] 20/20 VUs  0m34.9s/4m30.0s
+
+running (0m35.9s), 200/200 VUs, 1475 complete and 0 interrupted iterations
+workload_01_amazon    [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+workload_02_amd       [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+workload_03_apple     [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+workload_04_azure     [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+workload_05_google    [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+workload_06_meta      [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+workload_07_netflix   [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+workload_08_nvidia    [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+workload_09_paypal    [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+workload_10_reddit    [  13% ] 20/20 VUs  0m35.9s/4m30.0s
+
+running (0m36.9s), 200/200 VUs, 1602 complete and 0 interrupted iterations
+workload_01_amazon    [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+workload_02_amd       [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+workload_03_apple     [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+workload_04_azure     [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+workload_05_google    [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+workload_06_meta      [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+workload_07_netflix   [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+workload_08_nvidia    [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+workload_09_paypal    [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+workload_10_reddit    [  14% ] 20/20 VUs  0m36.9s/4m30.0s
+
+running (0m37.9s), 200/200 VUs, 1722 complete and 0 interrupted iterations
+workload_01_amazon    [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+workload_02_amd       [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+workload_03_apple     [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+workload_04_azure     [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+workload_05_google    [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+workload_06_meta      [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+workload_07_netflix   [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+workload_08_nvidia    [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+workload_09_paypal    [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+workload_10_reddit    [  14% ] 20/20 VUs  0m37.9s/4m30.0s
+
+running (0m38.9s), 200/200 VUs, 1848 complete and 0 interrupted iterations
+workload_01_amazon    [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+workload_02_amd       [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+workload_03_apple     [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+workload_04_azure     [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+workload_05_google    [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+workload_06_meta      [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+workload_07_netflix   [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+workload_08_nvidia    [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+workload_09_paypal    [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+workload_10_reddit    [  14% ] 20/20 VUs  0m38.9s/4m30.0s
+
+running (0m39.9s), 200/200 VUs, 1969 complete and 0 interrupted iterations
+workload_01_amazon    [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+workload_02_amd       [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+workload_03_apple     [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+workload_04_azure     [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+workload_05_google    [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+workload_06_meta      [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+workload_07_netflix   [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+workload_08_nvidia    [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+workload_09_paypal    [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+workload_10_reddit    [  15% ] 20/20 VUs  0m39.9s/4m30.0s
+
+running (0m40.9s), 200/200 VUs, 2093 complete and 0 interrupted iterations
+workload_01_amazon    [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+workload_02_amd       [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+workload_03_apple     [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+workload_04_azure     [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+workload_05_google    [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+workload_06_meta      [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+workload_07_netflix   [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+workload_08_nvidia    [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+workload_09_paypal    [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+workload_10_reddit    [  15% ] 20/20 VUs  0m40.9s/4m30.0s
+
+running (0m41.9s), 200/200 VUs, 2208 complete and 0 interrupted iterations
+workload_01_amazon    [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+workload_02_amd       [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+workload_03_apple     [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+workload_04_azure     [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+workload_05_google    [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+workload_06_meta      [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+workload_07_netflix   [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+workload_08_nvidia    [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+workload_09_paypal    [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+workload_10_reddit    [  16% ] 20/20 VUs  0m41.9s/4m30.0s
+
+running (0m42.9s), 200/200 VUs, 2322 complete and 0 interrupted iterations
+workload_01_amazon    [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+workload_02_amd       [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+workload_03_apple     [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+workload_04_azure     [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+workload_05_google    [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+workload_06_meta      [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+workload_07_netflix   [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+workload_08_nvidia    [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+workload_09_paypal    [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+workload_10_reddit    [  16% ] 20/20 VUs  0m42.9s/4m30.0s
+
+running (0m43.9s), 200/200 VUs, 2364 complete and 0 interrupted iterations
+workload_01_amazon    [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+workload_02_amd       [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+workload_03_apple     [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+workload_04_azure     [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+workload_05_google    [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+workload_06_meta      [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+workload_07_netflix   [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+workload_08_nvidia    [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+workload_09_paypal    [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+workload_10_reddit    [  16% ] 20/20 VUs  0m43.9s/4m30.0s
+
+running (0m44.9s), 200/200 VUs, 2480 complete and 0 interrupted iterations
+workload_01_amazon    [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+workload_02_amd       [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+workload_03_apple     [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+workload_04_azure     [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+workload_05_google    [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+workload_06_meta      [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+workload_07_netflix   [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+workload_08_nvidia    [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+workload_09_paypal    [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+workload_10_reddit    [  17% ] 20/20 VUs  0m44.9s/4m30.0s
+
+running (0m45.9s), 200/200 VUs, 2604 complete and 0 interrupted iterations
+workload_01_amazon    [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+workload_02_amd       [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+workload_03_apple     [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+workload_04_azure     [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+workload_05_google    [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+workload_06_meta      [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+workload_07_netflix   [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+workload_08_nvidia    [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+workload_09_paypal    [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+workload_10_reddit    [  17% ] 20/20 VUs  0m45.9s/4m30.0s
+
+running (0m46.9s), 200/200 VUs, 2708 complete and 0 interrupted iterations
+workload_01_amazon    [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+workload_02_amd       [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+workload_03_apple     [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+workload_04_azure     [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+workload_05_google    [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+workload_06_meta      [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+workload_07_netflix   [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+workload_08_nvidia    [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+workload_09_paypal    [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+workload_10_reddit    [  17% ] 20/20 VUs  0m46.9s/4m30.0s
+
+running (0m47.9s), 200/200 VUs, 2844 complete and 0 interrupted iterations
+workload_01_amazon    [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+workload_02_amd       [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+workload_03_apple     [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+workload_04_azure     [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+workload_05_google    [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+workload_06_meta      [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+workload_07_netflix   [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+workload_08_nvidia    [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+workload_09_paypal    [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+workload_10_reddit    [  18% ] 20/20 VUs  0m47.9s/4m30.0s
+
+running (0m48.9s), 200/200 VUs, 2918 complete and 0 interrupted iterations
+workload_01_amazon    [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+workload_02_amd       [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+workload_03_apple     [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+workload_04_azure     [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+workload_05_google    [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+workload_06_meta      [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+workload_07_netflix   [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+workload_08_nvidia    [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+workload_09_paypal    [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+workload_10_reddit    [  18% ] 20/20 VUs  0m48.9s/4m30.0s
+
+running (0m49.9s), 200/200 VUs, 3031 complete and 0 interrupted iterations
+workload_01_amazon    [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+workload_02_amd       [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+workload_03_apple     [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+workload_04_azure     [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+workload_05_google    [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+workload_06_meta      [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+workload_07_netflix   [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+workload_08_nvidia    [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+workload_09_paypal    [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+workload_10_reddit    [  18% ] 20/20 VUs  0m49.9s/4m30.0s
+
+running (0m50.9s), 200/200 VUs, 3132 complete and 0 interrupted iterations
+workload_01_amazon    [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+workload_02_amd       [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+workload_03_apple     [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+workload_04_azure     [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+workload_05_google    [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+workload_06_meta      [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+workload_07_netflix   [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+workload_08_nvidia    [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+workload_09_paypal    [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+workload_10_reddit    [  19% ] 20/20 VUs  0m50.9s/4m30.0s
+
+running (0m51.9s), 200/200 VUs, 3244 complete and 0 interrupted iterations
+workload_01_amazon    [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+workload_02_amd       [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+workload_03_apple     [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+workload_04_azure     [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+workload_05_google    [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+workload_06_meta      [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+workload_07_netflix   [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+workload_08_nvidia    [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+workload_09_paypal    [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+workload_10_reddit    [  19% ] 20/20 VUs  0m51.9s/4m30.0s
+
+running (0m52.9s), 200/200 VUs, 3367 complete and 0 interrupted iterations
+workload_01_amazon    [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+workload_02_amd       [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+workload_03_apple     [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+workload_04_azure     [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+workload_05_google    [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+workload_06_meta      [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+workload_07_netflix   [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+workload_08_nvidia    [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+workload_09_paypal    [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+workload_10_reddit    [  20% ] 20/20 VUs  0m52.9s/4m30.0s
+
+running (0m53.9s), 200/200 VUs, 3477 complete and 0 interrupted iterations
+workload_01_amazon    [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+workload_02_amd       [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+workload_03_apple     [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+workload_04_azure     [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+workload_05_google    [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+workload_06_meta      [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+workload_07_netflix   [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+workload_08_nvidia    [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+workload_09_paypal    [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+workload_10_reddit    [  20% ] 20/20 VUs  0m53.9s/4m30.0s
+
+running (0m54.9s), 200/200 VUs, 3610 complete and 0 interrupted iterations
+workload_01_amazon    [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+workload_02_amd       [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+workload_03_apple     [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+workload_04_azure     [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+workload_05_google    [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+workload_06_meta      [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+workload_07_netflix   [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+workload_08_nvidia    [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+workload_09_paypal    [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+workload_10_reddit    [  20% ] 20/20 VUs  0m54.9s/4m30.0s
+
+running (0m55.9s), 200/200 VUs, 3747 complete and 0 interrupted iterations
+workload_01_amazon    [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+workload_02_amd       [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+workload_03_apple     [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+workload_04_azure     [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+workload_05_google    [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+workload_06_meta      [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+workload_07_netflix   [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+workload_08_nvidia    [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+workload_09_paypal    [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+workload_10_reddit    [  21% ] 20/20 VUs  0m55.9s/4m30.0s
+
+running (0m56.9s), 200/200 VUs, 3882 complete and 0 interrupted iterations
+workload_01_amazon    [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+workload_02_amd       [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+workload_03_apple     [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+workload_04_azure     [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+workload_05_google    [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+workload_06_meta      [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+workload_07_netflix   [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+workload_08_nvidia    [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+workload_09_paypal    [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+workload_10_reddit    [  21% ] 20/20 VUs  0m56.9s/4m30.0s
+
+running (0m57.9s), 200/200 VUs, 4008 complete and 0 interrupted iterations
+workload_01_amazon    [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+workload_02_amd       [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+workload_03_apple     [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+workload_04_azure     [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+workload_05_google    [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+workload_06_meta      [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+workload_07_netflix   [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+workload_08_nvidia    [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+workload_09_paypal    [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+workload_10_reddit    [  21% ] 20/20 VUs  0m57.9s/4m30.0s
+
+running (0m58.9s), 200/200 VUs, 4131 complete and 0 interrupted iterations
+workload_01_amazon    [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+workload_02_amd       [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+workload_03_apple     [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+workload_04_azure     [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+workload_05_google    [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+workload_06_meta      [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+workload_07_netflix   [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+workload_08_nvidia    [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+workload_09_paypal    [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+workload_10_reddit    [  22% ] 20/20 VUs  0m58.9s/4m30.0s
+
+running (0m59.9s), 200/200 VUs, 4259 complete and 0 interrupted iterations
+workload_01_amazon    [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+workload_02_amd       [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+workload_03_apple     [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+workload_04_azure     [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+workload_05_google    [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+workload_06_meta      [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+workload_07_netflix   [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+workload_08_nvidia    [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+workload_09_paypal    [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+workload_10_reddit    [  22% ] 20/20 VUs  0m59.9s/4m30.0s
+
+running (1m00.9s), 200/200 VUs, 4391 complete and 0 interrupted iterations
+workload_01_amazon    [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+workload_02_amd       [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+workload_03_apple     [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+workload_04_azure     [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+workload_05_google    [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+workload_06_meta      [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+workload_07_netflix   [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+workload_08_nvidia    [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+workload_09_paypal    [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+workload_10_reddit    [  23% ] 20/20 VUs  1m00.9s/4m30.0s
+
+running (1m01.9s), 200/200 VUs, 4527 complete and 0 interrupted iterations
+workload_01_amazon    [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+workload_02_amd       [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+workload_03_apple     [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+workload_04_azure     [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+workload_05_google    [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+workload_06_meta      [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+workload_07_netflix   [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+workload_08_nvidia    [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+workload_09_paypal    [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+workload_10_reddit    [  23% ] 20/20 VUs  1m01.9s/4m30.0s
+
+running (1m02.9s), 200/200 VUs, 4662 complete and 0 interrupted iterations
+workload_01_amazon    [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+workload_02_amd       [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+workload_03_apple     [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+workload_04_azure     [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+workload_05_google    [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+workload_06_meta      [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+workload_07_netflix   [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+workload_08_nvidia    [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+workload_09_paypal    [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+workload_10_reddit    [  23% ] 20/20 VUs  1m02.9s/4m30.0s
+
+running (1m03.9s), 200/200 VUs, 4772 complete and 0 interrupted iterations
+workload_01_amazon    [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+workload_02_amd       [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+workload_03_apple     [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+workload_04_azure     [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+workload_05_google    [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+workload_06_meta      [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+workload_07_netflix   [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+workload_08_nvidia    [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+workload_09_paypal    [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+workload_10_reddit    [  24% ] 20/20 VUs  1m03.9s/4m30.0s
+
+running (1m04.9s), 200/200 VUs, 4876 complete and 0 interrupted iterations
+workload_01_amazon    [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+workload_02_amd       [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+workload_03_apple     [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+workload_04_azure     [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+workload_05_google    [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+workload_06_meta      [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+workload_07_netflix   [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+workload_08_nvidia    [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+workload_09_paypal    [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+workload_10_reddit    [  24% ] 20/20 VUs  1m04.9s/4m30.0s
+
+running (1m05.9s), 200/200 VUs, 4958 complete and 0 interrupted iterations
+workload_01_amazon    [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+workload_02_amd       [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+workload_03_apple     [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+workload_04_azure     [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+workload_05_google    [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+workload_06_meta      [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+workload_07_netflix   [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+workload_08_nvidia    [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+workload_09_paypal    [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+workload_10_reddit    [  24% ] 20/20 VUs  1m05.9s/4m30.0s
+
+running (1m06.9s), 200/200 VUs, 5074 complete and 0 interrupted iterations
+workload_01_amazon    [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+workload_02_amd       [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+workload_03_apple     [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+workload_04_azure     [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+workload_05_google    [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+workload_06_meta      [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+workload_07_netflix   [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+workload_08_nvidia    [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+workload_09_paypal    [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+workload_10_reddit    [  25% ] 20/20 VUs  1m06.9s/4m30.0s
+
+running (1m07.9s), 200/200 VUs, 5185 complete and 0 interrupted iterations
+workload_01_amazon    [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+workload_02_amd       [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+workload_03_apple     [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+workload_04_azure     [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+workload_05_google    [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+workload_06_meta      [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+workload_07_netflix   [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+workload_08_nvidia    [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+workload_09_paypal    [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+workload_10_reddit    [  25% ] 20/20 VUs  1m07.9s/4m30.0s
+
+running (1m08.9s), 200/200 VUs, 5300 complete and 0 interrupted iterations
+workload_01_amazon    [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+workload_02_amd       [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+workload_03_apple     [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+workload_04_azure     [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+workload_05_google    [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+workload_06_meta      [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+workload_07_netflix   [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+workload_08_nvidia    [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+workload_09_paypal    [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+workload_10_reddit    [  26% ] 20/20 VUs  1m08.9s/4m30.0s
+
+running (1m09.9s), 200/200 VUs, 5422 complete and 0 interrupted iterations
+workload_01_amazon    [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+workload_02_amd       [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+workload_03_apple     [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+workload_04_azure     [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+workload_05_google    [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+workload_06_meta      [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+workload_07_netflix   [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+workload_08_nvidia    [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+workload_09_paypal    [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+workload_10_reddit    [  26% ] 20/20 VUs  1m09.9s/4m30.0s
+
+running (1m10.9s), 200/200 VUs, 5517 complete and 0 interrupted iterations
+workload_01_amazon    [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+workload_02_amd       [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+workload_03_apple     [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+workload_04_azure     [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+workload_05_google    [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+workload_06_meta      [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+workload_07_netflix   [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+workload_08_nvidia    [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+workload_09_paypal    [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+workload_10_reddit    [  26% ] 20/20 VUs  1m10.9s/4m30.0s
+
+running (1m11.9s), 200/200 VUs, 5580 complete and 0 interrupted iterations
+workload_01_amazon    [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+workload_02_amd       [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+workload_03_apple     [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+workload_04_azure     [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+workload_05_google    [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+workload_06_meta      [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+workload_07_netflix   [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+workload_08_nvidia    [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+workload_09_paypal    [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+workload_10_reddit    [  27% ] 20/20 VUs  1m11.9s/4m30.0s
+
+running (1m12.9s), 200/200 VUs, 5673 complete and 0 interrupted iterations
+workload_01_amazon    [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+workload_02_amd       [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+workload_03_apple     [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+workload_04_azure     [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+workload_05_google    [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+workload_06_meta      [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+workload_07_netflix   [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+workload_08_nvidia    [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+workload_09_paypal    [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+workload_10_reddit    [  27% ] 20/20 VUs  1m12.9s/4m30.0s
+
+running (1m13.9s), 200/200 VUs, 5795 complete and 0 interrupted iterations
+workload_01_amazon    [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+workload_02_amd       [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+workload_03_apple     [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+workload_04_azure     [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+workload_05_google    [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+workload_06_meta      [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+workload_07_netflix   [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+workload_08_nvidia    [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+workload_09_paypal    [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+workload_10_reddit    [  27% ] 20/20 VUs  1m13.9s/4m30.0s
+
+running (1m14.9s), 200/200 VUs, 5904 complete and 0 interrupted iterations
+workload_01_amazon    [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+workload_02_amd       [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+workload_03_apple     [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+workload_04_azure     [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+workload_05_google    [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+workload_06_meta      [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+workload_07_netflix   [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+workload_08_nvidia    [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+workload_09_paypal    [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+workload_10_reddit    [  28% ] 20/20 VUs  1m14.9s/4m30.0s
+
+running (1m15.9s), 200/200 VUs, 6040 complete and 0 interrupted iterations
+workload_01_amazon    [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+workload_02_amd       [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+workload_03_apple     [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+workload_04_azure     [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+workload_05_google    [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+workload_06_meta      [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+workload_07_netflix   [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+workload_08_nvidia    [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+workload_09_paypal    [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+workload_10_reddit    [  28% ] 20/20 VUs  1m15.9s/4m30.0s
+
+running (1m16.9s), 200/200 VUs, 6175 complete and 0 interrupted iterations
+workload_01_amazon    [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+workload_02_amd       [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+workload_03_apple     [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+workload_04_azure     [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+workload_05_google    [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+workload_06_meta      [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+workload_07_netflix   [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+workload_08_nvidia    [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+workload_09_paypal    [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+workload_10_reddit    [  28% ] 20/20 VUs  1m16.9s/4m30.0s
+
+running (1m17.9s), 200/200 VUs, 6331 complete and 0 interrupted iterations
+workload_01_amazon    [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+workload_02_amd       [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+workload_03_apple     [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+workload_04_azure     [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+workload_05_google    [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+workload_06_meta      [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+workload_07_netflix   [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+workload_08_nvidia    [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+workload_09_paypal    [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+workload_10_reddit    [  29% ] 20/20 VUs  1m17.9s/4m30.0s
+
+running (1m18.9s), 200/200 VUs, 6390 complete and 0 interrupted iterations
+workload_01_amazon    [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+workload_02_amd       [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+workload_03_apple     [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+workload_04_azure     [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+workload_05_google    [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+workload_06_meta      [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+workload_07_netflix   [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+workload_08_nvidia    [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+workload_09_paypal    [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+workload_10_reddit    [  29% ] 20/20 VUs  1m18.9s/4m30.0s
+
+running (1m19.9s), 200/200 VUs, 6511 complete and 0 interrupted iterations
+workload_01_amazon    [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+workload_02_amd       [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+workload_03_apple     [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+workload_04_azure     [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+workload_05_google    [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+workload_06_meta      [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+workload_07_netflix   [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+workload_08_nvidia    [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+workload_09_paypal    [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+workload_10_reddit    [  30% ] 20/20 VUs  1m19.9s/4m30.0s
+
+running (1m20.9s), 200/200 VUs, 6645 complete and 0 interrupted iterations
+workload_01_amazon    [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+workload_02_amd       [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+workload_03_apple     [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+workload_04_azure     [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+workload_05_google    [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+workload_06_meta      [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+workload_07_netflix   [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+workload_08_nvidia    [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+workload_09_paypal    [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+workload_10_reddit    [  30% ] 20/20 VUs  1m20.9s/4m30.0s
+
+running (1m21.9s), 200/200 VUs, 6779 complete and 0 interrupted iterations
+workload_01_amazon    [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+workload_02_amd       [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+workload_03_apple     [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+workload_04_azure     [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+workload_05_google    [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+workload_06_meta      [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+workload_07_netflix   [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+workload_08_nvidia    [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+workload_09_paypal    [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+workload_10_reddit    [  30% ] 20/20 VUs  1m21.9s/4m30.0s
+
+running (1m22.9s), 200/200 VUs, 6923 complete and 0 interrupted iterations
+workload_01_amazon    [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+workload_02_amd       [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+workload_03_apple     [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+workload_04_azure     [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+workload_05_google    [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+workload_06_meta      [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+workload_07_netflix   [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+workload_08_nvidia    [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+workload_09_paypal    [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+workload_10_reddit    [  31% ] 20/20 VUs  1m22.9s/4m30.0s
+
+running (1m23.9s), 200/200 VUs, 7054 complete and 0 interrupted iterations
+workload_01_amazon    [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+workload_02_amd       [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+workload_03_apple     [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+workload_04_azure     [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+workload_05_google    [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+workload_06_meta      [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+workload_07_netflix   [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+workload_08_nvidia    [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+workload_09_paypal    [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+workload_10_reddit    [  31% ] 20/20 VUs  1m23.9s/4m30.0s
+
+running (1m24.9s), 200/200 VUs, 7195 complete and 0 interrupted iterations
+workload_01_amazon    [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+workload_02_amd       [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+workload_03_apple     [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+workload_04_azure     [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+workload_05_google    [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+workload_06_meta      [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+workload_07_netflix   [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+workload_08_nvidia    [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+workload_09_paypal    [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+workload_10_reddit    [  31% ] 20/20 VUs  1m24.9s/4m30.0s
+
+running (1m25.9s), 200/200 VUs, 7300 complete and 0 interrupted iterations
+workload_01_amazon    [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+workload_02_amd       [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+workload_03_apple     [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+workload_04_azure     [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+workload_05_google    [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+workload_06_meta      [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+workload_07_netflix   [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+workload_08_nvidia    [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+workload_09_paypal    [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+workload_10_reddit    [  32% ] 20/20 VUs  1m25.9s/4m30.0s
+
+running (1m26.9s), 200/200 VUs, 7407 complete and 0 interrupted iterations
+workload_01_amazon    [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+workload_02_amd       [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+workload_03_apple     [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+workload_04_azure     [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+workload_05_google    [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+workload_06_meta      [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+workload_07_netflix   [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+workload_08_nvidia    [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+workload_09_paypal    [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+workload_10_reddit    [  32% ] 20/20 VUs  1m26.9s/4m30.0s
+
+running (1m27.9s), 200/200 VUs, 7533 complete and 0 interrupted iterations
+workload_01_amazon    [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+workload_02_amd       [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+workload_03_apple     [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+workload_04_azure     [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+workload_05_google    [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+workload_06_meta      [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+workload_07_netflix   [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+workload_08_nvidia    [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+workload_09_paypal    [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+workload_10_reddit    [  33% ] 20/20 VUs  1m27.9s/4m30.0s
+
+running (1m28.9s), 200/200 VUs, 7672 complete and 0 interrupted iterations
+workload_01_amazon    [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+workload_02_amd       [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+workload_03_apple     [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+workload_04_azure     [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+workload_05_google    [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+workload_06_meta      [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+workload_07_netflix   [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+workload_08_nvidia    [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+workload_09_paypal    [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+workload_10_reddit    [  33% ] 20/20 VUs  1m28.9s/4m30.0s
+
+running (1m29.9s), 200/200 VUs, 7806 complete and 0 interrupted iterations
+workload_01_amazon    [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+workload_02_amd       [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+workload_03_apple     [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+workload_04_azure     [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+workload_05_google    [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+workload_06_meta      [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+workload_07_netflix   [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+workload_08_nvidia    [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+workload_09_paypal    [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+workload_10_reddit    [  33% ] 20/20 VUs  1m29.9s/4m30.0s
+
+running (1m30.9s), 200/200 VUs, 7952 complete and 0 interrupted iterations
+workload_01_amazon    [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+workload_02_amd       [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+workload_03_apple     [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+workload_04_azure     [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+workload_05_google    [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+workload_06_meta      [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+workload_07_netflix   [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+workload_08_nvidia    [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+workload_09_paypal    [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+workload_10_reddit    [  34% ] 20/20 VUs  1m30.9s/4m30.0s
+
+running (1m31.9s), 200/200 VUs, 8063 complete and 0 interrupted iterations
+workload_01_amazon    [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+workload_02_amd       [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+workload_03_apple     [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+workload_04_azure     [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+workload_05_google    [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+workload_06_meta      [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+workload_07_netflix   [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+workload_08_nvidia    [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+workload_09_paypal    [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+workload_10_reddit    [  34% ] 20/20 VUs  1m31.9s/4m30.0s
+
+running (1m32.9s), 200/200 VUs, 8258 complete and 0 interrupted iterations
+workload_01_amazon    [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+workload_02_amd       [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+workload_03_apple     [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+workload_04_azure     [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+workload_05_google    [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+workload_06_meta      [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+workload_07_netflix   [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+workload_08_nvidia    [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+workload_09_paypal    [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+workload_10_reddit    [  34% ] 20/20 VUs  1m32.9s/4m30.0s
+
+running (1m33.9s), 200/200 VUs, 8403 complete and 0 interrupted iterations
+workload_01_amazon    [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+workload_02_amd       [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+workload_03_apple     [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+workload_04_azure     [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+workload_05_google    [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+workload_06_meta      [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+workload_07_netflix   [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+workload_08_nvidia    [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+workload_09_paypal    [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+workload_10_reddit    [  35% ] 20/20 VUs  1m33.9s/4m30.0s
+
+running (1m34.9s), 200/200 VUs, 8514 complete and 0 interrupted iterations
+workload_01_amazon    [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+workload_02_amd       [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+workload_03_apple     [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+workload_04_azure     [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+workload_05_google    [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+workload_06_meta      [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+workload_07_netflix   [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+workload_08_nvidia    [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+workload_09_paypal    [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+workload_10_reddit    [  35% ] 20/20 VUs  1m34.9s/4m30.0s
+
+running (1m35.9s), 200/200 VUs, 8575 complete and 0 interrupted iterations
+workload_01_amazon    [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+workload_02_amd       [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+workload_03_apple     [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+workload_04_azure     [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+workload_05_google    [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+workload_06_meta      [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+workload_07_netflix   [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+workload_08_nvidia    [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+workload_09_paypal    [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+workload_10_reddit    [  36% ] 20/20 VUs  1m35.9s/4m30.0s
+
+running (1m36.9s), 200/200 VUs, 8682 complete and 0 interrupted iterations
+workload_01_amazon    [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+workload_02_amd       [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+workload_03_apple     [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+workload_04_azure     [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+workload_05_google    [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+workload_06_meta      [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+workload_07_netflix   [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+workload_08_nvidia    [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+workload_09_paypal    [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+workload_10_reddit    [  36% ] 20/20 VUs  1m36.9s/4m30.0s
+
+running (1m37.9s), 200/200 VUs, 8840 complete and 0 interrupted iterations
+workload_01_amazon    [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+workload_02_amd       [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+workload_03_apple     [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+workload_04_azure     [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+workload_05_google    [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+workload_06_meta      [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+workload_07_netflix   [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+workload_08_nvidia    [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+workload_09_paypal    [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+workload_10_reddit    [  36% ] 20/20 VUs  1m37.9s/4m30.0s
+
+running (1m38.9s), 200/200 VUs, 8987 complete and 0 interrupted iterations
+workload_01_amazon    [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+workload_02_amd       [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+workload_03_apple     [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+workload_04_azure     [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+workload_05_google    [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+workload_06_meta      [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+workload_07_netflix   [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+workload_08_nvidia    [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+workload_09_paypal    [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+workload_10_reddit    [  37% ] 20/20 VUs  1m38.9s/4m30.0s
+
+running (1m39.9s), 200/200 VUs, 9096 complete and 0 interrupted iterations
+workload_01_amazon    [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+workload_02_amd       [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+workload_03_apple     [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+workload_04_azure     [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+workload_05_google    [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+workload_06_meta      [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+workload_07_netflix   [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+workload_08_nvidia    [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+workload_09_paypal    [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+workload_10_reddit    [  37% ] 20/20 VUs  1m39.9s/4m30.0s
+
+running (1m40.9s), 200/200 VUs, 9274 complete and 0 interrupted iterations
+workload_01_amazon    [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+workload_02_amd       [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+workload_03_apple     [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+workload_04_azure     [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+workload_05_google    [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+workload_06_meta      [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+workload_07_netflix   [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+workload_08_nvidia    [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+workload_09_paypal    [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+workload_10_reddit    [  37% ] 20/20 VUs  1m40.9s/4m30.0s
+
+running (1m41.9s), 200/200 VUs, 9410 complete and 0 interrupted iterations
+workload_01_amazon    [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+workload_02_amd       [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+workload_03_apple     [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+workload_04_azure     [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+workload_05_google    [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+workload_06_meta      [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+workload_07_netflix   [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+workload_08_nvidia    [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+workload_09_paypal    [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+workload_10_reddit    [  38% ] 20/20 VUs  1m41.9s/4m30.0s
+
+running (1m42.9s), 200/200 VUs, 9561 complete and 0 interrupted iterations
+workload_01_amazon    [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+workload_02_amd       [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+workload_03_apple     [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+workload_04_azure     [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+workload_05_google    [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+workload_06_meta      [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+workload_07_netflix   [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+workload_08_nvidia    [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+workload_09_paypal    [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+workload_10_reddit    [  38% ] 20/20 VUs  1m42.9s/4m30.0s
+
+running (1m43.9s), 200/200 VUs, 9692 complete and 0 interrupted iterations
+workload_01_amazon    [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+workload_02_amd       [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+workload_03_apple     [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+workload_04_azure     [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+workload_05_google    [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+workload_06_meta      [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+workload_07_netflix   [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+workload_08_nvidia    [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+workload_09_paypal    [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+workload_10_reddit    [  38% ] 20/20 VUs  1m43.9s/4m30.0s
+
+running (1m44.9s), 200/200 VUs, 9833 complete and 0 interrupted iterations
+workload_01_amazon    [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+workload_02_amd       [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+workload_03_apple     [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+workload_04_azure     [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+workload_05_google    [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+workload_06_meta      [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+workload_07_netflix   [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+workload_08_nvidia    [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+workload_09_paypal    [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+workload_10_reddit    [  39% ] 20/20 VUs  1m44.9s/4m30.0s
+
+running (1m45.9s), 200/200 VUs, 9999 complete and 0 interrupted iterations
+workload_01_amazon    [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+workload_02_amd       [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+workload_03_apple     [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+workload_04_azure     [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+workload_05_google    [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+workload_06_meta      [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+workload_07_netflix   [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+workload_08_nvidia    [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+workload_09_paypal    [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+workload_10_reddit    [  39% ] 20/20 VUs  1m45.9s/4m30.0s
+
+running (1m46.9s), 200/200 VUs, 10158 complete and 0 interrupted iterations
+workload_01_amazon    [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+workload_02_amd       [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+workload_03_apple     [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+workload_04_azure     [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+workload_05_google    [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+workload_06_meta      [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+workload_07_netflix   [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+workload_08_nvidia    [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+workload_09_paypal    [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+workload_10_reddit    [  40% ] 20/20 VUs  1m46.9s/4m30.0s
+
+running (1m47.9s), 200/200 VUs, 10286 complete and 0 interrupted iterations
+workload_01_amazon    [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+workload_02_amd       [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+workload_03_apple     [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+workload_04_azure     [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+workload_05_google    [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+workload_06_meta      [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+workload_07_netflix   [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+workload_08_nvidia    [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+workload_09_paypal    [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+workload_10_reddit    [  40% ] 20/20 VUs  1m47.9s/4m30.0s
+
+running (1m48.9s), 200/200 VUs, 10423 complete and 0 interrupted iterations
+workload_01_amazon    [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+workload_02_amd       [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+workload_03_apple     [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+workload_04_azure     [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+workload_05_google    [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+workload_06_meta      [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+workload_07_netflix   [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+workload_08_nvidia    [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+workload_09_paypal    [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+workload_10_reddit    [  40% ] 20/20 VUs  1m48.9s/4m30.0s
+
+running (1m49.9s), 200/200 VUs, 10526 complete and 0 interrupted iterations
+workload_01_amazon    [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+workload_02_amd       [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+workload_03_apple     [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+workload_04_azure     [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+workload_05_google    [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+workload_06_meta      [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+workload_07_netflix   [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+workload_08_nvidia    [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+workload_09_paypal    [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+workload_10_reddit    [  41% ] 20/20 VUs  1m49.9s/4m30.0s
+
+running (1m50.9s), 200/200 VUs, 10636 complete and 0 interrupted iterations
+workload_01_amazon    [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+workload_02_amd       [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+workload_03_apple     [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+workload_04_azure     [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+workload_05_google    [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+workload_06_meta      [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+workload_07_netflix   [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+workload_08_nvidia    [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+workload_09_paypal    [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+workload_10_reddit    [  41% ] 20/20 VUs  1m50.9s/4m30.0s
+
+running (1m51.9s), 200/200 VUs, 10743 complete and 0 interrupted iterations
+workload_01_amazon    [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+workload_02_amd       [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+workload_03_apple     [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+workload_04_azure     [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+workload_05_google    [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+workload_06_meta      [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+workload_07_netflix   [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+workload_08_nvidia    [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+workload_09_paypal    [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+workload_10_reddit    [  41% ] 20/20 VUs  1m51.9s/4m30.0s
+
+running (1m52.9s), 200/200 VUs, 10883 complete and 0 interrupted iterations
+workload_01_amazon    [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+workload_02_amd       [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+workload_03_apple     [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+workload_04_azure     [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+workload_05_google    [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+workload_06_meta      [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+workload_07_netflix   [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+workload_08_nvidia    [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+workload_09_paypal    [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+workload_10_reddit    [  42% ] 20/20 VUs  1m52.9s/4m30.0s
+
+running (1m53.9s), 200/200 VUs, 11014 complete and 0 interrupted iterations
+workload_01_amazon    [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+workload_02_amd       [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+workload_03_apple     [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+workload_04_azure     [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+workload_05_google    [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+workload_06_meta      [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+workload_07_netflix   [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+workload_08_nvidia    [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+workload_09_paypal    [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+workload_10_reddit    [  42% ] 20/20 VUs  1m53.9s/4m30.0s
+
+running (1m54.9s), 200/200 VUs, 11147 complete and 0 interrupted iterations
+workload_01_amazon    [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+workload_02_amd       [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+workload_03_apple     [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+workload_04_azure     [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+workload_05_google    [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+workload_06_meta      [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+workload_07_netflix   [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+workload_08_nvidia    [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+workload_09_paypal    [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+workload_10_reddit    [  43% ] 20/20 VUs  1m54.9s/4m30.0s
+
+running (1m55.9s), 200/200 VUs, 11268 complete and 0 interrupted iterations
+workload_01_amazon    [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+workload_02_amd       [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+workload_03_apple     [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+workload_04_azure     [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+workload_05_google    [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+workload_06_meta      [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+workload_07_netflix   [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+workload_08_nvidia    [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+workload_09_paypal    [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+workload_10_reddit    [  43% ] 20/20 VUs  1m55.9s/4m30.0s
+
+running (1m56.9s), 200/200 VUs, 11434 complete and 0 interrupted iterations
+workload_01_amazon    [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+workload_02_amd       [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+workload_03_apple     [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+workload_04_azure     [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+workload_05_google    [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+workload_06_meta      [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+workload_07_netflix   [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+workload_08_nvidia    [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+workload_09_paypal    [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+workload_10_reddit    [  43% ] 20/20 VUs  1m56.9s/4m30.0s
+
+running (1m57.9s), 200/200 VUs, 11570 complete and 0 interrupted iterations
+workload_01_amazon    [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+workload_02_amd       [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+workload_03_apple     [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+workload_04_azure     [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+workload_05_google    [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+workload_06_meta      [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+workload_07_netflix   [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+workload_08_nvidia    [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+workload_09_paypal    [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+workload_10_reddit    [  44% ] 20/20 VUs  1m57.9s/4m30.0s
+
+running (1m58.9s), 200/200 VUs, 11700 complete and 0 interrupted iterations
+workload_01_amazon    [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+workload_02_amd       [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+workload_03_apple     [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+workload_04_azure     [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+workload_05_google    [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+workload_06_meta      [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+workload_07_netflix   [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+workload_08_nvidia    [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+workload_09_paypal    [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+workload_10_reddit    [  44% ] 20/20 VUs  1m58.9s/4m30.0s
+
+running (1m59.9s), 200/200 VUs, 11825 complete and 0 interrupted iterations
+workload_01_amazon    [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+workload_02_amd       [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+workload_03_apple     [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+workload_04_azure     [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+workload_05_google    [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+workload_06_meta      [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+workload_07_netflix   [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+workload_08_nvidia    [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+workload_09_paypal    [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+workload_10_reddit    [  44% ] 20/20 VUs  1m59.9s/4m30.0s
+
+running (2m00.9s), 200/200 VUs, 11967 complete and 0 interrupted iterations
+workload_01_amazon    [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+workload_02_amd       [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+workload_03_apple     [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+workload_04_azure     [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+workload_05_google    [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+workload_06_meta      [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+workload_07_netflix   [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+workload_08_nvidia    [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+workload_09_paypal    [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+workload_10_reddit    [  45% ] 20/20 VUs  2m00.9s/4m30.0s
+
+running (2m01.9s), 200/200 VUs, 12102 complete and 0 interrupted iterations
+workload_01_amazon    [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+workload_02_amd       [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+workload_03_apple     [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+workload_04_azure     [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+workload_05_google    [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+workload_06_meta      [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+workload_07_netflix   [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+workload_08_nvidia    [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+workload_09_paypal    [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+workload_10_reddit    [  45% ] 20/20 VUs  2m01.9s/4m30.0s
+
+running (2m02.9s), 200/200 VUs, 12210 complete and 0 interrupted iterations
+workload_01_amazon    [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+workload_02_amd       [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+workload_03_apple     [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+workload_04_azure     [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+workload_05_google    [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+workload_06_meta      [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+workload_07_netflix   [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+workload_08_nvidia    [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+workload_09_paypal    [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+workload_10_reddit    [  46% ] 20/20 VUs  2m02.9s/4m30.0s
+
+running (2m03.9s), 200/200 VUs, 12322 complete and 0 interrupted iterations
+workload_01_amazon    [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+workload_02_amd       [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+workload_03_apple     [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+workload_04_azure     [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+workload_05_google    [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+workload_06_meta      [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+workload_07_netflix   [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+workload_08_nvidia    [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+workload_09_paypal    [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+workload_10_reddit    [  46% ] 20/20 VUs  2m03.9s/4m30.0s
+
+running (2m04.9s), 200/200 VUs, 12446 complete and 0 interrupted iterations
+workload_01_amazon    [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+workload_02_amd       [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+workload_03_apple     [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+workload_04_azure     [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+workload_05_google    [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+workload_06_meta      [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+workload_07_netflix   [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+workload_08_nvidia    [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+workload_09_paypal    [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+workload_10_reddit    [  46% ] 20/20 VUs  2m04.9s/4m30.0s
+
+running (2m05.9s), 200/200 VUs, 12570 complete and 0 interrupted iterations
+workload_01_amazon    [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+workload_02_amd       [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+workload_03_apple     [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+workload_04_azure     [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+workload_05_google    [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+workload_06_meta      [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+workload_07_netflix   [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+workload_08_nvidia    [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+workload_09_paypal    [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+workload_10_reddit    [  47% ] 20/20 VUs  2m05.9s/4m30.0s
+
+running (2m06.9s), 200/200 VUs, 12700 complete and 0 interrupted iterations
+workload_01_amazon    [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+workload_02_amd       [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+workload_03_apple     [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+workload_04_azure     [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+workload_05_google    [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+workload_06_meta      [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+workload_07_netflix   [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+workload_08_nvidia    [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+workload_09_paypal    [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+workload_10_reddit    [  47% ] 20/20 VUs  2m06.9s/4m30.0s
+
+running (2m07.9s), 200/200 VUs, 12826 complete and 0 interrupted iterations
+workload_01_amazon    [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+workload_02_amd       [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+workload_03_apple     [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+workload_04_azure     [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+workload_05_google    [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+workload_06_meta      [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+workload_07_netflix   [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+workload_08_nvidia    [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+workload_09_paypal    [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+workload_10_reddit    [  47% ] 20/20 VUs  2m07.9s/4m30.0s
+
+running (2m08.9s), 200/200 VUs, 12954 complete and 0 interrupted iterations
+workload_01_amazon    [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+workload_02_amd       [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+workload_03_apple     [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+workload_04_azure     [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+workload_05_google    [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+workload_06_meta      [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+workload_07_netflix   [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+workload_08_nvidia    [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+workload_09_paypal    [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+workload_10_reddit    [  48% ] 20/20 VUs  2m08.9s/4m30.0s
+
+running (2m09.9s), 200/200 VUs, 13077 complete and 0 interrupted iterations
+workload_01_amazon    [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+workload_02_amd       [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+workload_03_apple     [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+workload_04_azure     [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+workload_05_google    [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+workload_06_meta      [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+workload_07_netflix   [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+workload_08_nvidia    [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+workload_09_paypal    [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+workload_10_reddit    [  48% ] 20/20 VUs  2m09.9s/4m30.0s
+
+running (2m10.9s), 200/200 VUs, 13204 complete and 0 interrupted iterations
+workload_01_amazon    [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+workload_02_amd       [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+workload_03_apple     [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+workload_04_azure     [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+workload_05_google    [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+workload_06_meta      [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+workload_07_netflix   [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+workload_08_nvidia    [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+workload_09_paypal    [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+workload_10_reddit    [  48% ] 20/20 VUs  2m10.9s/4m30.0s
+
+running (2m11.9s), 200/200 VUs, 13334 complete and 0 interrupted iterations
+workload_01_amazon    [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+workload_02_amd       [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+workload_03_apple     [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+workload_04_azure     [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+workload_05_google    [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+workload_06_meta      [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+workload_07_netflix   [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+workload_08_nvidia    [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+workload_09_paypal    [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+workload_10_reddit    [  49% ] 20/20 VUs  2m11.9s/4m30.0s
+
+running (2m12.9s), 200/200 VUs, 13461 complete and 0 interrupted iterations
+workload_01_amazon    [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+workload_02_amd       [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+workload_03_apple     [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+workload_04_azure     [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+workload_05_google    [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+workload_06_meta      [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+workload_07_netflix   [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+workload_08_nvidia    [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+workload_09_paypal    [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+workload_10_reddit    [  49% ] 20/20 VUs  2m12.9s/4m30.0s
+
+running (2m13.9s), 200/200 VUs, 13590 complete and 0 interrupted iterations
+workload_01_amazon    [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+workload_02_amd       [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+workload_03_apple     [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+workload_04_azure     [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+workload_05_google    [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+workload_06_meta      [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+workload_07_netflix   [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+workload_08_nvidia    [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+workload_09_paypal    [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+workload_10_reddit    [  50% ] 20/20 VUs  2m13.9s/4m30.0s
+
+running (2m14.9s), 200/200 VUs, 13739 complete and 0 interrupted iterations
+workload_01_amazon    [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+workload_02_amd       [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+workload_03_apple     [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+workload_04_azure     [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+workload_05_google    [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+workload_06_meta      [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+workload_07_netflix   [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+workload_08_nvidia    [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+workload_09_paypal    [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+workload_10_reddit    [  50% ] 20/20 VUs  2m14.9s/4m30.0s
+
+running (2m15.9s), 200/200 VUs, 13811 complete and 0 interrupted iterations
+workload_01_amazon    [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+workload_02_amd       [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+workload_03_apple     [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+workload_04_azure     [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+workload_05_google    [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+workload_06_meta      [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+workload_07_netflix   [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+workload_08_nvidia    [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+workload_09_paypal    [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+workload_10_reddit    [  50% ] 20/20 VUs  2m15.9s/4m30.0s
+
+running (2m16.9s), 200/200 VUs, 13915 complete and 0 interrupted iterations
+workload_01_amazon    [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+workload_02_amd       [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+workload_03_apple     [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+workload_04_azure     [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+workload_05_google    [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+workload_06_meta      [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+workload_07_netflix   [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+workload_08_nvidia    [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+workload_09_paypal    [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+workload_10_reddit    [  51% ] 20/20 VUs  2m16.9s/4m30.0s
+
+running (2m17.9s), 200/200 VUs, 14043 complete and 0 interrupted iterations
+workload_01_amazon    [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+workload_02_amd       [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+workload_03_apple     [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+workload_04_azure     [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+workload_05_google    [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+workload_06_meta      [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+workload_07_netflix   [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+workload_08_nvidia    [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+workload_09_paypal    [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+workload_10_reddit    [  51% ] 20/20 VUs  2m17.9s/4m30.0s
+
+running (2m18.9s), 200/200 VUs, 14083 complete and 0 interrupted iterations
+workload_01_amazon    [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+workload_02_amd       [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+workload_03_apple     [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+workload_04_azure     [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+workload_05_google    [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+workload_06_meta      [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+workload_07_netflix   [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+workload_08_nvidia    [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+workload_09_paypal    [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+workload_10_reddit    [  51% ] 20/20 VUs  2m18.9s/4m30.0s
+
+running (2m19.9s), 200/200 VUs, 14169 complete and 0 interrupted iterations
+workload_01_amazon    [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+workload_02_amd       [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+workload_03_apple     [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+workload_04_azure     [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+workload_05_google    [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+workload_06_meta      [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+workload_07_netflix   [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+workload_08_nvidia    [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+workload_09_paypal    [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+workload_10_reddit    [  52% ] 20/20 VUs  2m19.9s/4m30.0s
+
+running (2m20.9s), 200/200 VUs, 14285 complete and 0 interrupted iterations
+workload_01_amazon    [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+workload_02_amd       [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+workload_03_apple     [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+workload_04_azure     [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+workload_05_google    [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+workload_06_meta      [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+workload_07_netflix   [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+workload_08_nvidia    [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+workload_09_paypal    [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+workload_10_reddit    [  52% ] 20/20 VUs  2m20.9s/4m30.0s
+
+running (2m21.9s), 200/200 VUs, 14392 complete and 0 interrupted iterations
+workload_01_amazon    [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+workload_02_amd       [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+workload_03_apple     [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+workload_04_azure     [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+workload_05_google    [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+workload_06_meta      [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+workload_07_netflix   [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+workload_08_nvidia    [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+workload_09_paypal    [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+workload_10_reddit    [  53% ] 20/20 VUs  2m21.9s/4m30.0s
+
+running (2m22.9s), 200/200 VUs, 14529 complete and 0 interrupted iterations
+workload_01_amazon    [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+workload_02_amd       [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+workload_03_apple     [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+workload_04_azure     [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+workload_05_google    [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+workload_06_meta      [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+workload_07_netflix   [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+workload_08_nvidia    [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+workload_09_paypal    [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+workload_10_reddit    [  53% ] 20/20 VUs  2m22.9s/4m30.0s
+
+running (2m23.9s), 200/200 VUs, 14634 complete and 0 interrupted iterations
+workload_01_amazon    [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+workload_02_amd       [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+workload_03_apple     [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+workload_04_azure     [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+workload_05_google    [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+workload_06_meta      [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+workload_07_netflix   [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+workload_08_nvidia    [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+workload_09_paypal    [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+workload_10_reddit    [  53% ] 20/20 VUs  2m23.9s/4m30.0s
+
+running (2m24.9s), 200/200 VUs, 14771 complete and 0 interrupted iterations
+workload_01_amazon    [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+workload_02_amd       [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+workload_03_apple     [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+workload_04_azure     [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+workload_05_google    [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+workload_06_meta      [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+workload_07_netflix   [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+workload_08_nvidia    [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+workload_09_paypal    [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+workload_10_reddit    [  54% ] 20/20 VUs  2m24.9s/4m30.0s
+
+running (2m25.9s), 200/200 VUs, 14881 complete and 0 interrupted iterations
+workload_01_amazon    [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+workload_02_amd       [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+workload_03_apple     [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+workload_04_azure     [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+workload_05_google    [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+workload_06_meta      [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+workload_07_netflix   [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+workload_08_nvidia    [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+workload_09_paypal    [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+workload_10_reddit    [  54% ] 20/20 VUs  2m25.9s/4m30.0s
+
+running (2m26.9s), 200/200 VUs, 15016 complete and 0 interrupted iterations
+workload_01_amazon    [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+workload_02_amd       [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+workload_03_apple     [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+workload_04_azure     [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+workload_05_google    [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+workload_06_meta      [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+workload_07_netflix   [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+workload_08_nvidia    [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+workload_09_paypal    [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+workload_10_reddit    [  54% ] 20/20 VUs  2m26.9s/4m30.0s
+
+running (2m27.9s), 200/200 VUs, 15151 complete and 0 interrupted iterations
+workload_01_amazon    [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+workload_02_amd       [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+workload_03_apple     [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+workload_04_azure     [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+workload_05_google    [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+workload_06_meta      [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+workload_07_netflix   [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+workload_08_nvidia    [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+workload_09_paypal    [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+workload_10_reddit    [  55% ] 20/20 VUs  2m27.9s/4m30.0s
+
+running (2m28.9s), 200/200 VUs, 15278 complete and 0 interrupted iterations
+workload_01_amazon    [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+workload_02_amd       [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+workload_03_apple     [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+workload_04_azure     [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+workload_05_google    [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+workload_06_meta      [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+workload_07_netflix   [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+workload_08_nvidia    [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+workload_09_paypal    [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+workload_10_reddit    [  55% ] 20/20 VUs  2m28.9s/4m30.0s
+
+running (2m29.9s), 200/200 VUs, 15383 complete and 0 interrupted iterations
+workload_01_amazon    [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+workload_02_amd       [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+workload_03_apple     [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+workload_04_azure     [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+workload_05_google    [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+workload_06_meta      [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+workload_07_netflix   [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+workload_08_nvidia    [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+workload_09_paypal    [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+workload_10_reddit    [  56% ] 20/20 VUs  2m29.9s/4m30.0s
+
+running (2m30.9s), 200/200 VUs, 15466 complete and 0 interrupted iterations
+workload_01_amazon    [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+workload_02_amd       [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+workload_03_apple     [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+workload_04_azure     [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+workload_05_google    [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+workload_06_meta      [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+workload_07_netflix   [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+workload_08_nvidia    [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+workload_09_paypal    [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+workload_10_reddit    [  56% ] 20/20 VUs  2m30.9s/4m30.0s
+
+running (2m31.9s), 200/200 VUs, 15583 complete and 0 interrupted iterations
+workload_01_amazon    [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+workload_02_amd       [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+workload_03_apple     [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+workload_04_azure     [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+workload_05_google    [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+workload_06_meta      [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+workload_07_netflix   [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+workload_08_nvidia    [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+workload_09_paypal    [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+workload_10_reddit    [  56% ] 20/20 VUs  2m31.9s/4m30.0s
+
+running (2m32.9s), 200/200 VUs, 15709 complete and 0 interrupted iterations
+workload_01_amazon    [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+workload_02_amd       [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+workload_03_apple     [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+workload_04_azure     [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+workload_05_google    [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+workload_06_meta      [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+workload_07_netflix   [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+workload_08_nvidia    [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+workload_09_paypal    [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+workload_10_reddit    [  57% ] 20/20 VUs  2m32.9s/4m30.0s
+
+running (2m33.9s), 200/200 VUs, 15858 complete and 0 interrupted iterations
+workload_01_amazon    [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+workload_02_amd       [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+workload_03_apple     [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+workload_04_azure     [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+workload_05_google    [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+workload_06_meta      [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+workload_07_netflix   [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+workload_08_nvidia    [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+workload_09_paypal    [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+workload_10_reddit    [  57% ] 20/20 VUs  2m33.9s/4m30.0s
+
+running (2m34.9s), 200/200 VUs, 15969 complete and 0 interrupted iterations
+workload_01_amazon    [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+workload_02_amd       [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+workload_03_apple     [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+workload_04_azure     [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+workload_05_google    [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+workload_06_meta      [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+workload_07_netflix   [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+workload_08_nvidia    [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+workload_09_paypal    [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+workload_10_reddit    [  57% ] 20/20 VUs  2m34.9s/4m30.0s
+
+running (2m35.9s), 200/200 VUs, 16122 complete and 0 interrupted iterations
+workload_01_amazon    [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+workload_02_amd       [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+workload_03_apple     [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+workload_04_azure     [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+workload_05_google    [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+workload_06_meta      [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+workload_07_netflix   [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+workload_08_nvidia    [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+workload_09_paypal    [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+workload_10_reddit    [  58% ] 20/20 VUs  2m35.9s/4m30.0s
+
+running (2m36.9s), 200/200 VUs, 16286 complete and 0 interrupted iterations
+workload_01_amazon    [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+workload_02_amd       [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+workload_03_apple     [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+workload_04_azure     [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+workload_05_google    [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+workload_06_meta      [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+workload_07_netflix   [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+workload_08_nvidia    [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+workload_09_paypal    [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+workload_10_reddit    [  58% ] 20/20 VUs  2m36.9s/4m30.0s
+
+running (2m37.9s), 200/200 VUs, 16443 complete and 0 interrupted iterations
+workload_01_amazon    [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+workload_02_amd       [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+workload_03_apple     [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+workload_04_azure     [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+workload_05_google    [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+workload_06_meta      [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+workload_07_netflix   [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+workload_08_nvidia    [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+workload_09_paypal    [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+workload_10_reddit    [  58% ] 20/20 VUs  2m37.9s/4m30.0s
+
+running (2m38.9s), 200/200 VUs, 16588 complete and 0 interrupted iterations
+workload_01_amazon    [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+workload_02_amd       [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+workload_03_apple     [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+workload_04_azure     [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+workload_05_google    [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+workload_06_meta      [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+workload_07_netflix   [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+workload_08_nvidia    [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+workload_09_paypal    [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+workload_10_reddit    [  59% ] 20/20 VUs  2m38.9s/4m30.0s
+
+running (2m39.9s), 200/200 VUs, 16734 complete and 0 interrupted iterations
+workload_01_amazon    [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+workload_02_amd       [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+workload_03_apple     [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+workload_04_azure     [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+workload_05_google    [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+workload_06_meta      [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+workload_07_netflix   [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+workload_08_nvidia    [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+workload_09_paypal    [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+workload_10_reddit    [  59% ] 20/20 VUs  2m39.9s/4m30.0s
+
+running (2m40.9s), 200/200 VUs, 16821 complete and 0 interrupted iterations
+workload_01_amazon    [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+workload_02_amd       [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+workload_03_apple     [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+workload_04_azure     [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+workload_05_google    [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+workload_06_meta      [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+workload_07_netflix   [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+workload_08_nvidia    [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+workload_09_paypal    [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+workload_10_reddit    [  60% ] 20/20 VUs  2m40.9s/4m30.0s
+
+running (2m41.9s), 200/200 VUs, 16896 complete and 0 interrupted iterations
+workload_01_amazon    [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+workload_02_amd       [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+workload_03_apple     [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+workload_04_azure     [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+workload_05_google    [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+workload_06_meta      [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+workload_07_netflix   [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+workload_08_nvidia    [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+workload_09_paypal    [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+workload_10_reddit    [  60% ] 20/20 VUs  2m41.9s/4m30.0s
+
+running (2m42.9s), 200/200 VUs, 17031 complete and 0 interrupted iterations
+workload_01_amazon    [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+workload_02_amd       [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+workload_03_apple     [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+workload_04_azure     [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+workload_05_google    [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+workload_06_meta      [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+workload_07_netflix   [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+workload_08_nvidia    [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+workload_09_paypal    [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+workload_10_reddit    [  60% ] 20/20 VUs  2m42.9s/4m30.0s
+
+running (2m43.9s), 200/200 VUs, 17108 complete and 0 interrupted iterations
+workload_01_amazon    [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+workload_02_amd       [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+workload_03_apple     [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+workload_04_azure     [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+workload_05_google    [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+workload_06_meta      [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+workload_07_netflix   [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+workload_08_nvidia    [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+workload_09_paypal    [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+workload_10_reddit    [  61% ] 20/20 VUs  2m43.9s/4m30.0s
+
+running (2m44.9s), 200/200 VUs, 17210 complete and 0 interrupted iterations
+workload_01_amazon    [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+workload_02_amd       [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+workload_03_apple     [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+workload_04_azure     [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+workload_05_google    [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+workload_06_meta      [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+workload_07_netflix   [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+workload_08_nvidia    [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+workload_09_paypal    [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+workload_10_reddit    [  61% ] 20/20 VUs  2m44.9s/4m30.0s
+
+running (2m45.9s), 200/200 VUs, 17347 complete and 0 interrupted iterations
+workload_01_amazon    [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+workload_02_amd       [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+workload_03_apple     [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+workload_04_azure     [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+workload_05_google    [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+workload_06_meta      [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+workload_07_netflix   [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+workload_08_nvidia    [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+workload_09_paypal    [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+workload_10_reddit    [  61% ] 20/20 VUs  2m45.9s/4m30.0s
+
+running (2m46.9s), 200/200 VUs, 17456 complete and 0 interrupted iterations
+workload_01_amazon    [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+workload_02_amd       [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+workload_03_apple     [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+workload_04_azure     [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+workload_05_google    [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+workload_06_meta      [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+workload_07_netflix   [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+workload_08_nvidia    [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+workload_09_paypal    [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+workload_10_reddit    [  62% ] 20/20 VUs  2m46.9s/4m30.0s
+
+running (2m47.9s), 200/200 VUs, 17580 complete and 0 interrupted iterations
+workload_01_amazon    [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+workload_02_amd       [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+workload_03_apple     [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+workload_04_azure     [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+workload_05_google    [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+workload_06_meta      [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+workload_07_netflix   [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+workload_08_nvidia    [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+workload_09_paypal    [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+workload_10_reddit    [  62% ] 20/20 VUs  2m47.9s/4m30.0s
+
+running (2m48.9s), 200/200 VUs, 17639 complete and 0 interrupted iterations
+workload_01_amazon    [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+workload_02_amd       [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+workload_03_apple     [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+workload_04_azure     [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+workload_05_google    [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+workload_06_meta      [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+workload_07_netflix   [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+workload_08_nvidia    [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+workload_09_paypal    [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+workload_10_reddit    [  63% ] 20/20 VUs  2m48.9s/4m30.0s
+
+running (2m49.9s), 200/200 VUs, 17745 complete and 0 interrupted iterations
+workload_01_amazon    [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+workload_02_amd       [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+workload_03_apple     [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+workload_04_azure     [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+workload_05_google    [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+workload_06_meta      [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+workload_07_netflix   [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+workload_08_nvidia    [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+workload_09_paypal    [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+workload_10_reddit    [  63% ] 20/20 VUs  2m49.9s/4m30.0s
+
+running (2m50.9s), 200/200 VUs, 17840 complete and 0 interrupted iterations
+workload_01_amazon    [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+workload_02_amd       [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+workload_03_apple     [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+workload_04_azure     [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+workload_05_google    [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+workload_06_meta      [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+workload_07_netflix   [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+workload_08_nvidia    [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+workload_09_paypal    [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+workload_10_reddit    [  63% ] 20/20 VUs  2m50.9s/4m30.0s
+
+running (2m51.9s), 200/200 VUs, 17949 complete and 0 interrupted iterations
+workload_01_amazon    [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+workload_02_amd       [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+workload_03_apple     [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+workload_04_azure     [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+workload_05_google    [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+workload_06_meta      [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+workload_07_netflix   [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+workload_08_nvidia    [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+workload_09_paypal    [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+workload_10_reddit    [  64% ] 20/20 VUs  2m51.9s/4m30.0s
+
+running (2m52.9s), 200/200 VUs, 18104 complete and 0 interrupted iterations
+workload_01_amazon    [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+workload_02_amd       [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+workload_03_apple     [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+workload_04_azure     [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+workload_05_google    [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+workload_06_meta      [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+workload_07_netflix   [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+workload_08_nvidia    [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+workload_09_paypal    [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+workload_10_reddit    [  64% ] 20/20 VUs  2m52.9s/4m30.0s
+
+running (2m53.9s), 200/200 VUs, 18227 complete and 0 interrupted iterations
+workload_01_amazon    [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+workload_02_amd       [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+workload_03_apple     [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+workload_04_azure     [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+workload_05_google    [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+workload_06_meta      [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+workload_07_netflix   [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+workload_08_nvidia    [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+workload_09_paypal    [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+workload_10_reddit    [  64% ] 20/20 VUs  2m53.9s/4m30.0s
+
+running (2m54.9s), 200/200 VUs, 18365 complete and 0 interrupted iterations
+workload_01_amazon    [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+workload_02_amd       [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+workload_03_apple     [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+workload_04_azure     [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+workload_05_google    [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+workload_06_meta      [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+workload_07_netflix   [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+workload_08_nvidia    [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+workload_09_paypal    [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+workload_10_reddit    [  65% ] 20/20 VUs  2m54.9s/4m30.0s
+
+running (2m55.9s), 200/200 VUs, 18507 complete and 0 interrupted iterations
+workload_01_amazon    [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+workload_02_amd       [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+workload_03_apple     [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+workload_04_azure     [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+workload_05_google    [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+workload_06_meta      [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+workload_07_netflix   [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+workload_08_nvidia    [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+workload_09_paypal    [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+workload_10_reddit    [  65% ] 20/20 VUs  2m55.9s/4m30.0s
+
+running (2m56.9s), 200/200 VUs, 18653 complete and 0 interrupted iterations
+workload_01_amazon    [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+workload_02_amd       [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+workload_03_apple     [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+workload_04_azure     [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+workload_05_google    [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+workload_06_meta      [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+workload_07_netflix   [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+workload_08_nvidia    [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+workload_09_paypal    [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+workload_10_reddit    [  66% ] 20/20 VUs  2m56.9s/4m30.0s
+
+running (2m57.9s), 200/200 VUs, 18796 complete and 0 interrupted iterations
+workload_01_amazon    [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+workload_02_amd       [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+workload_03_apple     [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+workload_04_azure     [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+workload_05_google    [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+workload_06_meta      [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+workload_07_netflix   [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+workload_08_nvidia    [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+workload_09_paypal    [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+workload_10_reddit    [  66% ] 20/20 VUs  2m57.9s/4m30.0s
+
+running (2m58.9s), 200/200 VUs, 18941 complete and 0 interrupted iterations
+workload_01_amazon    [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+workload_02_amd       [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+workload_03_apple     [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+workload_04_azure     [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+workload_05_google    [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+workload_06_meta      [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+workload_07_netflix   [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+workload_08_nvidia    [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+workload_09_paypal    [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+workload_10_reddit    [  66% ] 20/20 VUs  2m58.9s/4m30.0s
+
+running (2m59.9s), 200/200 VUs, 19080 complete and 0 interrupted iterations
+workload_01_amazon    [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+workload_02_amd       [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+workload_03_apple     [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+workload_04_azure     [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+workload_05_google    [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+workload_06_meta      [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+workload_07_netflix   [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+workload_08_nvidia    [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+workload_09_paypal    [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+workload_10_reddit    [  67% ] 20/20 VUs  2m59.9s/4m30.0s
+
+running (3m00.9s), 200/200 VUs, 19201 complete and 0 interrupted iterations
+workload_01_amazon    [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+workload_02_amd       [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+workload_03_apple     [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+workload_04_azure     [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+workload_05_google    [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+workload_06_meta      [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+workload_07_netflix   [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+workload_08_nvidia    [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+workload_09_paypal    [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+workload_10_reddit    [  67% ] 20/20 VUs  3m00.9s/4m30.0s
+
+running (3m01.9s), 200/200 VUs, 19334 complete and 0 interrupted iterations
+workload_01_amazon    [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+workload_02_amd       [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+workload_03_apple     [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+workload_04_azure     [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+workload_05_google    [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+workload_06_meta      [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+workload_07_netflix   [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+workload_08_nvidia    [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+workload_09_paypal    [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+workload_10_reddit    [  67% ] 20/20 VUs  3m01.9s/4m30.0s
+
+running (3m02.9s), 200/200 VUs, 19500 complete and 0 interrupted iterations
+workload_01_amazon    [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+workload_02_amd       [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+workload_03_apple     [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+workload_04_azure     [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+workload_05_google    [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+workload_06_meta      [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+workload_07_netflix   [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+workload_08_nvidia    [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+workload_09_paypal    [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+workload_10_reddit    [  68% ] 20/20 VUs  3m02.9s/4m30.0s
+
+running (3m03.9s), 200/200 VUs, 19601 complete and 0 interrupted iterations
+workload_01_amazon    [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+workload_02_amd       [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+workload_03_apple     [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+workload_04_azure     [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+workload_05_google    [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+workload_06_meta      [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+workload_07_netflix   [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+workload_08_nvidia    [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+workload_09_paypal    [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+workload_10_reddit    [  68% ] 20/20 VUs  3m03.9s/4m30.0s
+
+running (3m04.9s), 200/200 VUs, 19689 complete and 0 interrupted iterations
+workload_01_amazon    [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+workload_02_amd       [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+workload_03_apple     [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+workload_04_azure     [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+workload_05_google    [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+workload_06_meta      [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+workload_07_netflix   [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+workload_08_nvidia    [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+workload_09_paypal    [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+workload_10_reddit    [  68% ] 20/20 VUs  3m04.9s/4m30.0s
+
+running (3m05.9s), 200/200 VUs, 19801 complete and 0 interrupted iterations
+workload_01_amazon    [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+workload_02_amd       [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+workload_03_apple     [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+workload_04_azure     [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+workload_05_google    [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+workload_06_meta      [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+workload_07_netflix   [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+workload_08_nvidia    [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+workload_09_paypal    [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+workload_10_reddit    [  69% ] 20/20 VUs  3m05.9s/4m30.0s
+
+running (3m06.9s), 200/200 VUs, 19937 complete and 0 interrupted iterations
+workload_01_amazon    [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+workload_02_amd       [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+workload_03_apple     [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+workload_04_azure     [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+workload_05_google    [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+workload_06_meta      [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+workload_07_netflix   [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+workload_08_nvidia    [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+workload_09_paypal    [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+workload_10_reddit    [  69% ] 20/20 VUs  3m06.9s/4m30.0s
+
+running (3m07.9s), 200/200 VUs, 20055 complete and 0 interrupted iterations
+workload_01_amazon    [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+workload_02_amd       [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+workload_03_apple     [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+workload_04_azure     [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+workload_05_google    [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+workload_06_meta      [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+workload_07_netflix   [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+workload_08_nvidia    [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+workload_09_paypal    [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+workload_10_reddit    [  70% ] 20/20 VUs  3m07.9s/4m30.0s
+
+running (3m08.9s), 200/200 VUs, 20196 complete and 0 interrupted iterations
+workload_01_amazon    [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+workload_02_amd       [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+workload_03_apple     [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+workload_04_azure     [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+workload_05_google    [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+workload_06_meta      [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+workload_07_netflix   [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+workload_08_nvidia    [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+workload_09_paypal    [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+workload_10_reddit    [  70% ] 20/20 VUs  3m08.9s/4m30.0s
+
+running (3m09.9s), 200/200 VUs, 20320 complete and 0 interrupted iterations
+workload_01_amazon    [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+workload_02_amd       [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+workload_03_apple     [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+workload_04_azure     [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+workload_05_google    [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+workload_06_meta      [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+workload_07_netflix   [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+workload_08_nvidia    [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+workload_09_paypal    [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+workload_10_reddit    [  70% ] 20/20 VUs  3m09.9s/4m30.0s
+
+running (3m10.9s), 200/200 VUs, 20433 complete and 0 interrupted iterations
+workload_01_amazon    [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+workload_02_amd       [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+workload_03_apple     [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+workload_04_azure     [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+workload_05_google    [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+workload_06_meta      [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+workload_07_netflix   [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+workload_08_nvidia    [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+workload_09_paypal    [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+workload_10_reddit    [  71% ] 20/20 VUs  3m10.9s/4m30.0s
+
+running (3m11.9s), 200/200 VUs, 20551 complete and 0 interrupted iterations
+workload_01_amazon    [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+workload_02_amd       [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+workload_03_apple     [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+workload_04_azure     [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+workload_05_google    [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+workload_06_meta      [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+workload_07_netflix   [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+workload_08_nvidia    [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+workload_09_paypal    [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+workload_10_reddit    [  71% ] 20/20 VUs  3m11.9s/4m30.0s
+
+running (3m12.9s), 200/200 VUs, 20671 complete and 0 interrupted iterations
+workload_01_amazon    [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+workload_02_amd       [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+workload_03_apple     [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+workload_04_azure     [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+workload_05_google    [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+workload_06_meta      [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+workload_07_netflix   [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+workload_08_nvidia    [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+workload_09_paypal    [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+workload_10_reddit    [  71% ] 20/20 VUs  3m12.9s/4m30.0s
+
+running (3m13.9s), 200/200 VUs, 20751 complete and 0 interrupted iterations
+workload_01_amazon    [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+workload_02_amd       [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+workload_03_apple     [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+workload_04_azure     [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+workload_05_google    [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+workload_06_meta      [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+workload_07_netflix   [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+workload_08_nvidia    [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+workload_09_paypal    [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+workload_10_reddit    [  72% ] 20/20 VUs  3m13.9s/4m30.0s
+
+running (3m14.9s), 200/200 VUs, 20830 complete and 0 interrupted iterations
+workload_01_amazon    [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+workload_02_amd       [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+workload_03_apple     [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+workload_04_azure     [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+workload_05_google    [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+workload_06_meta      [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+workload_07_netflix   [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+workload_08_nvidia    [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+workload_09_paypal    [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+workload_10_reddit    [  72% ] 20/20 VUs  3m14.9s/4m30.0s
+
+running (3m15.9s), 200/200 VUs, 20947 complete and 0 interrupted iterations
+workload_01_amazon    [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+workload_02_amd       [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+workload_03_apple     [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+workload_04_azure     [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+workload_05_google    [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+workload_06_meta      [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+workload_07_netflix   [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+workload_08_nvidia    [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+workload_09_paypal    [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+workload_10_reddit    [  73% ] 20/20 VUs  3m15.9s/4m30.0s
+
+running (3m16.9s), 200/200 VUs, 21099 complete and 0 interrupted iterations
+workload_01_amazon    [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+workload_02_amd       [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+workload_03_apple     [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+workload_04_azure     [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+workload_05_google    [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+workload_06_meta      [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+workload_07_netflix   [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+workload_08_nvidia    [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+workload_09_paypal    [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+workload_10_reddit    [  73% ] 20/20 VUs  3m16.9s/4m30.0s
+
+running (3m17.9s), 200/200 VUs, 21250 complete and 0 interrupted iterations
+workload_01_amazon    [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+workload_02_amd       [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+workload_03_apple     [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+workload_04_azure     [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+workload_05_google    [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+workload_06_meta      [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+workload_07_netflix   [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+workload_08_nvidia    [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+workload_09_paypal    [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+workload_10_reddit    [  73% ] 20/20 VUs  3m17.9s/4m30.0s
+
+running (3m18.9s), 200/200 VUs, 21325 complete and 0 interrupted iterations
+workload_01_amazon    [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+workload_02_amd       [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+workload_03_apple     [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+workload_04_azure     [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+workload_05_google    [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+workload_06_meta      [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+workload_07_netflix   [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+workload_08_nvidia    [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+workload_09_paypal    [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+workload_10_reddit    [  74% ] 20/20 VUs  3m18.9s/4m30.0s
+
+running (3m19.9s), 200/200 VUs, 21422 complete and 0 interrupted iterations
+workload_01_amazon    [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+workload_02_amd       [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+workload_03_apple     [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+workload_04_azure     [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+workload_05_google    [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+workload_06_meta      [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+workload_07_netflix   [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+workload_08_nvidia    [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+workload_09_paypal    [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+workload_10_reddit    [  74% ] 20/20 VUs  3m19.9s/4m30.0s
+
+running (3m20.9s), 200/200 VUs, 21524 complete and 0 interrupted iterations
+workload_01_amazon    [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+workload_02_amd       [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+workload_03_apple     [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+workload_04_azure     [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+workload_05_google    [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+workload_06_meta      [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+workload_07_netflix   [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+workload_08_nvidia    [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+workload_09_paypal    [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+workload_10_reddit    [  74% ] 20/20 VUs  3m20.9s/4m30.0s
+
+running (3m21.9s), 200/200 VUs, 21635 complete and 0 interrupted iterations
+workload_01_amazon    [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+workload_02_amd       [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+workload_03_apple     [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+workload_04_azure     [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+workload_05_google    [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+workload_06_meta      [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+workload_07_netflix   [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+workload_08_nvidia    [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+workload_09_paypal    [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+workload_10_reddit    [  75% ] 20/20 VUs  3m21.9s/4m30.0s
+
+running (3m22.9s), 200/200 VUs, 21751 complete and 0 interrupted iterations
+workload_01_amazon    [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+workload_02_amd       [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+workload_03_apple     [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+workload_04_azure     [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+workload_05_google    [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+workload_06_meta      [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+workload_07_netflix   [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+workload_08_nvidia    [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+workload_09_paypal    [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+workload_10_reddit    [  75% ] 20/20 VUs  3m22.9s/4m30.0s
+
+running (3m23.9s), 200/200 VUs, 21875 complete and 0 interrupted iterations
+workload_01_amazon    [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+workload_02_amd       [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+workload_03_apple     [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+workload_04_azure     [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+workload_05_google    [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+workload_06_meta      [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+workload_07_netflix   [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+workload_08_nvidia    [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+workload_09_paypal    [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+workload_10_reddit    [  76% ] 20/20 VUs  3m23.9s/4m30.0s
+
+running (3m24.9s), 200/200 VUs, 21987 complete and 0 interrupted iterations
+workload_01_amazon    [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+workload_02_amd       [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+workload_03_apple     [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+workload_04_azure     [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+workload_05_google    [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+workload_06_meta      [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+workload_07_netflix   [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+workload_08_nvidia    [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+workload_09_paypal    [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+workload_10_reddit    [  76% ] 20/20 VUs  3m24.9s/4m30.0s
+
+running (3m25.9s), 200/200 VUs, 22139 complete and 0 interrupted iterations
+workload_01_amazon    [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+workload_02_amd       [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+workload_03_apple     [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+workload_04_azure     [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+workload_05_google    [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+workload_06_meta      [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+workload_07_netflix   [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+workload_08_nvidia    [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+workload_09_paypal    [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+workload_10_reddit    [  76% ] 20/20 VUs  3m25.9s/4m30.0s
+
+running (3m26.9s), 200/200 VUs, 22275 complete and 0 interrupted iterations
+workload_01_amazon    [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+workload_02_amd       [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+workload_03_apple     [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+workload_04_azure     [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+workload_05_google    [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+workload_06_meta      [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+workload_07_netflix   [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+workload_08_nvidia    [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+workload_09_paypal    [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+workload_10_reddit    [  77% ] 20/20 VUs  3m26.9s/4m30.0s
+
+running (3m27.9s), 200/200 VUs, 22427 complete and 0 interrupted iterations
+workload_01_amazon    [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+workload_02_amd       [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+workload_03_apple     [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+workload_04_azure     [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+workload_05_google    [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+workload_06_meta      [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+workload_07_netflix   [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+workload_08_nvidia    [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+workload_09_paypal    [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+workload_10_reddit    [  77% ] 20/20 VUs  3m27.9s/4m30.0s
+
+running (3m28.9s), 200/200 VUs, 22547 complete and 0 interrupted iterations
+workload_01_amazon    [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+workload_02_amd       [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+workload_03_apple     [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+workload_04_azure     [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+workload_05_google    [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+workload_06_meta      [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+workload_07_netflix   [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+workload_08_nvidia    [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+workload_09_paypal    [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+workload_10_reddit    [  77% ] 20/20 VUs  3m28.9s/4m30.0s
+
+running (3m29.9s), 200/200 VUs, 22659 complete and 0 interrupted iterations
+workload_01_amazon    [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+workload_02_amd       [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+workload_03_apple     [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+workload_04_azure     [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+workload_05_google    [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+workload_06_meta      [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+workload_07_netflix   [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+workload_08_nvidia    [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+workload_09_paypal    [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+workload_10_reddit    [  78% ] 20/20 VUs  3m29.9s/4m30.0s
+
+running (3m30.9s), 200/200 VUs, 22805 complete and 0 interrupted iterations
+workload_01_amazon    [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+workload_02_amd       [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+workload_03_apple     [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+workload_04_azure     [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+workload_05_google    [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+workload_06_meta      [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+workload_07_netflix   [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+workload_08_nvidia    [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+workload_09_paypal    [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+workload_10_reddit    [  78% ] 20/20 VUs  3m30.9s/4m30.0s
+
+running (3m31.9s), 200/200 VUs, 22937 complete and 0 interrupted iterations
+workload_01_amazon    [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+workload_02_amd       [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+workload_03_apple     [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+workload_04_azure     [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+workload_05_google    [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+workload_06_meta      [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+workload_07_netflix   [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+workload_08_nvidia    [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+workload_09_paypal    [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+workload_10_reddit    [  78% ] 20/20 VUs  3m31.9s/4m30.0s
+
+running (3m32.9s), 200/200 VUs, 23045 complete and 0 interrupted iterations
+workload_01_amazon    [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+workload_02_amd       [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+workload_03_apple     [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+workload_04_azure     [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+workload_05_google    [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+workload_06_meta      [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+workload_07_netflix   [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+workload_08_nvidia    [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+workload_09_paypal    [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+workload_10_reddit    [  79% ] 20/20 VUs  3m32.9s/4m30.0s
+
+running (3m33.9s), 200/200 VUs, 23184 complete and 0 interrupted iterations
+workload_01_amazon    [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+workload_02_amd       [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+workload_03_apple     [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+workload_04_azure     [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+workload_05_google    [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+workload_06_meta      [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+workload_07_netflix   [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+workload_08_nvidia    [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+workload_09_paypal    [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+workload_10_reddit    [  79% ] 20/20 VUs  3m33.9s/4m30.0s
+
+running (3m34.9s), 200/200 VUs, 23300 complete and 0 interrupted iterations
+workload_01_amazon    [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+workload_02_amd       [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+workload_03_apple     [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+workload_04_azure     [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+workload_05_google    [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+workload_06_meta      [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+workload_07_netflix   [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+workload_08_nvidia    [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+workload_09_paypal    [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+workload_10_reddit    [  80% ] 20/20 VUs  3m34.9s/4m30.0s
+
+running (3m35.9s), 200/200 VUs, 23437 complete and 0 interrupted iterations
+workload_01_amazon    [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+workload_02_amd       [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+workload_03_apple     [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+workload_04_azure     [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+workload_05_google    [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+workload_06_meta      [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+workload_07_netflix   [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+workload_08_nvidia    [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+workload_09_paypal    [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+workload_10_reddit    [  80% ] 20/20 VUs  3m35.9s/4m30.0s
+
+running (3m36.9s), 200/200 VUs, 23588 complete and 0 interrupted iterations
+workload_01_amazon    [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+workload_02_amd       [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+workload_03_apple     [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+workload_04_azure     [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+workload_05_google    [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+workload_06_meta      [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+workload_07_netflix   [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+workload_08_nvidia    [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+workload_09_paypal    [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+workload_10_reddit    [  80% ] 20/20 VUs  3m36.9s/4m30.0s
+
+running (3m37.9s), 200/200 VUs, 23712 complete and 0 interrupted iterations
+workload_01_amazon    [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+workload_02_amd       [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+workload_03_apple     [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+workload_04_azure     [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+workload_05_google    [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+workload_06_meta      [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+workload_07_netflix   [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+workload_08_nvidia    [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+workload_09_paypal    [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+workload_10_reddit    [  81% ] 20/20 VUs  3m37.9s/4m30.0s
+
+running (3m38.9s), 200/200 VUs, 23868 complete and 0 interrupted iterations
+workload_01_amazon    [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+workload_02_amd       [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+workload_03_apple     [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+workload_04_azure     [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+workload_05_google    [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+workload_06_meta      [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+workload_07_netflix   [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+workload_08_nvidia    [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+workload_09_paypal    [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+workload_10_reddit    [  81% ] 20/20 VUs  3m38.9s/4m30.0s
+
+running (3m39.9s), 200/200 VUs, 24010 complete and 0 interrupted iterations
+workload_01_amazon    [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+workload_02_amd       [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+workload_03_apple     [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+workload_04_azure     [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+workload_05_google    [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+workload_06_meta      [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+workload_07_netflix   [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+workload_08_nvidia    [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+workload_09_paypal    [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+workload_10_reddit    [  81% ] 20/20 VUs  3m39.9s/4m30.0s
+
+running (3m40.9s), 200/200 VUs, 24151 complete and 0 interrupted iterations
+workload_01_amazon    [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+workload_02_amd       [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+workload_03_apple     [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+workload_04_azure     [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+workload_05_google    [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+workload_06_meta      [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+workload_07_netflix   [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+workload_08_nvidia    [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+workload_09_paypal    [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+workload_10_reddit    [  82% ] 20/20 VUs  3m40.9s/4m30.0s
+
+running (3m41.9s), 200/200 VUs, 24305 complete and 0 interrupted iterations
+workload_01_amazon    [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+workload_02_amd       [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+workload_03_apple     [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+workload_04_azure     [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+workload_05_google    [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+workload_06_meta      [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+workload_07_netflix   [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+workload_08_nvidia    [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+workload_09_paypal    [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+workload_10_reddit    [  82% ] 20/20 VUs  3m41.9s/4m30.0s
+
+running (3m42.9s), 200/200 VUs, 24429 complete and 0 interrupted iterations
+workload_01_amazon    [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+workload_02_amd       [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+workload_03_apple     [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+workload_04_azure     [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+workload_05_google    [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+workload_06_meta      [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+workload_07_netflix   [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+workload_08_nvidia    [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+workload_09_paypal    [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+workload_10_reddit    [  83% ] 20/20 VUs  3m42.9s/4m30.0s
+
+running (3m43.9s), 200/200 VUs, 24540 complete and 0 interrupted iterations
+workload_01_amazon    [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+workload_02_amd       [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+workload_03_apple     [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+workload_04_azure     [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+workload_05_google    [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+workload_06_meta      [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+workload_07_netflix   [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+workload_08_nvidia    [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+workload_09_paypal    [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+workload_10_reddit    [  83% ] 20/20 VUs  3m43.9s/4m30.0s
+
+running (3m44.9s), 200/200 VUs, 24662 complete and 0 interrupted iterations
+workload_01_amazon    [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+workload_02_amd       [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+workload_03_apple     [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+workload_04_azure     [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+workload_05_google    [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+workload_06_meta      [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+workload_07_netflix   [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+workload_08_nvidia    [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+workload_09_paypal    [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+workload_10_reddit    [  83% ] 20/20 VUs  3m44.9s/4m30.0s
+
+running (3m45.9s), 200/200 VUs, 24783 complete and 0 interrupted iterations
+workload_01_amazon    [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+workload_02_amd       [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+workload_03_apple     [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+workload_04_azure     [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+workload_05_google    [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+workload_06_meta      [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+workload_07_netflix   [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+workload_08_nvidia    [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+workload_09_paypal    [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+workload_10_reddit    [  84% ] 20/20 VUs  3m45.9s/4m30.0s
+
+running (3m46.9s), 200/200 VUs, 24843 complete and 0 interrupted iterations
+workload_01_amazon    [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+workload_02_amd       [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+workload_03_apple     [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+workload_04_azure     [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+workload_05_google    [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+workload_06_meta      [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+workload_07_netflix   [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+workload_08_nvidia    [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+workload_09_paypal    [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+workload_10_reddit    [  84% ] 20/20 VUs  3m46.9s/4m30.0s
+
+running (3m47.9s), 200/200 VUs, 24980 complete and 0 interrupted iterations
+workload_01_amazon    [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+workload_02_amd       [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+workload_03_apple     [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+workload_04_azure     [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+workload_05_google    [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+workload_06_meta      [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+workload_07_netflix   [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+workload_08_nvidia    [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+workload_09_paypal    [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+workload_10_reddit    [  84% ] 20/20 VUs  3m47.9s/4m30.0s
+
+running (3m48.9s), 200/200 VUs, 25020 complete and 0 interrupted iterations
+workload_01_amazon    [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+workload_02_amd       [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+workload_03_apple     [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+workload_04_azure     [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+workload_05_google    [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+workload_06_meta      [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+workload_07_netflix   [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+workload_08_nvidia    [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+workload_09_paypal    [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+workload_10_reddit    [  85% ] 20/20 VUs  3m48.9s/4m30.0s
+
+running (3m49.9s), 200/200 VUs, 25142 complete and 0 interrupted iterations
+workload_01_amazon    [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+workload_02_amd       [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+workload_03_apple     [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+workload_04_azure     [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+workload_05_google    [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+workload_06_meta      [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+workload_07_netflix   [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+workload_08_nvidia    [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+workload_09_paypal    [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+workload_10_reddit    [  85% ] 20/20 VUs  3m49.9s/4m30.0s
+
+running (3m50.9s), 200/200 VUs, 25303 complete and 0 interrupted iterations
+workload_01_amazon    [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+workload_02_amd       [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+workload_03_apple     [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+workload_04_azure     [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+workload_05_google    [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+workload_06_meta      [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+workload_07_netflix   [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+workload_08_nvidia    [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+workload_09_paypal    [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+workload_10_reddit    [  86% ] 20/20 VUs  3m50.9s/4m30.0s
+
+running (3m51.9s), 200/200 VUs, 25463 complete and 0 interrupted iterations
+workload_01_amazon    [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+workload_02_amd       [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+workload_03_apple     [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+workload_04_azure     [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+workload_05_google    [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+workload_06_meta      [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+workload_07_netflix   [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+workload_08_nvidia    [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+workload_09_paypal    [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+workload_10_reddit    [  86% ] 20/20 VUs  3m51.9s/4m30.0s
+
+running (3m52.9s), 200/200 VUs, 25587 complete and 0 interrupted iterations
+workload_01_amazon    [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+workload_02_amd       [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+workload_03_apple     [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+workload_04_azure     [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+workload_05_google    [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+workload_06_meta      [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+workload_07_netflix   [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+workload_08_nvidia    [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+workload_09_paypal    [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+workload_10_reddit    [  86% ] 20/20 VUs  3m52.9s/4m30.0s
+
+running (3m53.9s), 200/200 VUs, 25728 complete and 0 interrupted iterations
+workload_01_amazon    [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+workload_02_amd       [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+workload_03_apple     [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+workload_04_azure     [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+workload_05_google    [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+workload_06_meta      [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+workload_07_netflix   [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+workload_08_nvidia    [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+workload_09_paypal    [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+workload_10_reddit    [  87% ] 20/20 VUs  3m53.9s/4m30.0s
+
+running (3m54.9s), 200/200 VUs, 25847 complete and 0 interrupted iterations
+workload_01_amazon    [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+workload_02_amd       [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+workload_03_apple     [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+workload_04_azure     [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+workload_05_google    [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+workload_06_meta      [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+workload_07_netflix   [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+workload_08_nvidia    [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+workload_09_paypal    [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+workload_10_reddit    [  87% ] 20/20 VUs  3m54.9s/4m30.0s
+
+running (3m55.9s), 200/200 VUs, 26015 complete and 0 interrupted iterations
+workload_01_amazon    [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+workload_02_amd       [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+workload_03_apple     [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+workload_04_azure     [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+workload_05_google    [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+workload_06_meta      [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+workload_07_netflix   [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+workload_08_nvidia    [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+workload_09_paypal    [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+workload_10_reddit    [  87% ] 20/20 VUs  3m55.9s/4m30.0s
+
+running (3m56.9s), 200/200 VUs, 26125 complete and 0 interrupted iterations
+workload_01_amazon    [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+workload_02_amd       [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+workload_03_apple     [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+workload_04_azure     [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+workload_05_google    [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+workload_06_meta      [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+workload_07_netflix   [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+workload_08_nvidia    [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+workload_09_paypal    [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+workload_10_reddit    [  88% ] 20/20 VUs  3m56.9s/4m30.0s
+
+running (3m57.9s), 200/200 VUs, 26278 complete and 0 interrupted iterations
+workload_01_amazon    [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+workload_02_amd       [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+workload_03_apple     [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+workload_04_azure     [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+workload_05_google    [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+workload_06_meta      [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+workload_07_netflix   [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+workload_08_nvidia    [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+workload_09_paypal    [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+workload_10_reddit    [  88% ] 20/20 VUs  3m57.9s/4m30.0s
+
+running (3m58.9s), 200/200 VUs, 26435 complete and 0 interrupted iterations
+workload_01_amazon    [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+workload_02_amd       [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+workload_03_apple     [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+workload_04_azure     [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+workload_05_google    [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+workload_06_meta      [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+workload_07_netflix   [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+workload_08_nvidia    [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+workload_09_paypal    [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+workload_10_reddit    [  88% ] 20/20 VUs  3m58.9s/4m30.0s
+
+running (3m59.9s), 200/200 VUs, 26571 complete and 0 interrupted iterations
+workload_01_amazon    [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+workload_02_amd       [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+workload_03_apple     [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+workload_04_azure     [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+workload_05_google    [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+workload_06_meta      [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+workload_07_netflix   [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+workload_08_nvidia    [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+workload_09_paypal    [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+workload_10_reddit    [  89% ] 20/20 VUs  3m59.9s/4m30.0s
+
+running (4m00.9s), 200/200 VUs, 26720 complete and 0 interrupted iterations
+workload_01_amazon    [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+workload_02_amd       [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+workload_03_apple     [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+workload_04_azure     [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+workload_05_google    [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+workload_06_meta      [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+workload_07_netflix   [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+workload_08_nvidia    [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+workload_09_paypal    [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+workload_10_reddit    [  89% ] 20/20 VUs  4m00.9s/4m30.0s
+
+running (4m01.9s), 190/200 VUs, 26869 complete and 10 interrupted iterations
+workload_01_amazon    [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+workload_02_amd       [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+workload_03_apple     [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+workload_04_azure     [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+workload_05_google    [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+workload_06_meta      [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+workload_07_netflix   [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+workload_08_nvidia    [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+workload_09_paypal    [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+workload_10_reddit    [  90% ] 19/20 VUs  4m01.9s/4m30.0s
+
+running (4m02.9s), 190/200 VUs, 27006 complete and 10 interrupted iterations
+workload_01_amazon    [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+workload_02_amd       [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+workload_03_apple     [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+workload_04_azure     [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+workload_05_google    [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+workload_06_meta      [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+workload_07_netflix   [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+workload_08_nvidia    [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+workload_09_paypal    [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+workload_10_reddit    [  90% ] 19/20 VUs  4m02.9s/4m30.0s
+
+running (4m03.9s), 180/200 VUs, 27120 complete and 20 interrupted iterations
+workload_01_amazon    [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+workload_02_amd       [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+workload_03_apple     [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+workload_04_azure     [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+workload_05_google    [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+workload_06_meta      [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+workload_07_netflix   [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+workload_08_nvidia    [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+workload_09_paypal    [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+workload_10_reddit    [  90% ] 18/20 VUs  4m03.9s/4m30.0s
+
+running (4m04.9s), 170/200 VUs, 27223 complete and 30 interrupted iterations
+workload_01_amazon    [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+workload_02_amd       [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+workload_03_apple     [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+workload_04_azure     [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+workload_05_google    [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+workload_06_meta      [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+workload_07_netflix   [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+workload_08_nvidia    [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+workload_09_paypal    [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+workload_10_reddit    [  91% ] 17/20 VUs  4m04.9s/4m30.0s
+
+running (4m05.9s), 170/200 VUs, 27355 complete and 30 interrupted iterations
+workload_01_amazon    [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+workload_02_amd       [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+workload_03_apple     [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+workload_04_azure     [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+workload_05_google    [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+workload_06_meta      [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+workload_07_netflix   [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+workload_08_nvidia    [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+workload_09_paypal    [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+workload_10_reddit    [  91% ] 17/20 VUs  4m05.9s/4m30.0s
+
+running (4m06.9s), 160/200 VUs, 27476 complete and 40 interrupted iterations
+workload_01_amazon    [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+workload_02_amd       [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+workload_03_apple     [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+workload_04_azure     [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+workload_05_google    [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+workload_06_meta      [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+workload_07_netflix   [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+workload_08_nvidia    [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+workload_09_paypal    [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+workload_10_reddit    [  91% ] 16/20 VUs  4m06.9s/4m30.0s
+
+running (4m07.9s), 150/200 VUs, 27583 complete and 50 interrupted iterations
+workload_01_amazon    [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+workload_02_amd       [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+workload_03_apple     [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+workload_04_azure     [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+workload_05_google    [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+workload_06_meta      [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+workload_07_netflix   [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+workload_08_nvidia    [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+workload_09_paypal    [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+workload_10_reddit    [  92% ] 15/20 VUs  4m07.9s/4m30.0s
+
+running (4m08.9s), 150/200 VUs, 27699 complete and 50 interrupted iterations
+workload_01_amazon    [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+workload_02_amd       [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+workload_03_apple     [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+workload_04_azure     [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+workload_05_google    [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+workload_06_meta      [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+workload_07_netflix   [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+workload_08_nvidia    [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+workload_09_paypal    [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+workload_10_reddit    [  92% ] 15/20 VUs  4m08.9s/4m30.0s
+
+running (4m09.9s), 140/200 VUs, 27842 complete and 60 interrupted iterations
+workload_01_amazon    [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+workload_02_amd       [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+workload_03_apple     [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+workload_04_azure     [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+workload_05_google    [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+workload_06_meta      [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+workload_07_netflix   [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+workload_08_nvidia    [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+workload_09_paypal    [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+workload_10_reddit    [  93% ] 14/20 VUs  4m09.9s/4m30.0s
+
+running (4m10.9s), 130/200 VUs, 27993 complete and 70 interrupted iterations
+workload_01_amazon    [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+workload_02_amd       [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+workload_03_apple     [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+workload_04_azure     [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+workload_05_google    [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+workload_06_meta      [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+workload_07_netflix   [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+workload_08_nvidia    [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+workload_09_paypal    [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+workload_10_reddit    [  93% ] 13/20 VUs  4m10.9s/4m30.0s
+
+running (4m11.9s), 130/200 VUs, 28126 complete and 70 interrupted iterations
+workload_01_amazon    [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+workload_02_amd       [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+workload_03_apple     [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+workload_04_azure     [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+workload_05_google    [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+workload_06_meta      [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+workload_07_netflix   [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+workload_08_nvidia    [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+workload_09_paypal    [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+workload_10_reddit    [  93% ] 13/20 VUs  4m11.9s/4m30.0s
+
+running (4m12.9s), 120/200 VUs, 28274 complete and 80 interrupted iterations
+workload_01_amazon    [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+workload_02_amd       [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+workload_03_apple     [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+workload_04_azure     [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+workload_05_google    [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+workload_06_meta      [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+workload_07_netflix   [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+workload_08_nvidia    [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+workload_09_paypal    [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+workload_10_reddit    [  94% ] 12/20 VUs  4m12.9s/4m30.0s
+
+running (4m13.9s), 110/200 VUs, 28416 complete and 90 interrupted iterations
+workload_01_amazon    [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+workload_02_amd       [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+workload_03_apple     [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+workload_04_azure     [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+workload_05_google    [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+workload_06_meta      [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+workload_07_netflix   [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+workload_08_nvidia    [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+workload_09_paypal    [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+workload_10_reddit    [  94% ] 11/20 VUs  4m13.9s/4m30.0s
+
+running (4m14.9s), 110/200 VUs, 28531 complete and 90 interrupted iterations
+workload_01_amazon    [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+workload_02_amd       [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+workload_03_apple     [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+workload_04_azure     [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+workload_05_google    [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+workload_06_meta      [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+workload_07_netflix   [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+workload_08_nvidia    [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+workload_09_paypal    [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+workload_10_reddit    [  94% ] 11/20 VUs  4m14.9s/4m30.0s
+
+running (4m15.9s), 100/200 VUs, 28676 complete and 100 interrupted iterations
+workload_01_amazon    [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+workload_02_amd       [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+workload_03_apple     [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+workload_04_azure     [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+workload_05_google    [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+workload_06_meta      [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+workload_07_netflix   [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+workload_08_nvidia    [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+workload_09_paypal    [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+workload_10_reddit    [  95% ] 10/20 VUs  4m15.9s/4m30.0s
+
+running (4m16.9s), 090/200 VUs, 28832 complete and 110 interrupted iterations
+workload_01_amazon    [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+workload_02_amd       [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+workload_03_apple     [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+workload_04_azure     [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+workload_05_google    [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+workload_06_meta      [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+workload_07_netflix   [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+workload_08_nvidia    [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+workload_09_paypal    [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+workload_10_reddit    [  95% ] 09/20 VUs  4m16.9s/4m30.0s
+
+running (4m17.9s), 090/200 VUs, 28973 complete and 110 interrupted iterations
+workload_01_amazon    [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+workload_02_amd       [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+workload_03_apple     [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+workload_04_azure     [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+workload_05_google    [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+workload_06_meta      [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+workload_07_netflix   [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+workload_08_nvidia    [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+workload_09_paypal    [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+workload_10_reddit    [  96% ] 09/20 VUs  4m17.9s/4m30.0s
+
+running (4m18.9s), 080/200 VUs, 29064 complete and 120 interrupted iterations
+workload_01_amazon    [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+workload_02_amd       [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+workload_03_apple     [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+workload_04_azure     [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+workload_05_google    [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+workload_06_meta      [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+workload_07_netflix   [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+workload_08_nvidia    [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+workload_09_paypal    [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+workload_10_reddit    [  96% ] 08/20 VUs  4m18.9s/4m30.0s
+
+running (4m19.9s), 070/200 VUs, 29111 complete and 130 interrupted iterations
+workload_01_amazon    [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+workload_02_amd       [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+workload_03_apple     [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+workload_04_azure     [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+workload_05_google    [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+workload_06_meta      [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+workload_07_netflix   [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+workload_08_nvidia    [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+workload_09_paypal    [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+workload_10_reddit    [  96% ] 07/20 VUs  4m19.9s/4m30.0s
+
+running (4m20.9s), 070/200 VUs, 29249 complete and 130 interrupted iterations
+workload_01_amazon    [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+workload_02_amd       [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+workload_03_apple     [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+workload_04_azure     [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+workload_05_google    [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+workload_06_meta      [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+workload_07_netflix   [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+workload_08_nvidia    [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+workload_09_paypal    [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+workload_10_reddit    [  97% ] 07/20 VUs  4m20.9s/4m30.0s
+
+running (4m21.9s), 060/200 VUs, 29375 complete and 140 interrupted iterations
+workload_01_amazon    [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+workload_02_amd       [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+workload_03_apple     [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+workload_04_azure     [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+workload_05_google    [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+workload_06_meta      [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+workload_07_netflix   [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+workload_08_nvidia    [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+workload_09_paypal    [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+workload_10_reddit    [  97% ] 06/20 VUs  4m21.9s/4m30.0s
+
+running (4m22.9s), 050/200 VUs, 29502 complete and 150 interrupted iterations
+workload_01_amazon    [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+workload_02_amd       [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+workload_03_apple     [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+workload_04_azure     [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+workload_05_google    [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+workload_06_meta      [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+workload_07_netflix   [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+workload_08_nvidia    [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+workload_09_paypal    [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+workload_10_reddit    [  97% ] 05/20 VUs  4m22.9s/4m30.0s
+
+running (4m23.9s), 050/200 VUs, 29626 complete and 150 interrupted iterations
+workload_01_amazon    [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+workload_02_amd       [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+workload_03_apple     [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+workload_04_azure     [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+workload_05_google    [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+workload_06_meta      [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+workload_07_netflix   [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+workload_08_nvidia    [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+workload_09_paypal    [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+workload_10_reddit    [  98% ] 05/20 VUs  4m23.9s/4m30.0s
+
+running (4m24.9s), 040/200 VUs, 29722 complete and 160 interrupted iterations
+workload_01_amazon    [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+workload_02_amd       [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+workload_03_apple     [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+workload_04_azure     [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+workload_05_google    [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+workload_06_meta      [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+workload_07_netflix   [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+workload_08_nvidia    [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+workload_09_paypal    [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+workload_10_reddit    [  98% ] 04/20 VUs  4m24.9s/4m30.0s
+
+running (4m25.9s), 030/200 VUs, 29822 complete and 170 interrupted iterations
+workload_01_amazon    [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+workload_02_amd       [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+workload_03_apple     [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+workload_04_azure     [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+workload_05_google    [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+workload_06_meta      [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+workload_07_netflix   [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+workload_08_nvidia    [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+workload_09_paypal    [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+workload_10_reddit    [  98% ] 03/20 VUs  4m25.9s/4m30.0s
+
+running (4m26.9s), 030/200 VUs, 29896 complete and 170 interrupted iterations
+workload_01_amazon    [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+workload_02_amd       [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+workload_03_apple     [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+workload_04_azure     [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+workload_05_google    [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+workload_06_meta      [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+workload_07_netflix   [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+workload_08_nvidia    [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+workload_09_paypal    [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+workload_10_reddit    [  99% ] 03/20 VUs  4m26.9s/4m30.0s
+
+running (4m27.9s), 020/200 VUs, 29949 complete and 180 interrupted iterations
+workload_01_amazon    [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+workload_02_amd       [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+workload_03_apple     [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+workload_04_azure     [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+workload_05_google    [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+workload_06_meta      [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+workload_07_netflix   [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+workload_08_nvidia    [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+workload_09_paypal    [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+workload_10_reddit    [  99% ] 02/20 VUs  4m27.9s/4m30.0s
+
+running (4m28.9s), 010/200 VUs, 29990 complete and 190 interrupted iterations
+workload_01_amazon    [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+workload_02_amd       [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+workload_03_apple     [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+workload_04_azure     [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+workload_05_google    [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+workload_06_meta      [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+workload_07_netflix   [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+workload_08_nvidia    [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+workload_09_paypal    [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+workload_10_reddit    [ 100% ] 01/20 VUs  4m28.9s/4m30.0s
+
+running (4m29.9s), 010/200 VUs, 30015 complete and 190 interrupted iterations
+workload_01_amazon    [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+workload_02_amd       [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+workload_03_apple     [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+workload_04_azure     [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+workload_05_google    [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+workload_06_meta      [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+workload_07_netflix   [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+workload_08_nvidia    [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+workload_09_paypal    [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+workload_10_reddit    [ 100% ] 01/20 VUs  4m29.9s/4m30.0s
+
+model=shared
+tenants=10
+VUs per tenant=20
+think time=0.25-0.5 s
+steady requests=44949
+steady request rate=249.71666666666667
+steady error rate=0
+steady latency p50=583.352042 ms
+steady latency p95=981.9306008 ms
+steady latency p99=1389.02685784 ms
+
+running (4m30.0s), 000/200 VUs, 30019 complete and 200 interrupted iterations
+workload_01_amazon  ✓ [ 100% ] 00/20 VUs  4m30s
+workload_02_amd     ✓ [ 100% ] 00/20 VUs  4m30s
+workload_03_apple   ✓ [ 100% ] 00/20 VUs  4m30s
+workload_04_azure   ✓ [ 100% ] 00/20 VUs  4m30s
+workload_05_google  ✓ [ 100% ] 01/20 VUs  4m30s
+workload_06_meta    ✓ [ 100% ] 00/20 VUs  4m30s
+workload_07_netflix ✓ [ 100% ] 01/20 VUs  4m30s
+workload_08_nvidia  ✓ [ 100% ] 00/20 VUs  4m30s
+workload_09_paypal  ✓ [ 100% ] 01/20 VUs  4m30s
+workload_10_reddit  ✓ [ 100% ] 00/20 VUs  4m30s

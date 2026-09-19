@@ -1,0 +1,55 @@
+metric,timestamp,value,labels
+rps,1789811896,250.17575757575756,{}
+error_rate,1789811896,0,{}
+latency_p50_seconds,1789811896,0.01840910530984666,{}
+latency_p95_seconds,1789811896,0.09646755988281924,{}
+latency_p99_seconds,1789811896,0.2088921397379913,{}
+cpu_cores,1789811896,0.7204378809437392,{}
+memory_working_set_bytes,1789811896,830021772.8298368,{}
+running_pods,1789811896,7,{}
+restarts,1789811896,0,{}
+cpu_throttle_ratio,1789811896,0.31246108809255757,{}
+postgres_connections,1789811896,22,{}
+postgres_cache_hit_ratio,1789811896,0.9999993568842327,{}
+postgres_locks,1789811896,13,{}
+redis_memory_bytes,1789811896,1532008,{}
+redis_ops_per_second,1789811896,253.16969696969693,{}
+redis_hit_ratio,1789811896,0,{}
+rps_by_tenant,1789811896,0.36969696969696964,"{""tenant"": ""unknown""}"
+rps_by_tenant,1789811896,25.109090909090906,"{""tenant"": ""amazon""}"
+rps_by_tenant,1789811896,24.769696969696966,"{""tenant"": ""amd""}"
+rps_by_tenant,1789811896,24.866666666666667,"{""tenant"": ""apple""}"
+rps_by_tenant,1789811896,24.957575757575757,"{""tenant"": ""azure""}"
+rps_by_tenant,1789811896,25.345454545454544,"{""tenant"": ""google""}"
+rps_by_tenant,1789811896,25.066666666666663,"{""tenant"": ""meta""}"
+rps_by_tenant,1789811896,25.024242424242424,"{""tenant"": ""netflix""}"
+rps_by_tenant,1789811896,24.763636363636362,"{""tenant"": ""nvidia""}"
+rps_by_tenant,1789811896,24.71515151515151,"{""tenant"": ""paypal""}"
+rps_by_tenant,1789811896,25.187878787878788,"{""tenant"": ""reddit""}"
+rps_by_tenant,1789811896,0,"{""tenant"": ""slack""}"
+rps_by_tenant,1789811896,0,"{""tenant"": ""spotify""}"
+rps_by_tenant,1789811896,0,"{""tenant"": ""tesla""}"
+rps_by_tenant,1789811896,0,"{""tenant"": ""uber""}"
+rps_by_tenant,1789811896,0,"{""tenant"": ""zoom""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""unknown""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""amazon""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""amd""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""apple""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""azure""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""google""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""meta""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""netflix""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""nvidia""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""paypal""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""reddit""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""slack""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""spotify""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""tesla""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""uber""}"
+error_rate_by_tenant,1789811896,0,"{""tenant"": ""zoom""}"
+cpu_cores_by_namespace,1789811896,0.7204378809437392,"{""namespace"": ""shared""}"
+memory_bytes_by_namespace,1789811896,830021772.8298368,"{""namespace"": ""shared""}"
+resource_requests,1789811896,0.9,"{""resource"": ""cpu"", ""unit"": ""core""}"
+resource_requests,1789811896,1610612736,"{""resource"": ""memory"", ""unit"": ""byte""}"
+resource_limits,1789811896,2.05,"{""resource"": ""cpu"", ""unit"": ""core""}"
+resource_limits,1789811896,3758096384,"{""resource"": ""memory"", ""unit"": ""byte""}"

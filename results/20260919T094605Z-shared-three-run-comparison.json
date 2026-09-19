@@ -1,0 +1,590 @@
+{
+  "cpu_cores": {
+    "maximum": 0.7325912115267076,
+    "mean": 0.7272017136530494,
+    "minimum": 0.7204378809437392,
+    "runs": 3,
+    "sample_standard_deviation": 0.006192128732923271,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.7325912115267076
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.7204378809437392
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.7285760484887015
+      }
+    ]
+  },
+  "cpu_cores_per_rps": {
+    "maximum": 0.002933653994854129,
+    "mean": 0.002834373907245813,
+    "minimum": 0.0026897407384456804,
+    "runs": 3,
+    "sample_standard_deviation": 0.00012812531226552028,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.002933653994854129
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.002879726988437631
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.0026897407384456804
+      }
+    ]
+  },
+  "cpu_throttle_ratio": {
+    "maximum": 0.3321778181119673,
+    "mean": 0.31175604568423876,
+    "minimum": 0.2906292308481915,
+    "runs": 3,
+    "sample_standard_deviation": 0.020783264649761938,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.2906292308481915
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.31246108809255757
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.3321778181119673
+      }
+    ]
+  },
+  "error_rate": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.0
+      }
+    ]
+  },
+  "k6_steady_checks_rate": {
+    "maximum": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 1.0
+      }
+    ]
+  },
+  "k6_steady_error_rate": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.0
+      }
+    ]
+  },
+  "k6_steady_http_requests": {
+    "maximum": 49214.0,
+    "mean": 46632.333333333336,
+    "minimum": 44949.0,
+    "runs": 3,
+    "sample_standard_deviation": 2269.979809014462,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 44949.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 45734.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 49214.0
+      }
+    ]
+  },
+  "k6_steady_latency_p50_ms": {
+    "maximum": 583.352042,
+    "mean": 541.0397156666667,
+    "minimum": 483.4752505,
+    "runs": 3,
+    "sample_standard_deviation": 51.65572741068576,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 583.352042
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 556.2918545
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 483.4752505
+      }
+    ]
+  },
+  "k6_steady_latency_p95_ms": {
+    "maximum": 981.9306008,
+    "mean": 958.9984539999999,
+    "minimum": 929.7894277499997,
+    "runs": 3,
+    "sample_standard_deviation": 26.63127660251929,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 981.9306008
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 965.2753334499997
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 929.7894277499997
+      }
+    ]
+  },
+  "k6_steady_latency_p99_ms": {
+    "maximum": 1447.5740919599998,
+    "mean": 1415.4778267666663,
+    "minimum": 1389.02685784,
+    "runs": 3,
+    "sample_standard_deviation": 29.67906136031513,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 1389.02685784
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 1409.8325304999992
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 1447.5740919599998
+      }
+    ]
+  },
+  "k6_steady_rps": {
+    "maximum": 273.4111111111111,
+    "mean": 259.0685185185185,
+    "minimum": 249.71666666666667,
+    "runs": 3,
+    "sample_standard_deviation": 12.610998938969225,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 249.71666666666667
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 254.07777777777778
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 273.4111111111111
+      }
+    ]
+  },
+  "k6_thresholds_passed": {
+    "maximum": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 1.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 1.0
+      }
+    ]
+  },
+  "latency_p50_seconds": {
+    "maximum": 0.01845841879545031,
+    "mean": 0.01769580252246314,
+    "minimum": 0.016219883462092445,
+    "runs": 3,
+    "sample_standard_deviation": 0.0012784211980171984,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.01845841879545031
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.01840910530984666
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.016219883462092445
+      }
+    ]
+  },
+  "latency_p95_seconds": {
+    "maximum": 0.09646755988281924,
+    "mean": 0.09566477181825356,
+    "minimum": 0.09512656290985397,
+    "runs": 3,
+    "sample_standard_deviation": 0.0007085688518299991,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.09540019266208745
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.09646755988281924
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.09512656290985397
+      }
+    ]
+  },
+  "latency_p99_seconds": {
+    "maximum": 0.2088921397379913,
+    "mean": 0.20156637999780389,
+    "minimum": 0.19614510489510506,
+    "runs": 3,
+    "sample_standard_deviation": 0.006583465699938122,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.19614510489510506
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.2088921397379913
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.1996618953603152
+      }
+    ]
+  },
+  "memory_bytes_per_rps": {
+    "maximum": 3344899.2816482726,
+    "mean": 3232658.293491086,
+    "minimum": 3035320.9895339874,
+    "runs": 3,
+    "sample_standard_deviation": 171437.20996078465,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 3344899.2816482726
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 3317754.6092909975
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 3035320.9895339874
+      }
+    ]
+  },
+  "memory_working_set_bytes": {
+    "maximum": 835287263.4181818,
+    "mean": 829164391.6597773,
+    "minimum": 822184138.7313131,
+    "runs": 3,
+    "sample_standard_deviation": 6593504.075450804,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 835287263.4181818
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 830021772.8298368
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 822184138.7313131
+      }
+    ]
+  },
+  "postgres_cache_hit_ratio": {
+    "maximum": 1.0,
+    "mean": 0.9999946281733284,
+    "minimum": 0.9999845276357523,
+    "runs": 3,
+    "sample_standard_deviation": 8.75323048743662e-06,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.9999845276357523
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.9999993568842327
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 1.0
+      }
+    ]
+  },
+  "postgres_connections": {
+    "maximum": 22.0,
+    "mean": 22.0,
+    "minimum": 22.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 22.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 22.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 22.0
+      }
+    ]
+  },
+  "postgres_locks": {
+    "maximum": 109.0,
+    "mean": 44.666666666666664,
+    "minimum": 12.0,
+    "runs": 3,
+    "sample_standard_deviation": 55.716544520755534,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 12.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 13.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 109.0
+      }
+    ]
+  },
+  "redis_hit_ratio": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.0
+      }
+    ]
+  },
+  "redis_memory_bytes": {
+    "maximum": 1613912.0,
+    "mean": 1559309.3333333333,
+    "minimum": 1532008.0,
+    "runs": 3,
+    "sample_standard_deviation": 47287.29644770711,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 1532008.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 1532008.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 1613912.0
+      }
+    ]
+  },
+  "redis_ops_per_second": {
+    "maximum": 273.65397202492056,
+    "mean": 259.5598986182451,
+    "minimum": 251.85602686011768,
+    "runs": 3,
+    "sample_standard_deviation": 12.223486048741119,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 251.85602686011768
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 253.16969696969693
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 273.65397202492056
+      }
+    ]
+  },
+  "restarts": {
+    "maximum": 0.0,
+    "mean": 0.0,
+    "minimum": 0.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 0.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 0.0
+      }
+    ]
+  },
+  "rps": {
+    "maximum": 270.87222127948417,
+    "mean": 256.92256143957087,
+    "minimum": 249.71970546347083,
+    "runs": 3,
+    "sample_standard_deviation": 12.082911615966081,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 249.71970546347083
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 250.17575757575756
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 270.87222127948417
+      }
+    ]
+  },
+  "rps_per_tenant": {
+    "maximum": 27.087222127948415,
+    "mean": 25.692256143957085,
+    "minimum": 24.971970546347084,
+    "runs": 3,
+    "sample_standard_deviation": 1.208291161596607,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 24.971970546347084
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 25.017575757575756
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 27.087222127948415
+      }
+    ]
+  },
+  "running_pods": {
+    "maximum": 7.0,
+    "mean": 7.0,
+    "minimum": 7.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 7.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 7.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 7.0
+      }
+    ]
+  },
+  "tenant_count": {
+    "maximum": 10.0,
+    "mean": 10.0,
+    "minimum": 10.0,
+    "runs": 3,
+    "sample_standard_deviation": 0.0,
+    "values": [
+      {
+        "run": "20260919T094715Z-shared",
+        "value": 10.0
+      },
+      {
+        "run": "20260919T095358Z-shared",
+        "value": 10.0
+      },
+      {
+        "run": "20260919T100003Z-shared",
+        "value": 10.0
+      }
+    ]
+  }
+}

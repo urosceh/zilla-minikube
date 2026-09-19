@@ -1,0 +1,306 @@
+{
+  "cpu_cores": 2.0159457115875954,
+  "cpu_cores_by_namespace": [
+    {
+      "labels": {
+        "namespace": "hybrid-grouped"
+      },
+      "value": 0.9791054246459661
+    },
+    {
+      "labels": {
+        "namespace": "binance"
+      },
+      "value": 0.3115144122080327
+    },
+    {
+      "labels": {
+        "namespace": "shared-grouped"
+      },
+      "value": 0.7253258747335966
+    }
+  ],
+  "cpu_cores_by_tenant": [
+    {
+      "labels": {
+        "tenant": "datadog"
+      },
+      "value": 0.24764743687060375
+    },
+    {
+      "labels": {
+        "tenant": "ibm"
+      },
+      "value": 0.24546397470424436
+    },
+    {
+      "labels": {
+        "tenant": "intel"
+      },
+      "value": 0.2089471682292394
+    },
+    {
+      "labels": {
+        "tenant": "binance"
+      },
+      "value": 0.3115144122080327
+    }
+  ],
+  "cpu_cores_per_rps": 0.003093659489514216,
+  "cpu_throttle_ratio": 0.0939746025346737,
+  "error_rate": 0.0,
+  "error_rate_by_tenant": [
+    {
+      "labels": {
+        "tenant": "ibm"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "unknown"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "mongo"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "oracle"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "qualcomm"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "salesforce"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "sap"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "shopify"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "stripe"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "twilio"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "datadog"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "intel"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "binance"
+      },
+      "value": 0.0
+    }
+  ],
+  "latency_p50_seconds": 0.0041918997613063815,
+  "latency_p95_seconds": 0.08491295930752388,
+  "latency_p99_seconds": 0.1528860380310311,
+  "memory_bytes_by_namespace": [
+    {
+      "labels": {
+        "namespace": "hybrid-grouped"
+      },
+      "value": 864790732.8
+    },
+    {
+      "labels": {
+        "namespace": "binance"
+      },
+      "value": 715003655.7575758
+    },
+    {
+      "labels": {
+        "namespace": "shared-grouped"
+      },
+      "value": 765589696.3878788
+    }
+  ],
+  "memory_bytes_by_tenant": [
+    {
+      "labels": {
+        "tenant": "datadog"
+      },
+      "value": 52892057.6
+    },
+    {
+      "labels": {
+        "tenant": "ibm"
+      },
+      "value": 51781632.0
+    },
+    {
+      "labels": {
+        "tenant": "intel"
+      },
+      "value": 53791278.54545455
+    },
+    {
+      "labels": {
+        "tenant": "binance"
+      },
+      "value": 715003655.7575758
+    }
+  ],
+  "memory_bytes_per_rps": 3599213.852456883,
+  "memory_working_set_bytes": 2345384084.9454546,
+  "postgres_cache_hit_ratio": 0.9998376980283964,
+  "postgres_connections": 56.0,
+  "postgres_locks": 19.0,
+  "redis_hit_ratio": 0.0,
+  "redis_memory_bytes": 3489976.0,
+  "redis_ops_per_second": 657.608823508178,
+  "resource_limits": [
+    {
+      "labels": {
+        "resource": "cpu",
+        "unit": "core"
+      },
+      "value": 7.15
+    },
+    {
+      "labels": {
+        "resource": "memory",
+        "unit": "byte"
+      },
+      "value": 12348030976.0
+    }
+  ],
+  "resource_requests": [
+    {
+      "labels": {
+        "resource": "cpu",
+        "unit": "core"
+      },
+      "value": 3.2
+    },
+    {
+      "labels": {
+        "resource": "memory",
+        "unit": "byte"
+      },
+      "value": 5368709120.0
+    }
+  ],
+  "restarts": 0.0,
+  "rps": 651.6378801288666,
+  "rps_by_tenant": [
+    {
+      "labels": {
+        "tenant": "ibm"
+      },
+      "value": 111.8403907807737
+    },
+    {
+      "labels": {
+        "tenant": "unknown"
+      },
+      "value": 0.36969248857589604
+    },
+    {
+      "labels": {
+        "tenant": "mongo"
+      },
+      "value": 28.157234457764147
+    },
+    {
+      "labels": {
+        "tenant": "oracle"
+      },
+      "value": 27.957236881977188
+    },
+    {
+      "labels": {
+        "tenant": "qualcomm"
+      },
+      "value": 28.520866413740443
+    },
+    {
+      "labels": {
+        "tenant": "salesforce"
+      },
+      "value": 28.569350674537276
+    },
+    {
+      "labels": {
+        "tenant": "sap"
+      },
+      "value": 28.181476588162568
+    },
+    {
+      "labels": {
+        "tenant": "shopify"
+      },
+      "value": 28.54510854413886
+    },
+    {
+      "labels": {
+        "tenant": "stripe"
+      },
+      "value": 28.77540878292384
+    },
+    {
+      "labels": {
+        "tenant": "twilio"
+      },
+      "value": 28.508745348541233
+    },
+    {
+      "labels": {
+        "tenant": "datadog"
+      },
+      "value": 111.55419532741432
+    },
+    {
+      "labels": {
+        "tenant": "intel"
+      },
+      "value": 97.0351874522733
+    },
+    {
+      "labels": {
+        "tenant": "binance"
+      },
+      "value": 103.62298638804378
+    }
+  ],
+  "rps_per_tenant": 54.30315667740555,
+  "running_pods": 23.0,
+  "tenant_count": 12
+}

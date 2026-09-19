@@ -19,7 +19,7 @@ case "$TARGET" in
     SERVICE="${KUBE_PROMETHEUS_STACK_RELEASE}-grafana"
     PORT_MAPPING="3000:80"
     URL="http://localhost:3000"
-    echo "Grafana credentials: admin / zilla-local-only"
+    echo "Grafana credentials: admin / admin"
     ;;
   prometheus)
     SERVICE="${KUBE_PROMETHEUS_STACK_RELEASE}-prometheus"

@@ -1,0 +1,102 @@
+{
+  "cpu_cores": 0.272808376437539,
+  "cpu_cores_by_namespace": [
+    {
+      "labels": {
+        "namespace": "arm"
+      },
+      "value": 0.272808376437539
+    }
+  ],
+  "cpu_cores_by_tenant": [
+    {
+      "labels": {
+        "tenant": "arm"
+      },
+      "value": 0.272808376437539
+    }
+  ],
+  "cpu_cores_per_rps": 0.0025143231709181036,
+  "cpu_throttle_ratio": 0.005430066207182716,
+  "error_rate": 0.0,
+  "error_rate_by_tenant": [
+    {
+      "labels": {
+        "tenant": "arm"
+      },
+      "value": 0.0
+    }
+  ],
+  "latency_p50_seconds": 0.0025418843707405727,
+  "latency_p95_seconds": 0.004829580304407089,
+  "latency_p99_seconds": 0.007635681818181876,
+  "memory_bytes_by_namespace": [
+    {
+      "labels": {
+        "namespace": "arm"
+      },
+      "value": 889305067.3131313
+    }
+  ],
+  "memory_bytes_by_tenant": [
+    {
+      "labels": {
+        "tenant": "arm"
+      },
+      "value": 889305067.3131313
+    }
+  ],
+  "memory_bytes_per_rps": 8196230.504206071,
+  "memory_working_set_bytes": 889305067.3131313,
+  "postgres_cache_hit_ratio": 0.999986599795586,
+  "postgres_connections": 6.0,
+  "postgres_locks": 2.0,
+  "redis_hit_ratio": 0.0,
+  "redis_memory_bytes": 970592.0,
+  "redis_ops_per_second": 110.6350226057866,
+  "resource_limits": [
+    {
+      "labels": {
+        "resource": "cpu",
+        "unit": "core"
+      },
+      "value": 2.05
+    },
+    {
+      "labels": {
+        "resource": "memory",
+        "unit": "byte"
+      },
+      "value": 3758096384.0
+    }
+  ],
+  "resource_requests": [
+    {
+      "labels": {
+        "resource": "cpu",
+        "unit": "core"
+      },
+      "value": 0.9
+    },
+    {
+      "labels": {
+        "resource": "memory",
+        "unit": "byte"
+      },
+      "value": 1610612736.0
+    }
+  ],
+  "restarts": 0.0,
+  "rps": 108.5017151307257,
+  "rps_by_tenant": [
+    {
+      "labels": {
+        "tenant": "arm"
+      },
+      "value": 108.5017151307257
+    }
+  ],
+  "rps_per_tenant": 108.5017151307257,
+  "running_pods": 7.0,
+  "tenant_count": 1
+}

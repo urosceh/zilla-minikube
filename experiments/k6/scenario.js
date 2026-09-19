@@ -4,11 +4,16 @@ import {check, sleep} from "k6";
 import {SharedArray} from "k6/data";
 
 const model = __ENV.MODEL;
-const warmupSeconds = positiveInt("WARMUP_SECONDS", 30);
-const steadySeconds = positiveInt("STEADY_SECONDS", 120);
+const warmupSeconds = positiveInt("WARMUP_SECONDS", 60);
+const steadySeconds = positiveInt("STEADY_SECONDS", 180);
 const cooldownSeconds = positiveInt("COOLDOWN_SECONDS", 30);
-const vusPerTenant = positiveInt("VUS_PER_TENANT", 2);
-const thinkTimeSeconds = nonNegativeNumber("THINK_TIME_SECONDS", 0.25);
+const vusPerTenant = positiveInt("VUS_PER_TENANT", 10);
+const thinkTimeMinSeconds = nonNegativeNumber("THINK_TIME_MIN_SECONDS", 2);
+const thinkTimeMaxSeconds = nonNegativeNumber("THINK_TIME_MAX_SECONDS", 4);
+
+if (thinkTimeMinSeconds > thinkTimeMaxSeconds) {
+  throw new Error("THINK_TIME_MIN_SECONDS must be less than or equal to THINK_TIME_MAX_SECONDS");
+}
 
 const routes = JSON.parse(open(__ENV.ROUTES_FILE));
 const credentials = new SharedArray("tenant credentials", () =>
@@ -21,6 +26,7 @@ if (!model || routes.length === 0 || credentials.length === 0) {
 
 const routeByTenant = Object.fromEntries(routes.map((route) => [route.tenant, route]));
 const usersByTenant = {};
+const sessionsByTenant = {};
 for (const credential of credentials) {
   usersByTenant[credential.tenant] ||= [];
   usersByTenant[credential.tenant].push(credential);
@@ -28,39 +34,34 @@ for (const credential of credentials) {
 
 const scenarios = {};
 for (const [index, route] of routes.entries()) {
-  if (!usersByTenant[route.tenant]?.length) {
-    throw new Error(`No credentials configured for tenant ${route.tenant}`);
+  const userCount = usersByTenant[route.tenant]?.length || 0;
+  if (userCount < vusPerTenant) {
+    throw new Error(
+      `Tenant ${route.tenant} has ${userCount} credential(s), but ${vusPerTenant} VUs require at least that many`
+    );
   }
 
   const suffix = `${String(index + 1).padStart(2, "0")}_${safeName(route.tenant)}`;
-  const common = {
+  const rampSeconds = Math.max(1, Math.floor(warmupSeconds / 2));
+  const warmSeconds = warmupSeconds - rampSeconds;
+  const stages = [{duration: `${rampSeconds}s`, target: vusPerTenant}];
+  if (warmSeconds > 0) {
+    stages.push({duration: `${warmSeconds}s`, target: vusPerTenant});
+  }
+  stages.push(
+    {duration: `${steadySeconds}s`, target: vusPerTenant},
+    {duration: `${cooldownSeconds}s`, target: 0}
+  );
+
+  scenarios[`workload_${suffix}`] = {
     exec: "tenantWorkload",
     env: {TENANT: route.tenant},
-    gracefulStop: "5s",
-  };
-
-  scenarios[`warmup_${suffix}`] = {
-    ...common,
     executor: "ramping-vus",
     startVUs: 0,
-    stages: [{duration: `${warmupSeconds}s`, target: vusPerTenant}],
-    tags: {model, tenant: route.tenant, phase: "warmup"},
-  };
-  scenarios[`steady_${suffix}`] = {
-    ...common,
-    executor: "constant-vus",
-    vus: vusPerTenant,
-    duration: `${steadySeconds}s`,
-    startTime: `${warmupSeconds}s`,
-    tags: {model, tenant: route.tenant, phase: "steady"},
-  };
-  scenarios[`cooldown_${suffix}`] = {
-    ...common,
-    executor: "ramping-vus",
-    startVUs: vusPerTenant,
-    stages: [{duration: `${cooldownSeconds}s`, target: 0}],
-    startTime: `${warmupSeconds + steadySeconds}s`,
-    tags: {model, tenant: route.tenant, phase: "cooldown"},
+    stages,
+    gracefulRampDown: "0s",
+    gracefulStop: "5s",
+    tags: {model, tenant: route.tenant},
   };
 }
 
@@ -80,51 +81,43 @@ export function tenantWorkload() {
   const tenant = __ENV.TENANT;
   const route = routeByTenant[tenant];
   const users = usersByTenant[tenant];
-  const user = users[exec.scenario.iterationInTest % users.length];
-  const headers = routeHeaders(route);
+  exec.vu.metrics.tags.phase = currentPhase();
 
-  const loginResponse = http.post(
-    apiUrl(route, "/user/login"),
-    JSON.stringify({email: user.email, password: user.password}),
-    requestParams(
-      {...headers, "Content-Type": "application/json"},
-      "authenticate",
-      "POST /api/user/login"
-    )
-  );
-  const loginOk = check(loginResponse, {
-    "login succeeded": (response) => response.status === 200,
-  });
-  if (!loginOk) {
-    sleep(thinkTimeSeconds);
+  const session = sessionForVu(route, users);
+  if (!session) {
+    think();
     return;
   }
 
-  const loginBody = parseJson(loginResponse);
-  const token = loginBody?.bearerToken;
-  if (!token) {
-    check(null, {"login returned bearer token": () => false});
-    sleep(thinkTimeSeconds);
-    return;
-  }
-
-  const authorization = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
-  const authHeaders = {...headers, Authorization: authorization};
-  const projectsResponse = http.get(
+  let authHeaders = authenticatedHeaders(route, session);
+  let projectsResponse = http.get(
     apiUrl(route, "/project/all"),
     requestParams(authHeaders, "read", "GET /api/project/all")
   );
+  if (projectsResponse.status === 401) {
+    const refreshedAuthorization = authenticate(route, session.user);
+    if (!refreshedAuthorization) {
+      think();
+      return;
+    }
+    session.authorization = refreshedAuthorization;
+    authHeaders = authenticatedHeaders(route, session);
+    projectsResponse = http.get(
+      apiUrl(route, "/project/all"),
+      requestParams(authHeaders, "read", "GET /api/project/all")
+    );
+  }
   const projectsOk = check(projectsResponse, {
     "projects read succeeded": (response) => response.status === 200,
   });
   if (!projectsOk) {
-    sleep(thinkTimeSeconds);
+    think();
     return;
   }
 
   const projects = parseJson(projectsResponse);
   if (!Array.isArray(projects) || projects.length === 0) {
-    sleep(thinkTimeSeconds);
+    think();
     return;
   }
 
@@ -138,7 +131,71 @@ export function tenantWorkload() {
     updateIssue(route, authHeaders, project, tenant);
   }
 
-  sleep(thinkTimeSeconds);
+  think();
+}
+
+function currentPhase() {
+  const elapsedSeconds = (Date.now() - exec.scenario.startTime) / 1000;
+  if (elapsedSeconds < warmupSeconds) {
+    return "warmup";
+  }
+  if (elapsedSeconds < warmupSeconds + steadySeconds) {
+    return "steady";
+  }
+  return "cooldown";
+}
+
+function sessionForVu(route, users) {
+  if (sessionsByTenant[route.tenant]) {
+    return sessionsByTenant[route.tenant];
+  }
+
+  const user = users[(exec.vu.idInTest - 1) % users.length];
+  const authorization = authenticate(route, user);
+  if (!authorization) {
+    return null;
+  }
+
+  sessionsByTenant[route.tenant] = {user, authorization};
+  return sessionsByTenant[route.tenant];
+}
+
+function authenticate(route, user) {
+  const response = http.post(
+    apiUrl(route, "/user/login"),
+    JSON.stringify({email: user.email, password: user.password}),
+    requestParams(
+      {...routeHeaders(route), "Content-Type": "application/json"},
+      "authenticate",
+      "POST /api/user/login"
+    )
+  );
+  const loginOk = check(response, {
+    "login succeeded": (item) => item.status === 200,
+  });
+  if (!loginOk) {
+    return null;
+  }
+
+  const token = parseJson(response)?.bearerToken;
+  const tokenOk = check(token, {
+    "login returned bearer token": (value) => typeof value === "string" && value.length > 0,
+  });
+  if (!tokenOk) {
+    return null;
+  }
+
+  return token.startsWith("Bearer ") ? token : `Bearer ${token}`;
+}
+
+function authenticatedHeaders(route, session) {
+  return {...routeHeaders(route), Authorization: session.authorization};
+}
+
+function think() {
+  const duration =
+    thinkTimeMinSeconds + Math.random() * (thinkTimeMaxSeconds - thinkTimeMinSeconds);
+  sleep(duration);
 }
 
 function readIssues(route, headers, project) {
@@ -272,6 +329,8 @@ export function handleSummary(data) {
     "",
     `model=${model}`,
     `tenants=${routes.length}`,
+    `VUs per tenant=${vusPerTenant}`,
+    `think time=${thinkTimeMinSeconds}-${thinkTimeMaxSeconds} s`,
     `steady requests=${stableRequests.count ?? 0}`,
     `steady request rate=${stableRequestRate}`,
     `steady error rate=${stableFailures.rate ?? 0}`,

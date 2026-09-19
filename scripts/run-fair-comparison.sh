@@ -12,8 +12,9 @@ if [[ -z "$TARGET" || "$#" -ne 1 ]]; then
   cat <<'EOF' >&2
 Usage: scripts/run-fair-comparison.sh <primary|iso|hybrid|shared|grouped>
 
-  primary  Runs iso, hybrid, and shared three times in rotating order.
-  grouped  Runs grouped separately; it is never included in primary results.
+  primary  Runs ISO and shared three times, pausing between experiments.
+  hybrid   Runs the secondary hybrid comparison separately.
+  grouped  Runs the secondary grouped comparison separately.
 EOF
   exit 1
 fi
@@ -62,6 +63,33 @@ PY
 }
 
 readonly INITIAL_IMAGE_LOCK_SHA="$(file_sha256 "$IMAGE_LOCK")"
+
+tenant_filter_for_model() {
+  case "$1" in
+    iso) printf '%s' "$FAIR_COMPARISON_ISO_TENANTS" ;;
+    shared) printf '%s' "$FAIR_COMPARISON_SHARED_TENANTS" ;;
+    hybrid|grouped) printf '' ;;
+  esac
+}
+
+confirm_iteration_transition() {
+  local next_model="$1"
+  local next_repetition="$2"
+  local answer
+
+  while true; do
+    if ! read -r -p \
+      "Experiment finished. Inspect Grafana now. Continue with ${next_model} repetition ${next_repetition}/${FAIR_COMPARISON_REPETITIONS}? [y/n] " \
+      answer; then
+      return 1
+    fi
+    case "$answer" in
+      [Yy]|[Yy][Ee][Ss]) return 0 ;;
+      [Nn]|[Nn][Oo]) return 1 ;;
+      *) warn "Please answer y or n." ;;
+    esac
+  done
+}
 
 activate_only_profile() {
   local selected="$1"
@@ -114,6 +142,9 @@ run_repetition() {
   local current_lock_sha
   local result_dir
   local run_status
+  local tenant_filter
+
+  tenant_filter="$(tenant_filter_for_model "$model")"
 
   current_lock_sha="$(file_sha256 "$IMAGE_LOCK")"
   if [[ "$current_lock_sha" != "$INITIAL_IMAGE_LOCK_SHA" ]]; then
@@ -129,7 +160,7 @@ run_repetition() {
 
   set +e
   (
-    unset TENANTS
+    TENANTS="$tenant_filter" \
     EXPERIMENT_PROTOCOL="$FAIR_COMPARISON_PROTOCOL" \
     EXPERIMENT_BATCH_ID="$BATCH_ID" \
     EXPERIMENT_REPETITION="$repetition" \
@@ -138,7 +169,8 @@ run_repetition() {
     STEADY_SECONDS="$FAIR_COMPARISON_STEADY_SECONDS" \
     COOLDOWN_SECONDS="$FAIR_COMPARISON_COOLDOWN_SECONDS" \
     VUS_PER_TENANT="$FAIR_COMPARISON_VUS_PER_TENANT" \
-    THINK_TIME_SECONDS="$FAIR_COMPARISON_THINK_TIME_SECONDS" \
+    THINK_TIME_MIN_SECONDS="$FAIR_COMPARISON_THINK_TIME_MIN_SECONDS" \
+    THINK_TIME_MAX_SECONDS="$FAIR_COMPARISON_THINK_TIME_MAX_SECONDS" \
       bash "${ROOT_DIR}/scripts/run-experiment.sh" "$model"
   )
   run_status=$?
@@ -167,12 +199,17 @@ run_repetition() {
   esac
 }
 
-for ((repetition = 1; repetition <= FAIR_COMPARISON_REPETITIONS; repetition++)); do
-  model_count="${#models[@]}"
-  offset=$(((repetition - 1) % model_count))
-  for ((position = 0; position < model_count; position++)); do
-    index=$(((position + offset) % model_count))
-    run_repetition "${models[$index]}" "$repetition"
+first_iteration=true
+for model in "${models[@]}"; do
+  for ((repetition = 1; repetition <= FAIR_COMPARISON_REPETITIONS; repetition++)); do
+    # if [[ "$first_iteration" == false ]]; then
+    #   if ! confirm_iteration_transition "$model" "$repetition"; then
+    #     ok "Fair comparison stopped before ${model} repetition ${repetition}"
+    #     exit 0
+    #   fi
+    # fi
+    run_repetition "$model" "$repetition"
+    first_iteration=false
   done
 done
 

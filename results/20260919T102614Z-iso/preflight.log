@@ -1,0 +1,32 @@
+Profile: iso
+Chart:   kube-prometheus-stack 88.6.2
+NAME                                                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/kube-prometheus-stack-grafana              1/1     1            1           40h
+deployment.apps/kube-prometheus-stack-kube-state-metrics   1/1     1            1           40h
+deployment.apps/kube-prometheus-stack-operator             1/1     1            1           40h
+
+NAME                                                           READY   AGE
+statefulset.apps/prometheus-kube-prometheus-stack-prometheus   1/1     40h
+
+NAME                                                            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+daemonset.apps/kube-prometheus-stack-prometheus-node-exporter   1         1         1       1            1           kubernetes.io/os=linux   40h
+
+NAME                                                           READY   STATUS    RESTARTS      AGE
+pod/kube-prometheus-stack-grafana-6f676dd88f-b9rsh             3/3     Running   3 (17m ago)   40h
+pod/kube-prometheus-stack-kube-state-metrics-8fc6b9b9f-wrp4d   1/1     Running   1 (17m ago)   40h
+pod/kube-prometheus-stack-operator-589d8c9bc7-782x7            1/1     Running   2 (17m ago)   40h
+pod/kube-prometheus-stack-prometheus-node-exporter-c428l       1/1     Running   1 (17m ago)   40h
+pod/prometheus-kube-prometheus-stack-prometheus-0              2/2     Running   2 (17m ago)   40h
+
+NAME                                                                                                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0   Bound    pvc-eb86654a-716c-48b2-a309-daa45fe553a8   4Gi        RWO            standard       <unset>                 40h
+[OK] Grafana Prometheus datasource is provisioned
+[OK] Grafana dashboards are provisioned (3 ConfigMaps)
+[OK] All monitoring workloads are Ready
+backend: 1/1 UP (1 discovered)
+postgres: 1/1 UP (1 discovered)
+redis: 1/1 UP (1 discovered)
+[OK] zilla_http_requests_total returns data for model iso
+[OK] pg_up returns data for model iso
+[OK] redis_up returns data for model iso
+[OK] All expected iso targets and metric families are available

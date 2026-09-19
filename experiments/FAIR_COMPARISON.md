@@ -5,11 +5,12 @@ eksperimente i analizu u diplomskom radu.
 
 ## Opseg poređenja
 
-Primarno poređenje obuhvata modele `iso`, `hybrid` i `shared`.
+Primarno poređenje obuhvata modele `iso` i `shared`.
 
-Model `grouped` nije deo iste rang-liste. On kombinuje ISO, hybrid i shared
-podmodele na jednom Minikube profilu i koristi se kao samostalan test
-mešovitog, opterećenog okruženja.
+Modeli `hybrid` i `grouped` su sekundarni eksperimenti i nisu deo iste
+rang-liste. `grouped` kombinuje ISO, hybrid i shared podmodele na jednom
+Minikube profilu i koristi se kao samostalan test mešovitog, opterećenog
+okruženja.
 
 Postojeći rezultati:
 
@@ -19,8 +20,7 @@ Postojeći rezultati:
 - `results/20260909T090907Z-grouped`
 
 predstavljaju pilot-testove. Ne treba ih koristiti kao finalno međusobno
-poređenje jer nemaju identične `steady_seconds` i `think_time_seconds`
-parametre.
+poređenje jer nemaju identične faze, broj VU-ova i raspon think time-a.
 
 ## Šta znači „fer” u ovom eksperimentu
 
@@ -28,23 +28,26 @@ Poređenje je test fiksnog infrastrukturnog troška:
 
 - ISO, hybrid i shared profili imaju 3 CPU, 4096 MiB RAM-a i disk od 20 GiB;
 - odgovarajući tipovi komponenti imaju iste Kubernetes requests/limits;
-- svaki tenant dobija isti k6 raspored i isti broj VU-ova;
+- svaki izabrani tenant dobija isti k6 raspored i 10 VU-ova;
 - svi modeli koriste isti scenario i isti request mix;
 - faze testa i think time su identični;
+- svaki VU koristi jednog korisnika, prijavljuje se jednom tokom warmup-a i
+  ponovo se prijavljuje samo posle odgovora `401`;
 - aplikacioni podaci se resetuju pre svakog merenja;
 - svaki model se meri najmanje tri puta.
 
 Broj tenant-a i ukupan broj podova nisu jednaki. To je namerna posledica
 arhitekture:
 
-- ISO: 1 tenant;
-- hybrid: 3 tenant-a;
-- shared: 15 tenant-a.
+- ISO: 1 tenant (`arm`);
+- shared: 10 tenant-a (`amazon`, `amd`, `apple`, `azure`, `google`, `meta`,
+  `netflix`, `nvidia`, `paypal`, `reddit`).
 
-Zbog toga je jednako **opterećenje po tenant-u**, a ne ukupno opterećenje
-klastera. Rezultate treba opisati kao poređenje kapaciteta i efikasnosti
-različitih topologija na serverima iste veličine. Ne treba tvrditi da se meri
-čista razlika arhitektura pod identičnim ukupnim saobraćajem.
+Zbog toga je jednako **opterećenje po tenant-u**, ali ne i ukupno opterećenje
+klastera: ISO ima 10, a shared 100 istovremenih VU-ova. Rezultate treba
+opisati kao poređenje kapaciteta i efikasnosti predviđenih topologija na
+serverima iste veličine. Ne treba tvrditi da se meri čista razlika
+arhitektura pod identičnim ukupnim saobraćajem.
 
 ## Resursni budžet
 
@@ -81,20 +84,25 @@ stvarnu potrošnju koristiti `cpu_cores` i `memory_working_set_bytes`.
 Za svaki finalni run koristiti:
 
 ```text
-WARMUP_SECONDS=30
-STEADY_SECONDS=120
+WARMUP_SECONDS=60
+STEADY_SECONDS=180
 COOLDOWN_SECONDS=30
-VUS_PER_TENANT=2
-THINK_TIME_SECONDS=0.25
+VUS_PER_TENANT=10
+THINK_TIME_MIN_SECONDS=2
+THINK_TIME_MAX_SECONDS=4
 ```
 
 Kanonske vrednosti se nalaze u `experiments/fair-comparison.env`. Finalni
 runner ih učitava direktno, tako da pojedinačni run-ovi ne mogu slučajno
 dobiti različite override vrednosti.
 
-Ne koristiti `TENANTS`, odnosno testirati pun tenant set svakog modela.
-Parametre navesti eksplicitno u komandi čak i kada odgovaraju podrazumevanim
-vrednostima, kako bi protokol bio očigledan i lako ponovljiv.
+Warmup prvih 30 sekundi podiže opterećenje od 0 do 10 VU-ova po tenant-u, a
+narednih 30 sekundi drži svih 10 VU-ova radi zagrevanja. Think time se za
+svaku iteraciju bira uniformno između 2 i 4 sekunde.
+
+Kanonski tenant skup je takođe definisan u tom fajlu: jedan ISO tenant i
+deset shared tenant-a. Ručni override promenljive `TENANTS` nije deo finalnog
+protokola.
 
 ## Automatski postupak merenja
 
@@ -106,35 +114,45 @@ Primarno poređenje pokrenuti komandom:
 
 Runner automatski:
 
-- pokreće `iso`, `hybrid` i `shared` po tri puta;
-- rotira redosled modela između ponavljanja;
+- pokreće prvo `iso`, pa `shared`, svaki po tri puta;
+- između svaka dva eksperimenta traži `y/n` potvrdu, tako da se završeni run
+  može pregledati i screenshot-ovati u Grafani pre početka sledećeg;
 - zaustavlja ostale Minikube profile pre svakog merenja;
 - proverava da se image lock nije promenio;
-- radi purge i seed kompletnog tenant seta;
+- radi purge i seed modela, a opterećuje kanonski tenant skup;
 - prosleđuje identične parametre svakom run-u;
 - upisuje protocol, batch i repetition podatke u `parameters.json`;
 - proverava parametre, image-e i k6 exit code pre računanja statistike;
 - generiše comparison JSON i CSV za svaki model.
 
-Grouped test se pokreće isključivo odvojeno:
+Aktivni Minikube profil se ne restartuje između ponavljanja istog modela.
+Ručna pauza na potvrdi razdvaja k6 pikove, dok bi restart unosio cold-start
+efekte i praznine u scrape-ovanju. Profil ostaje dostupan dok se Grafana
+pregleda, a pri prelasku na drugi model runner ga zaustavlja radi izolacije
+host resursa.
+
+Sekundarni testovi se pokreću odvojeno:
 
 ```bash
+./scripts/run-fair-comparison.sh hybrid
 ./scripts/run-fair-comparison.sh grouped
 ```
 
 ## Ručni postupak merenja
 
-Za svaki od modela `iso`, `hybrid` i `shared`:
+Za svaki od primarnih modela:
 
 ```bash
 ./scripts/purge-model.sh <model>
 ./scripts/seed-model.sh <model>
 
-WARMUP_SECONDS=30 \
-STEADY_SECONDS=120 \
+TENANTS=<kanonski-tenant-skup-za-model> \
+WARMUP_SECONDS=60 \
+STEADY_SECONDS=180 \
 COOLDOWN_SECONDS=30 \
-VUS_PER_TENANT=2 \
-THINK_TIME_SECONDS=0.25 \
+VUS_PER_TENANT=10 \
+THINK_TIME_MIN_SECONDS=2 \
+THINK_TIME_MAX_SECONDS=4 \
 ./scripts/run-experiment.sh <model>
 ```
 
@@ -150,8 +168,8 @@ Tokom merenja treba:
 - sačekati da workload i monitoring budu Ready;
 - ne menjati manifests, tenant set ili parametre između ponavljanja.
 
-Za grouped, ako se prikazuje kao dodatni eksperiment, koristiti iste parametre
-i takođe tri ponavljanja, ali rezultate analizirati odvojeno.
+Za hybrid i grouped koristiti iste faze, VU-ove i think time i takođe tri
+ponavljanja, ali rezultate analizirati odvojeno.
 
 ## Obrada i prikaz rezultata
 

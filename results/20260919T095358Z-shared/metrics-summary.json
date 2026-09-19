@@ -1,0 +1,268 @@
+{
+  "cpu_cores": 0.7204378809437392,
+  "cpu_cores_by_namespace": [
+    {
+      "labels": {
+        "namespace": "shared"
+      },
+      "value": 0.7204378809437392
+    }
+  ],
+  "cpu_cores_by_tenant": null,
+  "cpu_cores_per_rps": 0.002879726988437631,
+  "cpu_throttle_ratio": 0.31246108809255757,
+  "error_rate": 0.0,
+  "error_rate_by_tenant": [
+    {
+      "labels": {
+        "tenant": "unknown"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "amazon"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "amd"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "apple"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "azure"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "google"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "meta"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "netflix"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "nvidia"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "paypal"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "reddit"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "slack"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "spotify"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "tesla"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "uber"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "zoom"
+      },
+      "value": 0.0
+    }
+  ],
+  "latency_p50_seconds": 0.01840910530984666,
+  "latency_p95_seconds": 0.09646755988281924,
+  "latency_p99_seconds": 0.2088921397379913,
+  "memory_bytes_by_namespace": [
+    {
+      "labels": {
+        "namespace": "shared"
+      },
+      "value": 830021772.8298368
+    }
+  ],
+  "memory_bytes_by_tenant": null,
+  "memory_bytes_per_rps": 3317754.6092909975,
+  "memory_working_set_bytes": 830021772.8298368,
+  "postgres_cache_hit_ratio": 0.9999993568842327,
+  "postgres_connections": 22.0,
+  "postgres_locks": 13.0,
+  "redis_hit_ratio": 0.0,
+  "redis_memory_bytes": 1532008.0,
+  "redis_ops_per_second": 253.16969696969693,
+  "resource_limits": [
+    {
+      "labels": {
+        "resource": "cpu",
+        "unit": "core"
+      },
+      "value": 2.05
+    },
+    {
+      "labels": {
+        "resource": "memory",
+        "unit": "byte"
+      },
+      "value": 3758096384.0
+    }
+  ],
+  "resource_requests": [
+    {
+      "labels": {
+        "resource": "cpu",
+        "unit": "core"
+      },
+      "value": 0.9
+    },
+    {
+      "labels": {
+        "resource": "memory",
+        "unit": "byte"
+      },
+      "value": 1610612736.0
+    }
+  ],
+  "restarts": 0.0,
+  "rps": 250.17575757575756,
+  "rps_by_tenant": [
+    {
+      "labels": {
+        "tenant": "unknown"
+      },
+      "value": 0.36969696969696964
+    },
+    {
+      "labels": {
+        "tenant": "amazon"
+      },
+      "value": 25.109090909090906
+    },
+    {
+      "labels": {
+        "tenant": "amd"
+      },
+      "value": 24.769696969696966
+    },
+    {
+      "labels": {
+        "tenant": "apple"
+      },
+      "value": 24.866666666666667
+    },
+    {
+      "labels": {
+        "tenant": "azure"
+      },
+      "value": 24.957575757575757
+    },
+    {
+      "labels": {
+        "tenant": "google"
+      },
+      "value": 25.345454545454544
+    },
+    {
+      "labels": {
+        "tenant": "meta"
+      },
+      "value": 25.066666666666663
+    },
+    {
+      "labels": {
+        "tenant": "netflix"
+      },
+      "value": 25.024242424242424
+    },
+    {
+      "labels": {
+        "tenant": "nvidia"
+      },
+      "value": 24.763636363636362
+    },
+    {
+      "labels": {
+        "tenant": "paypal"
+      },
+      "value": 24.71515151515151
+    },
+    {
+      "labels": {
+        "tenant": "reddit"
+      },
+      "value": 25.187878787878788
+    },
+    {
+      "labels": {
+        "tenant": "slack"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "spotify"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "tesla"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "uber"
+      },
+      "value": 0.0
+    },
+    {
+      "labels": {
+        "tenant": "zoom"
+      },
+      "value": 0.0
+    }
+  ],
+  "rps_per_tenant": 25.017575757575756,
+  "running_pods": 7.0,
+  "tenant_count": 10
+}

@@ -1,0 +1,35 @@
+metric,timestamp,value,labels
+rps,1789816035,315.5378468396366,{}
+error_rate,1789816035,0,{}
+latency_p50_seconds,1789816035,0.0026460095158185835,{}
+latency_p95_seconds,1789816035,0.006299373705780245,{}
+latency_p99_seconds,1789816035,0.1543432977435542,{}
+cpu_cores,1789816035,0.832101784338402,{}
+memory_working_set_bytes,1789816035,988690245.8181818,{}
+running_pods,1789816035,9,{}
+restarts,1789816035,0,{}
+cpu_throttle_ratio,1789816035,0.031660985329362186,{}
+postgres_connections,1789816035,68,{}
+postgres_cache_hit_ratio,1789816035,0.9999461127245503,{}
+postgres_locks,1789816035,1,{}
+redis_memory_bytes,1789816035,1053464,{}
+redis_ops_per_second,1789816035,314.83894427441595,{}
+redis_hit_ratio,1789816035,0,{}
+rps_by_tenant,1789816035,111.21009921031738,"{""tenant"": ""blackrock""}"
+rps_by_tenant,1789816035,99.99757581634385,"{""tenant"": ""atlassian""}"
+rps_by_tenant,1789816035,104.33017181297535,"{""tenant"": ""baidu""}"
+error_rate_by_tenant,1789816035,0,"{""tenant"": ""blackrock""}"
+error_rate_by_tenant,1789816035,0,"{""tenant"": ""atlassian""}"
+error_rate_by_tenant,1789816035,0,"{""tenant"": ""baidu""}"
+cpu_cores_by_namespace,1789816035,0.832101784338402,"{""namespace"": ""hybrid""}"
+memory_bytes_by_namespace,1789816035,988690245.8181818,"{""namespace"": ""hybrid""}"
+cpu_cores_by_tenant,1789816035,0.19820441882236142,"{""tenant"": ""blackrock""}"
+cpu_cores_by_tenant,1789816035,0.18616248008304762,"{""tenant"": ""atlassian""}"
+cpu_cores_by_tenant,1789816035,0.19981054798274286,"{""tenant"": ""baidu""}"
+memory_bytes_by_tenant,1789816035,55127691.63636363,"{""tenant"": ""blackrock""}"
+memory_bytes_by_tenant,1789816035,61861888,"{""tenant"": ""atlassian""}"
+memory_bytes_by_tenant,1789816035,60524202.666666664,"{""tenant"": ""baidu""}"
+resource_requests,1789816035,1.4,"{""resource"": ""cpu"", ""unit"": ""core""}"
+resource_requests,1789816035,2147483648,"{""resource"": ""memory"", ""unit"": ""byte""}"
+resource_limits,1789816035,4831838208,"{""resource"": ""memory"", ""unit"": ""byte""}"
+resource_limits,1789816035,3.05,"{""resource"": ""cpu"", ""unit"": ""core""}"
